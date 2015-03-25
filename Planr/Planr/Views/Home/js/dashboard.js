@@ -66,7 +66,7 @@ function User(url, recordDOMID){
 /////////////////////////////////
 // Preference class
 /////////////////////////////////
-function Preference(url, preferenceDOMID){
+function Preferences(url, preferenceDOMID, statusCode){
 	// dayof, morning, night
 	
 	// private instance variables
@@ -75,7 +75,47 @@ function Preference(url, preferenceDOMID){
 	// public instance variables
 	this.preferenceURL = url;
 	this.DomId = preferenceDOMID;
+	this.statusCode = statusCode;
+	this.self = this;
+	
+	this.getPreferences = function(){
+		return preference;
+	};
+	
+	this.setPreferences = function(newPreferences){
+		preference = newPreferences;
+	};
 }
+
+Preferences.prototype = {
+	constructor:Preferences,
+	
+	fetchPreferencesFromServer: function() {
+		var self = this.self;
+		$.get(this.preferenceURL, function(data) {
+			self.setPreferences(data);
+		});
+	},
+	
+	updatePreferences: function() {
+		//TODO
+	},
+	
+	savePreferencesToDatabase: function() {
+		//TODO format sequence for backend
+		var formattedPreferences = JSON.stringify(this.getPreferences());
+		var self = this.self;
+
+		$.get(this.preferenceURL + '?preferences=' + formattedPreferences, function(data) {
+			//TODO compare with returned status code to make sure everything went ok
+			if(data === self.statusCode){}
+		});
+	}
+	
+	
+	
+	
+};
 
 
 /////////////////////////////////
