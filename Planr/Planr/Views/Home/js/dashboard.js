@@ -64,26 +64,56 @@ function User(url, recordDOMID){
 }
 
 /////////////////////////////////
-// Preference class
+// Preferences class
 /////////////////////////////////
-function Preferences(url, preferencesDOMID, statusCode){
-	// dayof, morning, night
+function Preferences(url, preferencesDOMID){
+	// Constants
+	var SUCCESS_STATUS_CODE = 1;
 	
 	// private instance variables
-	var preferences = null;
+	// dayof, morning, nightBooleans
+	var morning = null;
+	var dayOff = null;
+	var night = null;
+	
 	
 	// public instance variables
+	//boolean stating if there is an ajax call to the server
+	this.fetching = false;
+	//ajax object
+	this.jqxhr = null;
 	this.preferencesURL = url;
-	this.DomId = preferencesDOMID;
-	this.statusCode = statusCode;
+	this.domID = preferencesDOMID;
 	this.self = this;
 	
-	this.getPreferences = function(){
-		return preference;
+	//accessor methods
+	this.getMorning = function(){
+		return morning;
 	};
 	
-	this.setPreferences = function(newPreferences){
-		preferences = newPreferences;
+	this.setMorning = function(newMorning){
+		morning = newMorning;
+	};
+	
+	this.getDayOff = function(){
+		return dayOff;
+	};
+	
+	this.setDayOff = function(newDayOff){
+		dayOff = newDayOff;
+	};
+	
+	this.getNight = function(){
+		return night;
+	};
+	
+	this.setNight = function(newNight){
+		night = newNight;
+	};
+	
+	//return the success status code
+	this.getSuccessStatusCode = function(){
+		return SUCCESS_STATUS_CODE;
 	};
 }
 
@@ -91,14 +121,29 @@ Preferences.prototype = {
 	constructor:Preferences,
 	
 	fetchPreferencesFromServer: function() {
+		if (this.fetching === false) {
+			var self = this.self;
+			var this.jqxhr = $.get(this.preferencesURL, function(data) {
+				//TODO: self.setPreferences(data);
+			});
+		}
+	},
+	
+	savePreferencesToServer:function(){
 		var self = this.self;
-		$.get(this.preferencesURL, function(data) {
-			self.setPreferences(data);
+		var this.jqxhr = $.get(this.preferencesURL+"?morning="+this.getMorning()+"&dayOff="+this.getDayOff()+"&night="+this.getNight(), function(data){
+			//if the returned data is not the same as our success status code then alert the user and return false
+			if(self.getSuccessStatusCode == data){
+				alert('failed to save data to server.');
+				return false;
+			}
+			//TODO, what to do if it worked.
 		});
 	},
 	
+	
 	updatePreferences: function() {
-		//TODO
+		//TODO: Angular for data  binding?
 	}
 	
 	
