@@ -174,12 +174,15 @@ Sequence.prototype = {
 	//and sets this instance variable, the server should
 	//return the sequence in json format
 	fetchSequenceFromServer:function(){
-		var self = this.self;
-		this.fetching = true;
-		self.jqxhr = $.get(this.sequenceUrl, function(data){
+		//if there is no other ajax call already fetching the sequence
+		if(this.fetching === false){
+			var self = this.self;
+			this.fetching = true;
+			self.jqxhr = $.get(this.sequenceUrl, function(data) {
 			self.setSequence(data);
 			self.fetching = false;
-		});
+			});
+		}
 	},
 	
 	htmlFormat:function(){
