@@ -66,15 +66,15 @@ function User(url, recordDOMID){
 /////////////////////////////////
 // Preference class
 /////////////////////////////////
-function Preferences(url, preferenceDOMID, statusCode){
+function Preferences(url, preferencesDOMID, statusCode){
 	// dayof, morning, night
 	
 	// private instance variables
-	var preference = null;
+	var preferences = null;
 	
 	// public instance variables
-	this.preferenceURL = url;
-	this.DomId = preferenceDOMID;
+	this.preferencesURL = url;
+	this.DomId = preferencesDOMID;
 	this.statusCode = statusCode;
 	this.self = this;
 	
@@ -83,7 +83,7 @@ function Preferences(url, preferenceDOMID, statusCode){
 	};
 	
 	this.setPreferences = function(newPreferences){
-		preference = newPreferences;
+		preferences = newPreferences;
 	};
 }
 
@@ -92,27 +92,14 @@ Preferences.prototype = {
 	
 	fetchPreferencesFromServer: function() {
 		var self = this.self;
-		$.get(this.preferenceURL, function(data) {
+		$.get(this.preferencesURL, function(data) {
 			self.setPreferences(data);
 		});
 	},
 	
 	updatePreferences: function() {
 		//TODO
-	},
-	
-	savePreferencesToDatabase: function() {
-		//TODO format sequence for backend
-		var formattedPreferences = JSON.stringify(this.getPreferences());
-		var self = this.self;
-
-		$.get(this.preferenceURL + '?preferences=' + formattedPreferences, function(data) {
-			//TODO compare with returned status code to make sure everything went ok
-			if(data === self.statusCode){}
-		});
 	}
-	
-	
 	
 	
 };
@@ -161,6 +148,10 @@ function Sequence(url, sequenceDOMID){
 	var sequence = null;
 	
 	//public instance variables
+	//boolean stating if there is an ajax call to the server
+	this.fetching = false;
+	//ajax object
+	this.jqxhr = null;
 	this.sequenceUrl = url;
 	this.DOMID = sequenceDOMID;
 	this.self = this;
@@ -184,17 +175,45 @@ Sequence.prototype = {
 	//return the sequence in json format
 	fetchSequenceFromServer:function(){
 		var self = this.self;
-		$.get(this.sequenceUrl, function(data){
+		this.fetching = true;
+		self.jqxhr = $.get(this.sequenceUrl, function(data){
 			self.setSequence(data);
+			self.fetching = false;
 		});
 	},
 	
-	updateSequence:function(){
-		//TODO: this code will read the sequence displayed in the dom and save it to the sequence instance variable
-		//$(//some selector).each(//put in sequence);
+	htmlFormat:function(){
+		var self = this.self;
+		///TODO: self.getSequence();
+		//return formattedSequence
 	},
 	
-	//using the same url, pass in a sequence to save to the server
+	insertInDOM:function(){
+		var self = this.self;
+		//if sequence is loaded, insert
+		if(self.getSequence !== null)
+			$("#"+self.DOMID).html();
+		//if sequence is not loaded and there are no current ajax call going on
+		else if(this.fetching === false){
+			//then fetch sequence from server
+			this.fetchSequenceFromServer();
+			//and call back insertInDOM when finished
+			this.jqxhr.done(this.insertInDOM);
+			
+			//if there is already an ajax call to retreive the sequence
+		} else if (this.fetching === true)
+			//then call back insertInDOM when finished
+			this.jqxhr.done(this.insertInDOM);
+			
+			
+	},
+	
+	/*updateSequence:function(){
+		//TODO: this code will read the sequence displayed in the dom and save it to the sequence instance variable
+		//$(//some selector).each(//put in sequence);
+	},*/
+	
+	/*//using the same url, pass in a sequence to save to the server
 	saveSequenceToDatabase:function(){
 		//TODO format sequence for backend
 		var formattedSequence = JSON.stringify(this.getSequence());
@@ -202,7 +221,7 @@ Sequence.prototype = {
 		$.get(this.sequenceUrl + '?sequence=' + formattedSequence, function(data){
 			//TODO compare with returned status code to make sure everything went ok
 		});
-	}
+	}*/
 	
 	//TODO check if course placed in a summer sessions
 };
