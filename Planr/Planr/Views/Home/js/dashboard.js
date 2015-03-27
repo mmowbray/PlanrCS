@@ -6,6 +6,8 @@ function StudentRecord(url, recordDOMID){
 	var record = null;
 	
 	//public instance variables
+	this.fetching = false; //boolean stating if there is an ajax call to the server
+	this.jqxhr = null; //ajax object
 	this.recordUrl = url;
 	this.DOMID = recordDOMID;
 	this.self = this;
@@ -121,30 +123,41 @@ Preferences.prototype = {
 	constructor:Preferences,
 	
 	fetchPreferencesFromServer: function() {
-		if (this.fetching === false) {
+		if (!this.fetching) { //if no current preference ajax goin on then fetch
+			this.fetching = true; //set fetch flag to true
 			var self = this.self;
-			var this.jqxhr = $.get(this.preferencesURL, function(data) {
+			//perform get request
+			this.jqxhr = $.get(this.preferencesURL, function(data) {
 				//TODO: self.setPreferences(data);
+				self.fetching = false;
 			});
 		}
 	},
 	
 	savePreferencesToServer:function(){
-		var self = this.self;
-		var this.jqxhr = $.get(this.preferencesURL+"?morning="+this.getMorning()+"&dayOff="+this.getDayOff()+"&night="+this.getNight(), function(data){
-			//if the returned data is not the same as our success status code then alert the user and return false
-			if(self.getSuccessStatusCode == data){
-				alert('failed to save data to server.');
-				return false;
-			}
-			//TODO, what to do if it worked.
-		});
+		if (!this.fetching) { //if no current preference ajax goin on then fetch
+			this.fetching = true; //set fetch flag to true
+			var self = this.self;
+			//perform get request
+			this.jqxhr = $.get(this.preferencesURL + "?morning=" + this.getMorning() + "&dayOff=" + this.getDayOff() + "&night=" + this.getNight(), function(data) {
+				//if the returned data is not the same as our success status code then alert the user and return false
+				if (self.getSuccessStatusCode == data) {
+					alert('failed to save data to server.');
+					return false;
+				}
+				
+				//TODO, what to do if it worked.
+				self.fetching = false;
+			});
+		}
 	},
 	
 	
 	updatePreferences: function() {
 		//TODO: Angular for data  binding?
-	}
+	},
+	
+	updatePreferencesInDOM: function(){}
 	
 	
 };
@@ -220,9 +233,10 @@ Sequence.prototype = {
 	//return the sequence in json format
 	fetchSequenceFromServer:function(){
 		//if there is no other ajax call already fetching the sequence
-		if(this.fetching === false){
-			var self = this.self;
+		if(!this.fetching){
 			this.fetching = true;
+			
+			var self = this.self;
 			self.jqxhr = $.get(this.sequenceUrl, function(data) {
 			self.setSequence(data);
 			self.fetching = false;
@@ -242,14 +256,14 @@ Sequence.prototype = {
 		if(self.getSequence !== null)
 			$("#"+self.DOMID).html();
 		//if sequence is not loaded and there are no current ajax call going on
-		else if(this.fetching === false){
+		else if(!this.fetching){
 			//then fetch sequence from server
 			this.fetchSequenceFromServer();
 			//and call back insertInDOM when finished
 			this.jqxhr.done(this.insertInDOM);
 			
 			//if there is already an ajax call to retreive the sequence
-		} else if (this.fetching === true)
+		} else if (!this.fetching)
 			//then call back insertInDOM when finished
 			this.jqxhr.done(this.insertInDOM);
 			
