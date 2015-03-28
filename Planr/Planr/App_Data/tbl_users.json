@@ -31,14 +31,14 @@
     "StudentID": 123451,
     "SavedPreferences": null,
     "Record": {
-      "CreditsCompleted": 0,
+      "CreditsCompleted": 60,
       "Options": null,
       "CompletedCourses": null
     },
     "SavedSchedule": {},
     "SavedSequence": null,
     "UserName": "stuart",
-    "Password": "pass2",
+    "Password": "planr",
     "Type": "Student"
   },
   {

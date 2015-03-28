@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Web.Mvc;
 using Planr.Models.PlanrModels;
 
@@ -28,70 +29,70 @@ namespace Planr.Controllers
 
         // This method returns the saved sequence of the currently logged in user, retrieved from the Database
 
-        [HttpPost]
+        [HttpGet]
         public JsonResult GetSequence() //receives AJAX call from front-end and returns a JSON array
         {
-            return Json(DBHelper.GetSequence(Session["username"].ToString()));
+            return Json(DBHelper.GetSequence(Session["username"].ToString()), JsonRequestBehavior.AllowGet);
         }
 
         // This method returns the saved schedule of the currently logged in user, retrieved from the Database
 
-        [HttpPost]
+        [HttpGet]
         public JsonResult ViewSavedSchedule()
         {
-            return Json(DBHelper.GetSchedule(Session["username"].ToString()));
+            return Json(DBHelper.GetSchedule(Session["username"].ToString()), JsonRequestBehavior.AllowGet);
         }
 
         // This method accepts a sequence object from the front-end, and writes it to the database for the currently logged in user
         // 0 = SUCCESS, 1 = ERROR
 
-        [HttpPost]
+        [HttpGet]
         public JsonResult SaveSequence(Sequence sequence)
         {
-            return Json(DBHelper.SaveSequence(Session["username"].ToString(), sequence));
+            return Json(DBHelper.SaveSequence(Session["username"].ToString(), sequence), JsonRequestBehavior.AllowGet);
         }
 
         // This method returns the saved record of the currently logged in user, retrieved from the Database
 
-        [HttpPost]
+        [HttpGet]
         public JsonResult ViewRecord()
         {
-            return Json(DBHelper.GetRecord(Session["username"].ToString()));
+            return Json(DBHelper.GetRecord(Session["username"].ToString()), JsonRequestBehavior.AllowGet);
         }
 
         // This method accepts a new password string from the front-end, and writes it to the database for the currently logged in user
         // 0 = SUCCESS, 1 = ERROR
 
-        [HttpPost]
+        [HttpGet]
         public JsonResult ChangePassword(String newPassword)
         {
-            return Json(DBHelper.SetPassword(Session["username"].ToString(), newPassword));
+            return Json(DBHelper.SetPassword(Session["username"].ToString(), newPassword), JsonRequestBehavior.AllowGet);
         }
 
         // This method returns a collection of schedules for the currently logged in user
 
-        [HttpPost]
+        [HttpGet]
         public JsonResult GenerateSchedules(Student.Preference prefs)
         {
-            return Json(DBHelper.GenerateSchedules(Session["username"].ToString(), prefs));
+            return Json(DBHelper.GenerateSchedules(Session["username"].ToString(), prefs), JsonRequestBehavior.AllowGet);
         }
 
         // This method accepts a Schedule object from the front-end, and writes it to the database for the currently logged in user
         // 0 = SUCCESS, 1 = ERROR
 
-        [HttpPost]
+        [HttpGet]
         public JsonResult SaveSchedule(Schedule schedule)
         {
-            return Json(DBHelper.SaveSchedule(Session["username"].ToString(), schedule));
+            return Json(DBHelper.SaveSchedule(Session["username"].ToString(), schedule), JsonRequestBehavior.AllowGet);
         }
 
         // This method accepts a Student.Preferences object from the front-end, and writes it to the database for the currently logged in user
         // 0 = SUCCESS, 1 = ERROR
 
-        [HttpPost]
+        [HttpGet]
         public JsonResult SavePreferences(Student.Preference prefs)
         {
-            return Json(DBHelper.SavePreferences(Session["username"].ToString(), prefs));
+            return Json(DBHelper.SavePreferences(Session["username"].ToString(), prefs), JsonRequestBehavior.AllowGet);
         }
     }
 }

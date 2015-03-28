@@ -45,7 +45,7 @@ namespace Planr.Models.PlanrModels
             return student.SavedSchedule;
         }
 
-        static Student GetStudent(String studentName)
+        public static Student GetStudent(String studentName)
         {
             return GetUsers().OfType<Student>().FirstOrDefault(student => student.UserName == studentName);
         }
