@@ -164,41 +164,6 @@ Preferences.prototype = {
 
 
 /////////////////////////////////
-// Schedule class
-/////////////////////////////////
-
-function Schedule(url, scheduleDOMID){
-	
-	// private instace variables
-	var schedule = null;
-	
-	// public instance variables
-	this.scheduleURL = url;
-	this.DomId = scheduleDOMID;
-	this.self = this;
-	
-	// accessor methods
-	
-	this.getSchedule = function(){
-		return schedule;
-	};
-	
-	this.setSchedule = function(scheduleObj){
-		schedule = scheduleObj;
-	};	
-	
-}
-
-/*
-Schedule.prototype = {
-	constructor: Schedule;
-	
-}
-*/
-
-/////////////////////////////////
-
-/////////////////////////////////
 //Sequence class
 ////////////////////////////////
 function Sequence(url, sequenceDOMID){
@@ -290,4 +255,49 @@ Sequence.prototype = {
 
 
 
+/////////////////////////////////
+// Schedule class
+/////////////////////////////////
 
+function Schedule(coursesArray, scheduleDOMID){
+	
+	// private instace variables, array of course object
+	var courses = coursesArray;
+	
+	//create the schedule's canvas
+	var canvas = document.createElement('canvas'); //create canva element
+	canvas.id = 
+	canvas.width = 1800;
+	canvas.height = 2880;
+	canvas.style.width = "600px";
+	canvas.style.height = "960px";
+	var ctx = canvas.getContext("2d");
+	ctx.scale(3, 3);
+	var days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+	var hour = ["08:00", "08:15", "08:30", "08:45", "09:00", "09:15", "09:30", "09:45", "10:00", "10:15", "10:30", "10:45", "11:00", "11:15", "11:30", "11:45", "12:00", "12:15", "12:30", "12:45", "13:00", "13:15", "13:30", "13:45", "14:00", "14:15", "14:30", "14:45", "15:00", "15:15", "15:30", "15:45", "16:00", "16:15", "16:30", "16:45", "17:00", "17:15", "17:30", "17:45", "15:00", "15:15", "15:30", "15:45", "17:00", "17:15", "17:30", "17:45", "18:00", "18:15", "18:30", "18:45", "19:00", "19:15", "19:30", "19:45", "20:00", "20:15", "20:30", "20:45", "21:00", "21:15", "21:30", "21:45", "22:00", "22:15", "22:30", "22:45", "23:00"]
+	var time = [];
+	var backColor = ["black", "gray", "gold", "cyan", "darkMagenta", "navy"];
+	var frontColor = ["yellow", "white", "mediumBlue", "blue", "Gainsboro", "white"];
+	
+	this.DomId = scheduleDOMID;
+	this.self = this;
+	
+	// accessor methods
+	
+	this.getCourses = function(){
+		return courses;
+	};
+	
+	this.setCourses = function(coursesArray){
+		courses = coursesArray;
+	};	
+	
+}
+
+Schedule.prototype = {
+	constructor:Schedule,
+	
+	
+	
+	
+};
