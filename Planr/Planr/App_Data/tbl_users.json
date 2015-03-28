@@ -1,0 +1,72 @@
+[
+  {
+    "StudentID": 758473,
+    "SavedPreferences": null,
+    "Record": {
+      "CreditsCompleted": 0,
+      "Options": null,
+      "CompletedCourses": "77/78/68/70/79/71/84/85/4/137"
+    },
+    "SavedSchedule": {},
+    "SavedSequence": null,
+    "UserName": "ralph",
+    "Password": "1234",
+    "Type": "Student"
+  },
+  {
+    "StudentID": 945785,
+    "SavedPreferences": null,
+    "Record": {
+      "CreditsCompleted": 0,
+      "Options": null,
+      "CompletedCourses": null
+    },
+    "SavedSchedule": {},
+    "SavedSequence": null,
+    "UserName": "ronald",
+    "Password": "right",
+    "Type": "Student"
+  },
+  {
+    "StudentID": 123451,
+    "SavedPreferences": null,
+    "Record": {
+      "CreditsCompleted": 0,
+      "Options": null,
+      "CompletedCourses": null
+    },
+    "SavedSchedule": {},
+    "SavedSequence": null,
+    "UserName": "stuart",
+    "Password": "pass2",
+    "Type": "Student"
+  },
+  {
+    "StudentID": 234567,
+    "SavedPreferences": null,
+    "Record": {
+      "CreditsCompleted": 0,
+      "Options": null,
+      "CompletedCourses": null
+    },
+    "SavedSchedule": {},
+    "SavedSequence": null,
+    "UserName": "wing",
+    "Password": "007",
+    "Type": "Student"
+  },
+  {
+    "StudentID": 987654,
+    "SavedPreferences": null,
+    "Record": {
+      "CreditsCompleted": 0,
+      "Options": null,
+      "CompletedCourses": null
+    },
+    "SavedSchedule": {},
+    "SavedSequence": null,
+    "UserName": "mark",
+    "Password": "password2",
+    "Type": "Student"
+  }
+]
