@@ -129,4 +129,46 @@ padding: 15px;
 width: 100%;
 }
 
+.sequence_title{
+
+  text-align: center;
+  margin-top: 3em;
+}
+
+.sequence_ul{
+  list-style: none;
+  margin-top: 2em;
+  padding: 0 !important;
+}
+
+.sequence_li{
+  color: #000;
+  padding: 20px;
+  width: 100%;
+
+  margin: 0px auto;
+  cursor: pointer;
+  line-height: 1em;
+  height:8%;
+}
+.sc_name{
+	float: left;
+}
+.sc_credit{
+	float: right;
+}
+
+.yearSequence{
+
+}
+
+.yearNum{
+	
+}
+
+ul li.c-1{ background: #e74c3c }
+ul li.c-2{ background: #3498db }
+ul li.c-3{ background: #f39c12 }
+ul li.c-4{ background: #27ae60 }
+ul li.c-5{ background: #9b59b6 }
 
