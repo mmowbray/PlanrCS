@@ -27,9 +27,10 @@ StudentRecord.prototype = {
 	constructor:StudentRecord,
 	
 	fetchRecordFromServer:function(){
+
 		var self = this.self;
 		$.get(this.recordUrl, function(data){
-			this.setRecord(data);
+			self.setRecord(data);
 			
 			//TODO add a callback
 		
@@ -37,10 +38,11 @@ StudentRecord.prototype = {
 	},
 	
 	insertInDOM: function() {
-
+		var self = this.self;
 		if (this.getRecord !== null) {
 			$('#' + this.DOMID).html(function() {
 				//TO DO actual html code to be inserted
+				return self.getRecord();
 			});
 		} else{
 			this.fetchRecordFromServer();
@@ -59,10 +61,8 @@ function Preferences(url, preferencesDOMID){
 	var SUCCESS_STATUS_CODE = 1;
 	
 	// private instance variables
-	// dayof, morning, nightBooleans
-	var morning = null;
-	var dayOff = null;
-	var night = null;
+	// preferences object
+	var preferences = {'morning':false, 'night':false, 'dayOff':false};
 	
 	
 	// public instance variables
@@ -75,28 +75,12 @@ function Preferences(url, preferencesDOMID){
 	this.self = this;
 	
 	//accessor methods
-	this.getMorning = function(){
-		return morning;
+	this.getPreferences = function(){
+		return preferences;
 	};
 	
-	this.setMorning = function(newMorning){
-		morning = newMorning;
-	};
-	
-	this.getDayOff = function(){
-		return dayOff;
-	};
-	
-	this.setDayOff = function(newDayOff){
-		dayOff = newDayOff;
-	};
-	
-	this.getNight = function(){
-		return night;
-	};
-	
-	this.setNight = function(newNight){
-		night = newNight;
+	this.setPreferences = function(newPreferences){
+		preferences = newPreferences;
 	};
 	
 	//return the success status code
@@ -112,9 +96,9 @@ Preferences.prototype = {
 		if (!this.fetching) { //if no current preference ajax goin on then fetch
 			this.fetching = true; //set fetch flag to true
 			var self = this.self;
-			//perform get request
+			//perform get request, format of returned data should be as follows: {"morning":true, "night":true, "dayOff":true}
 			this.jqxhr = $.get(this.preferencesURL, function(data) {
-				//TODO: self.setPreferences(data);
+				self.setPreferences(JSON.parse(data));
 				self.fetching = false;
 			});
 		}
@@ -125,9 +109,9 @@ Preferences.prototype = {
 			this.fetching = true; //set fetch flag to true
 			var self = this.self;
 			//perform get request
-			this.jqxhr = $.get(this.preferencesURL + "?morning=" + this.getMorning() + "&dayOff=" + this.getDayOff() + "&night=" + this.getNight(), function(data) {
+			this.jqxhr = $.get(this.preferencesURL + "?morning=" + this.getPreferences().morning + "&dayOff=" + this.getPreferences().dayOff + "&night=" + this.getPreferences().night, function(data) {
 				//if the returned data is not the same as our success status code then alert the user and return false
-				if (self.getSuccessStatusCode == data) {
+				if (self.getSuccessStatusCode() != data) {
 					alert('failed to save data to server.');
 					return false;
 				}
@@ -188,9 +172,11 @@ Sequence.prototype = {
 			this.fetching = true;
 			
 			var self = this.self;
+			
+			//fetch sequence using get, sequence shoulds be returned in json array format eg: ["course1","course2","course3","course4"]
 			self.jqxhr = $.get(this.sequenceUrl, function(data) {
-			self.setSequence(data);
-			self.fetching = false;
+				self.setSequence(JSON.parse(data));
+				self.fetching = false;
 			});
 		}
 	},
@@ -201,22 +187,31 @@ Sequence.prototype = {
 		//return formattedSequence
 	},
 	
-	insertInDOM:function(){
-		var self = this.self;
+	insertInDOM:function(selfReference){
+		var self = (selfReference === undefined) ? this.self : selfReference;
 		//if sequence is loaded, insert
-		if(self.getSequence !== null)
-			$("#"+self.DOMID).html();
+		if(self.getSequence() !== null)
+			//TODO: properly html format
+			$("#"+self.DOMID).html(this.getSequence());
 		//if sequence is not loaded and there are no current ajax call going on
 		else if(!this.fetching){
 			//then fetch sequence from server
 			this.fetchSequenceFromServer();
 			//and call back insertInDOM when finished
-			this.jqxhr.done(this.insertInDOM);
+			this.jqxhr.done(function(){self.insertInDOM(self);}); /*pass in the self referencing object 
+			to the call back so that self can reference to the active object, this is done because the method 
+			is passed as a stand alone object function which can't self reference the active object on its own. 
+			Moreover, we wrapper it in an anonymous function because passing the self referencing object without 
+			being wrapped would caused the function to execute.*/
 			
 			//if there is already an ajax call to retreive the sequence
-		} else if (!this.fetching)
+		} else if (this.fetching)
 			//then call back insertInDOM when finished
-			this.jqxhr.done(this.insertInDOM);
+			this.jqxhr.done(function(){self.insertInDOM(self);});/*pass in the self referencing object 
+			to the call back so that self can reference to the active object, this is done because the method 
+			is passed as a stand alone object function which can't self reference the active object on its own. 
+			Moreover, we wrapper it in an anonymous function because passing the self referencing object without 
+			being wrapped would caused the function to execute.*/
 			
 			
 	},
@@ -267,7 +262,7 @@ function Schedule(coursesArray, scheduleSemester, scheduleYear){
 	};
 	
 	this.getYear = function(){
-		
+		return year;
 	};
 	
 }
@@ -302,9 +297,9 @@ Schedules.prototype = {
 			var self = this.self;
 			
 			//fetch using get, set ajax ovject
-			this.jqxhr = $.get(this.schedulesUrl + '?morning=' + this.preferences.getMorning() + '&night=' + this.preferences.getNight() + '&dayoff' + this.preferences.getDayOff(), function(data){
+			this.jqxhr = $.get(this.schedulesUrl + '?morning=' + this.preferences.getPreferences().morning + '&night=' + this.preferences.getPreferences().night + '&dayoff' + this.preferences.getPreferences().dayOff, function(data){
 				//build the schedule options based on the received data
-				self.makeSchedules(data);
+				self.makeSchedules(JSON.parse(data));
 				self.fetching = false;
 				//run a callback setted by the constructor
 				self.callback();
@@ -320,14 +315,14 @@ Schedules.prototype = {
 		this.fallSchedules = [];
 		$.each(data[0], function(i, o){
 			//push new schedules to schedules array
-			self.fallSchedules.push(new Schedule(o[i], 'Fall', self.year));
+			self.fallSchedules.push(new Schedule(o, 'Fall', self.year));
 		});
 		
 		//create winter schedules array
 		this.winterSchedules = [];
 		$.each(data[1], function(i, o){
 			//push new schedules to schedules array
-			self.fallSchedules.push(new Schedule(o[i], 'Winter', self.year));
+			self.winterSchedules.push(new Schedule(o, 'Winter', self.year));
 		});
 		
 		//TODO: add check to make sure there is a summer semester given
@@ -335,7 +330,7 @@ Schedules.prototype = {
 		this.summerSchedules = [];
 		$.each(data[2], function(i, o){
 			//push new schedules to schedules array
-			self.fallSchedules.push(new Schedule(o[i], 'Summer', self.year));
+			self.summerSchedules.push(new Schedule(o, 'Summer', self.year));
 		});
 		
 	}
@@ -368,22 +363,6 @@ function ScheduleCanvas(canvasID) {
 	};
 	
 	//The methods, TODO: refactor them in the prototype
-	
-	//function to draw one day of a course. 
-	this.draw = function(name, day, start, end, type, bcolor, fcolor) {
-		var xAxis = (days.indexOf(day) + 1) * 100;
-		var startHour = start.substr(0, 2).concat(":00");
-		var startY = (time.indexOf(startHour) * 15) + (parseInt(start.substr(3, 2)) * 1) + 15;
-		var endHour = end.substr(0, 2).concat(":00");
-		var endY = (time.indexOf(endHour) * 15) + parseInt(end.substr(3, 2)) + 15;
-		ctx.fillStyle = bcolor;
-		ctx.fillRect(xAxis, startY, 100, endY - startY);
-		ctx.font = '10pt Calibri';
-		ctx.textAlign = 'center';
-		ctx.fillStyle = fcolor;
-		ctx.fillText(name, xAxis + 50, (startY + endY) / 2);
-		ctx.fillText(type.concat(" ", start, "-", end), xAxis + 50, (startY + endY) / 2 + 15);
-	};
 	
 	//this method draw the schedule canvas to the dom element for the provided id
 	this.drawSchedule = function (schedule) {
@@ -421,7 +400,7 @@ function ScheduleCanvas(canvasID) {
 			s += 1;
 		}
 		for (var i = 0; i < schedule.length; i++) {
-			schedule[i].drawCourse(backColor[i], frontColor[i]);
+			schedule[i].drawCourse(backColor[i], frontColor[i], ctx, time);
 		}
 	};
 	
@@ -471,27 +450,65 @@ function Course(name, lDay1, lDay2, startL, endL, tDay1, tDay2, startT, endT, la
 	this.labDay2 = labDay2;
 	this.startLab = startLab;
 	this.endLab = endLab;
-	this.drawCourse = function(bcolor, fcolor) {
+	var ctx;
+	var days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+	var time;
+	
+	//function to draw one day of a course. 
+	this.draw = function(name, day, start, end, type, bcolor, fcolor) {
+		var xAxis = (days.indexOf(day) + 1) * 100;
+		var startHour = start.substr(0, 2).concat(":00");
+		var startY = (time.indexOf(startHour) * 15) + (parseInt(start.substr(3, 2)) * 1) + 15;
+		var endHour = end.substr(0, 2).concat(":00");
+		var endY = (time.indexOf(endHour) * 15) + parseInt(end.substr(3, 2)) + 15;
+		ctx.fillStyle = bcolor;
+		ctx.fillRect(xAxis, startY, 100, endY - startY);
+		ctx.font = '10pt Calibri';
+		ctx.textAlign = 'center';
+		ctx.fillStyle = fcolor;
+		ctx.fillText(name, xAxis + 50, (startY + endY) / 2);
+		ctx.fillText(type.concat(" ", start, "-", end), xAxis + 50, (startY + endY) / 2 + 15);
+	};
+	
+	
+	this.drawCourse = function(bcolor, fcolor, suppliedCanvas, suppliedTime) {
+		ctx = suppliedCanvas;
+		time = suppliedTime;
 		if (name != "") {
 			if (lDay1 != "") {
-				draw(name, lDay1, startL, endL, "Lec", bcolor, fcolor);
+				this.draw(name, lDay1, startL, endL, "Lec", bcolor, fcolor);
 			}
 			if (lDay2 != "") {
-				draw(name, lDay2, startL, endL, "Lec", bcolor, fcolor);
+				this.draw(name, lDay2, startL, endL, "Lec", bcolor, fcolor);
 			}
 			if (tDay1 != "") {
-				draw(name, tDay1, startT, endT, "Tut", bcolor, fcolor);
+				this.draw(name, tDay1, startT, endT, "Tut", bcolor, fcolor);
 			}
 			if (tDay2 != "") {
-				draw(name, tDay2, startT, endT, "Tut", bcolor, fcolor);
+				this.draw(name, tDay2, startT, endT, "Tut", bcolor, fcolor);
 			}
 			if (labDay1 != "") {
-				draw(name, labDay1, startLab, endLab, "Lab", bcolor, fcolor);
+				this.draw(name, labDay1, startLab, endLab, "Lab", bcolor, fcolor);
 			}
 			if (labDay2 != "") {
-				draw(name, labDay2, startLab, endLab, "Lab", bcolor, fcolor);
+				this.draw(name, labDay2, startLab, endLab, "Lab", bcolor, fcolor);
 			}
 
 		}
 	};
 }
+
+/*
+how to draw the schedule with courses now:
+
+->myCanvas = new ScheduleCanvas('canvas')
+
+->var course1 = new Course("Course1", "Monday", "Wednesday", "10:30", "12:00", "Friday", "", "11:00", "14:00", "", "", "", "");
+->var course2 = new Course("Course2", "Tuesday", "Thursday", "10:00", "12:00", "", "", "", "", "Wednesday", "", "12:15", "15:05");
+->var course3 = new Course("Course3", "Monday", "Wednesday", "15:30", "17:00", "Friday", "", "14:15", "17:00", "", "", "", "");
+->var course4 = new Course("Course4", "Tuesday", "Thursday", "12:15", "13:30", "", "", "", "", "Monday", "", "12:30", "14:45");
+->var course5 = new Course("Course5", "Tuesday", "Thursday", "14:00", "15:00", "", "", "", "", "Friday", "", "11:00", "14:07");
+->var schedules = [course1, course2, course3, course4, course5];
+
+->myCanvas.drawSchedule(schedules)
+*/
