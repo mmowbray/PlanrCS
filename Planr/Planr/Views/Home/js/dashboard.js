@@ -271,6 +271,8 @@ function Schedule(coursesArray, scheduleSemester, scheduleYear){
 // Schedules class
 /////////////////////////////////
 function Schedules(url, preferencesOBJ, year, ajaxCallback){
+	// Constants
+	var SUCCESS_STATUS_CODE = 1;
 	//public instance variables
 	//boolean stating if there is an ajax call to the server
 	this.fetching = false;
@@ -333,6 +335,24 @@ Schedules.prototype = {
 			self.summerSchedules.push(new Schedule(o, 'Summer', self.year));
 		});
 		
+	},
+	
+	saveSchedules:function(scheduleIDArray){
+		if (!this.fetching) { //if no current preference ajax goin on then fetch
+			this.fetching = true; //set fetch flag to true
+			var self = this.self;
+			//perform get request
+			this.jqxhr = $.get(this.schedulesUrl, {'scheduleIDs[]': scheduleIDArray}, function(data) {
+				//if the returned data is not the same as our success status code then alert the user and return false
+				if (self.getSuccessStatusCode() != data) {
+					alert('failed to save data to server.');
+					return false;
+				}
+				
+				//TODO, what to do if it worked.
+				self.fetching = false;
+			});
+		}
 	}
 };
 /////////////////////////////////
