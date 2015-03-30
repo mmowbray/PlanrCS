@@ -1,9 +1,9 @@
 
 var table = ""; 
 
-                table +='<tbody><thead><tr><td rowspan ="3"> Course NUMBER </td><td colspan = "12"> Section </td><td rowspan ="3"> Edit </td>';
-                table += '<td rowspan ="3"> Delete </td></tr><tr><td colspan = "4"> Lecture </td><td colspan = "4"> Time </td>';
-                table += '<td colspan = "4"> Tutorial </td><tr><td> Day 1 </td><td> Day 2 </td><td> Start </td>';
+                table +='<tbody><thead><tr><td rowspan ="3"> Course Number </td><td colspan = "12"> Section </td><td rowspan ="3"> Edit </td>';
+                table += '<td rowspan ="3"> Delete </td></tr><tr><td colspan = "4"> Lecture </td><td colspan = "4"> Tutorial </td>';
+                table += '<td colspan = "4"> Lab </td><tr><td> Day 1 </td><td> Day 2 </td><td> Start </td>';
                 table += '<td> End </td><td> Day 1 </td><td> Day 2 </td><td> Start </td><td> End </td><td> Day 1 </td><td> Day 2 </td>';
                 table += '<td> Start </td><td> End </td></tr></tr></thead>';
                 
@@ -28,20 +28,23 @@ var table = "";
                         table += '<tr><td> ' +cName+ '</td><td>' +lDay1+ '</td><td>' +lDay2+ '</td><td>' +startL+ '</td><td>' +endL+ '</td>';
                         table += '<td>' +tDay1+ '</td><td>' +tDay2+ '</td><td>' +startT+ '</td><td>' +endT+ '</td>';
                         table += '<td>' +labDay1+ '</td><td>' +labDay2+ '</td><td>' +startLab+ '</td><td>' +endLab+ '</td>';
-                        table += '<td> <form><button class = "button" type="submit" name="editCourse"> Edit Course </button></form> </td>';
-                        table += '<td> <form><button class = "button" type="submit" name="delCourse" > Delete Course</button></form></td></tr>';    
+                        table += '<td class="button_td"> <form><button class = "buttons" type="submit" name="editSection"> Edit Section </button></form> </td>';
+                        table += '<td class="button_td"> <form><button class = "buttons" type="submit" name="delSection" > Delete Section</button></form></td></tr>';    
                         
                       };
                 }
 
-                var course1 = new Course("Course1", "Monday", "Tuesday", "8:45", "10:00", "Thursday", "", "8:45", "10:00", "", "", "", ""); 
+                var course1 = new Course("Course1", "Wednesday", "Wednesday", "8:45", "10:00", "Wednesday", "Wednesday", "8:45", "10:00", "Wednesday", "Wednesday",  "8:45", "10:00"); 
                 var course2 = new Course("Course2", "Monday", "Tuesday", "10:15", "11:30", "", "", "", "", "Wednesday", "", "12:00", "15:00"); 
                 var course3 = new Course("Course3", "Wednesday", "Friday", "10:15", "11:30", "", "", "", "", "Thursday", "", "12:00", "15:00"); 
                 var course4 = new Course("Course1", "Monday", "Tuesday", "8:45", "10:00", "Thursday", "", "8:45", "10:00", "", "", "", ""); 
                 var course5 = new Course("Course2", "Monday", "Tuesday", "10:15", "11:30", "", "", "", "", "Wednesday", "", "12:00", "15:00"); 
                 var course6 = new Course("Course3", "Wednesday", "Friday", "10:15", "11:30", "", "", "", "", "Thursday", "", "12:00", "15:00");
+				var course7 = new Course("Course1", "Monday", "Tuesday", "8:45", "10:00", "Thursday", "", "8:45", "10:00", "", "", "", ""); 
+                var course8 = new Course("Course2", "Monday", "Tuesday", "10:15", "11:30", "", "", "", "", "Wednesday", "", "12:00", "15:00"); 
+                var course9 = new Course("Course3", "Wednesday", "Friday", "10:15", "11:30", "", "", "", "", "Thursday", "", "12:00", "15:00");
 
-                var schedules = [course1, course2, course3, course4, course5, course6]; 
+                var schedules = [course1, course2, course3, course4, course5, course6, course7, course8, course9]; 
 
 
 				function drawTable(){ 
