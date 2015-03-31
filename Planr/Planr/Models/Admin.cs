@@ -1,4 +1,4 @@
-﻿namespace Planr.Models.PlanrModels
+﻿namespace Planr.Models
 {
     public class Admin : User
     {

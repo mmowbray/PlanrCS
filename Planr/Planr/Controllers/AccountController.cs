@@ -1,12 +1,10 @@
 ﻿using System.Threading.Tasks;
 using System.Web.Mvc;
-using Planr.Models;
-using Planr.Models.PlanrModels;
 
 // AccountController Class
 // This class is responsible for dealing with logging in and out, as well as displaying the Login page
 
-namespace Planr.Controllers
+namespace Planr.Models
 {
     [Authorize]
     [AllowAnonymous]

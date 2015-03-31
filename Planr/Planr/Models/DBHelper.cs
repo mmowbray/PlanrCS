@@ -8,12 +8,12 @@ using Newtonsoft.Json.Linq;
 // DBHelper Class
 // This class is responsible to interfacing with the JSON databases, ie reading and writing to them
 
-namespace Planr.Models.PlanrModels
+namespace Planr.Models
 {
     public static class DBHelper
     {
         private static readonly String DB_USERS_PATH = System.Web.HttpContext.Current.Server.MapPath("~/App_Data/tbl_users.json");
-        private static readonly String DB_SECTIONS_PATH = System.Web.HttpContext.Current.Server.MapPath("~/App_Data/tbl_soen_courses_sections.json");
+        private static readonly String DB_SECTIONS_PATH = System.Web.HttpContext.Current.Server.MapPath("~/App_Data/tbl_courses_sections.json");
         private static readonly String DB_COURSES_PATH = System.Web.HttpContext.Current.Server.MapPath("~/App_Data/tbl_soen_courses.json");
 
         public static List<User> GetUsers()
@@ -37,6 +37,9 @@ namespace Planr.Models.PlanrModels
             StreamReader sr = new StreamReader(DB_COURSES_PATH);
             List<Course> returnList = JsonConvert.DeserializeObject<List<Course>>(sr.ReadToEnd());
             sr.Close();
+
+            WriteValuesToDB(DB_COURSES_PATH, returnList);
+
             return returnList;
         }
 
@@ -102,7 +105,8 @@ namespace Planr.Models.PlanrModels
 
         public static List<Schedule> GenerateSchedules(string StudentName, Student.Preference prefs)
         {
-            return Scheduler.GenerateSchedules(GetStudent(StudentName));
+            //return Scheduler.GenerateSchedules(GetStudent(StudentName)); //TODO
+            return new List<Schedule>();
         }
 
         public static int SaveSequence(string studentName, Sequence sequence)

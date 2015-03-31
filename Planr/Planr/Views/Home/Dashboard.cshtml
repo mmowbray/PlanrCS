@@ -7,6 +7,10 @@
 
     <input type="button" id="ChangePassToPlanr" value="Change password to 'planr'"/>
     <input type="button" id="GetCredits" value="Get credits completed from student record!"/>
+    <input type="button" id="TestGetCourses" value="Get course count in DB!"/>
+    <input type="button" id="TestGetSections" value="Get section count in DB!" />
+
+    
 </div>
 
 <div class="row">
@@ -35,24 +39,47 @@
 </div>
 
 <script>
-    $("#GetCredits").click(function () {
+    $("#GetCredits").click(function() {
         $.ajax({
             url: '@Url.Action("ViewRecord")',
             type: "GET",
-            success: function (response) {
+            success: function(response) {
                 alert('you have completed this many credits: ' + response.CreditsCompleted);
             }
         });
     });
 
-    $("#ChangePassToPlanr").click(function () {
+    $("#ChangePassToPlanr").click(function() {
         $.ajax({
             url: '@Url.Action("ChangePassword")',
             data: { 'newPassword': 'planr' },
             type: "GET",
-            success: function (response) {
+            success: function(response) {
                 alert('response code (0 is success): ' + response);
             }
         });
     });
+
+    $("#TestGetCourses").click(function() {
+        $.ajax({
+            url: '@Url.Action("TestGetCourses")',
+            type: "GET",
+            success: function(response) {
+                alert('there are this many courses: ' + response);
+            }
+        });
+    });
+
+    $("#TestGetSections").click(function () {
+        $.ajax({
+            url: '@Url.Action("TestGetSections")',
+            type: "GET",
+            success: function (response) {
+                alert('there are this many courses: ' + response);
+            }
+        });
+    });
 </script>
+
+
+

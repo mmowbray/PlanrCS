@@ -3,11 +3,19 @@
     "StudentID": 758473,
     "SavedPreferences": null,
     "Record": {
-      "CreditsCompleted": 0,
-      "Options": null,
+      "CreditsCompleted": 30,
+      "Option": "Computer Games",
       "CompletedCourses": "77/78/68/70/79/71/84/85/4/137"
     },
-    "SavedSchedule": {},
+    "SavedSchedule": {
+      "schedule": [
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
     "SavedSequence": null,
     "UserName": "ralph",
     "Password": "1234",
@@ -17,11 +25,19 @@
     "StudentID": 945785,
     "SavedPreferences": null,
     "Record": {
-      "CreditsCompleted": 0,
-      "Options": null,
+      "CreditsCompleted": 55,
+      "Option": null,
       "CompletedCourses": null
     },
-    "SavedSchedule": {},
+    "SavedSchedule": {
+      "schedule": [
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
     "SavedSequence": null,
     "UserName": "ronald",
     "Password": "right",
@@ -32,41 +48,31 @@
     "SavedPreferences": null,
     "Record": {
       "CreditsCompleted": 60,
-      "Options": null,
+      "Option": null,
       "CompletedCourses": null
     },
-    "SavedSchedule": {},
+    "SavedSchedule": {
+      "schedule": [
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
     "SavedSequence": null,
     "UserName": "stuart",
     "Password": "planr",
     "Type": "Student"
   },
   {
-    "StudentID": 234567,
-    "SavedPreferences": null,
-    "Record": {
-      "CreditsCompleted": 0,
-      "Options": null,
-      "CompletedCourses": null
-    },
-    "SavedSchedule": {},
-    "SavedSequence": null,
     "UserName": "wing",
     "Password": "007",
-    "Type": "Student"
+    "Type": "Admin"
   },
   {
-    "StudentID": 987654,
-    "SavedPreferences": null,
-    "Record": {
-      "CreditsCompleted": 0,
-      "Options": null,
-      "CompletedCourses": null
-    },
-    "SavedSchedule": {},
-    "SavedSequence": null,
     "UserName": "mark",
     "Password": "password2",
-    "Type": "Student"
+    "Type": "Admin"
   }
 ]

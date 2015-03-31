@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 
-namespace Planr.Models.PlanrModels
+namespace Planr.Models
 {
     public class Student : User
     {
@@ -10,8 +9,6 @@ namespace Planr.Models.PlanrModels
         public AcademicRecord Record{ get; set; }
         public Schedule SavedSchedule { get; set; }
         public Sequence SavedSequence { get; set; }
-
-
         
         public Student()
         {
@@ -21,7 +18,7 @@ namespace Planr.Models.PlanrModels
         public class AcademicRecord
         {
             public int CreditsCompleted { get; set; }
-            public String Options{ get; set; }
+            public String Option{ get; set; }
             public String CompletedCourses{ get; set; }
         }
 

@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.IO;
-using Newtonsoft.Json;
 
-namespace Planr.Models.PlanrModels
+namespace Planr.Models
 {
     public static class Scheduler
     {

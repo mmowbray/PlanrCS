@@ -1,17 +1,14 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using Newtonsoft.Json;
 
-namespace Planr.Models.PlanrModels
+namespace Planr.Models
 {
     public static class Sequencer
     {
 
-        public static bool verifyPrereq(Course co, int i, List<String> complst, List<int> engr2, List<int> comp2,
-            List<int> soen2, int[] removeA)
+        public static bool verifyPrereq(Course co, int i, List<String> complst, List<int> engr2, List<int> comp2, List<int> soen2, int[] removeA)
         {
             bool approved = false;
             int c = 0;
@@ -128,13 +125,11 @@ namespace Planr.Models.PlanrModels
             Elective.CourseID = 333333;
             Elective.CourseName = "Elective Based on Option";
             bool chk = false;
-            string[] cmpare;
             //ignore option//int tech_elective = 2;
-            string student_Option = student.Record.Options;
+            string student_Option = student.Record.Option;
             List<Student.AcademicRecord> academicRecords;
             List<Course> items;
             String[] student_Completed = null;
-            Student.AcademicRecord student_AR;
             if (student.Record.CompletedCourses != null)
                 student_Completed = student.Record.CompletedCourses.Split('/');
             if (student.SavedPreferences.priorityCourse != null)
@@ -202,14 +197,11 @@ namespace Planr.Models.PlanrModels
             i = semester_int;
             j = 0;
             k = 0;
-            String x = null;
             Course tmpCourse2;
             int z;
             int loopTwice = 0;
-            String[] pre_req = null;
             Course tmpCourse;
             bool ready = false;
-            String[] availability;
             int cr, ci;
             String[] co_req = new String[0];
             int counter = 0;
@@ -226,7 +218,6 @@ namespace Planr.Models.PlanrModels
                 loopC = 0;
                 while (loopC < 20)
                 {
-
                     abc = true;
                     while (loopTwice < 2)
                     {

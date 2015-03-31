@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Linq;
 using System.Web.Mvc;
-using Planr.Models.PlanrModels;
+using Planr.Models;
 
 // HomeController Class
 // This class is responsible for dealing with connections to the Dashboard and Admin pages, as well as their associated AJAX calls
@@ -94,6 +93,24 @@ namespace Planr.Controllers
         public JsonResult SavePreferences(Student.Preference prefs)
         {
             return Json(DBHelper.SavePreferences(Session["username"].ToString(), prefs), JsonRequestBehavior.AllowGet);
+        }
+
+        // TEST METHODS AHEAD!!!
+
+        //TEST METHOD, returning the count of the courses, pulled from the database
+
+        [HttpGet]
+        public JsonResult TestGetCourses()
+        {
+            return Json(DBHelper.GetCourses().Count, JsonRequestBehavior.AllowGet);
+        }
+
+        //TEST METHOD, returning the count of the sections, pulled from the database
+
+        [HttpGet]
+        public JsonResult TestGetSections()
+        {
+            return Json(DBHelper.GetSections().Count, JsonRequestBehavior.AllowGet);
         }
     }
 }
