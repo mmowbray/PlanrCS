@@ -9,7 +9,6 @@ namespace Planr.Models.PlanrModels
         public int Credits { get; set; }
         public String Prerequisites { get; set; }
         public String Corequisites { get; set; }
-        public Section Section{ get; set; }
         public String CourseType { get; set; }
         public String Availability { get; set; }
     }

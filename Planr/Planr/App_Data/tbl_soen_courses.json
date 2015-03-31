@@ -1,1575 +1,1575 @@
 [
     {
-        "ID":4,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"General Elective",
-        "course_no":"ECON 203",
-        "course_name":"ECON 203",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
-    },
-    {
-        "ID":5,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"General Elective",
-        "course_no":"EDUC 230",
-        "course_name":"EDUC 230",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
-    },
-    {
-        "ID":6,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"General Elective",
-        "course_no":"ENCS 483",
-        "course_name":"ENCS 483",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
-    },
-    {
-        "ID":7,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"General Elective",
-        "course_no":"GEOG 203",
-        "course_name":"GEOG 203",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
-    },
-    {
-        "ID":8,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"General Elective",
-        "course_no":"GEOG 204",
-        "course_name":"GEOG 204",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
-    },
-    {
-        "ID":9,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"General Elective",
-        "course_no":"GEOG 210",
-        "course_name":"GEOG 210",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
-    },
-    {
-        "ID":10,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"General Elective",
-        "course_no":"GEOG 220",
-        "course_name":"GEOG 220",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
-    },
-    {
-        "ID":11,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"General Elective",
-        "course_no":"INST 250",
-        "course_name":"INST 250",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
-    },
-    {
-        "ID":12,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"General Elective",
-        "course_no":"LING 222",
-        "course_name":"LING 222",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
-    },
-    {
-        "ID":13,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"General Elective",
-        "course_no":"LING 300",
-        "course_name":"LING 300",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
-    },
-    {
-        "ID":14,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"General Elective",
-        "course_no":"POLI 202",
-        "course_name":"POLI 202",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
-    },
-    {
-        "ID":15,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"General Elective",
-        "course_no":"POLI 213",
-        "course_name":"POLI 213",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
-    },
-    {
-        "ID":16,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"General Elective",
-        "course_no":"POLI 390",
-        "course_name":"POLI 390",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
-    },
-    {
-        "ID":17,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"General Elective",
-        "course_no":"RELI 214",
-        "course_name":"RELI 214",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
-    },
-    {
-        "ID":18,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"General Elective",
-        "course_no":"RELI 215",
-        "course_name":"RELI 215",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
-    },
-    {
-        "ID":19,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"General Elective",
-        "course_no":"RELI 216",
-        "course_name":"RELI 216",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
-    },
-    {
-        "ID":20,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"General Elective",
-        "course_no":"RELI 218",
-        "course_name":"RELI 218",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
-    },
-    {
-        "ID":21,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"General Elective",
-        "course_no":"RELI 310",
-        "course_name":"RELI 310",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
-    },
-    {
-        "ID":22,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"General Elective",
-        "course_no":"RELI 312",
-        "course_name":"RELI 312",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
-    },
-    {
-        "ID":23,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"General Elective",
-        "course_no":"RELI 374",
-        "course_name":"RELI 374",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
-    },
-    {
-        "ID":24,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"General Elective",
-        "course_no":"SCPA 201",
-        "course_name":"SCPA 201",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
-    },
-    {
-        "ID":25,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"General Elective",
-        "course_no":"SCPA 215",
-        "course_name":"SCPA 215",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
-    },
-    {
-        "ID":26,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"General Elective",
-        "course_no":"SOCI 203",
-        "course_name":"SOCI 203",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
-    },
-    {
-        "ID":27,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"General Elective",
-        "course_no":"WSDB 290",
-        "course_name":"WSDB 290",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
-    },
-    {
-        "ID":28,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"General Elective",
-        "course_no":"WSDB 291",
-        "course_name":"WSDB 291",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
-    },
-    {
-        "ID":29,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"General Elective",
-        "course_no":"ARTH 353",
-        "course_name":"ARTH 353",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
-    },
-    {
-        "ID":30,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"General Elective",
-        "course_no":"ARTH 354",
-        "course_name":"ARTH 354",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
-    },
-    {
-        "ID":31,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"General Elective",
-        "course_no":"CLAS 266",
-        "course_name":"CLAS 266",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
-    },
-    {
-        "ID":32,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"General Elective",
-        "course_no":"COMS 360",
-        "course_name":"COMS 360",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
-    },
-    {
-        "ID":33,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"General Elective",
-        "course_no":"ENGL 224",
-        "course_name":"ENGL 224",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
-    },
-    {
-        "ID":34,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"General Elective",
-        "course_no":"ENGL 233",
-        "course_name":"ENGL 233",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
-    },
-    {
-        "ID":35,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"General Elective",
-        "course_no":"FLIT 230",
-        "course_name":"FLIT 230",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
-    },
-    {
-        "ID":36,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"General Elective",
-        "course_no":"FLIT 240",
-        "course_name":"FLIT 240",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
-    },
-    {
-        "ID":37,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"General Elective",
-        "course_no":"FMST 214",
-        "course_name":"FMST 214",
-        "credits":0,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
-    },
-    {
-        "ID":38,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"General Elective",
-        "course_no":"FMST 215",
-        "course_name":"FMST 215",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
-    },
-    {
-        "ID":39,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"General Elective",
-        "course_no":"HIST 201",
-        "course_name":"HIST 201",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
-    },
-    {
-        "ID":40,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"General Elective",
-        "course_no":"HIST 202",
-        "course_name":"HIST 202",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
-    },
-    {
-        "ID":41,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"General Elective",
-        "course_no":"HIST 205",
-        "course_name":"HIST 205",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
-    },
-    {
-        "ID":42,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"General Elective",
-        "course_no":"HIST 281",
-        "course_name":"HIST 281",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
-    },
-    {
-        "ID":43,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"General Elective",
-        "course_no":"HIST 283",
-        "course_name":"HIST 283",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
-    },
-    {
-        "ID":44,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"General Elective",
-        "course_no":"LBCL 201",
-        "course_name":"LBCL 201",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
-    },
-    {
-        "ID":45,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"General Elective",
-        "course_no":"LBCL 202",
-        "course_name":"LBCL 202",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
-    },
-    {
-        "ID":46,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"General Elective",
-        "course_no":"LBCL 203",
-        "course_name":"LBCL 203",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
-    },
-    {
-        "ID":47,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"General Elective",
-        "course_no":"LBCL 204",
-        "course_name":"LBCL 204",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
-    },
-    {
-        "ID":48,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"General Elective",
-        "course_no":"PHIL 201",
-        "course_name":"PHIL 201",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
-    },
-    {
-        "ID":49,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"General Elective",
-        "course_no":"PHIL 210",
-        "course_name":"PHIL 210",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
-    },
-    {
-        "ID":50,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"General Elective",
-        "course_no":"PHIL 232",
-        "course_name":"PHIL 232",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
-    },
-    {
-        "ID":51,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"General Elective",
-        "course_no":"PHIL 233",
-        "course_name":"PHIL 233",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
-    },
-    {
-        "ID":52,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"General Elective",
-        "course_no":"PHIL 235",
-        "course_name":"PHIL 235",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
-    },
-    {
-        "ID":53,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"General Elective",
-        "course_no":"PHIL 275",
-        "course_name":"PHIL 275",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
-    },
-    {
-        "ID":54,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"General Elective",
-        "course_no":"PHIL 330",
-        "course_name":"PHIL 330",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
-    },
-    {
-        "ID":55,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"General Elective",
-        "course_no":"THEO 202",
-        "course_name":"THEO 202",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
-    },
-    {
-        "ID":56,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"General Elective",
-        "course_no":"THEO 204",
-        "course_name":"THEO 204",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
-    },
-    {
-        "ID":57,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"General Elective",
-        "course_no":"THEO 233",
-        "course_name":"THEO 233",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
-    },
-    {
-        "ID":58,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"General Elective",
-        "course_no":"ADMI 201",
-        "course_name":"ADMI 201",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
-    },
-    {
-        "ID":59,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"General Elective",
-        "course_no":"ADMI 202",
-        "course_name":"ADMI 202",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
-    },
-    {
-        "ID":60,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"General Elective",
-        "course_no":"ENCS 484",
-        "course_name":"ENCS 484",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
-    },
-    {
-        "ID":61,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"General Elective",
-        "course_no":"MANA 201",
-        "course_name":"MANA 201",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
-    },
-    {
-        "ID":62,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"General Elective",
-        "course_no":"MANA 202",
-        "course_name":"MANA 202",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
-    },
-    {
-        "ID":63,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"General Elective",
-        "course_no":"MANA 300",
-        "course_name":"MANA 300",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
-    },
-    {
-        "ID":64,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"General Elective",
-        "course_no":"MARK 201",
-        "course_name":"MARK 201",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
-    },
-    {
-        "ID":65,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"General Elective",
-        "course_no":"URBS 230",
-        "course_name":"URBS 230",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
-    },
-    {
-        "ID":66,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":"2/3/6",
-        "course_type":"Eng Core",
-        "course_no":"ELEC 275",
-        "course_name":"ELEC 275",
-        "credits":3.5,
-        "pre_req":null,
-        "alter":null,
-        "conc":70
-    },
-    {
-        "ID":67,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":"2/3/4/5",
-        "course_type":"Eng Core",
-        "course_no":"ENCS 282",
-        "course_name":"ENCS 282",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
-    },
-    {
-        "ID":68,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":"2/3/4",
-        "course_type":"Eng Core",
-        "course_no":"ENGR 201",
-        "course_name":"ENGR 201",
-        "credits":1.5,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
-    },
-    {
-        "ID":69,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":"2/3/4",
-        "course_type":"Eng Core",
-        "course_no":"ENGR 202",
-        "course_name":"ENGR 202",
-        "credits":1.5,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
-    },
-    {
-        "ID":70,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":"2/3/4",
-        "course_type":"Eng Core",
-        "course_no":"ENGR 213",
-        "course_name":"ENGR 213",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
-    },
-    {
-        "ID":71,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":"2/3/5",
-        "course_type":"Eng Core",
-        "course_no":"ENGR 233",
-        "course_name":"ENGR 233",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
-    },
-    {
-        "ID":72,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":"2/3/4",
-        "course_type":"Eng Core",
-        "course_no":"ENGR 301",
-        "course_name":"ENGR 301",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
-    },
-    {
-        "ID":73,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":"2/3/5",
-        "course_type":"Eng Core",
-        "course_no":"ENGR 371",
-        "course_name":"ENGR 371",
-        "credits":3,
-        "pre_req":"70/71",
-        "alter":null,
-        "conc":null
-    },
-    {
-        "ID":74,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":"2/3/4/5",
-        "course_type":"Eng Core",
-        "course_no":"ENGR 391",
-        "course_name":"ENGR 391",
-        "credits":3,
-        "pre_req":"67/68/69",
+        "CourseID":4,
+        
+        
+        "Availability":null,
+        "CourseType":"General Elective",
+        
+        "CourseName":"ECON 203",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
+    },
+    {
+        "CourseID":5,
+        
+        
+        "Availability":null,
+        "CourseType":"General Elective",
+        
+        "CourseName":"EDUC 230",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
+    },
+    {
+        "CourseID":6,
+        
+        
+        "Availability":null,
+        "CourseType":"General Elective",
+        
+        "CourseName":"ENCS 483",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
+    },
+    {
+        "CourseID":7,
+        
+        
+        "Availability":null,
+        "CourseType":"General Elective",
+        
+        "CourseName":"GEOG 203",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
+    },
+    {
+        "CourseID":8,
+        
+        
+        "Availability":null,
+        "CourseType":"General Elective",
+        
+        "CourseName":"GEOG 204",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
+    },
+    {
+        "CourseID":9,
+        
+        
+        "Availability":null,
+        "CourseType":"General Elective",
+        
+        "CourseName":"GEOG 210",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
+    },
+    {
+        "CourseID":10,
+        
+        
+        "Availability":null,
+        "CourseType":"General Elective",
+        
+        "CourseName":"GEOG 220",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
+    },
+    {
+        "CourseID":11,
+        
+        
+        "Availability":null,
+        "CourseType":"General Elective",
+        
+        "CourseName":"INST 250",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
+    },
+    {
+        "CourseID":12,
+        
+        
+        "Availability":null,
+        "CourseType":"General Elective",
+        
+        "CourseName":"LING 222",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
+    },
+    {
+        "CourseID":13,
+        
+        
+        "Availability":null,
+        "CourseType":"General Elective",
+        
+        "CourseName":"LING 300",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
+    },
+    {
+        "CourseID":14,
+        
+        
+        "Availability":null,
+        "CourseType":"General Elective",
+        
+        "CourseName":"POLI 202",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
+    },
+    {
+        "CourseID":15,
+        
+        
+        "Availability":null,
+        "CourseType":"General Elective",
+        
+        "CourseName":"POLI 213",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
+    },
+    {
+        "CourseID":16,
+        
+        
+        "Availability":null,
+        "CourseType":"General Elective",
+        
+        "CourseName":"POLI 390",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
+    },
+    {
+        "CourseID":17,
+        
+        
+        "Availability":null,
+        "CourseType":"General Elective",
+        
+        "CourseName":"RELI 214",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
+    },
+    {
+        "CourseID":18,
+        
+        
+        "Availability":null,
+        "CourseType":"General Elective",
+        
+        "CourseName":"RELI 215",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
+    },
+    {
+        "CourseID":19,
+        
+        
+        "Availability":null,
+        "CourseType":"General Elective",
+        
+        "CourseName":"RELI 216",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
+    },
+    {
+        "CourseID":20,
+        
+        
+        "Availability":null,
+        "CourseType":"General Elective",
+        
+        "CourseName":"RELI 218",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
+    },
+    {
+        "CourseID":21,
+        
+        
+        "Availability":null,
+        "CourseType":"General Elective",
+        
+        "CourseName":"RELI 310",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
+    },
+    {
+        "CourseID":22,
+        
+        
+        "Availability":null,
+        "CourseType":"General Elective",
+        
+        "CourseName":"RELI 312",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
+    },
+    {
+        "CourseID":23,
+        
+        
+        "Availability":null,
+        "CourseType":"General Elective",
+        
+        "CourseName":"RELI 374",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
+    },
+    {
+        "CourseID":24,
+        
+        
+        "Availability":null,
+        "CourseType":"General Elective",
+        
+        "CourseName":"SCPA 201",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
+    },
+    {
+        "CourseID":25,
+        
+        
+        "Availability":null,
+        "CourseType":"General Elective",
+        
+        "CourseName":"SCPA 215",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
+    },
+    {
+        "CourseID":26,
+        
+        
+        "Availability":null,
+        "CourseType":"General Elective",
+        
+        "CourseName":"SOCI 203",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
+    },
+    {
+        "CourseID":27,
+        
+        
+        "Availability":null,
+        "CourseType":"General Elective",
+        
+        "CourseName":"WSDB 290",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
+    },
+    {
+        "CourseID":28,
+        
+        
+        "Availability":null,
+        "CourseType":"General Elective",
+        
+        "CourseName":"WSDB 291",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
+    },
+    {
+        "CourseID":29,
+        
+        
+        "Availability":null,
+        "CourseType":"General Elective",
+        
+        "CourseName":"ARTH 353",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
+    },
+    {
+        "CourseID":30,
+        
+        
+        "Availability":null,
+        "CourseType":"General Elective",
+        
+        "CourseName":"ARTH 354",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
+    },
+    {
+        "CourseID":31,
+        
+        
+        "Availability":null,
+        "CourseType":"General Elective",
+        
+        "CourseName":"CLAS 266",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
+    },
+    {
+        "CourseID":32,
+        
+        
+        "Availability":null,
+        "CourseType":"General Elective",
+        
+        "CourseName":"COMS 360",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
+    },
+    {
+        "CourseID":33,
+        
+        
+        "Availability":null,
+        "CourseType":"General Elective",
+        
+        "CourseName":"ENGL 224",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
+    },
+    {
+        "CourseID":34,
+        
+        
+        "Availability":null,
+        "CourseType":"General Elective",
+        
+        "CourseName":"ENGL 233",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
+    },
+    {
+        "CourseID":35,
+        
+        
+        "Availability":null,
+        "CourseType":"General Elective",
+        
+        "CourseName":"FLIT 230",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
+    },
+    {
+        "CourseID":36,
+        
+        
+        "Availability":null,
+        "CourseType":"General Elective",
+        
+        "CourseName":"FLIT 240",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
+    },
+    {
+        "CourseID":37,
+        
+        
+        "Availability":null,
+        "CourseType":"General Elective",
+        
+        "CourseName":"FMST 214",
+        "Credits":0,
+        "Prerequisites":null,
+        
+        "Corequisites":null
+    },
+    {
+        "CourseID":38,
+        
+        
+        "Availability":null,
+        "CourseType":"General Elective",
+        
+        "CourseName":"FMST 215",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
+    },
+    {
+        "CourseID":39,
+        
+        
+        "Availability":null,
+        "CourseType":"General Elective",
+        
+        "CourseName":"HIST 201",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
+    },
+    {
+        "CourseID":40,
+        
+        
+        "Availability":null,
+        "CourseType":"General Elective",
+        
+        "CourseName":"HIST 202",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
+    },
+    {
+        "CourseID":41,
+        
+        
+        "Availability":null,
+        "CourseType":"General Elective",
+        
+        "CourseName":"HIST 205",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
+    },
+    {
+        "CourseID":42,
+        
+        
+        "Availability":null,
+        "CourseType":"General Elective",
+        
+        "CourseName":"HIST 281",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
+    },
+    {
+        "CourseID":43,
+        
+        
+        "Availability":null,
+        "CourseType":"General Elective",
+        
+        "CourseName":"HIST 283",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
+    },
+    {
+        "CourseID":44,
+        
+        
+        "Availability":null,
+        "CourseType":"General Elective",
+        
+        "CourseName":"LBCL 201",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
+    },
+    {
+        "CourseID":45,
+        
+        
+        "Availability":null,
+        "CourseType":"General Elective",
+        
+        "CourseName":"LBCL 202",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
+    },
+    {
+        "CourseID":46,
+        
+        
+        "Availability":null,
+        "CourseType":"General Elective",
+        
+        "CourseName":"LBCL 203",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
+    },
+    {
+        "CourseID":47,
+        
+        
+        "Availability":null,
+        "CourseType":"General Elective",
+        
+        "CourseName":"LBCL 204",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
+    },
+    {
+        "CourseID":48,
+        
+        
+        "Availability":null,
+        "CourseType":"General Elective",
+        
+        "CourseName":"PHIL 201",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
+    },
+    {
+        "CourseID":49,
+        
+        
+        "Availability":null,
+        "CourseType":"General Elective",
+        
+        "CourseName":"PHIL 210",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
+    },
+    {
+        "CourseID":50,
+        
+        
+        "Availability":null,
+        "CourseType":"General Elective",
+        
+        "CourseName":"PHIL 232",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
+    },
+    {
+        "CourseID":51,
+        
+        
+        "Availability":null,
+        "CourseType":"General Elective",
+        
+        "CourseName":"PHIL 233",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
+    },
+    {
+        "CourseID":52,
+        
+        
+        "Availability":null,
+        "CourseType":"General Elective",
+        
+        "CourseName":"PHIL 235",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
+    },
+    {
+        "CourseID":53,
+        
+        
+        "Availability":null,
+        "CourseType":"General Elective",
+        
+        "CourseName":"PHIL 275",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
+    },
+    {
+        "CourseID":54,
+        
+        
+        "Availability":null,
+        "CourseType":"General Elective",
+        
+        "CourseName":"PHIL 330",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
+    },
+    {
+        "CourseID":55,
+        
+        
+        "Availability":null,
+        "CourseType":"General Elective",
+        
+        "CourseName":"THEO 202",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
+    },
+    {
+        "CourseID":56,
+        
+        
+        "Availability":null,
+        "CourseType":"General Elective",
+        
+        "CourseName":"THEO 204",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
+    },
+    {
+        "CourseID":57,
+        
+        
+        "Availability":null,
+        "CourseType":"General Elective",
+        
+        "CourseName":"THEO 233",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
+    },
+    {
+        "CourseID":58,
+        
+        
+        "Availability":null,
+        "CourseType":"General Elective",
+        
+        "CourseName":"ADMI 201",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
+    },
+    {
+        "CourseID":59,
+        
+        
+        "Availability":null,
+        "CourseType":"General Elective",
+        
+        "CourseName":"ADMI 202",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
+    },
+    {
+        "CourseID":60,
+        
+        
+        "Availability":null,
+        "CourseType":"General Elective",
+        
+        "CourseName":"ENCS 484",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
+    },
+    {
+        "CourseID":61,
+        
+        
+        "Availability":null,
+        "CourseType":"General Elective",
+        
+        "CourseName":"MANA 201",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
+    },
+    {
+        "CourseID":62,
+        
+        
+        "Availability":null,
+        "CourseType":"General Elective",
+        
+        "CourseName":"MANA 202",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
+    },
+    {
+        "CourseID":63,
+        
+        
+        "Availability":null,
+        "CourseType":"General Elective",
+        
+        "CourseName":"MANA 300",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
+    },
+    {
+        "CourseID":64,
+        
+        
+        "Availability":null,
+        "CourseType":"General Elective",
+        
+        "CourseName":"MARK 201",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
+    },
+    {
+        "CourseID":65,
+        
+        
+        "Availability":null,
+        "CourseType":"General Elective",
+        
+        "CourseName":"URBS 230",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
+    },
+    {
+        "CourseID":66,
+        
+        
+        "Availability":"2/3/6",
+        "CourseType":"Eng Core",
+        
+        "CourseName":"ELEC 275",
+        "Credits":3.5,
+        "Prerequisites":null,
+        
+        "Corequisites":70
+    },
+    {
+        "CourseID":67,
+        
+        
+        "Availability":"2/3/4/5",
+        "CourseType":"Eng Core",
+        
+        "CourseName":"ENCS 282",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
+    },
+    {
+        "CourseID":68,
+        
+        
+        "Availability":"2/3/4",
+        "CourseType":"Eng Core",
+        
+        "CourseName":"ENGR 201",
+        "Credits":1.5,
+        "Prerequisites":null,
+        
+        "Corequisites":null
+    },
+    {
+        "CourseID":69,
+        
+        
+        "Availability":"2/3/4",
+        "CourseType":"Eng Core",
+        
+        "CourseName":"ENGR 202",
+        "Credits":1.5,
+        "Prerequisites":null,
+        
+        "Corequisites":null
+    },
+    {
+        "CourseID":70,
+        
+        
+        "Availability":"2/3/4",
+        "CourseType":"Eng Core",
+        
+        "CourseName":"ENGR 213",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
+    },
+    {
+        "CourseID":71,
+        
+        
+        "Availability":"2/3/5",
+        "CourseType":"Eng Core",
+        
+        "CourseName":"ENGR 233",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
+    },
+    {
+        "CourseID":72,
+        
+        
+        "Availability":"2/3/4",
+        "CourseType":"Eng Core",
+        
+        "CourseName":"ENGR 301",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
+    },
+    {
+        "CourseID":73,
+        
+        
+        "Availability":"2/3/5",
+        "CourseType":"Eng Core",
+        
+        "CourseName":"ENGR 371",
+        "Credits":3,
+        "Prerequisites":"70/71",
+        
+        "Corequisites":null
+    },
+    {
+        "CourseID":74,
+        
+        
+        "Availability":"2/3/4/5",
+        "CourseType":"Eng Core",
+        
+        "CourseName":"ENGR 391",
+        "Credits":3,
+        "Prerequisites":"67/68/69",
         "alter":76,
-        "conc":null
+        "Corequisites":null
     },
     {
-        "ID":75,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":"2/3/4/5",
-        "course_type":"Eng Core",
-        "course_no":"ENGR 392",
-        "course_name":"ENGR 392",
-        "credits":3,
-        "pre_req":"67/68/69",
-        "alter":null,
-        "conc":null
+        "CourseID":75,
+        
+        
+        "Availability":"2/3/4/5",
+        "CourseType":"Eng Core",
+        
+        "CourseName":"ENGR 392",
+        "Credits":3,
+        "Prerequisites":"67/68/69",
+        
+        "Corequisites":null
     },
     {
-        "ID":76,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":"2/3",
-        "course_type":"Eng Core",
-        "course_no":"COMP 361",
-        "course_name":"COMP 361",
-        "credits":3,
-        "pre_req":"77/79",
+        "CourseID":76,
+        
+        
+        "Availability":"2/3",
+        "CourseType":"Eng Core",
+        
+        "CourseName":"COMP 361",
+        "Credits":3,
+        "Prerequisites":"77/79",
         "alter":74,
-        "conc":null
+        "Corequisites":null
     },
     {
-        "ID":77,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":"2/3/4",
-        "course_type":"Comp-Sci",
-        "course_no":"COMP 232",
-        "course_name":"COMP 232",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
+        "CourseID":77,
+        
+        
+        "Availability":"2/3/4",
+        "CourseType":"Comp-Sci",
+        
+        "CourseName":"COMP 232",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
     },
     {
-        "ID":78,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":"2/3/4",
-        "course_type":"Comp-Sci",
-        "course_no":"COMP 248",
-        "course_name":"COMP 248",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
+        "CourseID":78,
+        
+        
+        "Availability":"2/3/4",
+        "CourseType":"Comp-Sci",
+        
+        "CourseName":"COMP 248",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
     },
     {
-        "ID":79,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":"2/3/5",
-        "course_type":"Comp-Sci",
-        "course_no":"COMP 249",
-        "course_name":"COMP 249",
-        "credits":3,
-        "pre_req":78,
-        "alter":null,
-        "conc":null
+        "CourseID":79,
+        
+        
+        "Availability":"2/3/5",
+        "CourseType":"Comp-Sci",
+        
+        "CourseName":"COMP 249",
+        "Credits":3,
+        "Prerequisites":78,
+        
+        "Corequisites":null
     },
     {
-        "ID":80,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":"2/3/4",
-        "course_type":"Comp-Sci",
-        "course_no":"COMP 335",
-        "course_name":"COMP 335",
-        "credits":3,
-        "pre_req":"77/79",
-        "alter":null,
-        "conc":null
+        "CourseID":80,
+        
+        
+        "Availability":"2/3/4",
+        "CourseType":"Comp-Sci",
+        
+        "CourseName":"COMP 335",
+        "Credits":3,
+        "Prerequisites":"77/79",
+        
+        "Corequisites":null
     },
     {
-        "ID":81,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":"2/3/5",
-        "course_type":"Comp-Sci",
-        "course_no":"COMP 346",
-        "course_name":"COMP 346",
-        "credits":4,
-        "pre_req":"84/83",
-        "alter":null,
-        "conc":null
+        "CourseID":81,
+        
+        
+        "Availability":"2/3/5",
+        "CourseType":"Comp-Sci",
+        
+        "CourseName":"COMP 346",
+        "Credits":4,
+        "Prerequisites":"84/83",
+        
+        "Corequisites":null
     },
     {
-        "ID":82,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":"2/3/5",
-        "course_type":"Comp-Sci",
-        "course_no":"COMP 348",
-        "course_name":"COMP 348",
-        "credits":3,
-        "pre_req":79,
-        "alter":null,
-        "conc":null
+        "CourseID":82,
+        
+        
+        "Availability":"2/3/5",
+        "CourseType":"Comp-Sci",
+        
+        "CourseName":"COMP 348",
+        "Credits":3,
+        "Prerequisites":79,
+        
+        "Corequisites":null
     },
     {
-        "ID":83,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":"2/3/4",
-        "course_type":"Comp-Sci",
-        "course_no":"COMP 352",
-        "course_name":"COMP 352",
-        "credits":3,
-        "pre_req":79,
-        "alter":null,
-        "conc":77
+        "CourseID":83,
+        
+        
+        "Availability":"2/3/4",
+        "CourseType":"Comp-Sci",
+        
+        "CourseName":"COMP 352",
+        "Credits":3,
+        "Prerequisites":79,
+        
+        "Corequisites":77
     },
     {
-        "ID":84,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":3,
-        "course_type":"Software Eng Core",
-        "course_no":"SOEN 228",
-        "course_name":"SOEN 228",
-        "credits":4,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
+        "CourseID":84,
+        
+        
+        "Availability":3,
+        "CourseType":"Software Eng Core",
+        
+        "CourseName":"SOEN 228",
+        "Credits":4,
+        "Prerequisites":null,
+        
+        "Corequisites":null
     },
     {
-        "ID":85,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":"2/3/5",
-        "course_type":"Software Eng Core",
-        "course_no":"SOEN 287",
-        "course_name":"SOEN 287",
-        "credits":3,
-        "pre_req":78,
-        "alter":null,
-        "conc":null
+        "CourseID":85,
+        
+        
+        "Availability":"2/3/5",
+        "CourseType":"Software Eng Core",
+        
+        "CourseName":"SOEN 287",
+        "Credits":3,
+        "Prerequisites":78,
+        
+        "Corequisites":null
     },
     {
-        "ID":86,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":2,
-        "course_type":"Software Eng Core",
-        "course_no":"SOEN 321",
-        "course_name":"SOEN 321",
-        "credits":3,
-        "pre_req":81,
-        "alter":null,
-        "conc":null
+        "CourseID":86,
+        
+        
+        "Availability":2,
+        "CourseType":"Software Eng Core",
+        
+        "CourseName":"SOEN 321",
+        "Credits":3,
+        "Prerequisites":81,
+        
+        "Corequisites":null
     },
     {
-        "ID":87,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":3,
-        "course_type":"Software Eng Core",
-        "course_no":"SOEN 331",
-        "course_name":"SOEN 331",
-        "credits":3,
-        "pre_req":"77/79",
-        "alter":null,
-        "conc":null
+        "CourseID":87,
+        
+        
+        "Availability":3,
+        "CourseType":"Software Eng Core",
+        
+        "CourseName":"SOEN 331",
+        "Credits":3,
+        "Prerequisites":"77/79",
+        
+        "Corequisites":null
     },
     {
-        "ID":88,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":"2/3",
-        "course_type":"Software Eng Core",
-        "course_no":"SOEN 341",
-        "course_name":"SOEN 341",
-        "credits":3,
-        "pre_req":"78/83",
-        "alter":null,
-        "conc":null
+        "CourseID":88,
+        
+        
+        "Availability":"2/3",
+        "CourseType":"Software Eng Core",
+        
+        "CourseName":"SOEN 341",
+        "Credits":3,
+        "Prerequisites":"78/83",
+        
+        "Corequisites":null
     },
     {
-        "ID":89,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":2,
-        "course_type":"Software Eng Core",
-        "course_no":"SOEN 342",
-        "course_name":"SOEN 342",
-        "credits":3,
-        "pre_req":88,
-        "alter":null,
-        "conc":null
+        "CourseID":89,
+        
+        
+        "Availability":2,
+        "CourseType":"Software Eng Core",
+        
+        "CourseName":"SOEN 342",
+        "Credits":3,
+        "Prerequisites":88,
+        
+        "Corequisites":null
     },
     {
-        "ID":90,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":2,
-        "course_type":"Software Eng Core",
-        "course_no":"SOEN 343",
-        "course_name":"SOEN 343",
-        "credits":3,
-        "pre_req":88,
-        "alter":null,
-        "conc":89
+        "CourseID":90,
+        
+        
+        "Availability":2,
+        "CourseType":"Software Eng Core",
+        
+        "CourseName":"SOEN 343",
+        "Credits":3,
+        "Prerequisites":88,
+        
+        "Corequisites":89
     },
     {
-        "ID":91,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":3,
-        "course_type":"Software Eng Core",
-        "course_no":"SOEN 344",
-        "course_name":"SOEN 344",
-        "credits":3,
-        "pre_req":90,
-        "alter":null,
-        "conc":null
+        "CourseID":91,
+        
+        
+        "Availability":3,
+        "CourseType":"Software Eng Core",
+        
+        "CourseName":"SOEN 344",
+        "Credits":3,
+        "Prerequisites":90,
+        
+        "Corequisites":null
     },
     {
-        "ID":92,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":3,
-        "course_type":"Software Eng Core",
-        "course_no":"SOEN 345",
-        "course_name":"SOEN 345",
-        "credits":3,
-        "pre_req":88,
-        "alter":null,
-        "conc":90
+        "CourseID":92,
+        
+        
+        "Availability":3,
+        "CourseType":"Software Eng Core",
+        
+        "CourseName":"SOEN 345",
+        "Credits":3,
+        "Prerequisites":88,
+        
+        "Corequisites":90
     },
     {
-        "ID":93,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":3,
-        "course_type":"Software Eng Core",
-        "course_no":"SOEN 357",
-        "course_name":"SOEN 357",
-        "credits":3,
-        "pre_req":89,
-        "alter":null,
-        "conc":null
+        "CourseID":93,
+        
+        
+        "Availability":3,
+        "CourseType":"Software Eng Core",
+        
+        "CourseName":"SOEN 357",
+        "Credits":3,
+        "Prerequisites":89,
+        
+        "Corequisites":null
     },
     {
-        "ID":94,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":2,
-        "course_type":"Software Eng Core",
-        "course_no":"SOEN 384",
-        "course_name":"SOEN 384",
-        "credits":3,
-        "pre_req":"67/88",
-        "alter":null,
-        "conc":null
+        "CourseID":94,
+        
+        
+        "Availability":2,
+        "CourseType":"Software Eng Core",
+        
+        "CourseName":"SOEN 384",
+        "Credits":3,
+        "Prerequisites":"67/88",
+        
+        "Corequisites":null
     },
     {
-        "ID":95,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":3,
-        "course_type":"Software Eng Core",
-        "course_no":"SOEN 385",
-        "course_name":"SOEN 385",
-        "credits":3,
-        "pre_req":"70/71",
-        "alter":null,
-        "conc":null
+        "CourseID":95,
+        
+        
+        "Availability":3,
+        "CourseType":"Software Eng Core",
+        
+        "CourseName":"SOEN 385",
+        "Credits":3,
+        "Prerequisites":"70/71",
+        
+        "Corequisites":null
     },
     {
-        "ID":96,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":3,
-        "course_type":"Software Eng Core",
-        "course_no":"SOEN 390",
-        "course_name":"SOEN 390",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":"91/93"
+        "CourseID":96,
+        
+        
+        "Availability":3,
+        "CourseType":"Software Eng Core",
+        
+        "CourseName":"SOEN 390",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":"91/93"
     },
     {
-        "ID":97,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":1,
-        "course_type":"Software Eng Core",
-        "course_no":"SOEN 490",
-        "course_name":"SOEN 490",
-        "credits":3.5,
-        "pre_req":"89/90/91/96",
-        "alter":null,
-        "conc":null
+        "CourseID":97,
+        
+        
+        "Availability":1,
+        "CourseType":"Software Eng Core",
+        
+        "CourseName":"SOEN 490",
+        "Credits":3.5,
+        "Prerequisites":"89/90/91/96",
+        
+        "Corequisites":null
     },
     {
-        "ID":98,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":"2/3",
-        "course_type":"CG Option",
-        "course_no":"COMP 345",
-        "course_name":"COMP 345",
-        "credits":4,
-        "pre_req":null,
-        "alter":null,
-        "conc":83
+        "CourseID":98,
+        
+        
+        "Availability":"2/3",
+        "CourseType":"CG Option",
+        
+        "CourseName":"COMP 345",
+        "Credits":4,
+        "Prerequisites":null,
+        
+        "Corequisites":83
     },
     {
-        "ID":100,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":2,
-        "course_type":"CG Option",
-        "course_no":"COMP 376",
-        "course_name":"COMP 376",
-        "credits":4,
-        "pre_req":null,
-        "alter":null,
-        "conc":118
+        "CourseID":100,
+        
+        
+        "Availability":2,
+        "CourseType":"CG Option",
+        
+        "CourseName":"COMP 376",
+        "Credits":4,
+        "Prerequisites":null,
+        
+        "Corequisites":118
     },
     {
-        "ID":102,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":3,
-        "course_type":"CG Option",
-        "course_no":"COMP 476",
-        "course_name":"COMP 476",
-        "credits":4,
-        "pre_req":"100/76",
-        "alter":null,
-        "conc":null
+        "CourseID":102,
+        
+        
+        "Availability":3,
+        "CourseType":"CG Option",
+        
+        "CourseName":"COMP 476",
+        "Credits":4,
+        "Prerequisites":"100/76",
+        
+        "Corequisites":null
     },
     {
-        "ID":103,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":2,
-        "course_type":"CG Option",
-        "course_no":"COMP 477",
-        "course_name":"COMP 477",
-        "credits":4,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
+        "CourseID":103,
+        
+        
+        "Availability":2,
+        "CourseType":"CG Option",
+        
+        "CourseName":"COMP 477",
+        "Credits":4,
+        "Prerequisites":null,
+        
+        "Corequisites":null
     },
     {
-        "ID":107,
-        "ex_ID":null,
-        "tbl_sequence_ID":null,
-        "availability":2,
-        "course_type":"WSA",
-        "course_no":"SOEN 387",
-        "course_name":"SOEN 387",
-        "credits":3,
-        "pre_req":"85/88/117",
-        "alter":null,
-        "conc":null
+        "CourseID":107,
+        
+        
+        "Availability":2,
+        "CourseType":"WSA",
+        
+        "CourseName":"SOEN 387",
+        "Credits":3,
+        "Prerequisites":"85/88/117",
+        
+        "Corequisites":null
     },
     {
-        "ID":108,
-        "ex_ID":null,
-        "tbl_sequence_ID":null,
-        "availability":3,
-        "course_type":"WSA",
-        "course_no":"SOEN 487",
-        "course_name":"SOEN 487",
-        "credits":4,
-        "pre_req":null,
-        "alter":null,
-        "conc":107
+        "CourseID":108,
+        
+        
+        "Availability":3,
+        "CourseType":"WSA",
+        
+        "CourseName":"SOEN 487",
+        "Credits":4,
+        "Prerequisites":null,
+        
+        "Corequisites":107
     },
     {
-        "ID":117,
-        "ex_ID":null,
-        "tbl_sequence_ID":null,
-        "availability":"5/2/3",
-        "course_type":"WSA",
-        "course_no":"COMP 353",
-        "course_name":"COMP 353",
-        "credits":4,
-        "pre_req":83,
-        "alter":null,
-        "conc":null
+        "CourseID":117,
+        
+        
+        "Availability":"5/2/3",
+        "CourseType":"WSA",
+        
+        "CourseName":"COMP 353",
+        "Credits":4,
+        "Prerequisites":83,
+        
+        "Corequisites":null
     },
     {
-        "ID":118,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":"2/3/5",
-        "course_type":"CG Option",
-        "course_no":"COMP 371",
-        "course_name":"COMP 371",
-        "credits":4,
-        "pre_req":83,
-        "alter":null,
-        "conc":null
+        "CourseID":118,
+        
+        
+        "Availability":"2/3/5",
+        "CourseType":"CG Option",
+        
+        "CourseName":"COMP 371",
+        "Credits":4,
+        "Prerequisites":83,
+        
+        "Corequisites":null
     },
     {
-        "ID":122,
-        "ex_ID":null,
-        "tbl_sequence_ID":null,
-        "availability":"2/3",
-        "course_type":"WSA",
-        "course_no":"COMP 445",
-        "course_name":"COMP 445",
-        "credits":4,
-        "pre_req":81,
-        "alter":null,
-        "conc":null
+        "CourseID":122,
+        
+        
+        "Availability":"2/3",
+        "CourseType":"WSA",
+        
+        "CourseName":"COMP 445",
+        "Credits":4,
+        "Prerequisites":81,
+        
+        "Corequisites":null
     },
     {
-        "ID":125,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":"2/3",
-        "course_type":"CG Option",
-        "course_no":"COMP 472",
-        "course_name":"COMP 472",
-        "credits":4,
-        "pre_req":83,
-        "alter":null,
-        "conc":null
+        "CourseID":125,
+        
+        
+        "Availability":"2/3",
+        "CourseType":"CG Option",
+        
+        "CourseName":"COMP 472",
+        "Credits":4,
+        "Prerequisites":83,
+        
+        "Corequisites":null
     },
     {
-        "ID":129,
-        "ex_ID":null,
-        "tbl_sequence_ID":null,
-        "availability":2,
-        "course_type":"WSA",
-        "course_no":"COMP 479",
-        "course_name":"COMP 479",
-        "credits":4,
-        "pre_req":"71/73",
-        "alter":null,
-        "conc":null
+        "CourseID":129,
+        
+        
+        "Availability":2,
+        "CourseType":"WSA",
+        
+        "CourseName":"COMP 479",
+        "Credits":4,
+        "Prerequisites":"71/73",
+        
+        "Corequisites":null
     },
     {
-        "ID":137,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"Basic Science",
-        "course_no":"BIOL 206",
-        "course_name":"BIOL 206",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
+        "CourseID":137,
+        
+        
+        "Availability":null,
+        "CourseType":"Basic Science",
+        
+        "CourseName":"BIOL 206",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
     },
     {
-        "ID":138,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"Basic Science",
-        "course_no":"BIOL 208",
-        "course_name":"BIOL 208",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
+        "CourseID":138,
+        
+        
+        "Availability":null,
+        "CourseType":"Basic Science",
+        
+        "CourseName":"BIOL 208",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
     },
     {
-        "ID":139,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"Basic Science",
-        "course_no":"BIOL 226",
-        "course_name":"BIOL 226",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
+        "CourseID":139,
+        
+        
+        "Availability":null,
+        "CourseType":"Basic Science",
+        
+        "CourseName":"BIOL 226",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
     },
     {
-        "ID":140,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"Basic Science",
-        "course_no":"BIOL 261",
-        "course_name":"BIOL 261",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
+        "CourseID":140,
+        
+        
+        "Availability":null,
+        "CourseType":"Basic Science",
+        
+        "CourseName":"BIOL 261",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
     },
     {
-        "ID":141,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"Basic Science",
-        "course_no":"CHEM 209",
-        "course_name":"CHEM 209",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
+        "CourseID":141,
+        
+        
+        "Availability":null,
+        "CourseType":"Basic Science",
+        
+        "CourseName":"CHEM 209",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
     },
     {
-        "ID":142,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"Basic Science",
-        "course_no":"CHEM 217",
-        "course_name":"CHEM 217",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
+        "CourseID":142,
+        
+        
+        "Availability":null,
+        "CourseType":"Basic Science",
+        
+        "CourseName":"CHEM 217",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
     },
     {
-        "ID":143,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"Basic Science",
-        "course_no":"CHEM 221",
-        "course_name":"CHEM 221",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
+        "CourseID":143,
+        
+        
+        "Availability":null,
+        "CourseType":"Basic Science",
+        
+        "CourseName":"CHEM 221",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
     },
     {
-        "ID":144,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"Basic Science",
-        "course_no":"CHEM 234",
-        "course_name":"CHEM 234",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
+        "CourseID":144,
+        
+        
+        "Availability":null,
+        "CourseType":"Basic Science",
+        
+        "CourseName":"CHEM 234",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
     },
     {
-        "ID":145,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"Basic Science",
-        "course_no":"GEOL 206",
-        "course_name":"GEOL 206",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
+        "CourseID":145,
+        
+        
+        "Availability":null,
+        "CourseType":"Basic Science",
+        
+        "CourseName":"GEOL 206",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
     },
     {
-        "ID":146,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"Basic Science",
-        "course_no":"GEOL 208",
-        "course_name":"GEOL 208",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
+        "CourseID":146,
+        
+        
+        "Availability":null,
+        "CourseType":"Basic Science",
+        
+        "CourseName":"GEOL 208",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
     },
     {
-        "ID":147,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"Basic Science",
-        "course_no":"PHYS 252",
-        "course_name":"PHYS 252",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
+        "CourseID":147,
+        
+        
+        "Availability":null,
+        "CourseType":"Basic Science",
+        
+        "CourseName":"PHYS 252",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
     },
     {
-        "ID":148,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"Basic Science",
-        "course_no":"PHYS 253",
-        "course_name":"PHYS 253",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
+        "CourseID":148,
+        
+        
+        "Availability":null,
+        "CourseType":"Basic Science",
+        
+        "CourseName":"PHYS 253",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
     },
     {
-        "ID":149,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"Basic Science",
-        "course_no":"PHYS 273",
-        "course_name":"PHYS 273",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
+        "CourseID":149,
+        
+        
+        "Availability":null,
+        "CourseType":"Basic Science",
+        
+        "CourseName":"PHYS 273",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
     },
     {
-        "ID":150,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"Basic Science",
-        "course_no":"PHYS 334",
-        "course_name":"PHYS 334",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
+        "CourseID":150,
+        
+        
+        "Availability":null,
+        "CourseType":"Basic Science",
+        
+        "CourseName":"PHYS 334",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
     },
     {
-        "ID":151,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"Basic Science",
-        "course_no":"PHYS 354",
-        "course_name":"PHYS 354",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
+        "CourseID":151,
+        
+        
+        "Availability":null,
+        "CourseType":"Basic Science",
+        
+        "CourseName":"PHYS 354",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
     },
     {
-        "ID":153,
-        "ex_ID":0,
-        "tbl_sequence_ID":null,
-        "availability":null,
-        "course_type":"Basic Science",
-        "course_no":"PHYS 385",
-        "course_name":"PHYS 385",
-        "credits":3,
-        "pre_req":null,
-        "alter":null,
-        "conc":null
+        "CourseID":153,
+        
+        
+        "Availability":null,
+        "CourseType":"Basic Science",
+        
+        "CourseName":"PHYS 385",
+        "Credits":3,
+        "Prerequisites":null,
+        
+        "Corequisites":null
     }
 ]
