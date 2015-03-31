@@ -2824,7 +2824,7 @@
         "start_time":"08:45:00",
         "end_time":"10:00:00",
         "tutorial_day1":"F",
-        "tutorial_day2":1,
+        "tutorial_day2":null,
         "tutorial_starttime":"14:15:00",
         "tutorial_endtime":"15:05:00",
         "lab_day":null,

@@ -13,11 +13,29 @@ namespace Planr.Models.PlanrModels
     public static class DBHelper
     {
         private static readonly String DB_USERS_PATH = System.Web.HttpContext.Current.Server.MapPath("~/App_Data/tbl_users.json");
+        private static readonly String DB_SECTIONS_PATH = System.Web.HttpContext.Current.Server.MapPath("~/App_Data/tbl_soen_courses_sections.json");
+        private static readonly String DB_COURSES_PATH = System.Web.HttpContext.Current.Server.MapPath("~/App_Data/tbl_soen_courses.json");
 
         public static List<User> GetUsers()
         {
             StreamReader sr = new StreamReader(DB_USERS_PATH);
             List<User> returnList = JsonConvert.DeserializeObject<List<User>>(sr.ReadToEnd(), new UserItemConverter());
+            sr.Close();
+            return returnList;
+        }
+
+        public static List<Section> GetSections()
+        {
+            StreamReader sr = new StreamReader(DB_SECTIONS_PATH);
+            List<Section> returnList = JsonConvert.DeserializeObject<List<Section>>(sr.ReadToEnd());
+            sr.Close();
+            return returnList;
+        }
+
+        public static List<Course> GetCourses()
+        {
+            StreamReader sr = new StreamReader(DB_COURSES_PATH);
+            List<Course> returnList = JsonConvert.DeserializeObject<List<Course>>(sr.ReadToEnd());
             sr.Close();
             return returnList;
         }
@@ -48,6 +66,11 @@ namespace Planr.Models.PlanrModels
         public static Student GetStudent(String studentName)
         {
             return GetUsers().OfType<Student>().FirstOrDefault(student => student.UserName == studentName);
+        }
+
+        public static List<Student> GetStudents()
+        {
+            return (List<Student>) GetUsers().OfType<Student>();
         }
 
         static User GetUser(String username)

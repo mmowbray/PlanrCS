@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace Planr.Models.PlanrModels
 {
@@ -7,10 +6,11 @@ namespace Planr.Models.PlanrModels
     {
         public String CourseName { get; set; }
         public int CourseID{ get; set; }
-        public int CourseNumber { get; set; }
         public int Credits { get; set; }
-        public List<Course> Prerequisites { get; set; }
-        public List<Course> Corequisites { get; set; }
+        public String Prerequisites { get; set; }
+        public String Corequisites { get; set; }
         public Section Section{ get; set; }
+        public String CourseType { get; set; }
+        public String Availability { get; set; }
     }
 }

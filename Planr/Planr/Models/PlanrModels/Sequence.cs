@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace Planr.Models.PlanrModels
+﻿namespace Planr.Models.PlanrModels
 {
     public class Sequence
     {
+        public Course[, ,] sequence = new Course[6, 5, 5];
     }
 }
