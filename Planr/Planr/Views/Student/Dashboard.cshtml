@@ -8,7 +8,7 @@
     <input type="button" id="ChangePassToPlanr" value="Change password to 'planr'"/>
     <input type="button" id="GetCredits" value="Get credits completed from student record!"/>
     <input type="button" id="TestGetCourses" value="Get course count in DB!"/>
-    <input type="button" id="TestGetSections" value="Get section count in DB!" />
+    <input type="button" id="TestGetSections" value="Get Day1 value of first section in DB!" />
 
     
 </div>
@@ -75,7 +75,7 @@
             url: '@Url.Action("TestGetSections")',
             type: "GET",
             success: function (response) {
-                alert('there are this many courses: ' + response);
+                alert('Day 1 value of first section returned: ' + response[0].Day1);
             }
         });
     });

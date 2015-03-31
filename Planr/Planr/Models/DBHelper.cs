@@ -173,6 +173,20 @@ namespace Planr.Models
             x.Serialize(file, updated);
             file.Close();
         }
+
+        public static int AddCourse(Course course)
+        {
+            List<Course> DBPreviousState = GetCourses();
+            int courseIndex = DBPreviousState.FindIndex(acourse => acourse.CourseID == course.CourseID);
+
+            if (courseIndex != -1) //entry already in the DB
+                return 1; //1 = failure
+
+            DBPreviousState.Add(course);
+
+            WriteValuesToDB(DB_SECTIONS_PATH, DBPreviousState);
+            return 0; //0 = success
+        }
     }
 
     // UserItemConverter Class

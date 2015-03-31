@@ -22,9 +22,6 @@ namespace Planr.Models
         {
             if (ModelState.IsValid)
             {
-                //System.Web.HttpContext.Current.Server.MapPath("~/App_Data/tbl_users.json")
-                //List<User> RegisteredUsers = JsonConvert.DeserializeObject<List<User>>(new StreamReader(Server.MapPath("~/App_Data/tbl_users.json")).ReadToEnd());
-
                 User loggingInUser = DBHelper.GetUsers().Find(user => (user.UserName == model.UserName && user.Password == model.Password));
 
                 if (loggingInUser != null)
@@ -32,8 +29,8 @@ namespace Planr.Models
                     Session["username"] = loggingInUser.UserName;
 
                     if (loggingInUser.Type == "Admin")
-                        return RedirectToAction("Admin", "Home"); //user is an admin
-                    return RedirectToAction("Dashboard", "Home"); //user is not an admin
+                        return RedirectToAction("Editor", "Admin"); //user is an admin
+                    return RedirectToAction("Dashboard", "Student"); //user is not an admin
                 }
                 else
                 {

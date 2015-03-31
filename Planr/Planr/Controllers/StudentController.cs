@@ -9,7 +9,7 @@ using Planr.Models;
 
 namespace Planr.Controllers
 {
-    public class HomeController : Controller
+    public class StudentController : Controller
     {
         // This method simply allows a user to view the Dashboard page
 
@@ -110,7 +110,7 @@ namespace Planr.Controllers
         [HttpGet]
         public JsonResult TestGetSections()
         {
-            return Json(DBHelper.GetSections().Count, JsonRequestBehavior.AllowGet);
+            return Json(DBHelper.GetSections(), JsonRequestBehavior.AllowGet);
         }
     }
 }
