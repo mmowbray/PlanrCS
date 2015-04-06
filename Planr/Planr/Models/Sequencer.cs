@@ -136,7 +136,7 @@ namespace Planr.Models
                 student_p = student.SavedPreferences.priorityCourse.Split('/').Select( pref => Int32.Parse(pref)).ToArray();
             
             bool approved = false;
-            items = DBHelper.GetCourses();
+            items = DBInterfacer.GetCourses();
            
             String[] copyCompleted = new String[student_Completed.Length];
             Array.Copy(student_Completed, copyCompleted, student_Completed.Length);

@@ -2,25 +2,43 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
+using System.Web.UI.WebControls;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-// DBHelper Class
+// DBInterfacer Class
 // This class is responsible to interfacing with the JSON databases, ie reading and writing to them
 
 namespace Planr.Models
 {
-    public static class DBHelper
+    public static class DBInterfacer
     {
-        private static readonly String DB_USERS_PATH = System.Web.HttpContext.Current.Server.MapPath("~/App_Data/tbl_users.json");
-        private static readonly String DB_SECTIONS_PATH = System.Web.HttpContext.Current.Server.MapPath("~/App_Data/tbl_courses_sections.json");
-        private static readonly String DB_COURSES_PATH = System.Web.HttpContext.Current.Server.MapPath("~/App_Data/tbl_soen_courses.json");
+        /*private static readonly String DB_USERS_PATH = System.Web.Hosting.HostingEnvironment.MapPath("~/App_Data/tbl_users.json");
+        private static readonly String DB_SECTIONS_PATH = System.Web.Hosting.HostingEnvironment.MapPath("~/App_Data/tbl_courses_sections.json");
+        private static readonly String DB_COURSES_PATH = System.Web.Hosting.HostingEnvironment.MapPath("~/App_Data/tbl_soen_courses.json");*/
+
+        private static String DB_USERS_PATH;
+        private static String DB_SECTIONS_PATH;
+        private static String DB_COURSES_PATH;
+
+        static DBInterfacer()
+        {
+            List<string> assemblyPath = new List<string>((new System.Uri(Assembly.GetExecutingAssembly().CodeBase)).AbsolutePath.Split('/'));
+            assemblyPath = assemblyPath.GetRange(0, assemblyPath.Count - 1);
+            string sda = String.Join("/", assemblyPath);
+
+            DB_USERS_PATH = String.Join("/", assemblyPath) + "/../App_Data/tbl_users.json";
+            DB_COURSES_PATH = String.Join("/", assemblyPath) + "/../App_Data/tbl_soen_courses.json";
+            DB_SECTIONS_PATH = String.Join("/", assemblyPath) + "/../App_Data/courses_sections.json";
+        }
 
         public static List<User> GetUsers()
         {
             StreamReader sr = new StreamReader(DB_USERS_PATH);
             List<User> returnList = JsonConvert.DeserializeObject<List<User>>(sr.ReadToEnd(), new UserItemConverter());
             sr.Close();
+
             return returnList;
         }
 
@@ -76,7 +94,7 @@ namespace Planr.Models
             return (List<Student>) GetUsers().OfType<Student>();
         }
 
-        static User GetUser(String username)
+        public static User GetUser(String username)
         {
             return GetUsers().FirstOrDefault(user => user.UserName == username);
         }
@@ -129,7 +147,7 @@ namespace Planr.Models
         public static Sequence GetSequence(string studentName)
         {
             Student student = GetStudent(studentName);
-            return student.SavedSequence;
+            return Sequencer.GenerateSequence(student, 2, 0);
         }
 
         public static int SaveSchedule(string studentName, Schedule schedule)

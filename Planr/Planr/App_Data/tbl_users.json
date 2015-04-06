@@ -26,7 +26,7 @@
     "SavedPreferences": null,
     "Record": {
       "CreditsCompleted": 55,
-      "Option": null,
+      "Option": "Computer Games",
       "CompletedCourses": null
     },
     "SavedSchedule": {
@@ -45,11 +45,10 @@
   },
   {
     "StudentID": 123451,
-    "SavedPreferences": null,
     "Record": {
       "CreditsCompleted": 60,
-      "Option": null,
-      "CompletedCourses": null
+      "Option": "Computer Games",
+      "CompletedCourses": ""
     },
     "SavedSchedule": {
       "schedule": [
@@ -60,7 +59,13 @@
         null
       ]
     },
-    "SavedSequence": null,
+    "SavedPreferences": {
+
+        "timeOff" : "",
+        "dayOff": false,
+        "priorityCourse":"" 
+
+    },
     "UserName": "stuart",
     "Password": "planr",
     "Type": "Student"
@@ -71,8 +76,33 @@
     "Type": "Admin"
   },
   {
-    "UserName": "mark",
-    "Password": "password2",
+    "UserName": "UnitTestStudent",
+    "Password": "uni73$t",
     "Type": "Admin"
+  },
+  {
+    "StudentID": 345153,
+    "Record": {
+      "CreditsCompleted": 45,
+      "Option": "Computer Games",
+      "CompletedCourses": ""
+    },
+    "SavedSchedule": {
+      "schedule": [
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    "SavedPreferences": {
+        "timeOff" : "",
+        "dayOff": false,
+        "priorityCourse":""
+    },
+    "UserName": "stuart",
+    "Password": "planr",
+    "Type": "Student"
   }
 ]

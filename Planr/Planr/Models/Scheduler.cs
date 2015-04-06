@@ -184,7 +184,7 @@ namespace Planr.Models
             i = 0;
             Schedule schedule = new Schedule();
 
-            List<Section> items = DBHelper.GetSections();
+            List<Section> items = DBInterfacer.GetSections();
 
             foreach (Section item in items)
             {

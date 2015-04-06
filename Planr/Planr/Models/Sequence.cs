@@ -2,6 +2,7 @@
 {
     public class Sequence
     {
-        public Course[, ,] sequence = new Course[6, 5, 5];
+        //i: semester, j:year k: courses(sequence)
+        public Course[,,] sequence = new Course[6, 5, 5];
     }
 }
