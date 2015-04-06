@@ -30,10 +30,26 @@
 
 
 <div class="top-nav clearfix">
+    
     <!--search & user info start-->
-    <div class="user_profile">
-        <a href="#"><i class="fa fa-user profile_icon"></i></a>
-    </div>
+    <ul class="top-nav-list">
+        <li class="top-nav-list user_profile">
+            <a href="#"><i class="fa fa-user profile_icon"></i></a>
+        </li>
+        <li class="top-nav-list sequence_menu">
+            <a class ="menu_button_top"href="#">Sequence</a>
+        </li>
+        <li class="top-nav-list fall_menu">
+            <a class="menu_button_top" href="#">Fall</a>
+        </li>
+        <li class="top-nav-list winter_menu">
+            <a class="menu_button_top" href="#">Winter</a>
+        </li>
+        <li class="top-nav-list logout_menu" id="letmego">
+            <a class="menu_button_top" href="#" style="font-size: 44px"><i class="fa fa-power-off"></i></a>
+        </li>
+
+    </ul>
     <!--search & user info end-->
 </div>
 </header>
@@ -43,11 +59,14 @@
     <div id="sidebar" class="nav-collapse">
         <!-- sidebar menu start-->
         <div class="leftside-navigation">
-        <div class="user-pref">
-        <a href=""><i class="fa fa-bars profile_icon"></i></a>
-        
-        </div>
-          
+            <div id="pref_button">
+                <ul id="pref_list_ul">
+                    <li><a class="fa fa-sun-o" href="" title="Day Classes"></a></li>
+                    <li><a class="fa fa-moon-o" href="" title="Night Classes"></a></li>
+                    <li><a class="fa fa-ban" href="" title="Day Off"></a></li>
+                </ul>
+                <div id="pref_reveal"></div>
+            </div>
         </div>
         <!-- sidebar menu end-->
     </div>
@@ -68,7 +87,7 @@
     
     <div class="col-sm-12 yearSequence">
     <h2 class="yearNum">Year 1</h2>
-    <div class="col-sm-6">
+    <div class="col-sm-4">
     <h3>Fall</h3>
     <ul class="sequence_ul">  
         <li class="sequence_li c-1"><span class="sc_name">COMP 248</span><span class="sc_credit">3 credits</span></li>  
@@ -79,7 +98,7 @@
     </ul>  
     </div>
 
-    <div class="col-sm-6">
+    <div class="col-sm-4">
     <h3>Winter</h3>
     <ul class="sequence_ul">  
         <li class="sequence_li c-1"><span class="sc_name">c 1</span><span class="sc_credit">3 credits</span></li>  
@@ -89,6 +108,18 @@
         <li class="sequence_li c-5"><span class="sc_name">c 5</span><span class="sc_credit">3 credits</span></li>  
     </ul> 
     </div>
+
+    <div class="col-sm-4">
+    <h3>Summer</h3>
+    <ul class="sequence_ul">  
+        <li class="sequence_li c-1"><span class="sc_name">c 1</span><span class="sc_credit">3 credits</span></li>  
+        <li class="sequence_li c-2"><span class="sc_name">c 2</span><span class="sc_credit">3 credits</span></li>  
+        <li class="sequence_li c-3"><span class="sc_name">c 3</span><span class="sc_credit">3 credits</span></li>  
+        <li class="sequence_li c-4"><span class="sc_name">c 4</span><span class="sc_credit">3 credits</span></li>  
+        <li class="sequence_li c-5"><span class="sc_name">c 5</span><span class="sc_credit">3 credits</span></li>  
+    </ul> 
+    </div>
+
     </div>
 </div>
 </div>
