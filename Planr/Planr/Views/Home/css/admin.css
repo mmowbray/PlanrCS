@@ -151,11 +151,11 @@ width: 100%;
 	  position: absolute;
 }
 
-#add_course_text{
+#add_section_text{
 	display: none;
 }
 
-#add_circle:hover + #add_course_text
+#add_circle:hover + #add_section_text
 {
   color: #231f1d;
   font-size: 15px;
@@ -166,7 +166,7 @@ width: 100%;
   transition: all .4s ease-in-out;
 }
 
-#sequence_content
+#table_content
 {
 	margin-left: 5px;
 	margin-top: 22px;
@@ -233,5 +233,89 @@ width: 100%;
 }
 
 
- 
+/* Adding course form css */
+
+#add_sections {
+	  padding-top: 15px;
+	  padding-left: 20px;
+	  padding-right: 20px;
+	  margin-bottom: 20px;
+	  width: 40%;
+	  height: 78%;
+	  margin-left: 30%;
+	  background-color: #ccb7b7;
+}
+
+.form_field {
+	  position: relative;
+	  padding-bottom: 5px;
+	  width: 300px;
+	  margin-left: auto;
+	  margin-right: auto;
+}
+
+.form_field_label {
+	text-align: left;
+	font-size: 12px;
+	font-weight: bold;
+	color: black;
+}
+
+/*
+.field_input {
+	position: absolute;
+	display: block;
+	box-sizing: border-box;
+	font-size: 1em;
+	line-height: 1.25em;
+	padding: 0.3125em 0;
+	height: 1.875em;
+	width: 100%;
+	border: 0;
+	outline: none;
+	color: black;
+	border-bottom: 0.125em solid black;
+	background-color: transparent;
+}
+
+.field_input:valid {
+	position: relative;
+	top: 1.875em;
+	margin-top: -1.875em;
+}
+
+.field_input:focus {
+	border-bottom-color: darkred;
+	position: relative;
+	top: 1.875em;
+	margin-top: -1.875em;
+}
+
+*/
+
+#signin_btn {
+	display: block;
+	margin: 3em auto;
+	width: 50%;
+	height: 80px;
+	font: 700 1em sans-serif;
+	background: #FF000A;
+	color: #fff;
+	border: 0;
+	border-bottom: 0.35em solid #CA0606;
+	border-radius: 3px;
+	outline: 0;
+	cursor: pointer;
+	-webkit-transition: all .3s;
+	transition: all .3s;
+}
+
+#signin_btn:hover {
+	background: #231f1d;
+}
+
+#signin_btn:active {
+	background: #E81820;
+	border-color: #231f1d;
+}
 

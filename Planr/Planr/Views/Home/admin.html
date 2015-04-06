@@ -12,12 +12,11 @@
     <link rel="stylesheet" href="css/admin.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script type="text/javascript" src="js/main_index.js"></script>
-  	<script type="text/javascript" src="js/admin.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
 </head>
 
 
-<body onload = "drawTable()">
+<body>
 <section id="container">
 <!--header start-->
     <header class="header fixed-top clearfix">
@@ -41,8 +40,8 @@
 		
 		<!--add course button starts -->
 		<div id="add_button">
-			<a id="add_circle" href="#" style="font-size:25px" > <i class="fa fa-plus-circle"></i></a>
-			<p id="add_course_text"> Add course </p>
+			<a id="add_circle" href="#" onclick="addSectionToDb()" style="font-size:25px" > <i class="fa fa-plus-circle"></i></a>
+			<p id="add_section_text"> Add section </p>
     	</div>
 
         <!-- add course button ends -->
@@ -70,13 +69,14 @@
 <section id="main-content">
 <section class="wrapper">
 
-        
-
-        <div id="sequence_content"> 
-
+	
+        <div id = "add_section"></div>
+	
+        <div id="table_content"> 
+			
             <table id="course_table">
-            </table>
-
+            	<script type="text/javascript" src="js/admin.js"></script>
+            </table>	
         </div>
 
     </div>
