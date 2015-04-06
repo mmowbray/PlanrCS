@@ -75,7 +75,7 @@ Planr.controller('RecordCtrl', function($scope) {
 //Create Preferences controller
 Planr.controller('PreferencesCtrl', function($scope) {
 	//instantiate new obj
-	var prefObj = new Preferences('jsonTest/getPreferencesTest.html', 'someID');
+	var prefObj = new Preferences('jsonTest/getPreferencesTest.html', 'jsonTest/setPreferencesTest.html', 'someID');
 	//fetch from server $scope.$apply
 	prefObj.fetchPreferencesFromServer($scope.$apply);
 	//bind the object to the scope
@@ -143,7 +143,7 @@ StudentRecord.prototype = {
 /////////////////////////////////
 // Preferences class
 /////////////////////////////////
-function Preferences(url, preferencesDOMID){
+function Preferences(fetchUrl, saveUrl, preferencesDOMID){
 	// Constants
 	var SUCCESS_STATUS_CODE = 1;
 	
@@ -157,7 +157,8 @@ function Preferences(url, preferencesDOMID){
 	this.fetching = false;
 	//ajax object
 	this.jqxhr = null;
-	this.preferencesURL = url;
+	this.fetchPreferencesURL = fetchUrl;
+	this.savePreferencesURL = saveUrl;
 	this.domID = preferencesDOMID;
 	this.self = this;
 	
@@ -218,7 +219,7 @@ Preferences.prototype = {
 			this.fetching = true; //set fetch flag to true
 			var self = this.self;
 			//perform get request, format of returned data should be as follows: {"morning":true, "night":true, "dayOff":true}
-			this.jqxhr = $.get(this.preferencesURL, function(data) {
+			this.jqxhr = $.get(this.fetchPreferencesURL, function(data) {
 				self.setPreferences(JSON.parse(data));
 				self.fetching = false;
 				callback();
@@ -231,7 +232,7 @@ Preferences.prototype = {
 			this.fetching = true; //set fetch flag to true
 			var self = this.self;
 			//perform get request
-			this.jqxhr = $.get(this.preferencesURL + "?morning=" + this.getPreferences().morning + "&dayOff=" + this.getPreferences().dayOff + "&night=" + this.getPreferences().night, function(data) {
+			this.jqxhr = $.get(this.savePreferencesURL + "?morning=" + this.getPreferences().morning + "&dayOff=" + this.getPreferences().dayOff + "&night=" + this.getPreferences().night, function(data) {
 				//if the returned data is not the same as our success status code then alert the user and return false
 				if (self.getSuccessStatusCode() != data) {
 					alert('failed to save data to server.');
@@ -383,7 +384,7 @@ function Schedule(coursesArray, scheduleSemester, scheduleYear){
 /////////////////////////////////
 // Schedules class
 /////////////////////////////////
-function Schedules(url, preferencesOBJ, year, ajaxCallback, scheduleListDOMID){
+function Schedules(fetchUrl, saveUrl, preferencesOBJ, year, ajaxCallback, scheduleListDOMID){
 	// Constants
 	var SUCCESS_STATUS_CODE = 1;
 	//public instance variables
@@ -392,7 +393,8 @@ function Schedules(url, preferencesOBJ, year, ajaxCallback, scheduleListDOMID){
 	//ajax object
 	this.DOMID = scheduleListDOMID;
 	this.jqxhr = null;
-	this.schedulesUrl = url;
+	this.fetchSchedulesUrl = fetchUrl;
+	this.saveSchedulesUrl = saveUrl;
 	this.preferences = preferencesOBJ;
 	this.callback = ajaxCallback;
 	this.winterSchedules = null;
@@ -456,7 +458,7 @@ Schedules.prototype = {
 			this.fetching = true; //set fetch flag to true
 			var self = this.self;
 			//perform get request
-			this.jqxhr = $.get(this.schedulesUrl, {'scheduleIDs[]': scheduleIDArray}, function(data) {
+			this.jqxhr = $.get(this.saveSchedulesUrl, {'scheduleIDs[]': scheduleIDArray}, function(data) {
 				//if the returned data is not the same as our success status code then alert the user and return false
 				if (self.getSuccessStatusCode() != data) {
 					alert('failed to save data to server.');
