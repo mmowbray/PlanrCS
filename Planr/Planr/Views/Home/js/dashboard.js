@@ -2,12 +2,90 @@
 //Planr Class
 //'Main' class, mostly binds events to functions
 ////////////////////////////////////////////
-function Planr(){
-	l
-}
+/*function Planr(){
+	this.prefsID;
+	this.recordID;
+	this.sequenceID;
+	this.loaderID;
+	
+	//var schedulesID??
+	//var canvasID???
+	
+	//buttons id
+	this.semester1ID;
+	this.semester2ID
+	this.morningID;
+	this.nightID;
+	this.dayOff;
+	this.generateSchedulesID;
+	this.profileID;
+	
+	
+	
+	
+	//binding events
+	
+	
+}*/
+
+/*Planr.prototype = {
+	constructor:Planr,
+	
+	toggleLoader: function(){
+		$('#'+this.loaderID).toggle();
+	},
+	
+	
+};*/
+
+//defin app controllers
+/*var controllers = angular.module('AppControllers', []);
+
+//define controller for sequence
+controllers.controller('SequenceCtrl', function($scope) {
+	var sequenceObj = new Sequence('/jsonTest/sequenceTest.html');
+	$scope.sequenceArray = sequenceObj.getSequence();
+});*/
+
+//Create Planr Angular App
+var Planr = angular.module('Planr', []);
+
+//Create Sequence controller
+Planr.controller('SequenceCtrl', function($scope) {
+	//instantiate new obj
+	//TODO: put the apply function
+	var sequenceObj = new Sequence('jsonTest/sequenceTest.html', 'someID', function(){console.log('prefs');});
+	//fetch from server
+	sequenceObj.fetchSequenceFromServer($scope.$apply);
+	//bind the object to the scope
+	$scope.sequence = sequenceObj;
+	
+});
+
+//Create Record controller
+Planr.controller('RecordCtrl', function($scope) {
+	//instantiate new obj
+	var recordObj = new StudentRecord('jsonTest/studentRecodTest.html', 'someID');
+	//fetch from server
+	recordObj.fetchRecordFromServer(function(){console.log('prefs');});
+	//bind the object to the scope
+	$scope.record = recordObj;
+});
+
+//Create Preferences controller
+Planr.controller('PreferencesCtrl', function($scope) {
+	//instantiate new obj
+	var prefObj = new Preferences('jsonTest/getPreferencesTest.html', 'someID');
+	//fetch from server $scope.$apply
+	prefObj.fetchPreferencesFromServer($scope.$apply);
+	//bind the object to the scope
+	$scope.pref = prefObj;
+});
+
+
 
 ////////////////////////////////////////////
-//Student Record Class
+//Student Record Class 
 ////////////////////////////////////////////
 function StudentRecord(url, recordDOMID){
 	//private instance variables
@@ -27,20 +105,21 @@ function StudentRecord(url, recordDOMID){
 	
 	this.setRecord = function(recordObj){
 		record = recordObj;
-	};	
+		//bind the new sequence to the scope, using accessor to keep data private
+	};
+	
 	
 }
 
 StudentRecord.prototype = {
 	constructor:StudentRecord,
 	
-	fetchRecordFromServer:function(){
+	fetchRecordFromServer:function(callback){
 
 		var self = this.self;
 		$.get(this.recordUrl, function(data){
-			self.setRecord(data);
-			
-			//TODO add a callback
+			self.setRecord(JSON.parse(data));
+			callback();
 		
 		});
 	},
@@ -91,6 +170,40 @@ function Preferences(url, preferencesDOMID){
 		preferences = newPreferences;
 	};
 	
+	this.setMorning = function(value){
+		preferences.morning = value;
+	};
+	
+	this.setNight = function(value){
+		preferences.night = value;
+	};
+	
+	this.setDayOff = function(value){
+		preferences.dayOff = value;
+	};
+	
+	this.toggleMorning = function(){
+		if(preferences.morning)
+			preferences.morning = false;
+		else
+			preferences.morning = true;
+	};
+	
+	this.toggleNight = function(){
+		if(preferences.night)
+			preferences.night = false;
+		else
+			preferences.night = true;
+	};
+	
+	this.toggleDayOff = function(){
+		if(preferences.dayOff)
+			preferences.dayOff = false;
+		else
+			preferences.dayOff = true;
+	};
+	
+	
 	//return the success status code
 	this.getSuccessStatusCode = function(){
 		return SUCCESS_STATUS_CODE;
@@ -100,7 +213,7 @@ function Preferences(url, preferencesDOMID){
 Preferences.prototype = {
 	constructor:Preferences,
 	
-	fetchPreferencesFromServer: function() {
+	fetchPreferencesFromServer: function(callback) {
 		if (!this.fetching) { //if no current preference ajax goin on then fetch
 			this.fetching = true; //set fetch flag to true
 			var self = this.self;
@@ -108,11 +221,12 @@ Preferences.prototype = {
 			this.jqxhr = $.get(this.preferencesURL, function(data) {
 				self.setPreferences(JSON.parse(data));
 				self.fetching = false;
+				callback();
 			});
 		}
 	},
 	
-	savePreferencesToServer:function(){
+	savePreferencesToServer:function(callback){
 		if (!this.fetching) { //if no current preference ajax goin on then fetch
 			this.fetching = true; //set fetch flag to true
 			var self = this.self;
@@ -126,6 +240,7 @@ Preferences.prototype = {
 				
 				//TODO, what to do if it worked.
 				self.fetching = false;
+				callback()
 			});
 		}
 	},
@@ -140,22 +255,23 @@ Preferences.prototype = {
 	
 };
 
-
 /////////////////////////////////
 //Sequence class
 ////////////////////////////////
-function Sequence(url, sequenceDOMID){
+function Sequence(url, sequenceDOMID, ajaxCallback){
 	//private instance variables
-	var sequence = null;
+	var sequence;
 	
 	//public instance variables
 	//boolean stating if there is an ajax call to the server
 	this.fetching = false;
-	//ajax object
-	this.jqxhr = null;
+	this.jqxhr = null; //ajax object
 	this.sequenceUrl = url;
 	this.DOMID = sequenceDOMID;
 	this.self = this;
+	
+	//set ajax callback
+	this.callback = ajaxCallback;
 	
 	//accessor methods
 	this.getSequence = function(){
@@ -164,6 +280,11 @@ function Sequence(url, sequenceDOMID){
 	
 	this.setSequence = function(newSequence){
 		sequence = newSequence;
+		
+	};
+	
+	this.setAjaxCallback = function(ajaxCallback){
+		this.callback = ajaxCallback;
 	};
 }
 
@@ -185,6 +306,7 @@ Sequence.prototype = {
 			self.jqxhr = $.get(this.sequenceUrl, function(data) {
 				self.setSequence(JSON.parse(data));
 				self.fetching = false;
+				self.callback();
 			});
 		}
 	},
@@ -222,24 +344,7 @@ Sequence.prototype = {
 			being wrapped would caused the function to execute.*/
 			
 			
-	},
-	
-	/*updateSequence:function(){
-		//TODO: this code will read the sequence displayed in the dom and save it to the sequence instance variable
-		//$(//some selector).each(//put in sequence);
-	},*/
-	
-	/*//using the same url, pass in a sequence to save to the server
-	saveSequenceToDatabase:function(){
-		//TODO format sequence for backend
-		var formattedSequence = JSON.stringify(this.getSequence());
-		
-		$.get(this.sequenceUrl + '?sequence=' + formattedSequence, function(data){
-			//TODO compare with returned status code to make sure everything went ok
-		});
-	}*/
-	
-	//TODO check if course placed in a summer sessions
+	}
 };
 
 /////////////////////////////////
@@ -278,13 +383,14 @@ function Schedule(coursesArray, scheduleSemester, scheduleYear){
 /////////////////////////////////
 // Schedules class
 /////////////////////////////////
-function Schedules(url, preferencesOBJ, year, ajaxCallback){
+function Schedules(url, preferencesOBJ, year, ajaxCallback, scheduleListDOMID){
 	// Constants
 	var SUCCESS_STATUS_CODE = 1;
 	//public instance variables
 	//boolean stating if there is an ajax call to the server
 	this.fetching = false;
 	//ajax object
+	this.DOMID = scheduleListDOMID;
 	this.jqxhr = null;
 	this.schedulesUrl = url;
 	this.preferences = preferencesOBJ;
@@ -361,7 +467,18 @@ Schedules.prototype = {
 				self.fetching = false;
 			});
 		}
-	}
+	},
+	
+	writeSemesterOneToDOM:function(){},
+	
+	writeSemesterTwoToDOM:function(){},
+	
+	writeSemesterThreeToDOM:function(){},
+	
+	
+	
+	
+	
 };
 /////////////////////////////////
 // Canvas class
