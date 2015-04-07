@@ -197,19 +197,18 @@ width: 100%;
 }
 
 .buttons {
- -webkit-border-radius: 8;
-  -moz-border-radius: 8;
-  border-radius: 8px;
-  width: 92px;
-  height: 35px;
-  font-family: Arial;
-  color: #fff;
-  font-size: 12px;
-  padding: 4px;
-  background: #CA0606;
-  margin-top: 7px;
-  margin-bottom: -7px;
-
+	-webkit-border-radius: 8;
+	-moz-border-radius: 8;
+	border-radius: 8px;
+	width: 95px;
+	height: 35px;
+	font-family: Arial;
+	color: #fff;
+	font-size: 12px;
+	padding: 4px;
+	background: #a90c12;
+	margin-top: 5px;
+	margin-bottom: 5px;
 }
 
 .buttons:hover {
@@ -235,52 +234,8 @@ width: 100%;
 
 /* Adding course form css */
 
-
-#add_section {
-	margin-left: 20px;	
-}
-
-.form_label{
-	width: 10%;
-}
-
-.form_radio{
-	padding: 5px;
-}
-
-input.form_radio {
-  margin: 0 5px 0 5px;
-}
-
-#adding_button {
-	display: block;
-	margin: 2em auto;
-	width: 15%;
-	height: 50px;
-	font: 700 1.2em sans-serif;
-	background: #FF000A;
-	color: #fff;
-	border: 0;
-	border-bottom: 0.35em solid #CA0606;
-	border-radius: 3px;
-	outline: 0;
-	cursor: pointer;
-	-webkit-transition: all .3s;
-	transition: all .3s;
-}
-
-#adding_button:hover {
-	background: #A90C12;
-}
-
-#adding_button:active {
-  background: #E81820;
-  border-color: #E81820;
-}
-
-/*
-#add_section {
-	  padding-right: 5px;
+#add_sections {
+	  padding-top: 15px;
 	  padding-left: 20px;
 	  padding-right: 20px;
 	  margin-bottom: 20px;
@@ -289,7 +244,6 @@ input.form_radio {
 	  margin-left: 30%;
 	  background-color: #ccb7b7;
 }
-
 
 .form_field {
 	  position: relative;
@@ -310,7 +264,7 @@ input.form_radio {
 	display: inline;
 }
 
-
+/*
 .field_input {
 	position: absolute;
 	display: block;
@@ -326,50 +280,22 @@ input.form_radio {
 	border-bottom: 0.125em solid black;
 	background-color: transparent;
 }
-
 .field_input:valid {
 	position: relative;
 	top: 1.875em;
 	margin-top: -1.875em;
 }
-
 .field_input:focus {
 	border-bottom-color: darkred;
 	position: relative;
 	top: 1.875em;
 	margin-top: -1.875em;
 }
-
-#signin_btn {
-	display: block;
-	margin: 3em auto;
-	width: 50%;
-	height: 80px;
-	font: 700 1em sans-serif;
-	background: #FF000A;
-	color: #fff;
-	border: 0;
-	border-bottom: 0.35em solid #CA0606;
-	border-radius: 3px;
-	outline: 0;
-	cursor: pointer;
-	-webkit-transition: all .3s;
-	transition: all .3s;
-}
-
-#signin_btn:hover {
-	background: #231f1d;
-}
-
-#signin_btn:active {
-	background: #E81820;
-	border-color: #231f1d;
-}
 */
 
-fieldset
-{
-	margin-right: 10px; 
+
+fieldset{
+	padding-right: 10px; 
 }
 
 legend {
@@ -378,8 +304,42 @@ legend {
   text-align: center;
 }
 
-label { font-weight:bold; display: inline-block; height: 20px; text-align: left; padding-right:5px; }​
-.submit
-{
+label { font-weight:bold; display: inline-block; height: 20px; width:80px; text-align: center; padding-right:5px; }​
+
+.submit {
 text-align: center; 
+}
+
+.button_holder
+{
+	display:block; 
+	margin:auto; 
+	text-align: center; 
+}
+
+
+.form_button {
+	margin: 2em auto;
+	margin-right: 10px;
+	margin-left: 15px;
+	width: 130px;
+	height: 45px;
+	font: 700 13px sans-serif;
+	background: #FF000A;
+	color: #fff;
+	border: 0;
+	border-bottom: 0.35em solid #CA0606;
+	border-radius: 3px;
+	cursor: pointer;
+	-webkit-transition: all .3s;
+	transition: all .3s;
+}
+
+.form_button:hover {
+	background: #A90C12;
+}
+
+.form_button:active {
+  background: #E81820;
+  border-color: #E81820;
 }

@@ -69,77 +69,90 @@
 <section id="main-content">
 <section class="wrapper">
 
-		<!-- add section form starts here -->
-        <div id = "add_section" class="test" style="display: none">
-		<form name="addform" action="" onsubmit="" method="GET">
-			
-			<!-- action GET PATH FROM MAX -->
-			<!-- redirect back to admin page -->
+		<!-- add section form starts -->
+        <div id = "add_section" style="display: none">
+		<form name="myform" action="" onsubmit="" method="">
 			
 			<fieldset>
-					<legend>Add Section</legend>
-					<p><label class="form_label">Course Name</label><input type="text"></input>
-					<label class="form_label">Semester Offered</label>
-							<input class="form_radio" type="radio" name="Semester" value="1">Fall</input>
-							<input class="form_radio" type="radio" name="Semester" value="2">Winter</input>
-							<input class="form_radio" type="radio" name="Semester" value="3">Fall/Winter</input>
-							<input class="form_radio" type="radio" name="Semester" value="4">Summer1</input>
-							<input class="form_radio" type="radio" name="Semester" value="5">Summer2</input>
-							<input class="form_radio" type="radio" name="Semester" value="1">Online</input><br></p>
-					<p><label class="form_label">Lecture Day 1</label><input></input>
-					<label class="form_label">Lecture Day 2</label><input></input>
-					<label class="form_label">Lecture Start time</label><input></input>
-					<label class="form_label">Lecture End time</label><input></input></p>
-					<p><label class="form_label">Tutorial Day 1</label><input></input>
-					<label class="form_label">Tutorial Day 2</label><input></input>
-					<label class="form_label">Tutorial Start time</label><input></input>
-					<label class="form_label">Tutorial End time</label><input></input></p>
-					<p><label class="form_label">Lab Day 1</label><input></input>
-					<label class="form_label">Lab Day 2</label><input></input>
-					<label class="form_label">Lab Start time</label><input></input>
-					<label class="form_label">Lab End time</label><input></input></p>
-					<div> <input id="adding_button" type="submit" value="Add Section" /></div>
+					<legend id="title_field">Add Section</legend>
+					<p><label style="width:162.5px;">Course Name</label><input type="text"></input>
+					<label style="width:162px">Semester Offered</label>	
+													<input style="width:25px" type="radio" name="Semester" value="1">Fall</input>
+													<input style="width:25px" type="radio" name="Semester" value="2">Winter</input>
+													<input style="width:25px" type="radio" name="Semester" value="3">Fall/Winter</input>
+													<input style="width:25px" type="radio" name="Semester" value="4">Summer1</input>
+													<input style="width:25px" type="radio" name="Semester" value="5">Summer2</input>
+													<input style="width:25px" type="radio" name="Semester" value="1">Online</input><br>
+													</p>
+					<p><label>Lec</label>
+					<label>Day 1</label><input></input>
+					<label>Day 2</label><input></input>
+					<label>Start</label><input></input>
+					<label>End</label><input></input></p>
+					<p><label>Tut</label>
+					<label>Day 1</label><input></input>
+					<label>Day 2</label><input></input>
+					<label>Start</label><input></input>
+					<label>End</label><input></input></p>
+					<p><label>Lab</label>
+					<label>Day 1</label><input></input>
+					<label>Day 2</label><input></input>
+					<label>Start</label><input></input>
+					<label>End</label><input></input></p>
+					<div class="button_holder"> 
+						<input class="form_button" id="adding_button" type="submit" value="Add Section" />
+						<input class="form_button" id="cancel_button" type="submit" value="Cancel" /></div>
 					
 			</fieldset>
 		</form>	
 		</div>
-		<!-- edit section form ends here -->
-		
-		<!-- edit section form starts here -->
-		<div id = "edit_section" class="test" style="display: none">
-		<form name="editform" action="" onsubmit="" method="GET">
-			
-			<!-- action GET PATH FROM MAX -->
-			<!-- redirect back to admin page -->
+		<!-- add section form ends -->
+
+
+		<!-- add section form starts -->
+        <div id = "edit_section" style="display: none">
+		<form name="myform" action="" onsubmit="" method="">
 			
 			<fieldset>
-					<legend>Edit Section</legend>
-					<p><label class="form_label">Course Name</label><input type="text"></input>
-					<label class="form_label">Semester Offered</label>
-							<input class="form_radio" type="radio" name="Semester" value="1">Fall</input>
-							<input class="form_radio" type="radio" name="Semester" value="2">Winter</input>
-							<input class="form_radio" type="radio" name="Semester" value="3">Fall/Winter</input>
-							<input class="form_radio" type="radio" name="Semester" value="4">Summer1</input>
-							<input class="form_radio" type="radio" name="Semester" value="5">Summer2</input>
-							<input class="form_radio" type="radio" name="Semester" value="1">Online</input><br></p>
-					<p><label class="form_label">Lecture Day 1</label><input></input>
-					<label class="form_label">Lecture Day 2</label><input></input>
-					<label class="form_label">Lecture Start time</label><input></input>
-					<label class="form_label">Lecture End time</label><input></input></p>
-					<p><label class="form_label">Tutorial Day 1</label><input></input>
-					<label class="form_label">Tutorial Day 2</label><input></input>
-					<label class="form_label">Tutorial Start time</label><input></input>
-					<label class="form_label">Tutorial End time</label><input></input></p>
-					<p><label class="form_label">Lab Day 1</label><input></input>
-					<label class="form_label">Lab Day 2</label><input></input>
-					<label class="form_label">Lab Start time</label><input></input>
-					<label class="form_label">Lab End time</label><input></input></p>
-					<div> <input id="adding_button" type="submit" value="Edit Section" /></div>
-					
+					<legend id="title_field">Edit Section</legend>
+
+						<p>
+							<label style="width:162.5px;">Course Name</label><input type="text"></input>
+							<label style="width:162px">Semester Offered</label>	
+								<input style="width:25px" type="radio" name="Semester" value="1">Fall</input>
+								<input style="width:25px" type="radio" name="Semester" value="2">Winter</input>
+								<input style="width:25px" type="radio" name="Semester" value="3">Fall/Winter</input>
+								<input style="width:25px" type="radio" name="Semester" value="4">Summer1</input>
+								<input style="width:25px" type="radio" name="Semester" value="5">Summer2</input>
+								<input style="width:25px" type="radio" name="Semester" value="1">Online</input><br>
+						</p>
+
+						<p><label>Lec</label>
+						<label>Day 1</label><input></input>
+						<label>Day 2</label><input></input>
+						<label>Start</label><input></input>
+						<label>End</label><input></input></p>
+
+						<p><label>Tut</label>
+						<label>Day 1</label><input></input>
+						<label>Day 2</label><input></input>
+						<label>Start</label><input></input>
+						<label>End</label><input></input></p>
+						
+						<p><label>Lab</label>
+						<label>Day 1</label><input></input>
+						<label>Day 2</label><input></input>
+						<label>Start</label><input></input>
+						<label>End</label><input></input></p>
+						
+						<div class="button_holder"> 
+							<input class="form_button" id="edit_button" type="submit" value="Edit Section" />
+							<input class="form_button" id="cancel_button" type="submit" value="Cancel" />
+						</div>
 			</fieldset>
 		</form>	
 		</div>
-		<!-- edit section form ends here -->
+		<!-- add section form ends -->
 	
         <div id="table_content"> 
 			
