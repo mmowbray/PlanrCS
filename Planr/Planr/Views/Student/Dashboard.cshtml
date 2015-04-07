@@ -1,98 +1,89 @@
-﻿@{
-    ViewBag.Title = "Dashboard";
-}
+﻿<!DOCTYPE html>
+<html ng-app="Planr" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="initial-scale=1.0"/>
+    <title>Planr.me - Log In</title>
 
-<div class="jumbotron">
-    <h1>Dashboard</h1>
+    <link rel="stylesheet" href="/Content/font-awesome/css/font-awesome.min.css" />
+    <link href="/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href="/Content/main_style.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script type="text/javascript" src="/Scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/Scripts/dashboard.js"></script>
 
-    <input type="button" id="ChangePassToPlanr" value="Change password to 'planr'"/>
-    <input type="button" id="GetCredits" value="Get credits completed from student record!"/>
-    <input type="button" id="TestGetCourses" value="Get course count in DB!"/>
-    <input type="button" id="TestGetSections" value="Get Day1 value of first section in DB!"/>
-    <input type="button" id="GetSequence" value="GetSequence" />
+</head>
+<body>
+    <section id="container">
+        <!--header start-->
+        <header class="header fixed-top clearfix">
+            <!--logo start-->
+            <div class="brand">
+                <a href="#" class="logo">
+                    <span id="logo_span">P<span id="anr">lan R</span></span>
+                </a>
+            </div>
+            <!--logo end-->
 
-    
-
-
-</div>
-
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a>
-        </p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a>
-        </p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a>
-        </p>
-    </div>
-</div>
-
-<script>
-    $("#GetCredits").click(function() {
-        $.ajax({
-            url: '@Url.Action("ViewRecord")',
-            type: "GET",
-            success: function(response) {
-                alert('you have completed this many credits: ' + response.CreditsCompleted);
-            }
-        });
-    });
-
-    $("#ChangePassToPlanr").click(function() {
-        $.ajax({
-            url: '@Url.Action("ChangePassword")',
-            data: { 'newPassword': 'planr' },
-            type: "GET",
-            success: function(response) {
-                alert('response code (0 is success): ' + response);
-            }
-        });
-    });
-
-    $("#TestGetCourses").click(function() {
-        $.ajax({
-            url: '@Url.Action("TestGetCourses")',
-            type: "GET",
-            success: function(response) {
-                alert('there are this many courses: ' + response);
-            }
-        });
-    });
-
-    $("#TestGetSections").click(function () {
-        $.ajax({
-            url: '@Url.Action("TestGetSections")',
-            type: "GET",
-            success: function (response) {
-                alert('Day 1 value of first section returned: ' + response[0].Day1);
-            }
-        });
-    });
-
-    $("#GetSequence").click(function () {
-        $.ajax({
-            url: '@Url.Action("GetSequence")',
-            type: "GET",
-            success: function (response) {
-                alert(response);
-            }
-        });
-    });
-</script>
-
-
-
+            <div class="top-nav clearfix">
+                <!--search & user info start-->
+                <div class="user_profile">
+                    <a href="#"><i class="fa fa-user profile_icon"></i></a>
+                </div>
+                <div ng-controller="RecordCtrl">
+                    <span>{{record.getRecord().CreditsCompleted}}</span>
+                    <span>{{record.getRecord().Option}}</span>
+                    <span>{{record.getRecord().CompletedCourses}}</span>
+                </div>
+                <!--search & user info end-->
+            </div>
+        </header>
+        <!--header end-->
+        <!--sidebar start-->
+        <aside>
+            <div id="sidebar" class="nav-collapse">
+                <!-- sidebar menu start-->
+                <div class="leftside-navigation">
+                    <div ng-controller="PreferencesCtrl" class="user-pref">
+                        <a href=""><i class="fa fa-bars profile_icon"></i></a>
+                        <div><i class="fa fa-sun-o {{pref.getPreferences.morning ? 'pref-on':'pref-off'}}" ng-click="alert('hey')"></i></div>
+                        <div><i class="fa fa-moon-o {{pref.getPreferences.night ? 'pref-on':'pref-off'}}" ng-click="pref.toggleNight()"></i></div>
+                        <div><i class="fa fa-bed {{pref.getPreferences.dayOff ? 'pref-on':'pref-off'}}" ng-click="pref.toggleDayOff()"></i></div>
+                    </div>
+                </div>
+                <!-- sidebar menu end-->
+            </div>
+        </aside>
+        <!--sidebar end-->
+        <!--main content start || place for grid schedule-->
+        <section id="main-content">
+            <section class="wrapper">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <canvas id="schedule" height="1024" width="600px;" style="border:1px solid #d3d3d3;"></canvas>
+                    </div>
+                </div>
+                <div class="row">
+                    <div ng-controller="SequenceCtrl" class="container">
+                        <h1 class="sequence_title">Sequence list</h1>
+                        <div ng-repeat="year in sequence.getSequence()" class="col-sm-12 yearSequence">
+                            <h2 class="yearNum">Year {{$index+1}}</h2>
+                            <div ng-repeat="semester in year" class="col-sm-6">
+                                <h3>Semester {{$index+1}}</h3>
+                                <ul class="sequence_ul">
+                                    <li class="sequence_li {{'c-'+($index+1)}}" ng-repeat="course in semester">
+                                        <span class="sc_name">{{course}}</span><span class="sc_credit">{{$index+1}} credits</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <!--main content end-->
+    </section>
+</body>
+</html>

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Web.UI.WebControls;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
@@ -204,6 +203,27 @@ namespace Planr.Models
 
             WriteValuesToDB(DB_SECTIONS_PATH, DBPreviousState);
             return 0; //0 = success
+        }
+
+        public static Student.Preference GetSavedPreferences(String studentName)
+        {
+            Student student = GetStudent(studentName);
+            return student.SavedPreferences;
+        }
+
+        public static int DeleteSection(int sectionUID)
+        {
+            List<Section> DBPreviousState = GetSections();
+            int sectionIndex = DBPreviousState.FindIndex(index => index.UniqueID == sectionUID);
+
+            if (sectionIndex == -1) //entry not found in DB
+                return 1; //1 = failure
+
+            DBPreviousState.RemoveAt(sectionIndex);
+            WriteValuesToDB(DB_SECTIONS_PATH, DBPreviousState);
+
+            return 0; //0 = success
+
         }
     }
 

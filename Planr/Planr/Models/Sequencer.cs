@@ -101,7 +101,7 @@ namespace Planr.Models
 
         public static Sequence GenerateSequence(Student student, int semester_int, int summer_bool)
         {
-            Course[,,] sequence = new Course[6, 5, 5];
+            Course[,,] sequence = new Course[6, 6, 5];
             int[] engr = {68, 69, 70, 71};
             List<int> engr2 = engr.OfType<int>().ToList();
             int[] soen = {84, 85};
@@ -132,7 +132,7 @@ namespace Planr.Models
             String[] student_Completed = null;
             if (student.Record.CompletedCourses != null)
                 student_Completed = student.Record.CompletedCourses.Split('/');
-            if (student.SavedPreferences.priorityCourse != null)
+            if (student.SavedPreferences.priorityCourse != String.Empty)
                 student_p = student.SavedPreferences.priorityCourse.Split('/').Select( pref => Int32.Parse(pref)).ToArray();
             
             bool approved = false;
@@ -180,13 +180,16 @@ namespace Planr.Models
                     i = 0;
                     Int32.TryParse(copyCompleted[c], out i);
                     tmp_cse = (Course) allCourses[i];
-                    wut = tmp_cse.CourseType;
-                    if (wut == "General Elective")
-                        general_elective--;
-                    else if (wut == "Basic Science")
-                        science--;
-                    else //ignore option//
-                        elective--;
+                    if (tmp_cse != null)
+                    {
+                        wut = tmp_cse.CourseType;
+                        if (wut == "General Elective")
+                            general_elective--;
+                        else if (wut == "Basic Science")
+                            science--;
+                        else //ignore option//
+                            elective--;
+                    }
                 }
                 c++;
             }
@@ -263,14 +266,14 @@ namespace Planr.Models
                                             tmpCourse = (Course) allCourses[z];
                                             if (complst.Contains(tmpCourse.CourseID.ToString()) == false)
                                             {
-                                                sequence[i, j, k] = tmpCourse;
+                                                sequence[j, i, k] = tmpCourse;
                                                 removeA[k] = tmpCourse.CourseID;
                                                 loopC = 0;
                                                 k++;
                                                 if (tmpCourse.CourseID == 89)
                                                 {
                                                     tmpCourse2 = (Course) allCourses[90];
-                                                    sequence[i, j, k] = tmpCourse2;
+                                                    sequence[j, i, k] = tmpCourse2;
                                                     removeA[k] = tmpCourse2.CourseID;
                                                     loopC = 0;
                                                     k++;
@@ -281,7 +284,7 @@ namespace Planr.Models
                                                     neededCourses.Remove(tmpCourse.CourseID);
                                             }
                                         }
-                                        sequence[i, j, k] = priority;
+                                        sequence[j, i, k] = priority;
                                         removeA[k] = priority.CourseID;
                                         loopC = 0;
                                         k++;
@@ -293,7 +296,7 @@ namespace Planr.Models
                                 }
                                 else if (approved == true)
                                 {
-                                    sequence[i, j, k] = priority;
+                                    sequence[j, i, k] = priority;
                                     removeA[k] = priority.CourseID;
                                     loopC = 0;
                                     k++;
@@ -304,7 +307,7 @@ namespace Planr.Models
                                          i != 5))
                                     {
                                         tmpCourse = (Course) allCourses[96];
-                                        sequence[i, j, k] = tmpCourse;
+                                        sequence[j, i, k] = tmpCourse;
                                         removeA[k] = tmpCourse.CourseID;
                                         loopC = 0;
                                         k++;
@@ -314,7 +317,7 @@ namespace Planr.Models
                                     if (priority.CourseID == 89 && k + 1 < 4 && i != 4 && i != 5)
                                     {
                                         tmpCourse = (Course) allCourses[90];
-                                        sequence[i, j, k] = tmpCourse;
+                                        sequence[j, i, k] = tmpCourse;
                                         removeA[k] = tmpCourse.CourseID;
                                         loopC = 0;
                                         k++;
@@ -343,7 +346,7 @@ namespace Planr.Models
                                 approved = verifyPrereq(co, i, complst, engr2, comp2, soen2, removeA);
                                 if (approved == true)
                                 {
-                                    sequence[i, j, k] = co;
+                                    sequence[j, i, k] = co;
                                     removeA[k] = co.CourseID;
                                     if (important.ContainsKey(co.CourseID))
                                         important.Remove(co.CourseID);
@@ -380,14 +383,14 @@ namespace Planr.Models
                                 if (general_elective > 0 && i != 0 && i != 1)
                                 {
                                     general_elective--;
-                                    sequence[i, j, k] = General_Elective;
+                                    sequence[j, i, k] = General_Elective;
                                     chk = true;
 
                                 }
                                 else if (science > 0 && i != 0 && i != 1)
                                 {
                                     science--;
-                                    sequence[i, j, k] = Basic_Science;
+                                    sequence[j, i, k] = Basic_Science;
                                     chk = true;
                                 }
 
@@ -395,7 +398,7 @@ namespace Planr.Models
                                          comp2.Any() == false && soen2.Any() == false)
                                 {
                                     elective--;
-                                    sequence[i, j, k] = Elective;
+                                    sequence[j, i, k] = Elective;
                                     chk = true;
                                 }
                                 else
@@ -420,14 +423,14 @@ namespace Planr.Models
                                 if (general_elective > 0 && i != 0 && i != 1)
                                 {
                                     general_elective--;
-                                    sequence[i, j, k] = General_Elective;
+                                    sequence[j, i, k] = General_Elective;
                                     chk = true;
 
                                 }
                                 else if (science > 0 && i != 0 && i != 1)
                                 {
                                     science--;
-                                    sequence[i, j, k] = Basic_Science;
+                                    sequence[j, i, k] = Basic_Science;
                                     chk = true;
                                 }
                                 if (chk == true)
@@ -502,41 +505,7 @@ namespace Planr.Models
             }
 
             counter = 0;
-            int q = 1;
-            int w = 0;
-            while (w < 5)
-            {
-                k = w + 1;
-                Console.WriteLine("Year: " + k);
-                while (q < 6)
-                {
-                    if (q == 0)
-                        Console.WriteLine("Semester: " + "online");
-                    else if (q == 1)
-                        Console.WriteLine("Semester: " + "fall/winter");
-                    else if (q == 2)
-                        Console.WriteLine("Semester: " + "fall");
-                    else if (q == 3)
-                        Console.WriteLine("Semester: " + "winter");
-                    else if (q == 4)
-                        Console.WriteLine("Semester: " + "summer1");
-                    else if (q == 5)
-                        Console.WriteLine("Semester: " + "summer2");
-                    while (counter < 5)
-                    {
-                        if (sequence[q, w, counter] != null)
-                            Console.WriteLine(" -- " + sequence[q, w, counter].CourseName + " " +
-                                              sequence[q, w, counter].CourseID);
-                        else
-                            Console.WriteLine(" -- ");
-                        counter++;
-                    }
-                    q++;
-                    counter = 0;
-                }
-                w++;
-                q = 1;
-            }
+            
 
 
 

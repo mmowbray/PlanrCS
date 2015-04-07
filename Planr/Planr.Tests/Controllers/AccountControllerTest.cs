@@ -82,5 +82,22 @@ namespace Planr.Tests.Controllers
             Assert.IsNull(ac.Session["user"]);
 
         }
+
+        /*
+        [TestMethod]
+        public void DatabaseWriteToValuesTest()
+        {
+            var UsersDB = DBInterfacer.GetUsers();
+            var SectionsDB = DBInterfacer.GetSections();
+            var CoursesDB = DBInterfacer.GetCourses();
+
+            DBInterfacer.WriteValuesToDB(DB_USERS_PATH, UsersDB);
+            DBInterfacer.WriteValuesToDB(DB_SECTIONS_PATH, SectionsDB);
+            DBInterfacer.WriteValuesToDB(DB_COURSES_PATH, CoursesDB);
+
+            Assert.AreEqual(UsersDB, DBInterfacer.GetUsers());
+            Assert.AreEqual(SectionsDB, DBInterfacer.GetSections());
+            Assert.AreEqual(CoursesDB, DBInterfacer.GetCourses());
+        }*/
     }
 }

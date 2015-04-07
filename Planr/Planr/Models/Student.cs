@@ -24,9 +24,8 @@ namespace Planr.Models
 
         public class Preference
         {
-            public String timeOff { get; set; }
-            public bool dayOff { get; set; }
-            public String priorityCourse { get; set; }
+            public String priorityCourse { get; set; } //sequencer tries to put this course in 1st semester
+            //not using dayoff and timeoff
 
         }
     }

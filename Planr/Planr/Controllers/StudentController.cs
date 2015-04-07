@@ -64,7 +64,7 @@ namespace Planr.Controllers
         // This method returns a collection of schedules for the currently logged in user
 
         [HttpGet]
-        public JsonResult GenerateSchedules(Student.Preference prefs)
+        public JsonResult GenerateSchedules()
         {
             var x = Scheduler.GenerateSchedules(Sequencer.GenerateSequence(DBInterfacer.GetStudent(Session["username"].ToString()), 2, 0), 2, 0);
             return Json(x);
@@ -86,6 +86,12 @@ namespace Planr.Controllers
         public JsonResult SavePreferences(Student.Preference prefs)
         {
             return Json(DBInterfacer.SavePreferences(Session["username"].ToString(), prefs), JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpGet]
+        public JsonResult GetSavedPreferences(Student.Preference prefs)
+        {
+            return Json(DBInterfacer.GetSavedPreferences(Session["username"].ToString()), JsonRequestBehavior.AllowGet);
         }
 
         // TEST METHODS AHEAD!!!

@@ -37,10 +37,9 @@ namespace Planr.Controllers
         }
 
         [HttpGet]
-        public JsonResult DeleteSection(Section section)
+        public JsonResult DeleteSection(int section)
         {
-            return Json(1);
-            //return Json(DBHelper.DeleteSection(section)); //TODO
+            return Json(DBInterfacer.DeleteSection(section));
         }
 	}
 }

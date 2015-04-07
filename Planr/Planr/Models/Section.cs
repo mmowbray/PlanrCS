@@ -4,6 +4,7 @@ namespace Planr.Models
 {
     public class Section
     {
+        public int UniqueID { get; set; }
         public int CourseID { get; set; }
         public int Availability { get; set; }
         public String Day1 { get; set; }
