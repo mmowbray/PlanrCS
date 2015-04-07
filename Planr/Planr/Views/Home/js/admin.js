@@ -85,9 +85,7 @@
     {
         document.getElementById("title_field").innerHTML = "Edit Section";
 		document.getElementById("add_section").style.display='block'; 
-		window.alert(courseID);
 		var course=searchById(sectionArray, courseID); 
-		window.alert(course.cName);
 		document.getElementById("cName").value= course.cName;
 		document.getElementById("lDay1").value= course.lDay1;
 		document.getElementById("lDay2").value= course.lDay2;
