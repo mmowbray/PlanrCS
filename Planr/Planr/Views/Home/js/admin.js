@@ -99,6 +99,7 @@
 		document.getElementById("labDay2").value= course.labDay2;
 		document.getElementById("startLab").value= course.startLab;
 		document.getElementById("endLab").value= course.endLab;
+		document.getElementById("adding_button").value= "save";
     }
 	function searchById(arrayOfCourses, id)
 	{
