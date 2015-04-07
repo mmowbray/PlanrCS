@@ -24,9 +24,9 @@ namespace Planr.Controllers
         }
 
         [HttpGet]
-        public JsonResult AddCourse(Course course)
+        public JsonResult AddSection(Section newSection)
         {
-            return Json(DBInterfacer.AddCourse(course));
+            return Json(DBInterfacer.AddSection(newSection));
         }
 
         [HttpGet]
@@ -37,9 +37,9 @@ namespace Planr.Controllers
         }
 
         [HttpGet]
-        public JsonResult DeleteSection(int section)
+        public JsonResult DeleteSection(int sectionUniqueID)
         {
-            return Json(DBInterfacer.DeleteSection(section));
+            return Json(DBInterfacer.DeleteSection(sectionUniqueID));
         }
 	}
 }

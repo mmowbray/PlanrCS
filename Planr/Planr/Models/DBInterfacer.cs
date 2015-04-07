@@ -201,7 +201,7 @@ namespace Planr.Models
 
             DBPreviousState.Add(course);
 
-            WriteValuesToDB(DB_SECTIONS_PATH, DBPreviousState);
+            WriteValuesToDB(DB_COURSES_PATH, DBPreviousState);
             return 0; //0 = success
         }
 
@@ -224,6 +224,20 @@ namespace Planr.Models
 
             return 0; //0 = success
 
+        }
+
+        public static object AddSection(Section newSection)
+        {
+            List<Section> DBPreviousState = GetSections();
+            int sectionIndex = DBPreviousState.FindIndex(section => section.UniqueID == newSection.UniqueID);
+
+            if (sectionIndex != -1) //entry already in the DB
+                return 1; //1 = failure
+
+            DBPreviousState.Add(newSection);
+
+            WriteValuesToDB(DB_SECTIONS_PATH, DBPreviousState);
+            return 0; //0 = success
         }
     }
 
