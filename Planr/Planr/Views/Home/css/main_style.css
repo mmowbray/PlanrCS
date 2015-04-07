@@ -96,10 +96,12 @@ a.logo:hover {
   font-size: 1.4em;
   text-align: center;
   text-decoration: none;
+  color: #44609D;
 }
 .menu_button_top:hover, .menu_button_top:focus{
   text-decoration: none;
   border-bottom: 6px solid #FE3037;
+  color:#44609D
 }
 #icon-nav-user{
   color:#fff !important; 
@@ -117,7 +119,8 @@ a.logo:hover {
 }
 .user_profile:hover{
   color:#fff;
-  border-bottom: 6px solid #fff;
+  background-color: #d82d33;
+  /*border-bottom: 6px solid #fff;*/
 }
 
 .profile_icon{
@@ -132,11 +135,10 @@ transform: scale(1.1);
 }
 
 .user-pref{
+  padding-top: 5px;
+  background-color: #fe3037;
   height: 105px;
-  width: 105px;
-  position: absolute;
-  top:105px;
-  background: #FE3037;
+  position: relative;
 }
 
 #sidebar {
@@ -144,6 +146,7 @@ width: 104px;
 height: 100%;
 position: fixed;
 background: #fff;
+padding-top: 105px;
 -webkit-transition: all .3s ease-in-out;
 -moz-transition: all .3s ease-in-out;
 -o-transition: all .3s ease-in-out;
@@ -153,8 +156,28 @@ border: 0px solid #986464;
 -moz-box-shadow:9px 10px 7px -9px #888;
 box-shadow: 9px 10px 7px -9px #888;
 }
-.leftside-navigation, .right-stat-bar {
+.leftside-navigation{
 height: 100%;
+}
+
+#pref_list_ul{
+  list-style: none;
+  font-size: 1.8em;
+  color: white;
+}
+#pref-tile{
+  height: 105px;
+  background-color: #fe3036;
+  padding-top: 5px;
+}
+.pref_icon{
+  color:#fff;
+}
+.pref_icon:hover{
+  text-decoration: none;
+}
+.pref_icon_selected{
+  color: #43609c!important;
 }
 
 #main-content {
