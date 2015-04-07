@@ -258,6 +258,9 @@ width: 100%;
 	text-align: left;
 	font-size: 12px;
 	font-weight: bold;
+	display: inline;
+	padding: 0; 
+	
 	color: black;
 	display: inline;
 }
@@ -320,3 +323,18 @@ width: 100%;
 	border-color: #231f1d;
 }
 
+fieldset
+{
+padding-right: 10px; 
+}
+legend
+{
+font-size: 50px;
+color: #3399FF; 
+text-align: center;	
+}
+label { font-weight:bold; display: inline-block; height: 20px; text-align: left; padding-right:5px; }​
+.submit
+{
+text-align: center; 
+}
