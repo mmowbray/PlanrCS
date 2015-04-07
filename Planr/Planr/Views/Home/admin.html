@@ -74,27 +74,33 @@
 		<form name="myform" action="" onsubmit="" method="" id="add_section">
 			
 			<fieldset>
-					<legend>Add Section</legend>
-					<p><label>Course Name</label><input type="text"></input>
-					<label>Semester Offered</label><input type="radio" name="Semester" value="1">Fall</input>
-													<input type="radio" name="Semester" value="2">Winter</input>
-													<input type="radio" name="Semester" value="3">Fall/Winter</input>
-													<input type="radio" name="Semester" value="4">Summer1</input>
-													<input type="radio" name="Semester" value="5">Summer2</input>
-													<input type="radio" name="Semester" value="1">Online</input><br>
+					<legend id="title_field">Add Section</legend>
+					<p><label style="width:162.5px;">Course Name</label><input type="text"></input>
+					<label style="width:162px">Semester Offered</label>	
+													<input style="width:25px" type="radio" name="Semester" value="1">Fall</input>
+													<input style="width:25px" type="radio" name="Semester" value="2">Winter</input>
+													<input style="width:25px" type="radio" name="Semester" value="3">Fall/Winter</input>
+													<input style="width:25px" type="radio" name="Semester" value="4">Summer1</input>
+													<input style="width:25px" type="radio" name="Semester" value="5">Summer2</input>
+													<input style="width:25px" type="radio" name="Semester" value="1">Online</input><br>
 													</p>
-					<p><label>Lecture day 1</label><input></input>
-					<label>Lecture Day 2</label><input></input>
-					<label>Lecture Start time</label><input></input>
-					<label>Lecture end time</label><input></input></p>
-					<p><label>Tutorial day 1</label><input></input>
-					<label>Tutorial Day 2</label><input></input>
-					<label>Tutorial Start time</label><input></input>
-					<label>Tutorial end time</label><input></input></p>
-					<p><label>Lab day 1</label><input></input>
-					<label>Lab Day 2</label><input></input>
-					<label>Lab Start time</label><input></input>
-					<label>Lab end time</label><input></input></p>
+					<p><label>Lec</label>
+					<label>Day 1</label><input></input>
+					<label>Day 2</label><input></input>
+					<label>Start</label><input></input>
+					<label>End</label><input></input></p>
+					<p><label>Tut</label>
+					<label>Day 1</label><input></input>
+					<label>Day 2</label><input></input>
+					<label>Start</label><input></input>
+					<label>End</label><input></input></p>
+					<p><label>Lab</label>
+					<label>Day 1</label><input></input>
+					<label>Day 2</label><input></input>
+					<label>Start</label><input></input>
+					<label>End</label><input></input></p>
+					<div class="button_holder"> <input class="form_button" id="adding_button" type="submit" value="Add Section" />
+							<input class="form_button" id="cancel_button" type="submit" value="Cancel" /></div>
 					
 			</fieldset>
 		</form>	

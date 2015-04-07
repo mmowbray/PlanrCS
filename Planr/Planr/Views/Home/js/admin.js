@@ -48,7 +48,7 @@
 			courseHTMLString += '<tr><td> ' +cName+ '</td><td>' +lDay1+ '</td><td>' +lDay2+ '</td><td>' +startL+ '</td><td>' +endL+ '</td>';
 			courseHTMLString += '<td>' +tDay1+ '</td><td>' +tDay2+ '</td><td>' +startT+ '</td><td>' +endT+ '</td>';
 			courseHTMLString += '<td>' +labDay1+ '</td><td>' +labDay2+ '</td><td>' +startLab+ '</td><td>' +endLab+ '</td>';
-			courseHTMLString += '<td class="button_td"> <form><button class = "buttons" type="submit" name="editSection"> Edit Section </button></form> </td>';
+			courseHTMLString += '<td class="button_td"> <form><button onclick="editCourse()" class = "buttons" type="submit" name="editSection"> Edit Section </button></form> </td>';
 			courseHTMLString += '<td class="button_td"> <form><button class = "buttons" type="submit" name="delSection" > Delete Section</button></form></td></tr>';    
 			return courseHTMLString;       
 		};
@@ -79,4 +79,9 @@
           e.style.display = 'none';
        else
           e.style.display = 'block';
+    }
+    function editCourse()
+    {
+        document.getElementById("add_section").style.display='block'; 
+        document.getElementById("title_field").innerHTML = "Edit Section";
     }
