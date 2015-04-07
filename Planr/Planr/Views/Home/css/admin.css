@@ -235,8 +235,52 @@ width: 100%;
 
 /* Adding course form css */
 
-#add_sections {
-	  padding-top: 15px;
+
+#add_section {
+	margin-left: 20px;	
+}
+
+.form_label{
+	width: 10%;
+}
+
+.form_radio{
+	padding: 5px;
+}
+
+input.form_radio {
+  margin: 0 5px 0 5px;
+}
+
+#adding_button {
+	display: block;
+	margin: 2em auto;
+	width: 15%;
+	height: 50px;
+	font: 700 1.2em sans-serif;
+	background: #FF000A;
+	color: #fff;
+	border: 0;
+	border-bottom: 0.35em solid #CA0606;
+	border-radius: 3px;
+	outline: 0;
+	cursor: pointer;
+	-webkit-transition: all .3s;
+	transition: all .3s;
+}
+
+#adding_button:hover {
+	background: #A90C12;
+}
+
+#adding_button:active {
+  background: #E81820;
+  border-color: #E81820;
+}
+
+/*
+#add_section {
+	  padding-right: 5px;
 	  padding-left: 20px;
 	  padding-right: 20px;
 	  margin-bottom: 20px;
@@ -245,6 +289,7 @@ width: 100%;
 	  margin-left: 30%;
 	  background-color: #ccb7b7;
 }
+
 
 .form_field {
 	  position: relative;
@@ -265,7 +310,7 @@ width: 100%;
 	display: inline;
 }
 
-/*
+
 .field_input {
 	position: absolute;
 	display: block;
@@ -295,8 +340,6 @@ width: 100%;
 	margin-top: -1.875em;
 }
 
-*/
-
 #signin_btn {
 	display: block;
 	margin: 3em auto;
@@ -322,17 +365,19 @@ width: 100%;
 	background: #E81820;
 	border-color: #231f1d;
 }
+*/
 
 fieldset
 {
-padding-right: 10px; 
+	margin-right: 10px; 
 }
-legend
-{
-font-size: 50px;
-color: #3399FF; 
-text-align: center;	
+
+legend {
+  font-size: 35px;
+  color: #fe3037;
+  text-align: center;
 }
+
 label { font-weight:bold; display: inline-block; height: 20px; text-align: left; padding-right:5px; }​
 .submit
 {

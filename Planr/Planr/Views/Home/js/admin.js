@@ -44,11 +44,14 @@
            
         this.returnCourse = function()
         {
+			
+			var myButtonFunct = "toggle_visibility('edit_section')";
+			
 			var courseHTMLString = "";
 			courseHTMLString += '<tr><td> ' +cName+ '</td><td>' +lDay1+ '</td><td>' +lDay2+ '</td><td>' +startL+ '</td><td>' +endL+ '</td>';
 			courseHTMLString += '<td>' +tDay1+ '</td><td>' +tDay2+ '</td><td>' +startT+ '</td><td>' +endT+ '</td>';
 			courseHTMLString += '<td>' +labDay1+ '</td><td>' +labDay2+ '</td><td>' +startLab+ '</td><td>' +endLab+ '</td>';
-			courseHTMLString += '<td class="button_td"> <form><button class = "buttons" type="submit" name="editSection"> Edit Section </button></form> </td>';
+			courseHTMLString += '<td class="button_td"> <form><button class = "buttons" onclick=' +myButtonFunct+ ' type="submit" name="editSection"> Edit Section </button></form> </td>';
 			courseHTMLString += '<td class="button_td"> <form><button class = "buttons" type="submit" name="delSection" > Delete Section</button></form></td></tr>';    
 			return courseHTMLString;       
 		};
@@ -70,7 +73,6 @@
     var sectionArray = [course1, course2, course3, course4, course5, course6, course7, course8, course9]; 
     
     myTable.drawTable(sectionArray);
-
 
 
 	function toggle_visibility(id) {
