@@ -73,39 +73,10 @@
 
 
 
-	function addSectionToDb() {
-		
-		var myForm = '<div id= "add_sections"><form>';
-		myForm += '<div class="form_field"><label for="cName" class="form_field_label">Course Name</label>';
-        myForm += '<input class="form_field_label" name="cName" type="text" placeholder="Course name"  autocomplete="off" required/></div>';
-		myForm += '<div class="form_field"><label for="cAvailability" class="form_field_label">Course Availability</label>';
-		myForm += '<input class="form_field_label" name="cAvailability" type="text" placeholder="Course availability"  autocomplete="off" required/></div>';
-		myForm += '<div class="form_field"><label for="lDay1" class="form_field_label">Lecture Day 1</label>';
-		myForm += '<input class="form_field_label" name="lDay1" type="text" placeholder="Lecture Day 1"  autocomplete="off" required/></div>';
-		myForm += '<div class="form_field"><label for="lDay2" class="form_field_label">Lecture Day 2</label>';
-		myForm += '<input class="form_field_label" name="lDay2" type="text" placeholder="Lecture Day 2"  autocomplete="off" required/></div>';
-		myForm += '<div class="form_field"><label for="lstart" class="form_field_label">Lecture Start time</label>';
-        myForm += '<input class="form_field_label" name="lstart" type="text" placeholder="Lecture Start Time"  autocomplete="off" required/></div>';
-		myForm += '<div class="form_field"><label for="lend" class="form_field_label">Lecture End time</label>';
-		myForm += '<input class="form_field_label" name="lend" type="text" placeholder="Lecture End Time"  autocomplete="off" required/></div>';
-		myForm += '<div class="form_field"><label for="tDay1" class="form_field_label">Tutorial Day 1</label>';
-		myForm += '<input class="form_field_label" name="tDay1" type="text" placeholder="Tutorial Day 1"  autocomplete="off" required/></div>';
-		myForm += '<div class="form_field"><label for="tDay2" class="form_field_label">Tutorial Day 2</label>';
-		myForm += '<input class="form_field_label" name="tDay2" type="text" placeholder="Tutorial Day 2"  autocomplete="off" required/></div>';
-		myForm += '<div class="form_field"><label for="tstart" class="form_field_label">Tutorial Start time</label>';
-		myForm += '<input class="form_field_label" name="tstart" type="text" placeholder="Tutorial Start Time"  autocomplete="off" required/></div>';
-		myForm += '<div class="form_field"><label for="tend" class="form_field_label">Tutorial End time</label>';
-		myForm += '<input class="form_field_label" name="tend" type="text" placeholder="Tutorial End Time"  autocomplete="off" required/></div>';
-		myForm += '<div class="form_field"><label for="labDay1" class="form_field_label">Lab Day 1</label>';
-		myForm += '<input class="form_field_label" name="labDay1" type="text" placeholder="Lab Day 1"  autocomplete="off" required/></div>';
-		myForm += '<div class="form_field"><label for="labDay2" class="form_field_label">Lab Day 2</label>';
-		myForm += '<input class="form_field_label" name="labDay2" type="text" placeholder="Lab Day 2"  autocomplete="off" required/></div>';
-		myForm += '<div class="form_field"><label for="labstart" class="form_field_label">Lab Start time</label>';
-		myForm += '<input class="form_field_label" name="labstart" type="text" placeholder="Lab Start Time"  autocomplete="off" required/></div>';
-		myForm += '<div class="form_field"><label for="labend" class="form_field_label">Lab End time</label>';
-		myForm += '<input class="form_field_label" name="labend" type="text" placeholder="Lab End Time"  autocomplete="off" required/></div>';
-		myForm += '<div id="add_course_but"><input id="adding_button" type="submit" value="Add Section" /></div></form></div>';
-        
-			 document.getElementById('add_section').innerHTML = myForm;
-		
-	}
+	function toggle_visibility(id) {
+       var e = document.getElementById(id);
+       if(e.style.display == 'block')
+          e.style.display = 'none';
+       else
+          e.style.display = 'block';
+    }

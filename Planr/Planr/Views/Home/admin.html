@@ -40,7 +40,7 @@
 		
 		<!--add course button starts -->
 		<div id="add_button">
-			<a id="add_circle" href="#" onclick="addSectionToDb()" style="font-size:25px" > <i class="fa fa-plus-circle"></i></a>
+			<a id="add_circle" href="#" onclick="toggle_visibility('add_section')" style="font-size:25px";> <i class="fa fa-plus-circle"></i></a>
 			<p id="add_section_text"> Add section </p>
     	</div>
 
@@ -70,7 +70,35 @@
 <section class="wrapper">
 
 	
-        <div id = "add_section"></div>
+        <div id = "add_section" class="test" style="display: none">
+		<form name="myform" action="" onsubmit="" method="" id="add_section">
+			
+			<fieldset>
+					<legend>Add Section</legend>
+					<p><label>Course Name</label><input type="text"></input>
+					<label>Semester Offered</label><input type="radio" name="Semester" value="1">Fall</input>
+													<input type="radio" name="Semester" value="2">Winter</input>
+													<input type="radio" name="Semester" value="3">Fall/Winter</input>
+													<input type="radio" name="Semester" value="4">Summer1</input>
+													<input type="radio" name="Semester" value="5">Summer2</input>
+													<input type="radio" name="Semester" value="1">Online</input><br>
+													</p>
+					<p><label>Lecture day 1</label><input></input>
+					<label>Lecture Day 2</label><input></input>
+					<label>Lecture Start time</label><input></input>
+					<label>Lecture end time</label><input></input></p>
+					<p><label>Tutorial day 1</label><input></input>
+					<label>Tutorial Day 2</label><input></input>
+					<label>Tutorial Start time</label><input></input>
+					<label>Tutorial end time</label><input></input></p>
+					<p><label>Lab day 1</label><input></input>
+					<label>Lab Day 2</label><input></input>
+					<label>Lab Start time</label><input></input>
+					<label>Lab end time</label><input></input></p>
+					
+			</fieldset>
+		</form>	
+		</div>
 	
         <div id="table_content"> 
 			
