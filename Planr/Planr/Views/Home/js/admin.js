@@ -26,9 +26,9 @@
 
     }
         
-    function Course(cName,lDay1,lDay2,startL,endL,tDay1,tDay2,startT,endT,labDay1,labDay2,startLab,endLab)
+    function Course(sectionID,cName,lDay1,lDay2,startL,endL,tDay1,tDay2,startT,endT,labDay1,labDay2,startLab,endLab)
     {
-        this.courseName = cName;
+        this.cName = cName;
         this.lDay1 = lDay1;  
         this.lDay2 = lDay2;  
         this.startL = startL;  
@@ -40,7 +40,8 @@
         this.labDay1 = labDay1;  
         this.labDay2 = labDay2;  
         this.startLab = startLab;  
-        this.endLab = endLab;  
+        this.endLab = endLab; 
+		this.sectionID=sectionID; 		
            
         this.returnCourse = function()
         {
@@ -48,7 +49,7 @@
 			courseHTMLString += '<tr><td> ' +cName+ '</td><td>' +lDay1+ '</td><td>' +lDay2+ '</td><td>' +startL+ '</td><td>' +endL+ '</td>';
 			courseHTMLString += '<td>' +tDay1+ '</td><td>' +tDay2+ '</td><td>' +startT+ '</td><td>' +endT+ '</td>';
 			courseHTMLString += '<td>' +labDay1+ '</td><td>' +labDay2+ '</td><td>' +startLab+ '</td><td>' +endLab+ '</td>';
-			courseHTMLString += '<td class="button_td"> <form><button onclick="editCourse()" class = "buttons" type="submit" name="editSection"> Edit Section </button></form> </td>';
+			courseHTMLString += '<td class="button_td"> <form><button onclick="editCourse('+sectionID+')" class = "buttons" type="submit" name="editSection"> Edit Section </button></form> </td>';
 			courseHTMLString += '<td class="button_td"> <form><button class = "buttons" type="submit" name="delSection" > Delete Section</button></form></td></tr>';    
 			return courseHTMLString;       
 		};
@@ -57,15 +58,15 @@
 
     var myTable = new CourseTable();
     
-    var course1 = new Course("Course1", "Wednesday", "Wednesday", "8:45", "10:00", "Wednesday", "Wednesday", "8:45", "10:00", "Wednesday", "Wednesday",  "8:45", "10:00"); 
-    var course2 = new Course("Course2", "Monday", "Tuesday", "10:15", "11:30", "", "", "", "", "Wednesday", "", "12:00", "15:00"); 
-    var course3 = new Course("Course3", "Wednesday", "Friday", "10:15", "11:30", "", "", "", "", "Thursday", "", "12:00", "15:00"); 
-    var course4 = new Course("Course1", "Monday", "Tuesday", "8:45", "10:00", "Thursday", "", "8:45", "10:00", "", "", "", ""); 
-    var course5 = new Course("Course2", "Monday", "Tuesday", "10:15", "11:30", "", "", "", "", "Wednesday", "", "12:00", "15:00"); 
-    var course6 = new Course("Course3", "Wednesday", "Friday", "10:15", "11:30", "", "", "", "", "Thursday", "", "12:00", "15:00");
-    var course7 = new Course("Course1", "Monday", "Tuesday", "8:45", "10:00", "Thursday", "", "8:45", "10:00", "", "", "", ""); 
-    var course8 = new Course("Course2", "Monday", "Tuesday", "10:15", "11:30", "", "", "", "", "Wednesday", "", "12:00", "15:00"); 
-    var course9 = new Course("Course3", "Wednesday", "Friday", "10:15", "11:30", "", "", "", "", "Thursday", "", "12:00", "15:00");
+    var course1 = new Course(22,"Course1", "Wednesday", "Wednesday", "8:45", "10:00", "Wednesday", "Wednesday", "8:45", "10:00", "Wednesday", "Wednesday",  "8:45", "10:00"); 
+    var course2 = new Course(23,"Course2", "Monday", "Tuesday", "10:15", "11:30", "", "", "", "", "Wednesday", "", "12:00", "15:00"); 
+    var course3 = new Course(34,"Course3", "Wednesday", "Friday", "10:15", "11:30", "", "", "", "", "Thursday", "", "12:00", "15:00"); 
+    var course4 = new Course(36,"Course1", "Monday", "Tuesday", "8:45", "10:00", "Thursday", "", "8:45", "10:00", "", "", "", ""); 
+    var course5 = new Course(47,"Course2", "Monday", "Tuesday", "10:15", "11:30", "", "", "", "", "Wednesday", "", "12:00", "15:00"); 
+    var course6 = new Course(78,"Course3", "Wednesday", "Friday", "10:15", "11:30", "", "", "", "", "Thursday", "", "12:00", "15:00");
+    var course7 = new Course(89,"Course1", "Monday", "Tuesday", "8:45", "10:00", "Thursday", "", "8:45", "10:00", "", "", "", ""); 
+    var course8 = new Course(44,"Course2", "Monday", "Tuesday", "10:15", "11:30", "", "", "", "", "Wednesday", "", "12:00", "15:00"); 
+    var course9 = new Course(31,"Course3", "Wednesday", "Friday", "10:15", "11:30", "", "", "", "", "Thursday", "", "12:00", "15:00");
   
     var sectionArray = [course1, course2, course3, course4, course5, course6, course7, course8, course9]; 
     
@@ -80,8 +81,35 @@
        else
           e.style.display = 'block';
     }
-    function editCourse()
+    function editCourse(courseID)
     {
-        document.getElementById("add_section").style.display='block'; 
         document.getElementById("title_field").innerHTML = "Edit Section";
+		document.getElementById("add_section").style.display='block'; 
+		window.alert(courseID);
+		var course=searchById(sectionArray, courseID); 
+		window.alert(course.cName);
+		document.getElementById("cName").value= course.cName;
+		document.getElementById("lDay1").value= course.lDay1;
+		document.getElementById("lDay2").value= course.lDay2;
+		document.getElementById("startL").value= course.startL;
+		document.getElementById("endL").value= course.endL;
+		document.getElementById("tDay1").value= course.tDay1;
+		document.getElementById("tDay2").value= course.tDay2;
+		document.getElementById("startT").value= course.startT;
+		document.getElementById("endT").value= course.endT;
+		document.getElementById("labDay1").value= course.labDay1;
+		document.getElementById("labDay2").value= course.labDay2;
+		document.getElementById("startLab").value= course.startLab;
+		document.getElementById("endLab").value= course.endLab;
     }
+	function searchById(arrayOfCourses, id)
+	{
+		for(var i=0; i<arrayOfCourses.length; i++)
+		{
+			if(arrayOfCourses[i].sectionID==id)
+			{
+				return arrayOfCourses[i];
+			}
+		}
+	}
+	
