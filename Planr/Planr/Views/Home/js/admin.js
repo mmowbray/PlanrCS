@@ -51,7 +51,7 @@ function CourseTable ()
 			courseHTMLString += '<td>' +tDay1+ '</td><td>' +tDay2+ '</td><td>' +startT+ '</td><td>' +endT+ '</td>';
 			courseHTMLString += '<td>' +labDay1+ '</td><td>' +labDay2+ '</td><td>' +startLab+ '</td><td>' +endLab+ '</td>';
 			courseHTMLString += '<td class="button_td"> <button onclick="editCourse('+sectionID+')" class = "buttons" type="submit" name="editSection"> Edit Section </button></td>';
-			courseHTMLString += '<td class="button_td"> <button class = "buttons" type="submit" name="delSection" > Delete Section</button></td></tr>';    
+			courseHTMLString += '<td class="button_td"> <button onclick="deleteCourse('+sectionID+')" class = "buttons" type="submit" name="delSection" > Delete Section</button></td></tr>';    
 			return courseHTMLString;       
 		};
     }
@@ -155,4 +155,9 @@ function CourseTable ()
 			myTable.drawTable(sectionArray);
 			toggle_visibility("edit_section");
 			
+	}
+	function deleteCourse(courseID)
+	{
+		var course= searchById(sectionArray, courseID);  
+		window.alert("Are you sure you want to delete "+course.cName+"?"+course.sectionID);
 	}
