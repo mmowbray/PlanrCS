@@ -96,6 +96,7 @@ function CourseTable ()
 		document.getElementById("edit_section").style.display = 'block'; 
 		
 		var course = searchById(sectionArray, courseID); 
+		document.getElementById("courseID").value= courseID;
 		document.getElementById("editcName").value= course.cName;
 		document.getElementById("editlDay1").value= course.lDay1;
 		document.getElementById("editlDay2").value= course.lDay2;
@@ -110,9 +111,12 @@ function CourseTable ()
 		document.getElementById("editstartLab").value= course.startLab;
 		document.getElementById("editendLab").value= course.endLab;
 		document.getElementById(stringSemester[course.cAvailable-1]).checked=true;
-
+		
     }
-
+	function save(courseID)
+	{
+			
+	}
 	function searchById(arrayOfCourses, id)
 	{
 		for(var i=0; i<arrayOfCourses.length; i++)
