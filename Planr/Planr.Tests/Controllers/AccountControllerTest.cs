@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
 using System.Web.Mvc;
-using System.Web.UI.WebControls;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using Planr.Controllers;
@@ -131,29 +130,29 @@ namespace Planr.Tests.Controllers
             Assert.AreEqual(CoursesDB, DBInterfacer.GetCourses());
         }*/
 
-[TestMethod]
-public void StudentUserRedirectionTest()
-{
-var context = new Mock<ControllerContext>();
-var session = new MockHttpSession();
+        /*[TestMethod]
+        public void StudentUserRedirectionTest()
+        {
+        var context = new Mock<ControllerContext>();
+        var session = new MockHttpSession();
 
-context.Setup(m => m.HttpContext.Session).Returns(session);
+        context.Setup(m => m.HttpContext.Session).Returns(session);
 
-AccountController ac = new AccountController();
-ac.ControllerContext = context.Object;
+        AccountController ac = new AccountController();
+        ac.ControllerContext = context.Object;
 
-LoginViewModel loginModel = new LoginViewModel();
-loginModel.UserName = "UnitTestStudent";
-loginModel.Password = "uni73$t";
+        LoginViewModel loginModel = new LoginViewModel();
+        loginModel.UserName = "UnitTestStudent";
+        loginModel.Password = "uni73$t";
 
-ActionResult logoutResultingAction = ac.Login(loginModel);
+        ActionResult logoutResultingAction = ac.Login(loginModel);
 
-//ensure the user is redirected to the login page
-Assert.AreEqual(logoutResultingAction, RedirectToAction("Dashboard", "Student"));
-}
+        //ensure the user is redirected to the login page
+        Assert.AreEqual(logoutResultingAction, RedirectToAction("Dashboard", "Student"));
+        }*/
 
         //                        return RedirectToAction("Editor", "Admin"); //user is an admin
-                   // return RedirectToAction("Dashboard", "Student"); //user is not an admin
+                           // return RedirectToAction("Dashboard", "Student"); //user is not an admin
 
-    }
+        }
 }
