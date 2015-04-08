@@ -41,11 +41,5 @@ namespace Planr.Controllers
         {
             return Json(DBInterfacer.DeleteSection(sectionUniqueID), JsonRequestBehavior.AllowGet);
         }
-
-        [HttpGet]
-        public JsonResult TESTNUMBER()
-        {
-            return Json('1', JsonRequestBehavior.AllowGet);
-        }
     }
 }

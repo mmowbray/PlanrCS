@@ -12,6 +12,19 @@
 </address>
 
 <address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
+    <strong>Support:</strong> <a href="mailto:Support@example.com">Support@example.com</a><br/>
     <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
 </address>
+
+<input type="button" id="GetSectionsButton" value="alert the sections" />
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+<script>
+    
+    $("#GetSectionsButton").click(function () {
+        $.get("GetSections/", function (response) {
+            alert(response);
+        });
+    });
+</script>

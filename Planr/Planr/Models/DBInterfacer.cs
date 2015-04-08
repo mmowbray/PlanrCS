@@ -13,24 +13,9 @@ namespace Planr.Models
 {
     public static class DBInterfacer
     {
-        /*private static readonly String DB_USERS_PATH = System.Web.Hosting.HostingEnvironment.MapPath("~/App_Data/tbl_users.json");
+        private static readonly String DB_USERS_PATH = System.Web.Hosting.HostingEnvironment.MapPath("~/App_Data/tbl_users.json");
         private static readonly String DB_SECTIONS_PATH = System.Web.Hosting.HostingEnvironment.MapPath("~/App_Data/tbl_courses_sections.json");
-        private static readonly String DB_COURSES_PATH = System.Web.Hosting.HostingEnvironment.MapPath("~/App_Data/tbl_soen_courses.json");*/
-
-        private static String DB_USERS_PATH;
-        private static String DB_SECTIONS_PATH;
-        private static String DB_COURSES_PATH;
-
-        static DBInterfacer()
-        {
-            List<string> assemblyPath = new List<string>((new System.Uri(Assembly.GetExecutingAssembly().CodeBase)).AbsolutePath.Split('/'));
-            assemblyPath = assemblyPath.GetRange(0, assemblyPath.Count - 1);
-            string sda = String.Join("/", assemblyPath);
-
-            DB_USERS_PATH = String.Join("/", assemblyPath) + "/../App_Data/tbl_users.json";
-            DB_COURSES_PATH = String.Join("/", assemblyPath) + "/../App_Data/tbl_soen_courses.json";
-            DB_SECTIONS_PATH = String.Join("/", assemblyPath) + "/../App_Data/courses_sections.json";
-        }
+        private static readonly String DB_COURSES_PATH = System.Web.Hosting.HostingEnvironment.MapPath("~/App_Data/tbl_soen_courses.json");
 
         public static List<User> GetUsers()
         {
