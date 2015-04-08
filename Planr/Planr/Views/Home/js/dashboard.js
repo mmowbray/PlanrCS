@@ -73,23 +73,26 @@ Planr.controller('RecordCtrl', function($scope) {
 });
 
 //Create Preferences controller
-/*Planr.controller('PreferencesCtrl', function($scope) {
+//TODO: make as a service
+Planr.controller('PreferencesCtrl', function($scope) {
 	//instantiate new obj
-	var prefObj = new Preferences('jsonTest/getPreferencesTest.html', 'jsonTest/setPreferencesTest.html', 'someID');
+	var prefObj = new Preferences('jsonTest/getPreferencesTest.json', 'jsonTest/setPreferencesTest.html', 'someID');
 	//fetch from server $scope.$apply
 	prefObj.fetchPreferencesFromServer($scope.$apply);
 	//bind the object to the scope
 	$scope.pref = prefObj;
-});*/
+	$scope.count = 1;
+});
 
 //Create Schedules controller
-Planr.controller('SchedulesCtrl', function($scope) {
+//TODO make as service
+/*Planr.controller('SchedulesCtrl', function($scope) {
 	//instantiate new obj
 	var schedulesObj = new Schedules('jsonTest/schedulesTest.html', 'jsonTest/schedulesTest.html', 'someID');
 	//fetch from server $scope.$apply
 	//bind the object to the scope
-	$scope.pref = schedulesObj;
-});
+	$scope.schedules = schedulesObj;
+});*/
 
 
 
@@ -158,7 +161,7 @@ function Preferences(fetchUrl, saveUrl, preferencesDOMID){
 	
 	// private instance variables
 	// preferences object
-	var preferences = {'morning':false, 'night':false, 'dayOff':false};
+	var preferences = {'morning':'yo', 'night':false, 'dayOff':false};
 	
 	
 	// public instance variables
