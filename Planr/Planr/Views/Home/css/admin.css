@@ -147,7 +147,7 @@ width: 100%;
 #add_button
 {
 	  top: 30%;
-	  left: 90.5%;
+	  left: 89%;
 	  position: absolute;
 }
 
@@ -296,6 +296,14 @@ width: 100%;
 #form_content {
 	position: relative;
 	left: 45px;
+}
+
+#search {
+  margin-top: 10px;
+}
+
+#letmego {
+	margin-left: 94%;	
 }
 
 fieldset{
