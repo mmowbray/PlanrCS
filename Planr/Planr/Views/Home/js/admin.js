@@ -88,6 +88,7 @@ function CourseTable ()
 
     function editCourse(courseID)
     {
+		$('html,body').animate({scrollTop:0}, 'fast');
 		if (document.getElementById("add_section").style.display == 'block')
 			document.getElementById("add_section").style.display='none'; 
 		
