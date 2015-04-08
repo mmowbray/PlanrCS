@@ -20,13 +20,13 @@ namespace Planr.Controllers
         [HttpGet]
         public JsonResult GetSections()
         {
-            return Json(DBInterfacer.GetSections());
+            return Json(DBInterfacer.GetSections(), JsonRequestBehavior.AllowGet);
         }
 
         [HttpGet]
         public JsonResult AddSection(Section newSection)
         {
-            return Json(DBInterfacer.AddSection(newSection));
+            return Json(DBInterfacer.AddSection(newSection), JsonRequestBehavior.AllowGet);
         }
 
         [HttpGet]
@@ -39,7 +39,13 @@ namespace Planr.Controllers
         [HttpGet]
         public JsonResult DeleteSection(int sectionUniqueID)
         {
-            return Json(DBInterfacer.DeleteSection(sectionUniqueID));
+            return Json(DBInterfacer.DeleteSection(sectionUniqueID), JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpGet]
+        public JsonResult TESTNUMBER()
+        {
+            return Json('1', JsonRequestBehavior.AllowGet);
         }
     }
 }
