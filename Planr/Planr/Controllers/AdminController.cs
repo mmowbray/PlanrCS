@@ -41,5 +41,5 @@ namespace Planr.Controllers
         {
             return Json(DBInterfacer.DeleteSection(sectionUniqueID));
         }
-	}
+    }
 }

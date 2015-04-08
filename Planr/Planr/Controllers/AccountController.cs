@@ -25,7 +25,7 @@ namespace Planr.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
+        public async Task<ActionResult> Login(LoginViewModel model)
         {
             if (ModelState.IsValid)
             {

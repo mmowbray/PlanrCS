@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using System.Web.Mvc;
+using System.Web.UI.WebControls;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using Planr.Controllers;
@@ -60,28 +61,58 @@ namespace Planr.Tests.Controllers
 
         }
 
+        /*
         [TestMethod]
-        public void Logout()
+        public void LoginFailureErrorMsg()
         {
-
-            /*RedirectToRouteResult result = (RedirectToRouteResult) new AccountController().Logout();
-            Assert.AreEqual("Login", result.RouteValues["action"]);
-            Assert.AreEqual("Account", result.RouteValues["controller"]);*/
-
             var context = new Mock<ControllerContext>();
             var session = new MockHttpSession();
 
             context.Setup(m => m.HttpContext.Session).Returns(session);
 
             AccountController ac = new AccountController();
-
             ac.ControllerContext = context.Object;
 
-            ac.Logout();
+            LoginViewModel loginModel = new LoginViewModel();
+            loginModel.UserName = "UnitTestStudent";
+            loginModel.Password = "badPassword";
 
+            ac.Login(loginModel);
+
+            //ensure the user did not login successfully
             Assert.IsNull(ac.Session["user"]);
+            //ensure the error message was added to the login model
+            Assert.AreEqual(loginModel.ModelErrorSummary[0], "Invalid username or password");
+        }*/
 
-        }
+        /*
+        [TestMethod]
+        public void LogoutRedirectionTest()
+        {
+            var context = new Mock<ControllerContext>();
+            var session = new MockHttpSession();
+
+            context.Setup(m => m.HttpContext.Session).Returns(session);
+
+            AccountController ac = new AccountController();
+            ac.ControllerContext = context.Object;
+
+            LoginViewModel loginModel = new LoginViewModel();
+            loginModel.UserName = "UnitTestStudent";
+            loginModel.Password = "uni73$t";
+
+            ac.Login(loginModel);
+
+            //ensure the user logged in successfully
+            Assert.AreEqual(ac.Session["user"], loginModel.UserName);
+
+            ActionResult logoutResultingAction = ac.Logout();
+
+            //ensure the user is redirected to the login page
+            Assert.AreEqual(logoutResultingAction, RedirectToAction("Editor", "Admin"));
+            //ensure the user logged out successfully
+            Assert.IsNull(ac.Session["user"]);
+        }*/
 
         /*
         [TestMethod]
@@ -99,5 +130,30 @@ namespace Planr.Tests.Controllers
             Assert.AreEqual(SectionsDB, DBInterfacer.GetSections());
             Assert.AreEqual(CoursesDB, DBInterfacer.GetCourses());
         }*/
+
+[TestMethod]
+public void StudentUserRedirectionTest()
+{
+var context = new Mock<ControllerContext>();
+var session = new MockHttpSession();
+
+context.Setup(m => m.HttpContext.Session).Returns(session);
+
+AccountController ac = new AccountController();
+ac.ControllerContext = context.Object;
+
+LoginViewModel loginModel = new LoginViewModel();
+loginModel.UserName = "UnitTestStudent";
+loginModel.Password = "uni73$t";
+
+ActionResult logoutResultingAction = ac.Login(loginModel);
+
+//ensure the user is redirected to the login page
+Assert.AreEqual(logoutResultingAction, RedirectToAction("Dashboard", "Student"));
+}
+
+        //                        return RedirectToAction("Editor", "Admin"); //user is an admin
+                   // return RedirectToAction("Dashboard", "Student"); //user is not an admin
+
     }
 }
