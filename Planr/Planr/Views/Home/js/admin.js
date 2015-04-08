@@ -88,6 +88,7 @@ function CourseTable ()
 
     function editCourse(courseID)
     {
+		clearRadio();
 		$('html,body').animate({scrollTop:0}, 'fast');
 		if (document.getElementById("add_section").style.display == 'block')
 			document.getElementById("add_section").style.display='none'; 
@@ -120,6 +121,13 @@ function CourseTable ()
 			{
 				return arrayOfCourses[i];
 			}
+		}
+	}
+	function clearRadio()
+	{
+		for(var i=0; i<stringSemester.length; i++)
+		{
+		document.getElementById(stringSemester[i]).checked=false;
 		}
 	}
 	
