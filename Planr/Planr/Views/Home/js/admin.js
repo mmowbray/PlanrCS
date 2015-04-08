@@ -1,3 +1,4 @@
+var stringSemester = ["Fall", "Winter", "Fall/Winter", "Summer 1", "Summer 2"]; 
 function CourseTable ()
     {
       
@@ -40,12 +41,13 @@ function CourseTable ()
         this.labDay2 = labDay2;  
         this.startLab = startLab;  
         this.endLab = endLab; 
-		this.sectionID=sectionID; 		
-           
+		this.sectionID=sectionID; 
+		this.cAvailable=cAvailable;
+        var semester= stringSemester[cAvailable-1];   
         this.returnCourse = function()
         {
 			var courseHTMLString = "";
-			courseHTMLString += '<tr><td> ' +cName+ '</td><td>' +cAvailable+ '</td><td>' +lDay1+ '</td><td>' +lDay2+ '</td><td>' +startL+ '</td><td>' +endL+  '</td>';
+			courseHTMLString += '<tr><td> ' +cName+ '</td><td>' +semester+ '</td><td>' +lDay1+ '</td><td>' +lDay2+ '</td><td>' +startL+ '</td><td>' +endL+  '</td>';
 			courseHTMLString += '<td>' +tDay1+ '</td><td>' +tDay2+ '</td><td>' +startT+ '</td><td>' +endT+ '</td>';
 			courseHTMLString += '<td>' +labDay1+ '</td><td>' +labDay2+ '</td><td>' +startLab+ '</td><td>' +endLab+ '</td>';
 			courseHTMLString += '<td class="button_td"> <button onclick="editCourse('+sectionID+')" class = "buttons" type="submit" name="editSection"> Edit Section </button></td>';
@@ -57,15 +59,15 @@ function CourseTable ()
 
     var myTable = new CourseTable();
     
-    var course1 = new Course(22,"Course1", "Winter", "Wed", "Wed", "8:45", "10:00", "Wed", "Wed", "8:45", "10:00", "Wed", "Wed",  "8:45", "10:00"); 
-    var course2 = new Course(23,"Course2", "Fall", "Mon", "Tues", "10:15", "11:30", "", "", "", "", "Wed", "", "12:00", "15:00"); 
-    var course3 = new Course(34,"Course3", "Summer 1", "Wed", "Frid", "10:15", "11:30", "", "", "", "", "Thurs", "", "12:00", "15:00"); 
-    var course4 = new Course(36,"Course1", "Winter", "Mon", "Tues", "8:45", "10:00", "Thurs", "", "8:45", "10:00", "", "", "", ""); 
-    var course5 = new Course(47,"Course2", "Fall", "Mon", "Tues", "10:15", "11:30", "", "", "", "", "Wed", "", "12:00", "15:00"); 
-    var course6 = new Course(78,"Course3", "Winter", "Wed", "Frid", "10:15", "11:30", "", "", "", "", "Thurs", "", "12:00", "15:00");
-    var course7 = new Course(89,"Course1",  "Summer 2", "Mon", "Tues", "8:45", "10:00", "Thurs", "", "8:45", "10:00", "", "", "", ""); 
-    var course8 = new Course(44,"Course2", "Online", "Mon", "Tues", "10:15", "11:30", "", "", "", "", "Wed", "", "12:00", "15:00"); 
-    var course9 = new Course(31,"Course3", "Online", "Wed", "Frid", "10:15", "11:30", "", "", "", "", "Thurs", "", "12:00", "15:00");
+    var course1 = new Course(22,"Course1", 2, "Wed", "Wed", "8:45", "10:00", "Wed", "Wed", "8:45", "10:00", "Wed", "Wed",  "8:45", "10:00"); 
+    var course2 = new Course(23,"Course2", 4, "Mon", "Tues", "10:15", "11:30", "", "", "", "", "Wed", "", "12:00", "15:00"); 
+    var course3 = new Course(34,"Course3", 3, "Wed", "Frid", "10:15", "11:30", "", "", "", "", "Thurs", "", "12:00", "15:00"); 
+    var course4 = new Course(36,"Course1", 1, "Mon", "Tues", "8:45", "10:00", "Thurs", "", "8:45", "10:00", "", "", "", ""); 
+    var course5 = new Course(47,"Course2", 2, "Mon", "Tues", "10:15", "11:30", "", "", "", "", "Wed", "", "12:00", "15:00"); 
+    var course6 = new Course(78,"Course3", 5, "Wed", "Frid", "10:15", "11:30", "", "", "", "", "Thurs", "", "12:00", "15:00");
+    var course7 = new Course(89,"Course1", 3, "Mon", "Tues", "8:45", "10:00", "Thurs", "", "8:45", "10:00", "", "", "", ""); 
+    var course8 = new Course(44,"Course2", 1, "Mon", "Tues", "10:15", "11:30", "", "", "", "", "Wed", "", "12:00", "15:00"); 
+    var course9 = new Course(31,"Course3", 5, "Wed", "Frid", "10:15", "11:30", "", "", "", "", "Thurs", "", "12:00", "15:00");
   
     var sectionArray = [course1, course2, course3, course4, course5, course6, course7, course8, course9]; 
     
@@ -105,6 +107,8 @@ function CourseTable ()
 		document.getElementById("editlabDay2").value= course.labDay2;
 		document.getElementById("editstartLab").value= course.startLab;
 		document.getElementById("editendLab").value= course.endLab;
+		document.getElementById(stringSemester[course.cAvailable-1]).checked=true;
+
     }
 
 	function searchById(arrayOfCourses, id)
