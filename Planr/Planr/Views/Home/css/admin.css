@@ -293,6 +293,10 @@ width: 100%;
 }
 */
 
+#form_content {
+	position: relative;
+	left: 45px;
+}
 
 fieldset{
 	padding-right: 10px; 
@@ -301,7 +305,8 @@ fieldset{
 legend {
   font-size: 35px;
   color: #fe3037;
-  text-align: center;
+  /* text-align: center; */
+  padding-left: 530px;
 }
 
 label { font-weight:bold; display: inline-block; height: 20px; width:80px; text-align: center; padding-right:5px; }​
@@ -313,8 +318,9 @@ text-align: center;
 .button_holder
 {
 	display:block; 
-	margin:auto; 
-	text-align: center; 
+	margin-left: 445px;
+	/* margin:auto; 
+	text-align: center; */
 }
 
 

@@ -1,6 +1,4 @@
-
-
-    function CourseTable ()
+function CourseTable ()
     {
       
         var table = " "; 
@@ -24,12 +22,12 @@
             document.getElementById('course_table').innerHTML = table;
 		};
 
+
     }
         
-    function Course(cName, cAvailable, lDay1,lDay2, startL, endL,tDay1,tDay2,startT,endT,labDay1,labDay2,startLab,endLab)
+    function Course(sectionID,cName, cAvailable, lDay1,lDay2,startL,endL,tDay1,tDay2,startT,endT,labDay1,labDay2,startLab,endLab)
     {
-        this.courseName = cName;
-		this.courseAvailability = cAvailable;
+        this.cName = cName;
         this.lDay1 = lDay1;  
         this.lDay2 = lDay2;  
         this.startL = startL;  
@@ -41,17 +39,17 @@
         this.labDay1 = labDay1;  
         this.labDay2 = labDay2;  
         this.startLab = startLab;  
-        this.endLab = endLab;  
+        this.endLab = endLab; 
+		this.sectionID=sectionID; 		
            
         this.returnCourse = function()
         {
-			
 			var courseHTMLString = "";
-			courseHTMLString += '<tr><form><td> ' +cName+ '</td><td>' +cAvailable+ '</td><td>' +lDay1+ '</td><td>' +lDay2+ '</td><td>' +startL+ '</td><td>' +endL+ '</td>';
+			courseHTMLString += '<tr><td> ' +cName+ '</td><td>' +cAvailable+ '</td><td>' +lDay1+ '</td><td>' +lDay2+ '</td><td>' +startL+ '</td><td>' +endL+  '</td>';
 			courseHTMLString += '<td>' +tDay1+ '</td><td>' +tDay2+ '</td><td>' +startT+ '</td><td>' +endT+ '</td>';
 			courseHTMLString += '<td>' +labDay1+ '</td><td>' +labDay2+ '</td><td>' +startLab+ '</td><td>' +endLab+ '</td>';
-			courseHTMLString += '<td class="button_td"><button onclick="editCourse()" class = "buttons" name="editSection"> Edit Section </button> </td>';
-			courseHTMLString += '<td class="button_td"> <form><button class = "buttons" type="submit" name="delSection" > Delete Section</button></td></form></tr>';    
+			courseHTMLString += '<td class="button_td"> <button onclick="editCourse('+sectionID+')" class = "buttons" type="submit" name="editSection"> Edit Section </button></td>';
+			courseHTMLString += '<td class="button_td"> <button class = "buttons" type="submit" name="delSection" > Delete Section</button></td></tr>';    
 			return courseHTMLString;       
 		};
     }
@@ -59,38 +57,64 @@
 
     var myTable = new CourseTable();
     
-    var course1 = new Course("Course1", "Fall", "Wed", "Wed", "8:45", "10:00", "Wed", "Wed", "8:45", "10:00", "Wed", "Wed",  "8:45", "10:00"); 
-    var course2 = new Course("Course2", "Winter", "Mon", "Tues", "10:15", "11:30", "", "", "", "", "Wed", "", "12:00", "15:00"); 
-    var course3 = new Course("Course3", "Summer", "Wed", "Fri", "10:15", "11:30", "", "", "", "", "Thursd", "", "12:00", "15:00"); 
-    var course4 = new Course("Course1", "Fall", "Mon", "Tues", "8:45", "10:00", "Thursd", "", "8:45", "10:00", "", "", "", ""); 
-    var course5 = new Course("Course2", "Winter", "Mon", "Tues", "10:15", "11:30", "", "", "", "", "Wed", "", "12:00", "15:00"); 
-    var course6 = new Course("Course3", "Summer", "Wed", "Fri", "10:15", "11:30", "", "", "", "", "Thursd", "", "12:00", "15:00");
-    var course7 = new Course("Course1", "Fall", "Mon", "Tues", "8:45", "10:00", "Thursd", "", "8:45", "10:00", "", "", "", ""); 
-    var course8 = new Course("Course2", "Winter", "Mon", "Tues", "10:15", "11:30", "", "", "", "", "Wed", "", "12:00", "15:00"); 
-    var course9 = new Course("Course3", "Summer", "Wed", "Fri", "10:15", "11:30", "", "", "", "", "Thursd", "", "12:00", "15:00");
+    var course1 = new Course(22,"Course1", "Winter", "Wed", "Wed", "8:45", "10:00", "Wed", "Wed", "8:45", "10:00", "Wed", "Wed",  "8:45", "10:00"); 
+    var course2 = new Course(23,"Course2", "Fall", "Mon", "Tues", "10:15", "11:30", "", "", "", "", "Wed", "", "12:00", "15:00"); 
+    var course3 = new Course(34,"Course3", "Summer 1", "Wed", "Frid", "10:15", "11:30", "", "", "", "", "Thurs", "", "12:00", "15:00"); 
+    var course4 = new Course(36,"Course1", "Winter", "Mon", "Tues", "8:45", "10:00", "Thurs", "", "8:45", "10:00", "", "", "", ""); 
+    var course5 = new Course(47,"Course2", "Fall", "Mon", "Tues", "10:15", "11:30", "", "", "", "", "Wed", "", "12:00", "15:00"); 
+    var course6 = new Course(78,"Course3", "Winter", "Wed", "Frid", "10:15", "11:30", "", "", "", "", "Thurs", "", "12:00", "15:00");
+    var course7 = new Course(89,"Course1",  "Summer 2", "Mon", "Tues", "8:45", "10:00", "Thurs", "", "8:45", "10:00", "", "", "", ""); 
+    var course8 = new Course(44,"Course2", "Online", "Mon", "Tues", "10:15", "11:30", "", "", "", "", "Wed", "", "12:00", "15:00"); 
+    var course9 = new Course(31,"Course3", "Online", "Wed", "Frid", "10:15", "11:30", "", "", "", "", "Thurs", "", "12:00", "15:00");
   
     var sectionArray = [course1, course2, course3, course4, course5, course6, course7, course8, course9]; 
     
     myTable.drawTable(sectionArray);
 
 
+
 	function toggle_visibility(id) {
-       var e = document.getElementById(id);
-       
 		if (document.getElementById("edit_section").style.display == 'block')
 			document.getElementById("edit_section").style.display='none'; 
 		
-		if(e.style.display == 'block')
+       var e = document.getElementById(id);
+       if(e.style.display == 'block')
           e.style.display = 'none';
        else
           e.style.display = 'block';
     }
 
-    function editCourse()
+    function editCourse(courseID)
     {
 		if (document.getElementById("add_section").style.display == 'block')
 			document.getElementById("add_section").style.display='none'; 
 		
-        document.getElementById("edit_section").style.display='block'; 	
-
+		document.getElementById("edit_section").style.display = 'block'; 
+		
+		var course = searchById(sectionArray, courseID); 
+		document.getElementById("editcName").value= course.cName;
+		document.getElementById("editlDay1").value= course.lDay1;
+		document.getElementById("editlDay2").value= course.lDay2;
+		document.getElementById("editstartL").value= course.startL;
+		document.getElementById("editendL").value= course.endL;
+		document.getElementById("edittDay1").value= course.tDay1;
+		document.getElementById("edittDay2").value= course.tDay2;
+		document.getElementById("editstartT").value= course.startT;
+		document.getElementById("editendT").value= course.endT;
+		document.getElementById("editlabDay1").value= course.labDay1;
+		document.getElementById("editlabDay2").value= course.labDay2;
+		document.getElementById("editstartLab").value= course.startLab;
+		document.getElementById("editendLab").value= course.endLab;
     }
+
+	function searchById(arrayOfCourses, id)
+	{
+		for(var i=0; i<arrayOfCourses.length; i++)
+		{
+			if(arrayOfCourses[i].sectionID==id)
+			{
+				return arrayOfCourses[i];
+			}
+		}
+	}
+	
