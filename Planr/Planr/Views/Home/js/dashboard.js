@@ -54,7 +54,7 @@ var Planr = angular.module('Planr', []);
 Planr.controller('SequenceCtrl', function($scope) {
 	//instantiate new obj
 	//TODO: put the apply function
-	var sequenceObj = new Sequence('jsonTest/sequenceTest.html', 'someID', function(){console.log('prefs');});
+	var sequenceObj = new Sequence('jsonTest/sequenceTest.json', 'someID');
 	//fetch from server
 	sequenceObj.fetchSequenceFromServer($scope.$apply);
 	//bind the object to the scope
@@ -65,21 +65,30 @@ Planr.controller('SequenceCtrl', function($scope) {
 //Create Record controller
 Planr.controller('RecordCtrl', function($scope) {
 	//instantiate new obj
-	var recordObj = new StudentRecord('jsonTest/studentRecodTest.html', 'someID');
+	var recordObj = new StudentRecord('jsonTest/studentRecodTest.json', 'someID');
 	//fetch from server
-	recordObj.fetchRecordFromServer(function(){console.log('prefs');});
+	recordObj.fetchRecordFromServer($scope.$apply);
 	//bind the object to the scope
 	$scope.record = recordObj;
 });
 
 //Create Preferences controller
-Planr.controller('PreferencesCtrl', function($scope) {
+/*Planr.controller('PreferencesCtrl', function($scope) {
 	//instantiate new obj
 	var prefObj = new Preferences('jsonTest/getPreferencesTest.html', 'jsonTest/setPreferencesTest.html', 'someID');
 	//fetch from server $scope.$apply
 	prefObj.fetchPreferencesFromServer($scope.$apply);
 	//bind the object to the scope
 	$scope.pref = prefObj;
+});*/
+
+//Create Schedules controller
+Planr.controller('SchedulesCtrl', function($scope) {
+	//instantiate new obj
+	var schedulesObj = new Schedules('jsonTest/schedulesTest.html', 'jsonTest/schedulesTest.html', 'someID');
+	//fetch from server $scope.$apply
+	//bind the object to the scope
+	$scope.pref = schedulesObj;
 });
 
 
@@ -118,7 +127,7 @@ StudentRecord.prototype = {
 
 		var self = this.self;
 		$.get(this.recordUrl, function(data){
-			self.setRecord(JSON.parse(data));
+			self.setRecord(data);
 			callback();
 		
 		});
@@ -220,7 +229,7 @@ Preferences.prototype = {
 			var self = this.self;
 			//perform get request, format of returned data should be as follows: {"morning":true, "night":true, "dayOff":true}
 			this.jqxhr = $.get(this.fetchPreferencesURL, function(data) {
-				self.setPreferences(JSON.parse(data));
+				self.setPreferences(data);
 				self.fetching = false;
 				callback();
 			});
@@ -259,7 +268,7 @@ Preferences.prototype = {
 /////////////////////////////////
 //Sequence class
 ////////////////////////////////
-function Sequence(url, sequenceDOMID, ajaxCallback){
+function Sequence(url, sequenceDOMID){
 	//private instance variables
 	var sequence;
 	
@@ -270,9 +279,6 @@ function Sequence(url, sequenceDOMID, ajaxCallback){
 	this.sequenceUrl = url;
 	this.DOMID = sequenceDOMID;
 	this.self = this;
-	
-	//set ajax callback
-	this.callback = ajaxCallback;
 	
 	//accessor methods
 	this.getSequence = function(){
@@ -296,7 +302,7 @@ Sequence.prototype = {
 	//this method fetches the sequence data from the server
 	//and sets this instance variable, the server should
 	//return the sequence in json format
-	fetchSequenceFromServer:function(){
+	fetchSequenceFromServer:function(callback){
 		//if there is no other ajax call already fetching the sequence
 		if(!this.fetching){
 			this.fetching = true;
@@ -305,9 +311,9 @@ Sequence.prototype = {
 			
 			//fetch sequence using get, sequence shoulds be returned in json array format eg: ["course1","course2","course3","course4"]
 			self.jqxhr = $.get(this.sequenceUrl, function(data) {
-				self.setSequence(JSON.parse(data));
+				self.setSequence(data);
 				self.fetching = false;
-				self.callback();
+				callback();
 			});
 		}
 	},
@@ -384,7 +390,7 @@ function Schedule(coursesArray, scheduleSemester, scheduleYear){
 /////////////////////////////////
 // Schedules class
 /////////////////////////////////
-function Schedules(fetchUrl, saveUrl, preferencesOBJ, year, ajaxCallback, scheduleListDOMID){
+function Schedules(fetchUrl, saveUrl,/* preferencesOBJ,*/ scheduleListDOMID){
 	// Constants
 	var SUCCESS_STATUS_CODE = 1;
 	//public instance variables
@@ -395,12 +401,11 @@ function Schedules(fetchUrl, saveUrl, preferencesOBJ, year, ajaxCallback, schedu
 	this.jqxhr = null;
 	this.fetchSchedulesUrl = fetchUrl;
 	this.saveSchedulesUrl = saveUrl;
-	this.preferences = preferencesOBJ;
+	//this.preferences = preferencesOBJ;
 	this.callback = ajaxCallback;
 	this.winterSchedules = null;
 	this.fallSchedules = null;
 	this.summerSchedules = null;
-	this.year = year;
 	this.self = this;
 }
 
@@ -408,19 +413,19 @@ Schedules.prototype = {
 	constructor: Schedule,
 	
 	//fetch schedules from server
-	getSchedulesFromServer:function(){
+	getSchedulesFromServer:function(callback){
 		if(!this.fetching){
 			this.fetching = true;
 			
 			var self = this.self;
 			
 			//fetch using get, set ajax ovject
-			this.jqxhr = $.get(this.schedulesUrl + '?morning=' + this.preferences.getPreferences().morning + '&night=' + this.preferences.getPreferences().night + '&dayoff' + this.preferences.getPreferences().dayOff, function(data){
+			this.jqxhr = $.get(this.schedulesUrl /*+ '?morning=' + this.preferences.getPreferences().morning + '&night=' + this.preferences.getPreferences().night + '&dayoff' + this.preferences.getPreferences().dayOff*/, function(data){
 				//build the schedule options based on the received data
-				self.makeSchedules(JSON.parse(data));
+				self.makeSchedules(data);
 				self.fetching = false;
 				//run a callback setted by the constructor
-				self.callback();
+				callback();
 			});
 			
 		}
@@ -453,7 +458,7 @@ Schedules.prototype = {
 		
 	},
 	
-	saveSchedules:function(scheduleIDArray){
+	saveSchedules:function(scheduleIDArray, callback){
 		if (!this.fetching) { //if no current preference ajax goin on then fetch
 			this.fetching = true; //set fetch flag to true
 			var self = this.self;
@@ -467,6 +472,7 @@ Schedules.prototype = {
 				
 				//TODO, what to do if it worked.
 				self.fetching = false;
+				callback();
 			});
 		}
 	},
