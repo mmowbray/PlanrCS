@@ -101,15 +101,7 @@ var stringSemester = ["Fall", "Winter", "Fall/Winter", "Summer 1", "Summer 2"];
 			var idSection=document.getElementById("courseID").value;
 			window.alert(idSection); 
 			var section = searchById(sectionArray, idSection); 
-			var index = sectionArray.indexOf(section);
-			window.alert(index);
-			sectionArray[index].lDay1= document.getElementById("editlDay1").value;
-			window.alert(sectionArray[index].lDay1);
-			var table = document.getElementById("course_table"); 
-			if(table) {table.parentNode.removeChild(table); }
-			myTable.drawTable(sectionArray);
-			toggle_visibility("edit_section");
-			
+			window.reload(); 
 		}
 		function deleteCourse(courseID)
 		{
