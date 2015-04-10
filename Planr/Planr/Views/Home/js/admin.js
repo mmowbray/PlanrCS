@@ -23,7 +23,7 @@ var stringSemester = ["Fall", "Winter", "Fall/Winter", "Summer 1", "Summer 2"];
 		function returnCourse(course)
         {
 			var courseHTMLString = "";
-			courseHTMLString += '<tr><td> ' +course.CourseID+ '</td><td>' +course.Availability+ '</td><td>' +course.Day1+ '</td><td>' +course.Day2+ '</td><td>' +course.StartTime+ '</td><td>' +course.EndTime+  '</td>';
+			courseHTMLString += '<tr><td> ' +course.Course+ '</td><td>' +course.Availability+ '</td><td>' +course.Day1+ '</td><td>' +course.Day2+ '</td><td>' +course.StartTime+ '</td><td>' +course.EndTime+  '</td>';
 			courseHTMLString += '<td>' +course.TutorialDay1+ '</td><td>' +course.TutorialDay2+ '</td><td>' +course.TutorialStartTime+ '</td><td>' +course.TutorialEndTime+ '</td>';
 			courseHTMLString += '<td>' +course.LabDay+ '</td><td>' +course.LabStartTime+ '</td><td>' +course.LabEndTime+ '</td>';
 			courseHTMLString += '<td class="button_td"> <button onclick="editCourse('+course.UniqueID+')" class = "buttons" type="submit" name="editSection"> Edit </button></td>';
@@ -60,8 +60,8 @@ var stringSemester = ["Fall", "Winter", "Fall/Winter", "Summer 1", "Summer 2"];
 		document.getElementById("edit_section").style.display = 'block'; 
 		
 		var course = searchById(sectionArray, key); 
-		document.getElementById("courseID").value= key;
-		document.getElementById("editcName").value= course.CourseID;
+		document.getElementById("Course").value= key;
+		document.getElementById("editcName").value= course.Course;
 		document.getElementById("editlDay1").value= course.Day1;
 		document.getElementById("editlDay2").value= course.Day2;
 		document.getElementById("editstartL").value= course.StartTime;
@@ -99,7 +99,7 @@ var stringSemester = ["Fall", "Winter", "Fall/Winter", "Summer 1", "Summer 2"];
 	// TODO: change save to editSave, addSave.
 		function save()
 		{
-			var idSection=document.getElementById("courseID").value;
+			var idSection=document.getElementById("Course").value;
 			window.alert(idSection); 
 			var section = searchById(sectionArray, idSection); 
 			window.reload(); 
@@ -132,7 +132,7 @@ var stringSemester = ["Fall", "Winter", "Fall/Winter", "Summer 1", "Summer 2"];
 		var courseName=[]; 
 		for(var i=0; i<sectionArray.length;i++)
 		{
-			courseName.push(sectionArray[i].CourseID); 
+			courseName.push(sectionArray[i].Course); 
 		}
 		courseName=eliminateDuplicates(courseName);
 		
@@ -162,10 +162,10 @@ var stringSemester = ["Fall", "Winter", "Fall/Winter", "Summer 1", "Summer 2"];
 			}
 			return out;
 		}
-		function deleteCourse(courseID)
+		function deleteCourse(Course)
 		{
-		var course= searchById(sectionArray, courseID);  
-		window.alert("Are you sure you want to delete "+course.CourseID+"?"+course.UniqueID);
+		var course= searchById(sectionArray, Course);  
+		window.alert("Are you sure you want to delete "+course.Course+"?"+course.UniqueID);
 		}
 		function addCourse(course)
 		{
