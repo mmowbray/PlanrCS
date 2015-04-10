@@ -11,6 +11,11 @@ $(".field_input").focusout(function(){
 
 
 jQuery(document).ready(function($){  
+	
+	
+$('[data-toggle="tooltip"]').tooltip()
+	
+	
 $("#un").focusin(function(){
 	$($(".field_label")[0]).css("display", "block");
 });
@@ -28,7 +33,13 @@ $("#pass").focusout(function(){
 		}
 	});
 
+<<<<<<< HEAD
 $("#day_time").click(function(){$("#day_time").toggleClass( "pref_icon_selected");});
 $("#night_time").click(function(){$("#night_time").toggleClass( "pref_icon_selected");});
 $("#day_off").click(function(){$("#day_off").toggleClass( "pref_icon_selected");});
+=======
+/*$("#day_time").click(function(){$("#day_time").toggleClass( "pref_icon_selected");});
+$("#night_time").click(function(){$("#night_time").toggleClass( "pref_icon_selected");});
+$("#day_off").click(function(){$("#day_off").toggleClass( "pref_icon_selected");});*/
+>>>>>>> 77332e4421e9e709959281974d53765b0b69adcf
 });
