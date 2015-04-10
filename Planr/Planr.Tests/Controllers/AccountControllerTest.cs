@@ -26,6 +26,7 @@ namespace Planr.Tests.Controllers
             Assert.IsNotNull(result);
         }
 
+        /*
         [TestMethod]
         public void SuccessfulLogin()
         {
@@ -52,13 +53,7 @@ namespace Planr.Tests.Controllers
 
             Assert.AreEqual(ac.Session["user"], "UnitTestStudent");
 
-        }
-
-        [TestMethod]
-        public void UnsuccessfulLogin()
-        {
-
-        }
+        }*/
 
         /*
         [TestMethod]

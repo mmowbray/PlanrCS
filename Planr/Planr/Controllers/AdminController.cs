@@ -27,6 +27,7 @@ namespace Planr.Controllers
         public JsonResult AddSection(Section newSection)
         {
             return Json(DBInterfacer.AddSection(newSection), JsonRequestBehavior.AllowGet);
+            //TODO: generate new random id
         }
 
         [HttpGet]

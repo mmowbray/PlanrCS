@@ -4,6 +4,7 @@ namespace Planr.Models
 {
     public class Section
     {
+        public String Course { get; set; } //not ideal, but this is the course that the section belongs to
         public int UniqueID { get; set; }
         public int CourseID { get; set; }
         public int Availability { get; set; }

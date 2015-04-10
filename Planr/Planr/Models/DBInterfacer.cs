@@ -40,8 +40,6 @@ namespace Planr.Models
             List<Course> returnList = JsonConvert.DeserializeObject<List<Course>>(sr.ReadToEnd());
             sr.Close();
 
-            WriteValuesToDB(DB_COURSES_PATH, returnList);
-
             return returnList;
         }
 
@@ -211,7 +209,7 @@ namespace Planr.Models
 
         }
 
-        public static object AddSection(Section newSection)
+        public static int AddSection(Section newSection)
         {
             List<Section> DBPreviousState = GetSections();
             int sectionIndex = DBPreviousState.FindIndex(section => section.UniqueID == newSection.UniqueID);

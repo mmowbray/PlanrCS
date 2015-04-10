@@ -24,6 +24,7 @@ namespace Planr.Controllers
         public JsonResult GetSequence() //receives AJAX call from front-end and returns a JSON array
         {
             Sequence sequence = DBInterfacer.GetSequence(Session["username"].ToString());
+
             return Json(sequence, JsonRequestBehavior.AllowGet);
         }
 
