@@ -4,11 +4,11 @@ var stringSemester = ["Fall", "Winter", "Fall/Winter", "Summer 1", "Summer 2"];
         function drawTable(section)
 		{ 
 			var table=""; 	
-    		table +='<tbody><thead><tr><td rowspan ="3"> Course Name </td><td colspan = "12"> Section </td><td rowspan ="3"> Edit </td>';
+    		table +='<thead><tr><td rowspan ="3"> Course Name </td><td colspan = "12"> Section </td><td rowspan ="3"> Edit </td>';
             table += '<td rowspan ="3"> Delete </td></tr><tr><td rowspan ="2">Semester Offered</td><td colspan = "4"> Lecture </td><td colspan = "4"> Tutorial </td>';
             table += '<td colspan = "3"> Lab </td><tr><td> Day 1 </td><td> Day 2 </td><td> Start </td>';
             table += '<td> End </td><td> Day 1 </td><td> Day 2 </td><td> Start </td><td> End </td><td> Day 1 </td>';
-            table += '<td> Start </td><td> End </td></tr></tr></thead>';
+            table += '<td> Start </td><td> End </td></tr></tr></thead><tbody>';
 			
 			for (var i=0; i < section.length; i++)
 			{ 
@@ -26,13 +26,14 @@ var stringSemester = ["Fall", "Winter", "Fall/Winter", "Summer 1", "Summer 2"];
 			courseHTMLString += '<tr><td> ' +course.CourseID+ '</td><td>' +course.Availability+ '</td><td>' +course.Day1+ '</td><td>' +course.Day2+ '</td><td>' +course.StartTime+ '</td><td>' +course.EndTime+  '</td>';
 			courseHTMLString += '<td>' +course.TutorialDay1+ '</td><td>' +course.TutorialDay2+ '</td><td>' +course.TutorialStartTime+ '</td><td>' +course.TutorialEndTime+ '</td>';
 			courseHTMLString += '<td>' +course.LabDay+ '</td><td>' +course.LabStartTime+ '</td><td>' +course.LabEndTime+ '</td>';
-			courseHTMLString += '<td class="button_td"> <button onclick="editCourse('+course.UniqueID+')" class = "buttons" type="submit" name="editSection"> Edit Section </button></td>';
-			courseHTMLString += '<td class="button_td"> <button onclick="deleteCourse('+course.UniqueID+')" class = "buttons" type="submit" name="delSection" > Delete Section</button></td></tr>';    
+			courseHTMLString += '<td class="button_td"> <button onclick="editCourse('+course.UniqueID+')" class = "buttons" type="submit" name="editSection"> Edit </button></td>';
+			courseHTMLString += '<td class="button_td"> <button onclick="deleteCourse('+course.UniqueID+')" class = "buttons" type="submit" name="delSection" > Delete</button></td></tr>';    
 			return courseHTMLString;       
 		}
 	var sectionArray=[]; 
 	$(document).ready(function() {
 		$.get("http://planr.me/Admin/GetSections/",function(response){
+		
 		drawTable(response);
 		sectionArray=response; 
 		});
@@ -95,7 +96,7 @@ var stringSemester = ["Fall", "Winter", "Fall/Winter", "Summer 1", "Summer 2"];
 		}
 	}
 
-	
+	// TODO: change save to editSave, addSave.
 		function save()
 		{
 			var idSection=document.getElementById("courseID").value;
@@ -103,17 +104,74 @@ var stringSemester = ["Fall", "Winter", "Fall/Winter", "Summer 1", "Summer 2"];
 			var section = searchById(sectionArray, idSection); 
 			window.reload(); 
 		}
+		
+		
+		
+		$("#search").gridSearch({
+            primaryAction: "search",
+            scrollDuration: 0,
+            searchBarAtBottom: false,
+            customScrollHeight: -35,
+            visible: {
+                before: true,
+                next: true,
+                filter: true,
+                unfilter: true
+            },
+            textVisible: {
+                before: true,
+                next: true,
+                filter: true,
+                unfilter: true
+            },
+            minCount: 2
+        });
+		
+		function courseOption () {
+		var courseOptionContent = '<label style="width:162.5px;" id="select_option">Course Name</label> <select name="courses"> ';
+		var courseName=[]; 
+		for(var i=0; i<sectionArray.length;i++)
+		{
+			courseName.push(sectionArray[i].CourseID); 
+		}
+		courseName=eliminateDuplicates(courseName);
+		
+		for (var i=0; i < courseName.length; i++)
+		{
+			courseOptionContent += '<option value=" ' + courseName[i] + ' "> ' +courseName[i]+ ' </option>';
+			
+		}
+		
+		courseOptionContent += '</select>';
+		
+		document.getElementById("select_option").innerHTML = courseOptionContent;
+		}
+		
+		
+		function eliminateDuplicates(arr) {
+			var i,
+			len=arr.length,
+			out=[],
+			obj={};
+
+			for (i=0;i<len;i++) {
+			obj[arr[i]]=0;
+			}
+			for (i in obj) {
+			out.push(i);
+			}
+			return out;
+		}
 		function deleteCourse(courseID)
 		{
 		var course= searchById(sectionArray, courseID);  
 		window.alert("Are you sure you want to delete "+course.CourseID+"?"+course.UniqueID);
 		}
+		function addCourse(course)
+		{
 		
-		var $rows = $('#course_table tr');
-		$('#search').keyup(function() {
-		var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
-		$rows.show().filter(function() {
-        var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
-        return !~text.indexOf(val);
-		}).hide();
-		});
+		}
+		function validateInputAdd()
+		{
+			
+		}

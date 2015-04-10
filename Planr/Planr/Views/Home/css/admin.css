@@ -147,7 +147,7 @@ width: 100%;
 #add_button
 {
 	  top: 30%;
-	  left: 90.5%;
+	  left: 89%;
 	  position: absolute;
 }
 
@@ -259,43 +259,25 @@ width: 100%;
 	font-weight: bold;
 	display: inline;
 	padding: 0; 
-	
 	color: black;
-	display: inline;
+
 }
 
-/*
-.field_input {
-	position: absolute;
-	display: block;
-	box-sizing: border-box;
-	font-size: 1em;
-	line-height: 1.25em;
-	padding: 0.3125em 0;
-	height: 1.875em;
-	width: 100%;
-	border: 0;
-	outline: none;
-	color: black;
-	border-bottom: 0.125em solid black;
-	background-color: transparent;
+.readonly {
+	background-color: #FF000A ;
 }
-.field_input:valid {
-	position: relative;
-	top: 1.875em;
-	margin-top: -1.875em;
-}
-.field_input:focus {
-	border-bottom-color: darkred;
-	position: relative;
-	top: 1.875em;
-	margin-top: -1.875em;
-}
-*/
 
 #form_content {
 	position: relative;
 	left: 45px;
+}
+
+#search {
+  margin-top: 10px;
+}
+
+#letmego {
+	margin-left: 94%;	
 }
 
 fieldset{
@@ -309,7 +291,7 @@ legend {
   padding-left: 530px;
 }
 
-label { font-weight:bold; display: inline-block; height: 20px; width:80px; text-align: center; padding-right:5px; }​
+label { font-weight:bold; display: inline-block; height: 20px; width:80px; text-align: center; padding-right:5px; }
 
 .submit {
 text-align: center; 
