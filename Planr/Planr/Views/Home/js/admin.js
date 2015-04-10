@@ -60,7 +60,7 @@ var stringSemester = ["Fall", "Winter", "Fall/Winter", "Summer 1", "Summer 2"];
 		document.getElementById("edit_section").style.display = 'block'; 
 		
 		var course = searchById(sectionArray, key); 
-		document.getElementById("Course").value= key;
+		document.getElementById("courseID").value= key;
 		document.getElementById("editcName").value= course.Course;
 		document.getElementById("editlDay1").value= course.Day1;
 		document.getElementById("editlDay2").value= course.Day2;
@@ -107,25 +107,6 @@ var stringSemester = ["Fall", "Winter", "Fall/Winter", "Summer 1", "Summer 2"];
 		
 		
 		
-		$("#search").gridSearch({
-            primaryAction: "search",
-            scrollDuration: 0,
-            searchBarAtBottom: false,
-            customScrollHeight: -35,
-            visible: {
-                before: true,
-                next: true,
-                filter: true,
-                unfilter: true
-            },
-            textVisible: {
-                before: true,
-                next: true,
-                filter: true,
-                unfilter: true
-            },
-            minCount: 2
-        });
 		
 		function courseOption () {
 		var courseOptionContent = '<label style="width:162.5px;" id="select_option">Course Name</label> <select name="courses"> ';
