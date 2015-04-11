@@ -27,27 +27,27 @@ namespace Planr.Models
 
         public DateTime GetEndTime()
         {
-            return DateTime.Parse(StartTime);
+            return DateTime.Parse(EndTime);
         }
 
         public DateTime GetTutorialStartTime()
         {
-            return DateTime.Parse(StartTime);
+            return DateTime.Parse(TutorialStartTime);
         }
 
         public DateTime GetTutorialEndTime()
         {
-            return DateTime.Parse(StartTime);
+            return DateTime.Parse(TutorialEndTime);
         }
 
         public DateTime GetLabStartTime()
         {
-            return DateTime.Parse(StartTime);
+            return DateTime.Parse(LabStartTime);
         }
 
         public DateTime GetLabEndTime()
         {
-            return DateTime.Parse(StartTime);
+            return DateTime.Parse(LabEndTime);
         }
     }
 }

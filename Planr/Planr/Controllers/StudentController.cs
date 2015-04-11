@@ -27,6 +27,9 @@ namespace Planr.Controllers
         {
             Sequence sequence = DBInterfacer.GetSequence((Session["username"] ?? TEST_STUDENT_USER).ToString());
 
+            //remoive
+            DBInterfacer.ChangeDateTimeFormatForSections();
+            //
             return Json(sequence, JsonRequestBehavior.AllowGet);
         }
 

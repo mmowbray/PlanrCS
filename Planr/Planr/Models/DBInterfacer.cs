@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using Microsoft.Owin.Security;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
@@ -225,6 +226,27 @@ namespace Planr.Models
             WriteValuesToDB(DB_SECTIONS_PATH, DBPreviousState);
             return 0;
         }
+
+        public static void ChangeDateTimeFormatForSections()
+        {
+
+            List<Section> DBPreviousState = GetSections();
+
+            foreach (var section in DBPreviousState)
+            {
+                section.StartTime = section.GetStartTime().ToString("HH:mm");
+                section.EndTime = section.GetEndTime().ToString("HH:mm");
+                section.LabStartTime = section.GetLabStartTime().ToString("HH:mm");
+                section.LabEndTime = section.GetLabEndTime().ToString("HH:mm");
+                section.TutorialStartTime = section.GetTutorialStartTime().ToString("HH:mm");
+                section.TutorialEndTime = section.GetTutorialEndTime().ToString("HH:mm");
+            }
+
+            WriteValuesToDB(DB_SECTIONS_PATH, DBPreviousState);
+
+            //Console.WriteLine("Today is " + thisDate1.ToString("MMMM dd, yyyy") + ".");
+        }
+
     }
 
     // UserItemConverter Class
