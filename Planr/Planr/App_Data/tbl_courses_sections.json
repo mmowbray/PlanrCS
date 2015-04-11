@@ -1,6 +1,6 @@
 [
   {
-  	"Course": "ELEC 275",
+    "Course": "ELEC 275",
     "UniqueID": 270,
     "CourseID": 66,
     "Availability": 6,
@@ -17,7 +17,7 @@
     "LabEndTime": "11:30:00"
   },
   {
-  	"Course": "ELEC 275",
+    "Course": "ELEC 275",
     "UniqueID": 271,
     "CourseID": 66,
     "Availability": 6,
@@ -34,7 +34,7 @@
     "LabEndTime": "15:15:00"
   },
   {
-  	"Course": "ELEC 275",
+    "Course": "ELEC 275",
     "UniqueID": 272,
     "CourseID": 66,
     "Availability": 6,
@@ -51,7 +51,7 @@
     "LabEndTime": "11:30:00"
   },
   {
-  	"Course": "ELEC 275",
+    "Course": "ELEC 275",
     "UniqueID": 273,
     "CourseID": 66,
     "Availability": 6,
@@ -68,7 +68,7 @@
     "LabEndTime": "11:30:00"
   },
   {
-  	"Course": "ELEC 275",
+    "Course": "ELEC 275",
     "UniqueID": 274,
     "CourseID": 66,
     "Availability": 2,
@@ -85,7 +85,7 @@
     "LabEndTime": "14:30:00"
   },
   {
-  	"Course": "ELEC 275",
+    "Course": "ELEC 275",
     "UniqueID": 275,
     "CourseID": 66,
     "Availability": 2,
@@ -102,7 +102,7 @@
     "LabEndTime": "14:30:00"
   },
   {
-  	"Course": "ELEC 275",
+    "Course": "ELEC 275",
     "UniqueID": 276,
     "CourseID": 66,
     "Availability": 2,
@@ -119,7 +119,7 @@
     "LabEndTime": "11:30:00"
   },
   {
-  	"Course": "ELEC 275",
+    "Course": "ELEC 275",
     "UniqueID": 277,
     "CourseID": 66,
     "Availability": 2,
@@ -136,7 +136,7 @@
     "LabEndTime": "11:30:00"
   },
   {
-  	"Course": "ELEC 275",
+    "Course": "ELEC 275",
     "UniqueID": 278,
     "CourseID": 66,
     "Availability": 2,
@@ -153,7 +153,7 @@
     "LabEndTime": "17:30:00"
   },
   {
-  	"Course": "ELEC 275",
+    "Course": "ELEC 275",
     "UniqueID": 279,
     "CourseID": 66,
     "Availability": 2,
@@ -170,7 +170,7 @@
     "LabEndTime": "16:25:00"
   },
   {
-  	"Course": "ELEC 275",
+    "Course": "ELEC 275",
     "UniqueID": 280,
     "CourseID": 66,
     "Availability": 2,
@@ -187,7 +187,7 @@
     "LabEndTime": "11:30:00"
   },
   {
-  	"Course": "ELEC 275",
+    "Course": "ELEC 275",
     "UniqueID": 281,
     "CourseID": 66,
     "Availability": 3,
@@ -204,7 +204,7 @@
     "LabEndTime": "11:30:00"
   },
   {
-  	"Course": "ELEC 275",
+    "Course": "ELEC 275",
     "UniqueID": 282,
     "CourseID": 66,
     "Availability": 3,
@@ -221,7 +221,7 @@
     "LabEndTime": "20:30:00"
   },
   {
-  	"Course": "ELEC 275",
+    "Course": "ELEC 275",
     "UniqueID": 283,
     "CourseID": 66,
     "Availability": 3,
@@ -238,7 +238,7 @@
     "LabEndTime": "20:30:00"
   },
   {
-  	"Course": "ELEC 275",
+    "Course": "ELEC 275",
     "UniqueID": 284,
     "CourseID": 66,
     "Availability": 3,
@@ -255,7 +255,7 @@
     "LabEndTime": "11:30:00"
   },
   {
-  	"Course": "ELEC 275",
+    "Course": "ELEC 275",
     "UniqueID": 285,
     "CourseID": 66,
     "Availability": 3,
@@ -272,7 +272,7 @@
     "LabEndTime": "20:30:00"
   },
   {
-  	"Course": "ENCS 282",
+    "Course": "ENCS 282",
     "UniqueID": 286,
     "CourseID": 67,
     "Availability": 4,
@@ -289,7 +289,7 @@
     "LabEndTime": "00:00:00"
   },
   {
-  	"Course": "ENCS 282",
+    "Course": "ENCS 282",
     "UniqueID": 287,
     "CourseID": 67,
     "Availability": 4,
@@ -306,7 +306,7 @@
     "LabEndTime": "00:00:00"
   },
   {
-  	"Course": "ENCS 282",
+    "Course": "ENCS 282",
     "UniqueID": 288,
     "CourseID": 67,
     "Availability": 4,
@@ -323,7 +323,7 @@
     "LabEndTime": "00:00:00"
   },
   {
-  	"Course": "ENCS 282",
+    "Course": "ENCS 282",
     "UniqueID": 289,
     "CourseID": 67,
     "Availability": 4,
@@ -340,7 +340,7 @@
     "LabEndTime": "00:00:00"
   },
   {
-  	"Course": "ENCS 282",
+    "Course": "ENCS 282",
     "UniqueID": 290,
     "CourseID": 67,
     "Availability": 4,
@@ -357,7 +357,7 @@
     "LabEndTime": "00:00:00"
   },
   {
-  	"Course": "ENCS 282",
+    "Course": "ENCS 282",
     "UniqueID": 291,
     "CourseID": 67,
     "Availability": 4,
@@ -374,7 +374,7 @@
     "LabEndTime": "00:00:00"
   },
   {
-  	"Course": "ENCS 282",
+    "Course": "ENCS 282",
     "UniqueID": 292,
     "CourseID": 67,
     "Availability": 5,
@@ -391,7 +391,7 @@
     "LabEndTime": "00:00:00"
   },
   {
-  	"Course": "ENCS 282",
+    "Course": "ENCS 282",
     "UniqueID": 293,
     "CourseID": 67,
     "Availability": 5,
@@ -408,7 +408,7 @@
     "LabEndTime": "00:00:00"
   },
   {
-  	"Course": "ENCS 282",
+    "Course": "ENCS 282",
     "UniqueID": 294,
     "CourseID": 67,
     "Availability": 5,
@@ -425,7 +425,7 @@
     "LabEndTime": "00:00:00"
   },
   {
-  	"Course": "ENCS 282",
+    "Course": "ENCS 282",
     "UniqueID": 295,
     "CourseID": 67,
     "Availability": 2,
@@ -442,7 +442,7 @@
     "LabEndTime": "00:00:00"
   },
   {
-  	"Course": "ENCS 282",
+    "Course": "ENCS 282",
     "UniqueID": 296,
     "CourseID": 67,
     "Availability": 2,
@@ -459,7 +459,7 @@
     "LabEndTime": "00:00:00"
   },
   {
-  	"Course": "ENCS 282",
+    "Course": "ENCS 282",
     "UniqueID": 297,
     "CourseID": 67,
     "Availability": 2,
@@ -476,7 +476,7 @@
     "LabEndTime": "00:00:00"
   },
   {
-  	"Course": "ENCS 282",
+    "Course": "ENCS 282",
     "UniqueID": 298,
     "CourseID": 67,
     "Availability": 2,
@@ -493,7 +493,7 @@
     "LabEndTime": "00:00:00"
   },
   {
-  	"Course": "ENCS 282",
+    "Course": "ENCS 282",
     "UniqueID": 299,
     "CourseID": 67,
     "Availability": 2,
@@ -510,7 +510,7 @@
     "LabEndTime": "00:00:00"
   },
   {
-  	"Course": "ENCS 282",
+    "Course": "ENCS 282",
     "UniqueID": 300,
     "CourseID": 67,
     "Availability": 2,
@@ -527,7 +527,7 @@
     "LabEndTime": "00:00:00"
   },
   {
-  	"Course": "ENCS 282",
+    "Course": "ENCS 282",
     "UniqueID": 301,
     "CourseID": 67,
     "Availability": 3,
@@ -544,7 +544,7 @@
     "LabEndTime": "00:00:00"
   },
   {
-  	"Course": "ENCS 282",
+    "Course": "ENCS 282",
     "UniqueID": 302,
     "CourseID": 67,
     "Availability": 3,
@@ -561,7 +561,7 @@
     "LabEndTime": "00:00:00"
   },
   {
-  	"Course": "ENCS 282",
+    "Course": "ENCS 282",
     "UniqueID": 303,
     "CourseID": 67,
     "Availability": 3,
@@ -578,7 +578,7 @@
     "LabEndTime": "00:00:00"
   },
   {
-  	"Course": "ENCS 282",
+    "Course": "ENCS 282",
     "UniqueID": 304,
     "CourseID": 67,
     "Availability": 3,
@@ -595,7 +595,7 @@
     "LabEndTime": "00:00:00"
   },
   {
-  	"Course": "ENCS 282",
+    "Course": "ENCS 282",
     "UniqueID": 305,
     "CourseID": 67,
     "Availability": 3,
@@ -612,7 +612,7 @@
     "LabEndTime": "00:00:00"
   },
   {
-  	"Course": "ENCS 282",
+    "Course": "ENCS 282",
     "UniqueID": 306,
     "CourseID": 67,
     "Availability": 3,
@@ -629,7 +629,7 @@
     "LabEndTime": "00:00:00"
   },
   {
-  	"Course": "ENCS 282",
+    "Course": "ENCS 282",
     "UniqueID": 307,
     "CourseID": 67,
     "Availability": 3,
@@ -2261,7 +2261,7 @@
     "LabEndTime": "00:00:00"
   },
   {
-  	"Course": "COMP 361",
+    "Course": "COMP 361",
     "UniqueID": 403,
     "CourseID": 76,
     "Availability": 2,
@@ -2278,7 +2278,7 @@
     "LabEndTime": "00:00:00"
   },
   {
-  	"Course": "COMP 361",
+    "Course": "COMP 361",
     "UniqueID": 404,
     "CourseID": 76,
     "Availability": 3,
@@ -3995,6 +3995,7 @@
     "LabEndTime": "18:05:00"
   },
   {
+    "Course": null,
     "UniqueID": 505,
     "CourseID": 118,
     "Availability": 5,
@@ -5387,4 +5388,4 @@
     "LabStartTime": "15:45:00",
     "LabEndTime": "17:30:00"
   }
-  ]
+]

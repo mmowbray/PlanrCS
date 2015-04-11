@@ -45,6 +45,9 @@
   },
   {
     "StudentID": 123451,
+    "SavedPreferences": {
+      "priorityCourse": ""
+    },
     "Record": {
       "CreditsCompleted": 60,
       "Option": "Computer Games",
@@ -59,13 +62,7 @@
         null
       ]
     },
-    "SavedPreferences": {
-
-        "timeOff" : "",
-        "dayOff": false,
-        "priorityCourse":"" 
-
-    },
+    "SavedSequence": null,
     "UserName": "stuart",
     "Password": "planr",
     "Type": "Student"
@@ -82,6 +79,9 @@
   },
   {
     "StudentID": 345153,
+    "SavedPreferences": {
+      "priorityCourse": ""
+    },
     "Record": {
       "CreditsCompleted": 45,
       "Option": "Computer Games",
@@ -96,13 +96,33 @@
         null
       ]
     },
-    "SavedPreferences": {
-        "timeOff" : "",
-        "dayOff": false,
-        "priorityCourse":""
-    },
+    "SavedSequence": null,
     "UserName": "stuart",
     "Password": "planr",
+    "Type": "Student"
+  },
+    {
+    "StudentID": 653465,
+    "SavedPreferences": {
+      "priorityCourse": ""
+    },
+    "Record": {
+      "CreditsCompleted": 60,
+      "Option": "Computer Games",
+      "CompletedCourses": ""
+    },
+    "SavedSchedule": {
+      "schedule": [
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    "SavedSequence": null,
+    "UserName": "Sally",
+    "Password": "sunshine",
     "Type": "Student"
   }
 ]

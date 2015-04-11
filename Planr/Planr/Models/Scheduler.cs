@@ -31,12 +31,12 @@ namespace Planr.Models
                     {
                         TimeSlot ts = new TimeSlot();
 
-                        ts.timeslot[0] = s.StartTime;
-                        ts.timeslot[1] = s.EndTime;
+                        ts.timeslot[0] = s.GetStartTime();
+                        ts.timeslot[1] = s.GetEndTime();
                         tmpList = (List<TimeSlot>)weekdayTime[s.Day1];
                         foreach (TimeSlot ts1 in tmpList)
                         {
-                            if ((s.StartTime >= ts1.timeslot[0] && s.StartTime <= ts1.timeslot[1]) || (s.EndTime <= ts1.timeslot[1] && s.EndTime >= ts1.timeslot[0]))
+                            if ((s.GetStartTime() >= ts1.timeslot[0] && s.GetStartTime() <= ts1.timeslot[1]) || (s.GetEndTime() <= ts1.timeslot[1] && s.GetEndTime() >= ts1.timeslot[0]))
                             {
                                 return false;
                             }
@@ -49,12 +49,12 @@ namespace Planr.Models
                     {
                         TimeSlot ts = new TimeSlot();
 
-                        ts.timeslot[0] = s.StartTime;
-                        ts.timeslot[1] = s.EndTime;
+                        ts.timeslot[0] = s.GetStartTime();
+                        ts.timeslot[1] = s.GetEndTime();
                         tmpList = (List<TimeSlot>)weekdayTime[s.Day2];
                         foreach (TimeSlot ts1 in tmpList)
                         {
-                            if ((s.StartTime >= ts1.timeslot[0] && s.StartTime <= ts1.timeslot[1]) || (s.EndTime <= ts1.timeslot[1] && s.EndTime >= ts1.timeslot[0]))
+                            if ((s.GetStartTime() >= ts1.timeslot[0] && s.GetStartTime() <= ts1.timeslot[1]) || (s.GetEndTime() <= ts1.timeslot[1] && s.GetEndTime() >= ts1.timeslot[0]))
                             {
                                 return false;
                             }
@@ -66,13 +66,13 @@ namespace Planr.Models
                     {
                         TimeSlot ts = new TimeSlot();
 
-                        ts.timeslot[0] = s.TutorialStartTime;
-                        ts.timeslot[1] = s.TutorialEndTime;
+                        ts.timeslot[0] = s.GetTutorialStartTime();
+                        ts.timeslot[1] = s.GetTutorialEndTime();
                         tmpList = (List<TimeSlot>)weekdayTime[s.TutorialDay1];
                         foreach (TimeSlot ts1 in tmpList)
                         {
 
-                            if ((s.TutorialStartTime >= ts1.timeslot[0] && s.TutorialStartTime <= ts1.timeslot[1]) || (s.TutorialEndTime <= ts1.timeslot[1] && s.TutorialEndTime >= ts1.timeslot[0]))
+                            if ((s.GetTutorialStartTime() >= ts1.timeslot[0] && s.GetTutorialStartTime() <= ts1.timeslot[1]) || (s.GetTutorialEndTime() <= ts1.timeslot[1] && s.GetTutorialEndTime() >= ts1.timeslot[0]))
                                 return false;
                         }
 
@@ -83,13 +83,13 @@ namespace Planr.Models
                     {
                         TimeSlot ts = new TimeSlot();
 
-                        ts.timeslot[0] = s.TutorialStartTime;
-                        ts.timeslot[1] = s.TutorialEndTime;
+                        ts.timeslot[0] = s.GetTutorialStartTime();
+                        ts.timeslot[1] = s.GetTutorialEndTime();
                         tmpList = (List<TimeSlot>)weekdayTime[s.TutorialDay2];
                         foreach (TimeSlot ts1 in tmpList)
                         {
 
-                            if ((s.TutorialStartTime >= ts1.timeslot[0] && s.TutorialStartTime <= ts1.timeslot[1]) || (s.TutorialEndTime <= ts1.timeslot[1] && s.TutorialEndTime >= ts1.timeslot[0]))
+                            if ((s.GetTutorialStartTime() >= ts1.timeslot[0] && s.GetTutorialStartTime() <= ts1.timeslot[1]) || (s.GetTutorialEndTime() <= ts1.timeslot[1] && s.GetTutorialEndTime() >= ts1.timeslot[0]))
                                 return false;
                         }
                         tmpList.Add(ts);
@@ -100,13 +100,13 @@ namespace Planr.Models
                     {
                         TimeSlot ts = new TimeSlot();
 
-                        ts.timeslot[0] = s.LabStartTime;
-                        ts.timeslot[1] = s.LabEndTime;
+                        ts.timeslot[0] = s.GetLabStartTime();
+                        ts.timeslot[1] = s.GetLabEndTime();
                         tmpList = (List<TimeSlot>)weekdayTime[s.LabDay];
                         foreach (TimeSlot ts1 in tmpList)
                         {
 
-                            if ((s.LabStartTime >= ts1.timeslot[0] && s.LabStartTime <= ts1.timeslot[1]) || (s.LabEndTime <= ts1.timeslot[1] && s.LabEndTime >= ts1.timeslot[0]))
+                            if ((s.GetLabStartTime() >= ts1.timeslot[0] && s.GetLabStartTime() <= ts1.timeslot[1]) || (s.GetLabEndTime() <= ts1.timeslot[1] && s.GetLabEndTime() >= ts1.timeslot[0]))
                                 return false;
                         }
                         tmpList.Add(ts);
@@ -190,7 +190,7 @@ namespace Planr.Models
             {
                 if (item.Availability == semester && Array.IndexOf(course1, item.CourseID) != -1)
                 {//i think is here
-                    //Console.WriteLine(item.CourseID + " " + item.StartTime.ToString("HH:mm") + " " + item.EndTime.ToString("HH:mm") + " " + item.tutorial_day1 + " " + item.tutorial_day2 + " " + item.TutorialStartTime.ToString("HH:mm") + " " + item.TutorialEndTime.ToString("HH:mm") + " " + item.lab_day + " " + item.LabStartTime.ToString("HH:mm") + " " + item.LabEndTime.ToString("HH:mm"));
+                    //Console.WriteLine(item.CourseID + " " + item.GetStartTime().ToString("HH:mm") + " " + item.GetEndTime().ToString("HH:mm") + " " + item.tutorial_day1 + " " + item.tutorial_day2 + " " + item.GetTutorialStartTime().ToString("HH:mm") + " " + item.GetTutorialEndTime().ToString("HH:mm") + " " + item.lab_day + " " + item.GetLabStartTime().ToString("HH:mm") + " " + item.LabEndTime().ToString("HH:mm"));
                     tmpInt = item.CourseID;
                     tmpInt = Array.IndexOf(course1, tmpInt);
                     tmpList = (List<Section>)semester1_sec[tmpInt];

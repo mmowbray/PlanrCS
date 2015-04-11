@@ -222,7 +222,7 @@ namespace Planr.Models
                 return -1;//section was not found in database, error!
 
             DBPreviousState[sectionIndex] = section;
-
+            WriteValuesToDB(DB_SECTIONS_PATH, DBPreviousState);
             return 0;
         }
     }

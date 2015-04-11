@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿using System.Linq;
 using System.Web.Mvc;
 using Planr.Models;
 
@@ -27,13 +27,7 @@ namespace Planr.Controllers
         [HttpGet]
         public JsonResult AddSection(Section newSection)
         {
-            int highestUniqueSectionID = 0;
-            List<Section> allSections = DBInterfacer.GetSections();
-            
-            for(int i = 0; i < allSections.Count;i++)
-                if (allSections[i].UniqueID > highestUniqueSectionID)
-                    highestUniqueSectionID = allSections[i].UniqueID;
-
+            int highestUniqueSectionID = DBInterfacer.GetSections().Select(t => t.UniqueID).Concat(new[] { 0 }).Max(); //gets the highest unique section ID in the sections DB
             newSection.UniqueID = highestUniqueSectionID + 1;
             return Json(DBInterfacer.AddSection(newSection), JsonRequestBehavior.AllowGet);
         }
@@ -41,7 +35,7 @@ namespace Planr.Controllers
         [HttpGet]
         public JsonResult UpdateExistingSection(Section section)
         {
-            return Json(DBInterfacer.UpdateExistingSection(section)); //TODO
+            return Json(DBInterfacer.UpdateExistingSection(section));
         }
 
         [HttpGet]
