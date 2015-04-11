@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System.Collections.Generic;
+using System.Web.Mvc;
 using Planr.Models;
 
 // AdminController Class
@@ -26,15 +27,21 @@ namespace Planr.Controllers
         [HttpGet]
         public JsonResult AddSection(Section newSection)
         {
+            int highestUniqueSectionID = 0;
+            List<Section> allSections = DBInterfacer.GetSections();
+            
+            for(int i = 0; i < allSections.Count;i++)
+                if (allSections[i].UniqueID > highestUniqueSectionID)
+                    highestUniqueSectionID = allSections[i].UniqueID;
+
+            newSection.UniqueID = highestUniqueSectionID + 1;
             return Json(DBInterfacer.AddSection(newSection), JsonRequestBehavior.AllowGet);
-            //TODO: generate new random id
         }
 
         [HttpGet]
         public JsonResult UpdateExistingSection(Section section)
         {
-            return Json(1);
-            //return Json(DBHelper.UpdateExistingSection(section)); //TODO
+            return Json(DBInterfacer.UpdateExistingSection(section)); //TODO
         }
 
         [HttpGet]

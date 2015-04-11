@@ -45,16 +45,13 @@ namespace Planr.Models
 
         public static int UpdatePreferences(String studentname, Student.Preference preferences)
         {
-            List<User> DBPreviousState = GetUsers();
-            int studentIndex = DBPreviousState.FindIndex(usr => usr.UserName == studentname);
+            List<Student> DBPreviousState = GetStudents();
+            int studentIndex = DBPreviousState.FindIndex(student => student.UserName == studentname);
 
             if (studentIndex == -1) //entry not found in DB
                 return 1; //1 = failure
 
-            Student student1 = (Student)DBPreviousState[studentIndex];
-            student1.SavedPreferences = preferences;
-            DBPreviousState[studentIndex] = student1;
-
+            DBPreviousState[studentIndex].SavedPreferences = preferences;
             WriteValuesToDB(DB_USERS_PATH, DBPreviousState);
 
             return 0; //0 = success
@@ -94,9 +91,7 @@ namespace Planr.Models
             if (userIndex == -1) //entry not found in DB
                 return 1; //1 = failure
 
-            User user1 = DBPreviousState[userIndex];
-            user1.Password = newPassword;
-            DBPreviousState[userIndex] = user1;
+            DBPreviousState[userIndex].Password = newPassword;
 
             WriteValuesToDB(DB_USERS_PATH, DBPreviousState);
 
@@ -134,32 +129,27 @@ namespace Planr.Models
 
         public static int SaveSchedule(string studentName, Schedule schedule)
         {
-            List<User> DBPreviousState = GetUsers();
-            int userIndex = DBPreviousState.FindIndex(usr => usr.UserName == studentName);
+            List<Student> DBPreviousState = GetStudents();
+            int studentIndex = DBPreviousState.FindIndex(stud => stud.UserName == studentName);
 
-            if (userIndex == -1) //entry not found in DB
+            if (studentIndex == -1) //entry not found in DB
                 return 1; //1 = failure
 
-            Student student1 = (Student)DBPreviousState[userIndex];
-            student1.SavedSchedule = schedule;
-            DBPreviousState[userIndex] = student1;
-
+            DBPreviousState[studentIndex].SavedSchedule = schedule;
             WriteValuesToDB(DB_USERS_PATH, DBPreviousState);
 
             return 0; //0 = success        
         }
 
-        public static int SavePreferences(string studentName, Student.Preference prefs)
+        public static int SavePreferences(string studentName, Student.Preference newPrefs)
         {
-            List<User> DBPreviousState = GetUsers();
-            int userIndex = DBPreviousState.FindIndex(usr => usr.UserName == studentName);
+            List<Student> DBPreviousState = GetStudents();
+            int studentIndex = DBPreviousState.FindIndex(usr => usr.UserName == studentName);
 
-            if (userIndex == -1) //entry not found in DB
+            if (studentIndex == -1) //entry not found in DB
                 return 1; //1 = failure
 
-            Student student1 = (Student)DBPreviousState[userIndex];
-            student1.SavedPreferences = prefs;
-            DBPreviousState[userIndex] = student1;
+            DBPreviousState[studentIndex].SavedPreferences = newPrefs;
 
             WriteValuesToDB(DB_USERS_PATH, DBPreviousState);
             return 0; //0 = success              
@@ -222,10 +212,23 @@ namespace Planr.Models
             WriteValuesToDB(DB_SECTIONS_PATH, DBPreviousState);
             return 0; //0 = success
         }
+
+        public static int UpdateExistingSection(Section section)
+        {
+            List<Section> DBPreviousState = GetSections();
+            int sectionIndex = DBPreviousState.FindIndex(sec => sec.UniqueID == section.UniqueID);
+            
+            if (sectionIndex == -1)
+                return -1;//section was not found in database, error!
+
+            DBPreviousState[sectionIndex] = section;
+
+            return 0;
+        }
     }
 
     // UserItemConverter Class
-    // This class tells the JSON Deserializer how to know if the User object it is deserializing is a Student of an Admin
+    // This class tells the JSON Deserializer how to know if the User object it is deserializing is a Student or an Admin
     // That way we can do "true" deserialization of the user database into proper Student of Admin objects
 
     class UserItemConverter : JsonConverter

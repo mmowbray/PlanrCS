@@ -1,6 +1,6 @@
 ﻿namespace Planr.Models
 {
-    public class Admin : User
+    public abstract class Admin : User
     {
         public Admin()
         {
