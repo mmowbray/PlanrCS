@@ -262,3 +262,121 @@ button {
   cursor: pointer;
 }
 */
+
+.schedule_icon {
+    display: inline-block;
+    /*font-family: Pacifico;*/
+    font-size: 45px;
+    line-height: 90px;
+    cursor: pointer;
+    margin: 20px;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    text-align: center;
+    position: relative;
+    text-decoration: none;
+    z-index: 1;
+    color: #fff;
+}
+.schedule_icon.small {
+    font-size: 20px;
+    line-height:28px;
+    width:35px;
+    height:35px;
+    margin:7px;
+}
+.schedule_icon:after {
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    content:'';
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+.schedule_icon:before {
+    speak: none;
+    font-size: 48px;
+    line-height: 90px;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    display: block;
+    -webkit-font-smoothing: antialiased;
+}
+/* Effect 2 */
+ .schedule_icon.effect-2 {
+    color: #fff;
+    box-shadow: 0 0 0 4px red;
+    -webkit-transition: color 0.3s;
+    -moz-transition: color 0.3s;
+    transition: color 0.3s;
+}
+.schedule_icon.effect-2:after {
+    top: -2px;
+    left: -2px;
+    padding: 2px;
+    z-index: -1;
+    background: red;
+    -webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
+    -moz-transition: -moz-transform 0.2s, opacity 0.2s;
+    transition: transform 0.2s, opacity 0.2s;
+}
+/* Effect 2a */
+ .schedule_icon.effect-2.sub-a:hover, .schedule_icon.effect-2.sub-a:hover i {
+    color: #fff;
+   background:#fff;
+}
+.schedule_icon.effect-2.sub-a:hover:after {
+    -webkit-transform: scale(0.75);
+    -moz-transform: scale(0.75);
+    -ms-transform: scale(0.75);
+    transform: scale(0.75);
+}
+
+
+.genSchedule_btn {
+
+	display: block;
+	margin: 3em auto;
+	width: 90%;
+	height: 50px;
+	font: 700 1em sans-serif;
+	background: #FF000A;
+	color: #fff;
+	padding-top: 6px;
+	border: 0;
+	border-bottom: 0.35em solid #CA0606;
+	border-radius: 3px;
+	outline: 0;
+	cursor: pointer;
+	-webkit-transition: all .3s;
+	transition: all .3s;
+}
+
+.genSchedule_btn:hover {
+	background: #A90C12;
+	color:#767676;
+	text-decoration: none;
+}
+
+.genSchedule_btn:active {
+	background: #E81820;
+	border-color: #E81820;
+}
+
+.genSchedule_btn.sideMenu{
+	position:absolute;
+	bottom: -23px;
+	left: 5px;
+}
+
+.schedule-option{
+	height: 198px;
+  	margin-right: -19px;
+  	overflow: auto;
+}
