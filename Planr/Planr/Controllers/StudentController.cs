@@ -69,7 +69,7 @@ namespace Planr.Controllers
         public JsonResult GenerateSchedules()
         {
             var x = Scheduler.GenerateSchedules(Sequencer.GenerateSequence(DBInterfacer.GetStudent((Session["username"] ?? TEST_STUDENT_USER).ToString()), 2, 0), 2, 0);
-            return Json(x);
+            return Json(x, JsonRequestBehavior.AllowGet);
         }
 
         // This method accepts a Schedule object from the front-end, and writes it to the database for the currently logged in user
