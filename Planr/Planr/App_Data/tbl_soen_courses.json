@@ -830,7 +830,7 @@
   {
     "CourseName": "SOEN 390",
     "CourseID": 96,
-    "Credits": 3.0,
+    "Credits": 3.5,
     "Prerequisites": null,
     "Corequisites": "91/93",
     "CourseType": "Software Eng Core",
@@ -839,7 +839,7 @@
   {
     "CourseName": "SOEN 490",
     "CourseID": 97,
-    "Credits": 3.5,
+    "Credits": 4,
     "Prerequisites": "89/90/91/96",
     "Corequisites": null,
     "CourseType": "Software Eng Core",

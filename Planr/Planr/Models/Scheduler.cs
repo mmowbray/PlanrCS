@@ -128,7 +128,7 @@ namespace Planr.Models
             tmpSchedule.schedule[4] = sections[4];
             scT.sem1.Add(tmpSchedule);
         }
-        static public Section[, ,] GenerateSchedules(Sequence seq, int semester, int year)
+        static public ScheduleOptions GenerateSchedules(Sequence seq, int semester, int year)
         {
             List<Course> semester1 = new List<Course>();
             Hashtable semester1_sec = new Hashtable();
@@ -221,17 +221,17 @@ namespace Planr.Models
             }
 
             i = 0;
-            Section[, ,] returnArray = new Section[1, scT.sem1.Count, 5];
+            ScheduleOptions op = new ScheduleOptions(scT.sem1.Count);
             foreach (Schedule s in scT.sem1)
             {
-                returnArray[0, i, 0] = s.schedule[0];
-                returnArray[0, i, 1] = s.schedule[1];
-                returnArray[0, i, 2] = s.schedule[2];
-                returnArray[0, i, 3] = s.schedule[3];
-                returnArray[0, i, 4] = s.schedule[4];
+                op.scheduleOptions[0, i, 0] = s.schedule[0];
+                op.scheduleOptions[0, i, 1] = s.schedule[1];
+                op.scheduleOptions[0, i, 2] = s.schedule[2];
+                op.scheduleOptions[0, i, 3] = s.schedule[3];
+                op.scheduleOptions[0, i, 4] = s.schedule[4];
                 i++;
             }
-            return returnArray;
+            return op;
         }
     }
 
@@ -243,5 +243,15 @@ namespace Planr.Models
     {
         public List<Schedule> sem1 = new List<Schedule>();
         public List<Schedule> sem2 = new List<Schedule>();
+    }
+
+    public class ScheduleOptions
+    {
+        public Section[,,] scheduleOptions;
+
+        public ScheduleOptions(int length)
+        {
+            scheduleOptions = new Section[1, length, 5]; 
+        }
     }
 }

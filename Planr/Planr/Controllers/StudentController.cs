@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Web.Mvc;
+using Newtonsoft.Json.Linq;
 using Planr.Models;
 
 // HomeController Class
@@ -23,10 +24,11 @@ namespace Planr.Controllers
         // This method returns the saved sequence of the currently logged in user, retrieved from the Database
 
         [HttpGet]
-        public JsonResult GetSequence() //receives AJAX call from front-end and returns a JSON array
+        public ContentResult GetSequence() //receives AJAX call from front-end and returns a JSON array
         {
             Sequence sequence = DBInterfacer.GetSequence((Session["username"] ?? TEST_STUDENT_USER).ToString());
-            return Json(sequence, JsonRequestBehavior.AllowGet);
+            var sequenceJson = JObject.FromObject(sequence);
+            return Content(sequenceJson.ToString(), "application/json");
         }
 
         // This method returns the saved schedule of the currently logged in user, retrieved from the Database
@@ -66,10 +68,11 @@ namespace Planr.Controllers
         // This method returns a collection of schedules for the currently logged in user
 
         [HttpGet]
-        public JsonResult GenerateSchedules()
+        public ContentResult GenerateSchedules()
         {
             var x = Scheduler.GenerateSchedules(Sequencer.GenerateSequence(DBInterfacer.GetStudent((Session["username"] ?? TEST_STUDENT_USER).ToString()), 2, 0), 2, 0);
-            return Json(x, JsonRequestBehavior.AllowGet);
+            var scheduleJson = JObject.FromObject(x);
+            return Content(scheduleJson.ToString(), "application/json");
         }
 
         // This method accepts a Schedule object from the front-end, and writes it to the database for the currently logged in user
