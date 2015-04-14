@@ -32,27 +32,25 @@
 
 
     <div class="top-nav clearfix">
-		
-		<!--search & user info start-->
-      	
-		<div class="user_profile">
+        <!--search & user info start-->
+        <div class="user_profile">
             <a href="#"><i class="fa fa-user profile_icon"></i></a>
 			<div>	<input type="text" id="search" placeholder="Type to search"></input> </div>
         </div>
-
 		<!--search & user info end-->
 		
 		<!--add course button starts -->
 		<div id="add_button">
-			<a id="add_circle" href="#" onclick="toggle_visibility('add_section')" style="font-size:25px";> <i class="fa fa-plus-circle"></i></a>
+			<a id="add_circle" href="#" onclick="toggle_visibility('add_section'); courseOption()" style="font-size:25px";> <i class="fa fa-plus-circle"></i></a>
 			<p id="add_section_text"> Add section </p>
     	</div>
-		<!-- add course button ends -->
+        <!-- add course button ends -->
 		
 		<div class="top-nav-list top-nav-list-right logout_menu" id="letmego">
             <a class="menu_button_top" href="#" style="font-size: 44px"><span class="fa fa-power-off" style="font-size:1.1em; line-height: 2.1em;"></span></a>
         </div>
-    </div>
+    
+	</div>
 		
 	
 </header>
@@ -83,7 +81,8 @@
 			<fieldset>
 					<legend id="title_field">Add Section</legend>
 				<div id="form_content">
-					<p><label style="width:162.5px;">Course Name</label><input type="text/javascript" id="cName"></input>
+					<p>
+					<label style="width:162.5px;" id="select_option">Course Name</label>
 					<label style="width:162px">Semester Offered</label>	
 													<input style="width:25px" type="radio" name="Fall" value="1">Fall</input>
 													<input style="width:25px" type="radio" name="Winter" value="2">Winter</input>
@@ -93,18 +92,17 @@
 													<input style="width:25px" type="radio" name="Online" value="1">Online</input><br>
 													</p>
 					<p><label>Lec</label>
-					<label>Day 1</label><input id="lDay1"></input>
-					<label>Day 2</label><input id="lDay2"></input>
+					<label>Day 1</label><input id="lDay1" placeholder="M / T / W / J / F" maxlength="1"></input>
+					<label>Day 2</label><input id="lDay2" placeholder="M / T / W / J / F" maxlength="1"></input>
 					<label>Start</label><input id="startL"></input>
 					<label>End</label><input id="endL"></input></p>
 					<p><label>Tut</label>
-					<label>Day 1</label><input id="tDay1"></input>
-					<label>Day 2</label><input id="tDay2"></input>
-					<label>Start</label><input id="startT"></input>
+					<label>Day 1</label><input id="tDay1" placeholder="M / T / W / J / F" maxlength="1"></input>
+					<label>Day 2</label><input id="tDay2" placeholder="M / T / W / J / F" maxlength="1"></input>
+					<label>Start</label><input id="startT" ></input>
 					<label>End</label><input id="endT"></input></p>
 					<p><label>Lab</label>
-					<label>Day 1</label><input id="labDay1"></input>
-					<label>Day 2</label><input id="labDay2"></input>
+					<label>Day 1</label><input id="labDay1" placeholder="M / T / W / J / F" maxlength="1"></input>
 					<label>Start</label><input id="startLab"></input>
 					<label>End</label><input id="endLab"></input></p>
 				</div>
@@ -127,33 +125,35 @@
 			<fieldset>
 					<legend id="title_field">Edit Section</legend>
 				<div id="form_content">
-					<p><label style="width:162.5px;">Course Name</label><input type="text/javascript" id="editcName"></input>
+					<p>
+					
+					<label style="width:162.5px;">Course Name</label><input class ="readonly" type="text/javascript" id="editcName" readonly></input>
+					<label  style="width:20px;">ID</label><input class ="readonly" id="courseID" style="width:50px" readonly></input>
 					<label style="width:162px">Semester Offered</label>	
-													<input style="width:25px" type="radio" name="Fall" id="Fall" value="1">Fall</input>
-													<input style="width:25px" type="radio" name="Winter" id="Winter" value="2">Winter</input>
-													<input style="width:25px" type="radio" name="Fall/Winter" id="Fall/Winter" value="3">Fall/Winter</input>
-													<input style="width:25px" type="radio" name="Summer 1" id="Summer 1" value="4">Summer1</input>
-													<input style="width:25px" type="radio" name="Summer 2" id="Summer 2" value="5">Summer2</input>
-													<input style="width:25px" type="radio" name="Online" id="Online" value="6">Online</input><br>
+													<input style="width:25px" type="radio" name="semester" id="1" value="1">Fall</input>
+													<input style="width:25px" type="radio" name="semester" id="2" value="2">Winter</input>
+													<input style="width:25px" type="radio" name="semester" id="3" value="3">Fall/Winter</input>
+													<input style="width:25px" type="radio" name="semester" id="4" value="4">Summer1</input>
+													<input style="width:25px" type="radio" name="semester" id="5" value="5">Summer2</input>
+													<input style="width:25px" type="radio" name="semester" id="6" value="6">Online</input><br>
 													</p>
 					<p><label>Lec</label>
-					<label>Day 1</label><input id="editlDay1"></input>
-					<label>Day 2</label><input id="editlDay2"></input>
-					<label>Start</label><input id="editstartL"></input>
+					<label>Day 1</label><input id="editlDay1" placeholder="M / T / W / J / F" maxlength="1"></input>
+					<label>Day 2</label><input id="editlDay2" placeholder="M / T / W / J / F" maxlength="1"></input>
+					<label>Start</label><input id="editstartL" ></input>
 					<label>End</label><input id="editendL"></input></p>
 					<p><label>Tut</label>
-					<label>Day 1</label><input id="edittDay1"></input>
-					<label>Day 2</label><input id="edittDay2"></input>
+					<label>Day 1</label><input id="edittDay1" placeholder="M / T / W / J / F" maxlength="1"></input>
+					<label>Day 2</label><input id="edittDay2" placeholder="M / T / W / J / F" maxlength="1"></input>
 					<label>Start</label><input id="editstartT"></input>
 					<label>End</label><input id="editendT"></input></p>
 					<p><label>Lab</label>
-					<label>Day 1</label><input id="editlabDay1"></input>
-					<label>Day 2</label><input id="editlabDay2"></input>
+					<label>Day 1</label><input id="editlabDay1" placeholder="M / T / W / J / F" maxlength="1"></input>
 					<label>Start</label><input id="editstartLab"></input>
 					<label>End</label><input id="editendLab"></input></p>
 				</div>
 
-					<div class="button_holder"> <input class="form_button" id="edit_button" type="submit" value="Edit Section" />
+					<div class="button_holder"> <input class="form_button" id="edit_button" type="submit" onclick="save()" value="Edit Section" />
 							<input class="form_button" id="cancel_button" type="submit" value="Cancel" /></div>
 					
 			</fieldset>
