@@ -15,54 +15,65 @@
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
 </head>
 
-
 <body>
 <section id="container">
-<!--header start-->
-    <header class="header fixed-top clearfix">
-
-    <!--logo start-->
-    <div class="brand">
-
-        <a href="#" class="logo">
-            <span id="logo_span">P<span id="anr">lan R</span></span>
-        </a>
-    </div>
-    <!--logo end-->
-
-
-    <div class="top-nav clearfix">
-        <!--search & user info start-->
-        <div class="user_profile">
-            <a href="#"><i class="fa fa-user profile_icon"></i></a>
-			<div>	<input type="text" id="search" placeholder="Type to search"></input> </div>
-        </div>
-		<!--search & user info end-->
-		
-		<!--add course button starts -->
-		<div id="add_button">
-			<a id="add_circle" href="#" onclick="toggle_visibility('add_section'); courseOption()" style="font-size:25px";> <i class="fa fa-plus-circle"></i></a>
-			<p id="add_section_text"> Add section </p>
-    	</div>
-        <!-- add course button ends -->
-		
-		<div class="top-nav-list top-nav-list-right logout_menu" id="letmego">
-            <a class="menu_button_top" href="#" style="font-size: 44px"><span class="fa fa-power-off" style="font-size:1.1em; line-height: 2.1em;"></span></a>
-        </div>
-    
-	</div>
-		
 	
-</header>
-<!--header end-->
+	<!--header start-->
+        <header class="header fixed-top clearfix">
+            <!--logo start-->
+            <div class="brand">
+
+                <a href="#" class="logo">
+                    <span id="logo_span">P<span id="anr">lan R</span></span>
+                </a>
+            </div>
+            <!--logo end-->
+
+
+            <div class="top-nav clearfix">
+
+                <!--search & user info start-->
+                <ul class="top-nav-list">
+                    <li class="top-nav-list top-nav-list-left user_profile">
+                        <a href="#" class="user_profile"><span class="fa fa-user" style="font-size: 4.4em;line-height: 1.8em;"></span></a>
+                    </li>
+                 
+
+					<!-- <div class="user_profile">
+						<a href="#"><i class="fa fa-user profile_icon"></i></a>
+						<div>	<input type="text" id="search" placeholder="Type to search"></input> </div>
+					</div> -->
+
+					<li class="top-nav-list top-nav-list-right logout_menu" id="letmego">
+						<a class="menu_button_top" href="#" style="font-size: 14px"><span class="fa fa-power-off" style="font-size:3.1em; line-height: 2.4em;"></span></a>
+					</li>
+					
+					<!--add course button starts -->
+					<div>
+						<li id="add_button" class="top-nav-list top-nav-list-right logout_menu">
+							<a id="add_b" href="#" onclick="toggle_visibility('add_section'); courseOption()" ><i class="fa fa-plus-circle"></i></a>
+							 <p id="add_text"> Add section </p>
+						</li>
+					</div>
+					<!-- add course button ends -->
+
+				
+
+				</ul>
+                <!--search & user info end-->
+            </div>
+        </header>
+        <!--header end-->
 
 
 <!--sidebar start-->
 <aside>
     <div id="sidebar" class="nav-collapse">
         <!-- sidebar menu start-->
-        <div class="leftside-navigation">
-
+        <div class="leftside-navigation" style="text-align:center">
+  			<div ng-controller="PreferencesCtrl" id="pref-tile">
+				<a href='admin.html' id="sidebar_text"> <p style="padding-top: 20px;">View Sections </p> </a>
+            </div>
         </div>
         <!-- sidebar menu end-->
     </div>
@@ -168,8 +179,6 @@
             </table>	
         </div>
 
-    </div>
-</div>
 </section>
 </section>
 <!--main content end-->

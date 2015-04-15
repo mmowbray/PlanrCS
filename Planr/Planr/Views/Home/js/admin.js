@@ -109,25 +109,24 @@ var stringSemester = ["Fall", "Winter", "Fall/Winter", "Summer 1", "Summer 2"];
 		
 		
 		function courseOption () {
-		var courseOptionContent = '<label style="width:162.5px;" id="select_option">Course Name</label> <select name="courses"> ';
-		var courseName=[]; 
-		for(var i=0; i<sectionArray.length;i++)
-		{
-			courseName.push(sectionArray[i].Course); 
+			var courseOptionContent = '<label style="width:162.5px;" id="select_option">Course Name</label> <select name="courses"> ';
+			var courseName=[]; 
+			for(var i=0; i<sectionArray.length;i++)
+			{
+				courseName.push(sectionArray[i].Course); 
+			}
+			courseName=eliminateDuplicates(courseName);
+
+			for (var i=0; i < courseName.length; i++)
+			{
+				courseOptionContent += '<option value=" ' + courseName[i] + ' "> ' +courseName[i]+ ' </option>';
+
+			}
+
+			courseOptionContent += '</select>';
+
+			document.getElementById("select_option").innerHTML = courseOptionContent;
 		}
-		courseName=eliminateDuplicates(courseName);
-		
-		for (var i=0; i < courseName.length; i++)
-		{
-			courseOptionContent += '<option value=" ' + courseName[i] + ' "> ' +courseName[i]+ ' </option>';
-			
-		}
-		
-		courseOptionContent += '</select>';
-		
-		document.getElementById("select_option").innerHTML = courseOptionContent;
-		}
-		
 		
 		function eliminateDuplicates(arr) {
 			var i,
@@ -143,16 +142,24 @@ var stringSemester = ["Fall", "Winter", "Fall/Winter", "Summer 1", "Summer 2"];
 			}
 			return out;
 		}
+
 		function deleteCourse(Course)
 		{
-		var course= searchById(sectionArray, Course);  
-		window.alert("Are you sure you want to delete "+course.Course+"?"+course.UniqueID);
+			var course= searchById(sectionArray, Course);  
+			window.alert("Are you sure you want to delete "+course.Course+"?"+course.UniqueID);
 		}
+
 		function addCourse(course)
 		{
 		
 		}
+		
 		function validateInputAdd()
+		{
+			
+		}
+
+		function validateInputEdit()
 		{
 			
 		}
