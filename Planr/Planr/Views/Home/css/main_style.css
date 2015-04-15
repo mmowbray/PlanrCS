@@ -209,13 +209,12 @@ width: 100%;
 }
 
 .sequence_li{
-  color: #000;
+  color: white;
   padding: 20px;
   width: 100%;
-
   margin: 0px auto;
   cursor: pointer;
-  line-height: 1em;
+  line-height: 2.6px;
   height:8%;
 }
 .sc_name{

@@ -8,6 +8,32 @@ Planr.factory('preferencesFactory', function() {
 
 //Create the app services
 Planr.service('schedulesService', function() {
+	this.schedulesColors = ['#4CE632',
+		'#41A1FD',
+		'#F2121D',
+		'#E228FC',
+		'#004D62',
+		'#F6F043',
+		'#F58665',
+		'#966FFF',
+		'#6BDF9F',
+		'#D3CD00',
+		'#BC006D',
+		'#387E00',
+		'#F58603',
+		'#37197C',
+		'#BF6ADE',
+		'#D57D00',
+		'#FFC0BB',
+		'#FE19B8',
+		'#FF4C02',
+		'#02FBFF',
+		'#FD06C9',
+		'#9AFF01',
+		'#009899',
+	];
+	//arrray to keep track index of selected schedules array of 2 for the 2 semesters
+	this.favoritedIndex = new Array(2);
 	this.selectedSchedules;
 	this.selectedSemester = 0;
 	this.selectedSchedule = 0;
