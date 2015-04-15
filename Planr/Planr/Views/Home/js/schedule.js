@@ -1,4 +1,4 @@
-var canvas = document.getElementById("schedule");
+var canvas = document.getElementById("canvas");
 canvas.width = 1800;
 canvas.height = 2880;
 canvas.style.width = "600px";
@@ -135,11 +135,11 @@ function drawSchedule(schedule) {
 		schedule[i].drawCourse(backColor[i], frontColor[i]);
 	}
 }
-var course1 = new Course("Course1", "Monday", "Wednesday", "10:30", "12:00", "Friday", "", "11:00", "14:00", "", "", "", "");
+/*var course1 = new Course("Course1", "Monday", "Wednesday", "10:30", "12:00", "Friday", "", "11:00", "14:00", "", "", "", "");
 var course2 = new Course("Course2", "Tuesday", "Thursday", "10:00", "12:00", "", "", "", "", "Wednesday", "", "12:15", "15:05");
 var course3 = new Course("Course3", "Monday", "Wednesday", "15:30", "17:00", "Friday", "", "14:15", "17:00", "", "", "", "");
 var course4 = new Course("Course4", "Tuesday", "Thursday", "12:15", "13:30", "", "", "", "", "Monday", "", "12:30", "14:45");
 var course5 = new Course("Course5", "Tuesday", "Thursday", "14:00", "15:00", "", "", "", "", "Friday", "", "11:00", "14:07");
 var schedules = [course1, course2, course3, course4, course5];
 
-drawSchedule(schedules);
+drawSchedule(schedules);*/

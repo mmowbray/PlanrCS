@@ -1,1 +1,596 @@
-[[["course1","course2","course3","course4", "course6"],["course1","course2","course3","course4", "course6"],["course1","course2","course3","course4", "course6"]],[["course1","course2","course3","course4", "course6"],["course1","course2","course3","course4", "course6"],["course1","course2","course3","course4", "course6"]]]
+{
+  "sequence": [
+    [
+      [
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        {
+          "CourseName": "COMP 248",
+          "CourseID": 78,
+          "Credits": 3.0,
+          "Prerequisites": null,
+          "Corequisites": null,
+          "CourseType": "Comp-Sci",
+          "Availability": "2/3/4"
+        },
+        {
+          "CourseName": "COMP 232",
+          "CourseID": 77,
+          "Credits": 3.0,
+          "Prerequisites": null,
+          "Corequisites": null,
+          "CourseType": "Comp-Sci",
+          "Availability": "2/3/4"
+        },
+        {
+          "CourseName": "ENGR 233",
+          "CourseID": 71,
+          "Credits": 3.0,
+          "Prerequisites": null,
+          "Corequisites": null,
+          "CourseType": "Eng Core",
+          "Availability": "2/3/5"
+        },
+        {
+          "CourseName": "ENGR 213",
+          "CourseID": 70,
+          "Credits": 3.0,
+          "Prerequisites": null,
+          "Corequisites": null,
+          "CourseType": "Eng Core",
+          "Availability": "2/3/4"
+        },
+        {
+          "CourseName": "General Elective",
+          "CourseID": 111111,
+          "Credits": 0.0,
+          "Prerequisites": null,
+          "Corequisites": null,
+          "CourseType": null,
+          "Availability": null
+        }
+      ],
+      [
+        {
+          "CourseName": "SOEN 287",
+          "CourseID": 85,
+          "Credits": 3.0,
+          "Prerequisites": "78",
+          "Corequisites": null,
+          "CourseType": "Software Eng Core",
+          "Availability": "2/3/5"
+        },
+        {
+          "CourseName": "SOEN 228",
+          "CourseID": 84,
+          "Credits": 4.0,
+          "Prerequisites": null,
+          "Corequisites": null,
+          "CourseType": "Software Eng Core",
+          "Availability": "3"
+        },
+        {
+          "CourseName": "COMP 249",
+          "CourseID": 79,
+          "Credits": 3.0,
+          "Prerequisites": "78",
+          "Corequisites": null,
+          "CourseType": "Comp-Sci",
+          "Availability": "2/3/5"
+        },
+        {
+          "CourseName": "ENGR 202",
+          "CourseID": 69,
+          "Credits": 1.5,
+          "Prerequisites": null,
+          "Corequisites": null,
+          "CourseType": "Eng Core",
+          "Availability": "2/3/4"
+        },
+        {
+          "CourseName": "Basic Science",
+          "CourseID": 222222,
+          "Credits": 0.0,
+          "Prerequisites": null,
+          "Corequisites": null,
+          "CourseType": null,
+          "Availability": null
+        }
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    ],
+    [
+      [
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        {
+          "CourseName": "COMP 352",
+          "CourseID": 83,
+          "Credits": 3.0,
+          "Prerequisites": "79",
+          "Corequisites": "77",
+          "CourseType": "Comp-Sci",
+          "Availability": "2/3/4"
+        },
+        {
+          "CourseName": "COMP 348",
+          "CourseID": 82,
+          "Credits": 3.0,
+          "Prerequisites": "79",
+          "Corequisites": null,
+          "CourseType": "Comp-Sci",
+          "Availability": "2/3/5"
+        },
+        {
+          "CourseName": "COMP 335",
+          "CourseID": 80,
+          "Credits": 3.0,
+          "Prerequisites": "77/79",
+          "Corequisites": null,
+          "CourseType": "Comp-Sci",
+          "Availability": "2/3/4"
+        },
+        {
+          "CourseName": "COMP 361",
+          "CourseID": 76,
+          "Credits": 3.0,
+          "Prerequisites": "77/79",
+          "Corequisites": null,
+          "CourseType": "Eng Core",
+          "Availability": "2/3"
+        },
+        {
+          "CourseName": "Basic Science",
+          "CourseID": 222222,
+          "Credits": 0.0,
+          "Prerequisites": null,
+          "Corequisites": null,
+          "CourseType": null,
+          "Availability": null
+        }
+      ],
+      [
+        {
+          "CourseName": "SOEN 341",
+          "CourseID": 88,
+          "Credits": 3.0,
+          "Prerequisites": "78/83",
+          "Corequisites": null,
+          "CourseType": "Software Eng Core",
+          "Availability": "2/3"
+        },
+        {
+          "CourseName": "SOEN 331",
+          "CourseID": 87,
+          "Credits": 3.0,
+          "Prerequisites": "77/79",
+          "Corequisites": null,
+          "CourseType": "Software Eng Core",
+          "Availability": "3"
+        },
+        {
+          "CourseName": "COMP 346",
+          "CourseID": 81,
+          "Credits": 4.0,
+          "Prerequisites": "84/83",
+          "Corequisites": null,
+          "CourseType": "Comp-Sci",
+          "Availability": "2/3/5"
+        },
+        {
+          "CourseName": "ENGR 201",
+          "CourseID": 68,
+          "Credits": 1.5,
+          "Prerequisites": null,
+          "Corequisites": null,
+          "CourseType": "Eng Core",
+          "Availability": "2/3/4"
+        },
+        {
+          "CourseName": "ENCS 282",
+          "CourseID": 67,
+          "Credits": 3.0,
+          "Prerequisites": null,
+          "Corequisites": null,
+          "CourseType": "Eng Core",
+          "Availability": "2/3/4/5"
+        }
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    ],
+    [
+      [
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        {
+          "CourseName": "SOEN 342",
+          "CourseID": 89,
+          "Credits": 3.0,
+          "Prerequisites": "88",
+          "Corequisites": null,
+          "CourseType": "Software Eng Core",
+          "Availability": "2"
+        },
+        {
+          "CourseName": "SOEN 343",
+          "CourseID": 90,
+          "Credits": 3.0,
+          "Prerequisites": "88",
+          "Corequisites": "89",
+          "CourseType": "Software Eng Core",
+          "Availability": "2"
+        },
+        {
+          "CourseName": "SOEN 343",
+          "CourseID": 90,
+          "Credits": 3.0,
+          "Prerequisites": "88",
+          "Corequisites": "89",
+          "CourseType": "Software Eng Core",
+          "Availability": "2"
+        },
+        {
+          "CourseName": "SOEN 321",
+          "CourseID": 86,
+          "Credits": 3.0,
+          "Prerequisites": "81",
+          "Corequisites": null,
+          "CourseType": "Software Eng Core",
+          "Availability": "2"
+        },
+        {
+          "CourseName": "ENGR 392",
+          "CourseID": 75,
+          "Credits": 3.0,
+          "Prerequisites": "67/68/69",
+          "Corequisites": null,
+          "CourseType": "Eng Core",
+          "Availability": "2/3/4/5"
+        }
+      ],
+      [
+        {
+          "CourseName": "SOEN 357",
+          "CourseID": 93,
+          "Credits": 3.0,
+          "Prerequisites": "89",
+          "Corequisites": null,
+          "CourseType": "Software Eng Core",
+          "Availability": "3"
+        },
+        {
+          "CourseName": "SOEN 344",
+          "CourseID": 91,
+          "Credits": 3.0,
+          "Prerequisites": "90",
+          "Corequisites": null,
+          "CourseType": "Software Eng Core",
+          "Availability": "3"
+        },
+        {
+          "CourseName": "SOEN 390",
+          "CourseID": 96,
+          "Credits": 3.0,
+          "Prerequisites": null,
+          "Corequisites": "91/93",
+          "CourseType": "Software Eng Core",
+          "Availability": "3"
+        },
+        {
+          "CourseName": "ENGR 391",
+          "CourseID": 74,
+          "Credits": 3.0,
+          "Prerequisites": "67/68/69",
+          "Corequisites": null,
+          "CourseType": "Eng Core",
+          "Availability": "2/3/4/5"
+        },
+        {
+          "CourseName": "ENGR 371",
+          "CourseID": 73,
+          "Credits": 3.0,
+          "Prerequisites": "70/71",
+          "Corequisites": null,
+          "CourseType": "Eng Core",
+          "Availability": "2/3/5"
+        }
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    ],
+    [
+      [
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        {
+          "CourseName": "SOEN 490",
+          "CourseID": 97,
+          "Credits": 3.5,
+          "Prerequisites": "89/90/91/96",
+          "Corequisites": null,
+          "CourseType": "Software Eng Core",
+          "Availability": "1"
+        },
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        {
+          "CourseName": "ENGR 301",
+          "CourseID": 72,
+          "Credits": 3.0,
+          "Prerequisites": null,
+          "Corequisites": null,
+          "CourseType": "Eng Core",
+          "Availability": "2/3/4"
+        },
+        {
+          "CourseName": "ELEC 275",
+          "CourseID": 66,
+          "Credits": 3.5,
+          "Prerequisites": null,
+          "Corequisites": "70",
+          "CourseType": "Eng Core",
+          "Availability": "2/3/6"
+        },
+        {
+          "CourseName": "SOEN 384",
+          "CourseID": 94,
+          "Credits": 3.0,
+          "Prerequisites": "67/88",
+          "Corequisites": null,
+          "CourseType": "Software Eng Core",
+          "Availability": "2"
+        },
+        {
+          "CourseName": "Elective Based on Option",
+          "CourseID": 333333,
+          "Credits": 0.0,
+          "Prerequisites": null,
+          "Corequisites": null,
+          "CourseType": null,
+          "Availability": null
+        },
+        {
+          "CourseName": "Elective Based on Option",
+          "CourseID": 333333,
+          "Credits": 0.0,
+          "Prerequisites": null,
+          "Corequisites": null,
+          "CourseType": null,
+          "Availability": null
+        }
+      ],
+      [
+        {
+          "CourseName": "SOEN 385",
+          "CourseID": 95,
+          "Credits": 3.0,
+          "Prerequisites": "70/71",
+          "Corequisites": null,
+          "CourseType": "Software Eng Core",
+          "Availability": "3"
+        },
+        {
+          "CourseName": "SOEN 345",
+          "CourseID": 92,
+          "Credits": 3.0,
+          "Prerequisites": "88",
+          "Corequisites": "90",
+          "CourseType": "Software Eng Core",
+          "Availability": "3"
+        },
+        {
+          "CourseName": "Elective Based on Option",
+          "CourseID": 333333,
+          "Credits": 0.0,
+          "Prerequisites": null,
+          "Corequisites": null,
+          "CourseType": null,
+          "Availability": null
+        },
+        {
+          "CourseName": "Elective Based on Option",
+          "CourseID": 333333,
+          "Credits": 0.0,
+          "Prerequisites": null,
+          "Corequisites": null,
+          "CourseType": null,
+          "Availability": null
+        },
+        {
+          "CourseName": "Elective Based on Option",
+          "CourseID": 333333,
+          "Credits": 0.0,
+          "Prerequisites": null,
+          "Corequisites": null,
+          "CourseType": null,
+          "Availability": null
+        }
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    ],
+    [
+      [
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    ],
+    [
+      [
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    ]
+  ]
+}
