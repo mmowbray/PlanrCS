@@ -96,7 +96,7 @@ a.logo:hover {
   font-size: 1.4em;
   text-align: center;
   text-decoration: none;
-  color: #44609D;
+  color: #767676;
 }
 .menu_button_top:hover, .menu_button_top:focus{
   text-decoration: none;
@@ -158,6 +158,7 @@ box-shadow: 9px 10px 7px -9px #888;
 }
 .leftside-navigation{
 height: 100%;
+position: relative;
 }
 
 #pref_list_ul{

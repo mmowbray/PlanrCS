@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.8.3/angular-material.min.css">
     <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/main_style.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-animate.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-aria.min.js"></script>
@@ -51,7 +52,7 @@
                         <a ng-click = "schedulesServ.selectedSemester = 2; schedulesServ.selectedSchedule = 0" class="menu_button_top" href="#">Winter</a>
                     </li>
                     <li class="top-nav-list top-nav-list-right logout_menu" id="letmego">
-                        <a class="menu_button_top" href="#" style="font-size: 44px"><span class="fa fa-power-off" style="font-size:1.1em; line-height: 2.1em;"></span></a>
+                        <a class="menu_button_top" href="#" style="font-size: 14px"><span class="fa fa-power-off" style="font-size:3.1em; line-height: 2.4em;"></span></a>
                     </li>
 
                 </ul>
@@ -90,11 +91,17 @@
                         night: {{pref.getPreferences().night}}<br>
                         offt: {{pref.getPreferences().dayOff}}<br>-->
                     </div>
-                    <div ng-controller="SchedulesCtrl">
-                        <ul>
-                            
-                            <li ng-if = "schedulesServ.selectedSemester > 0" ng-repeat="schedule in schedulesObj.allSchedulesFetched[schedulesServ.selectedSemester-1]"><a ng-click="schedulesServ.selectedSchedule = $index">{{$index+1}}</a></li>
-                        </ul>
+                    <div style="padding-top: 20px;text-align: center;overflow-x: hidden;" ng-controller="SchedulesCtrl">
+                        <p>Schedule</p>
+                        <hr \>
+                        <div class="schedule-option">
+                            <ul style="padding-left:0px;list-style:none;">
+                                
+                                <li ng-if = "schedulesServ.selectedSemester > 0" ng-repeat="schedule in schedulesObj.allSchedulesFetched[schedulesServ.selectedSemester-1]" class="schedule_icon small effect-2 sub-a"><a ng-click="schedulesServ.selectedSchedule = $index">{{$index+1}}</a></li>
+                            </ul>
+                    </div>
+                    <hr />
+                    <a class="genSchedule_btn sideMenu">generate schedule</a>
                     </div>
                 </div>
                 <!-- sidebar menu end-->
