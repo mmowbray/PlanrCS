@@ -1,0 +1,14 @@
+diff a/Planr/Planr/Views/Home/admin.html b/Planr/Planr/Views/Home/admin.html	(rejected hunks)
+@@ -159,10 +159,8 @@
+ 		<!-- end of edit section form -->
+ 	
+         <div id="table_content"> 
+-			
+-            <table id="course_table">
+-            	<script type="text/javascript" src="js/admin.js"></script>
+-            </table>	
++			<input onload="drawTable(sectionArray)"/>
++           
+         </div>
+ 
+     </div>

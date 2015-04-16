@@ -1,4 +1,4 @@
-
+var semester=["Online", "Fall/Winter", "Fall", "Winter", "Summer1", "Summer2", "Summer"]; 
         function drawTable(section)
 		{ 
 			var table=""; 	
@@ -21,7 +21,7 @@
 		function returnCourse(course)
         {
 			var courseHTMLString = "";
-			courseHTMLString += '<tr><td> ' +course.Course+ '</td><td>' +course.Availability+ '</td><td>' +course.Day1+ '</td><td>' +course.Day2+ '</td><td>' +course.StartTime+ '</td><td>' +course.EndTime+  '</td>';
+			courseHTMLString += '<tr><td> ' +course.Course+ '</td><td>' +findSemester(course.Availability)+ '</td><td>' +course.Day1+ '</td><td>' +course.Day2+ '</td><td>' +course.StartTime+ '</td><td>' +course.EndTime+  '</td>';
 			courseHTMLString += '<td>' +course.TutorialDay1+ '</td><td>' +course.TutorialDay2+ '</td><td>' +course.TutorialStartTime+ '</td><td>' +course.TutorialEndTime+ '</td>';
 			courseHTMLString += '<td>' +course.LabDay+ '</td><td>' +course.LabStartTime+ '</td><td>' +course.LabEndTime+ '</td>';
 			courseHTMLString += '<td class="button_td"> <button onclick="editCourse('+course.UniqueID+')" class = "buttons" type="submit" name="editSection"> Edit </button></td>';
@@ -461,4 +461,8 @@ function saveAddSection()
 	});
 
 })(document);
+
+function findSemester(numberSemester){
+return semester[numberSemester];
+}
 
