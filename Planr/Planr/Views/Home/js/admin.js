@@ -1,4 +1,4 @@
-var semester=["Online", "Fall/Winter", "Fall", "Winter", "Summer1", "Summer2", "Summer"]; 
+var semester=["Online","Fall/Winter","Fall", "Winter","Summer1", "Summer2", "Summer"]; 
         function drawTable(section)
 		{ 
 			var table=""; 	
