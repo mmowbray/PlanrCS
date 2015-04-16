@@ -1,10 +1,4 @@
-<<<<<<< HEAD
-var stringSemester = ["Fall", "Winter", "Fall/Winter", "Summer 1", "Summer 2"]; 
-
-        
-=======
-
->>>>>>> 72f119e91869094e658076d1fcb672848f1c53d1
+var semester=["Online", "Fall/Winter", "Fall", "Winter", "Summer1", "Summer2", "Summer"]; 
         function drawTable(section)
 		{ 
 			var table=""; 	
@@ -27,17 +21,14 @@ var stringSemester = ["Fall", "Winter", "Fall/Winter", "Summer 1", "Summer 2"];
 		function returnCourse(course)
         {
 			var courseHTMLString = "";
-			courseHTMLString += '<tr><td> ' +course.Course+ '</td><td>' +course.Availability+ '</td><td>' +course.Day1+ '</td><td>' +course.Day2+ '</td><td>' +course.StartTime+ '</td><td>' +course.EndTime+  '</td>';
+			courseHTMLString += '<tr><td> ' +course.Course+ '</td><td>' +findSemester(course.Availability)+ '</td><td>' +course.Day1+ '</td><td>' +course.Day2+ '</td><td>' +course.StartTime+ '</td><td>' +course.EndTime+  '</td>';
 			courseHTMLString += '<td>' +course.TutorialDay1+ '</td><td>' +course.TutorialDay2+ '</td><td>' +course.TutorialStartTime+ '</td><td>' +course.TutorialEndTime+ '</td>';
 			courseHTMLString += '<td>' +course.LabDay+ '</td><td>' +course.LabStartTime+ '</td><td>' +course.LabEndTime+ '</td>';
 			courseHTMLString += '<td class="button_td"> <button onclick="editCourse('+course.UniqueID+')" class = "buttons" type="submit" name="editSection"> Edit </button></td>';
 			courseHTMLString += '<td class="button_td"> <button onclick="deleteCourse('+course.UniqueID+')" class = "buttons" type="submit" name="delSection" > Delete</button></td></tr>';    
 			return courseHTMLString;       
 		}
-<<<<<<< HEAD
-=======
 
->>>>>>> 72f119e91869094e658076d1fcb672848f1c53d1
 	var sectionArray=[]; 
 	$(document).ready(function() {
 		$.get("http://planr.me/Admin/GetSections/",function(response){
@@ -86,26 +77,6 @@ var stringSemester = ["Fall", "Winter", "Fall/Winter", "Summer 1", "Summer 2"];
 		document.getElementById(course.Availability).checked=true;
 		
 		
-<<<<<<< HEAD
-		var course = searchById(sectionArray, key); 
-		document.getElementById("courseID").value= key;
-		document.getElementById("editcName").value= course.Course;
-		document.getElementById("editlDay1").value= course.Day1;
-		document.getElementById("editlDay2").value= course.Day2;
-		document.getElementById("editstartL").value= course.StartTime;
-		document.getElementById("editendL").value= course.EndTime;
-		document.getElementById("edittDay1").value= course.TutorialDay1;
-		document.getElementById("edittDay2").value= course.TutorialDay2;
-		document.getElementById("editstartT").value= course.TutorialStartTime;
-		document.getElementById("editendT").value= course.TutorialEndTime;
-		document.getElementById("editlabDay1").value= course.LabDay;
-		document.getElementById("editstartLab").value= course.LabStartTime;
-		document.getElementById("editendLab").value= course.LabEndTime;
-		alert(course.Availability); 
-		document.getElementById(course.Availability).checked=true;
-		
-=======
->>>>>>> 72f119e91869094e658076d1fcb672848f1c53d1
     }
 
 	function searchById(arrayOfCourses, id)
@@ -139,28 +110,6 @@ var stringSemester = ["Fall", "Winter", "Fall/Winter", "Summer 1", "Summer 2"];
 		
 		
 		function courseOption () {
-<<<<<<< HEAD
-		var courseOptionContent = '<label style="width:162.5px;" id="select_option">Course Name</label> <select name="courses"> ';
-		var courseName=[]; 
-		for(var i=0; i<sectionArray.length;i++)
-		{
-			courseName.push(sectionArray[i].Course); 
-		}
-		courseName=eliminateDuplicates(courseName);
-		
-		for (var i=0; i < courseName.length; i++)
-		{
-			courseOptionContent += '<option value=" ' + courseName[i] + ' "> ' +courseName[i]+ ' </option>';
-			
-		}
-		
-		courseOptionContent += '</select>';
-		
-		document.getElementById("select_option").innerHTML = courseOptionContent;
-		}
-		
-		
-=======
 			var courseOptionContent = '<label style="width:162.5px;" >Course Name</label> <select id="course_name" name="courses"> ';
 			var courseName=[]; 
 			for(var i=0; i<sectionArray.length;i++)
@@ -180,7 +129,6 @@ var stringSemester = ["Fall", "Winter", "Fall/Winter", "Summer 1", "Summer 2"];
 			document.getElementById("select_option").innerHTML = courseOptionContent;
 		}
 		
->>>>>>> 72f119e91869094e658076d1fcb672848f1c53d1
 		function eliminateDuplicates(arr) {
 			var i,
 			len=arr.length,
@@ -195,13 +143,6 @@ var stringSemester = ["Fall", "Winter", "Fall/Winter", "Summer 1", "Summer 2"];
 			}
 			return out;
 		}
-<<<<<<< HEAD
-		function deleteCourse(Course)
-		{
-		var course= searchById(sectionArray, Course);  
-		window.alert("Are you sure you want to delete "+course.Course+"?"+course.UniqueID);
-		}
-=======
 
 		function deleteCourse(Course)
 		{
@@ -209,17 +150,10 @@ var stringSemester = ["Fall", "Winter", "Fall/Winter", "Summer 1", "Summer 2"];
 			window.alert("Are you sure you want to delete "+course.Course+"?"+course.UniqueID);
 		}
 
->>>>>>> 72f119e91869094e658076d1fcb672848f1c53d1
 		function addCourse(course)
 		{
 		
 		}
-<<<<<<< HEAD
-		function validateInputAdd()
-		{
-			
-		}
-=======
 		
 
 		// Function for overall validation
@@ -528,4 +462,7 @@ function saveAddSection()
 
 })(document);
 
->>>>>>> 72f119e91869094e658076d1fcb672848f1c53d1
+function findSemester(numberSemester){
+return semester[numberSemester];
+}
+
