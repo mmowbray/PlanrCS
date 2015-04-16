@@ -118,6 +118,7 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\font-awesome\css\bootstrap.min.css" />
     <Content Include="Content\font-awesome\css\font-awesome.css" />
     <Content Include="Content\font-awesome\css\font-awesome.min.css" />
     <Content Include="Content\font-awesome\fonts\fontawesome-webfont.svg" />
@@ -178,6 +179,20 @@
     <Content Include="Scripts\style.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Scripts\dashboard.js" />
+    <None Include="Views\Admin\Editor.cshtml" />
+    <Content Include="Content\admin.css" />
+    <Content Include="Views\Admin\css\bootstrap-theme.css" />
+    <Content Include="Views\Admin\css\bootstrap-theme.min.css" />
+    <Content Include="Views\Admin\css\bootstrap.css" />
+    <Content Include="Views\Admin\css\bootstrap.min.css" />
+    <Content Include="Views\Admin\css\main_style.css" />
+    <Content Include="Views\Admin\css\style.css" />
+    <Content Include="Content\font-awesome\css\font-awesome2.min.css" />
+    <Content Include="Views\Admin\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Views\Admin\img\planr_bg_img.png" />
+    <Content Include="Scripts\admin.js" />
+    <Content Include="Views\Admin\js\bootstrap.min.js" />
+    <Content Include="Scripts\main_index.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -189,16 +204,20 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Admin\Editor.cshtml" />
     <Content Include="Views\Student\Dashboard_OLD.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Student\Dashboard.cshtml" />
+    <Content Include="Views\Admin\css\bootstrap-theme.css.map" />
+    <Content Include="Views\Admin\css\bootstrap.css.map" />
+    <Content Include="Views\Admin\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Views\Admin\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Views\Admin\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Views\Admin\fonts\glyphicons-halflings-regular.woff2" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Account\js\" />
-    <Folder Include="Views\Admin\js\" />
     <Folder Include="Views\Student\js\" />
   </ItemGroup>
   <ItemGroup>

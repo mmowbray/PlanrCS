@@ -85,6 +85,8 @@ namespace Planr.Controllers
         {
             //List<Schedule> dsa = JsonConvert.DeserializeObject<List<Schedule>>(schedules);
 
+            //var x = new JsonConvert.DeserializeObject<List<Schedule>>(input);
+
             return Json(1, JsonRequestBehavior.AllowGet);
             //return Json(DBInterfacer.SaveSchedule((Session["username"] ?? TEST_STUDENT_USER).ToString(), schedules), JsonRequestBehavior.AllowGet);
         }
