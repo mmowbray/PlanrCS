@@ -75,7 +75,7 @@ var stringSemester = ["Fall", "Winter", "Fall/Winter", "Summer 1", "Summer 2"];
 		document.getElementById("editlabDay1").value= course.LabDay;
 		document.getElementById("editstartLab").value= course.LabStartTime;
 		document.getElementById("editendLab").value= course.LabEndTime;
-		alert(course.Availability); 
+		// alert(course.Availability); 
 		document.getElementById(course.Availability).checked=true;
 		
 		
@@ -190,8 +190,12 @@ var stringSemester = ["Fall", "Winter", "Fall/Winter", "Summer 1", "Summer 2"];
 			var validStartLab = validTime(startLab, "startLab");
 			var validEndLab = validTime(endLab, "endLab");
 			
-			var inputNonEmpty = nonEmptyInput(courseL1) && nonEmptyInput(startLec) && nonEmptyInput(endLec);
+			
 			var isSemesterSelected = selectedSemester("semester");
+			var lectureRequired = nonEmptyInput(courseL1, "lDay1");
+			var lectureStartRequired = nonEmptyInput(startLec, "startL");
+			var lectureEndRequired = nonEmptyInput(endLec, "endL");
+			var inputNonEmpty = lectureRequired && lectureStartRequired && lectureEndRequired;
 			
 			var validInput = validL1 && validL2 && validStartL && validEndL && validT1 && validT2 && validStartTut && validEndTut && validLab && validStartLab && validEndLab && isSemesterSelected && inputNonEmpty;
 			
@@ -231,7 +235,10 @@ var stringSemester = ["Fall", "Winter", "Fall/Winter", "Summer 1", "Summer 2"];
 			var validStartLab = validTime(startLab, "editstartLab");
 			var validEndLab = validTime(endLab, "editendLab");
 			
-			var inputNonEmpty = nonEmptyInput(courseL1) && nonEmptyInput(startLec) && nonEmptyInput(endLec);
+			var lectureRequired = nonEmptyInput(courseL1, "editlDay1");
+			var lectureStartRequired = nonEmptyInput(startLec, "editstartL");
+			var lectureEndRequired = nonEmptyInput(endLec, "editendL");
+			var inputNonEmpty = lectureRequired && lectureStartRequired && lectureEndRequired;
 			var isSemesterSelected = selectedSemester("editsemester");
 			
 			var validInput = validL1 && validL2 && validStartL && validEndL && validT1 && validT2 && validStartTut && validEndTut && validLab && validStartLab && validEndLab && isSemesterSelected && inputNonEmpty;
@@ -240,7 +247,7 @@ var stringSemester = ["Fall", "Winter", "Fall/Winter", "Summer 1", "Summer 2"];
 				// CALL FIRAS FUNCTION --> addCourse()
 				alert ("Valid input. Call Firas' function");
 			else
-				alert ("Mistakes shown is red.");
+				alert ("Mistakes shown is red from edit.");
 		}
 
 		// Function that returns selected semester within the radio buttons
@@ -258,14 +265,14 @@ var stringSemester = ["Fall", "Winter", "Fall/Winter", "Summer 1", "Summer 2"];
 		function selectedSemester(radioGroup) {
 
 				var radioSem = document.getElementsByName(radioGroup);
-				var isSelected = true;
+				// var isSelected = false;
 			
-				for ( var i = 0; i < radioSem.length; i++) {
-					if (radioSem.item(i).checked !== true) 
-						isSelected = false;
+				for ( var l = 0; l < radioSem.length; l++)
+					if (radioSem.item(l).checked === true) 
+						return true;
 					
-				return isSelected;	
-			}
+				return false;	
+			
 		}
 
 		// Function checks for right format of the days (M / T / W / J / F)
@@ -298,14 +305,16 @@ var stringSemester = ["Fall", "Winter", "Fall/Winter", "Summer 1", "Summer 2"];
 		}
 
 		// Function checks for non-empty input
-		function nonEmptyInput(input) 
+		function nonEmptyInput(input, id) 
 		{
 			var isValid = false;
 			
 			if (input !== "")
-				return true;
+				isValid = true;
 			else 
-				return false;
+				isValid = false;
+			
+			return changeInputField(isValid, id);
 		}
 
 		// Function changes the border of input fields to indicate to the user something has gone wrong.
@@ -320,21 +329,12 @@ var stringSemester = ["Fall", "Winter", "Fall/Winter", "Summer 1", "Summer 2"];
 				return true;
 		}
 
-		function resetInput()
+		function resetInputEdit()
 		{
 			resetStyleEdit();
 			
-			document.getElementById("editlDay1").value = "";
-			document.getElementById("editlDay2").value = "";
-			document.getElementById("editstartL").value = "";
-			document.getElementById("editendL").value = "";
-			document.getElementById("edittDay1").value = "";
-			document.getElementById("edittDay2").value = "";
-			document.getElementById("editstartT").value = "";
-			document.getElementById("editendT").value = "";
-			document.getElementById("editlabDay1").value = "";
-			document.getElementById("editstartLab").value = "";
-			document.getElementById("editendLab").value = "";
+			var myKey = document.getElementById("courseID").value;
+			editCourse(myKey);
 			
 		}
 
