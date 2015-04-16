@@ -228,9 +228,8 @@ width: 100%;
 #sidebar_text {
 
 	position: relative;
-	padding-top: 20px;
 	font-weight: bolder;
-	font-size: 1.4em;		
+	font-size: 14px;		
 	color: #f0f0f0;
 }
 
@@ -239,7 +238,7 @@ width: 100%;
 	color: #43609c;
 }
 
-#sidebar_text:focus {
+#sidebar_text:focus {	
 	text-decoration: none;
 }
 

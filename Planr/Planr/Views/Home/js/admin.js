@@ -30,6 +30,7 @@ var stringSemester = ["Fall", "Winter", "Fall/Winter", "Summer 1", "Summer 2"];
 			courseHTMLString += '<td class="button_td"> <button onclick="deleteCourse('+course.UniqueID+')" class = "buttons" type="submit" name="delSection" > Delete</button></td></tr>';    
 			return courseHTMLString;       
 		}
+
 	var sectionArray=[]; 
 	$(document).ready(function() {
 		$.get("http://planr.me/Admin/GetSections/",function(response){
@@ -109,7 +110,7 @@ var stringSemester = ["Fall", "Winter", "Fall/Winter", "Summer 1", "Summer 2"];
 		
 		
 		function courseOption () {
-			var courseOptionContent = '<label style="width:162.5px;" id="select_option">Course Name</label> <select name="courses"> ';
+			var courseOptionContent = '<label style="width:162.5px;" >Course Name</label> <select id="course_name" name="courses"> ';
 			var courseName=[]; 
 			for(var i=0; i<sectionArray.length;i++)
 			{
@@ -154,12 +155,161 @@ var stringSemester = ["Fall", "Winter", "Fall/Winter", "Summer 1", "Summer 2"];
 		
 		}
 		
+
+		// Function for overall validation
 		function validateInputAdd()
 		{
 			
+			var courseName = document.getElementById("course_name").value;
+			var courseL1 = document.getElementById("lDay1").value.toUpperCase();
+			var courseL2 = document.getElementById("lDay2").value.toUpperCase();
+			var startLec = document.getElementById("startL").value;
+			var endLec = document.getElementById("endL").value;
+			var courseT1 = document.getElementById("tDay1").value.toUpperCase();
+			var courseT2 = document.getElementById("tDay2").value.toUpperCase();
+			var startTut = document.getElementById("startT").value;
+			var endTut = document.getElementById("endT").value;
+			var courseLab1 = document.getElementById("labDay1").value.toUpperCase();
+			var startLab = document.getElementById("startLab").value;
+			var endLab = document.getElementById("endLab").value;
+			var courseSemester = getSelectedSemester("semester");
+				
+			
+			var validL1 = validDay(courseL1, "lDay1");
+			var validL2 = validDay(courseL2, "lDay2");
+			var validStartL = validTime(startLec, "startL");
+			var validEndL = validTime(endLec, "endL");
+			var validT1 = validDay(courseT1, "tDay1");
+			var validT2 = validDay(courseT2, "tDay2");
+			var validStartTut = validTime(startTut, "startT");
+			var validEndTut = validTime(endTut, "endT");
+			var validLab = validDay(courseLab1, "labDay1");
+			var validStartLab = validTime(startLab, "startLab");
+			var validEndLab = validTime(endLab, "endLab");
+			
+			var inputNonEmpty = nonEmptyInput(courseL1) && nonEmptyInput(startLec) && nonEmptyInput(endLec);
+			var isSemesterSelected = selectedSemester("semester");
+			
+			var validInput = validL1 && validL2 && validStartL && validEndL && validT1 && validT2 && validStartTut && validEndTut && validLab && validStartLab && validEndLab && isSemesterSelected && inputNonEmpty;
+			
+			if (validInput)
+				// CALL FIRAS FUNCTION --> addCourse()
+				alert ("Valid input. Call Firas' function");
 		}
 
 		function validateInputEdit()
 		{
 			
+			var courseL1 = document.getElementById("editlDay1").value.toUpperCase();
+			var courseL2 = document.getElementById("editlDay2").value.toUpperCase();
+			var startLec = document.getElementById("editstartL").value;
+			var endLec = document.getElementById("editendL").value;
+			var courseT1 = document.getElementById("edittDay1").value.toUpperCase();
+			var courseT2 = document.getElementById("edittDay2").value.toUpperCase();
+			var startTut = document.getElementById("editstartT").value;
+			var endTut = document.getElementById("editendT").value;
+			var courseLab1 = document.getElementById("editlabDay1").value.toUpperCase();
+			var startLab = document.getElementById("editstartLab").value;
+			var endLab = document.getElementById("editendLab").value;
+			var courseSemester = getSelectedSemester("semester");
+				
+			
+			var validL1 = validDay(courseL1, "editlDay1");
+			var validL2 = validDay(courseL2, "editlDay2");
+			var validStartL = validTime(startLec, "editstartL");
+			var validEndL = validTime(endLec, "editendL");
+			var validT1 = validDay(courseT1, "edittDay1");
+			var validT2 = validDay(courseT2, "edittDay2");
+			var validStartTut = validTime(startTut, "editstartT");
+			var validEndTut = validTime(endTut, "editendT");
+			var validLab = validDay(courseLab1, "editlabDay1");
+			var validStartLab = validTime(startLab, "editstartLab");
+			var validEndLab = validTime(endLab, "editendLab");
+			
+			var inputNonEmpty = nonEmptyInput(courseL1) && nonEmptyInput(startLec) && nonEmptyInput(endLec);
+			var isSemesterSelected = selectedSemester("editsemester");
+			
+			var validInput = validL1 && validL2 && validStartL && validEndL && validT1 && validT2 && validStartTut && validEndTut && validLab && validStartLab && validEndLab && isSemesterSelected && inputNonEmpty;
+			
+			if (validInput)
+				// CALL FIRAS FUNCTION --> addCourse()
+				alert ("Valid input. Call Firas' function");
 		}
+
+		// Function that returns selected semester within the radio buttons
+		function getSelectedSemester(radioGroup) {
+
+				var radioSem = document.getElementsByName(radioGroup);
+				
+				for ( var i = 0; i < radioSem.length; i++) {
+					if (radioSem.item(i).checked) 
+						return radioSem.item(i).value;
+			}
+		}
+
+		// Function that checks if a semester has been selected
+		function selectedSemester(radioGroup) {
+
+				var radioSem = document.getElementsByName(radioGroup);
+				var isSelected = true;
+			
+				for ( var i = 0; i < radioSem.length; i++) {
+					if (radioSem.item(i).checked !== true) 
+						isSelected = false;
+					
+				return isSelected;	
+			}
+		}
+
+		// Function checks for right format of the days (M / T / W / J / F)
+		function validDay(day, id)
+		{
+			var arrayDay = ["M", "T", "W", "J", "F", ""];
+			var isValid = false;
+			
+			for (var i = 0; i < arrayDay.length; i++)
+			{
+				if (day == arrayDay[i])		
+					isValid = true;
+			}
+			
+			return changeInputField (isValid, id);
+		}
+
+		// Function checks for right format of the time (00:00)
+		function validTime(time, id) 
+		{
+			var isValid = false;
+			
+			if (time === "")
+				return true;
+			else 
+				isValid = /([0-1]\d|2[0-3]):([0-5]\d)/.test(time);
+			
+			
+			return changeInputField (isValid, id);
+		}
+
+		// Function checks for non-empty input
+		function nonEmptyInput(input) 
+		{
+			var isValid = false;
+			
+			if (input !== "")
+				return true;
+			else 
+				return false;
+		}
+
+		// Function changes the border of input fields to indicate to the user something has gone wrong.
+		function changeInputField(valid, myId)
+		{
+			if (valid !== true) {
+				document.getElementById(myId).style.borderColor = "red";
+				document.getElementById(myId).style.borderWidth = "thick";
+				return false;
+			}
+			else
+				return true;
+		}
+

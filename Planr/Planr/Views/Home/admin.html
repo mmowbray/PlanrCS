@@ -72,7 +72,7 @@
         <!-- sidebar menu start-->
         <div class="leftside-navigation" style="text-align:center">
   			<div ng-controller="PreferencesCtrl" id="pref-tile">
-				<a href='admin.html' id="sidebar_text"> <p style="padding-top: 20px;">View Sections </p> </a>
+				<a href='admin.html' id="sidebar_text"> <p style="padding-top: 35px;">View Sections </p> </a>
             </div>
         </div>
         <!-- sidebar menu end-->
@@ -94,34 +94,36 @@
 				<div id="form_content">
 					<p>
 					<label style="width:162.5px;" id="select_option">Course Name</label>
+						
 					<label style="width:162px">Semester Offered</label>	
-													<input style="width:25px" type="radio" name="Fall" value="1">Fall</input>
-													<input style="width:25px" type="radio" name="Winter" value="2">Winter</input>
-													<input style="width:25px" type="radio" name="Fall/Winter" value="3">Fall/Winter</input>
-													<input style="width:25px" type="radio" name="Summer 1" value="4">Summer1</input>
-													<input style="width:25px" type="radio" name="Summer 2" value="5">Summer2</input>
-													<input style="width:25px" type="radio" name="Online" value="1">Online</input><br>
+													<input style="width:25px" type="radio" name="semester" id="aFall" value="1" required>Fall</input>
+													<input style="width:25px" type="radio" name="semester" id="aWinter" value="2" required>Winter</input>
+													<input style="width:25px" type="radio" name="semester" id="aFallWinter" value="3" required>Fall/Winter</input>
+													<input style="width:25px" type="radio" name="semester" id="aSummer1" value="4" required>Summer1</input>
+													<input style="width:25px" type="radio" name="semester" id="aSummer2" value="5" required>Summer2</input>
+													<input style="width:25px" type="radio" name="semester" id="aOnline" value="6" required>Online</input><br>
 													</p>
 					<p><label>Lec</label>
-					<label>Day 1</label><input id="lDay1" placeholder="M / T / W / J / F" maxlength="1"></input>
+					<label>Day 1</label><input id="lDay1" placeholder="M / T / W / J / F" maxlength="1" style="text-transform: uppercase" required></input>
 					<label>Day 2</label><input id="lDay2" placeholder="M / T / W / J / F" maxlength="1"></input>
-					<label>Start</label><input id="startL"></input>
-					<label>End</label><input id="endL"></input></p>
+					<label>Start</label><input id="startL" placeholder="00:00" maxlength="5" required></input>
+					<label>End</label><input id="endL" placeholder="00:00" maxlength="5" required></input></p>
 					<p><label>Tut</label>
-					<label>Day 1</label><input id="tDay1" placeholder="M / T / W / J / F" maxlength="1"></input>
-					<label>Day 2</label><input id="tDay2" placeholder="M / T / W / J / F" maxlength="1"></input>
-					<label>Start</label><input id="startT" ></input>
-					<label>End</label><input id="endT"></input></p>
+					<label>Day 1</label><input id="tDay1" placeholder="M / T / W / J / F" maxlength="1" style="text-transform: uppercase"></input>
+					<label>Day 2</label><input id="tDay2" placeholder="M / T / W / J / F" maxlength="1" style="text-transform: uppercase"></input>
+					<label>Start</label><input id="startT" placeholder="00:00" maxlength="5" ></input>
+					<label>End</label><input id="endT" placeholder="00:00" maxlength="5"></input></p>
 					<p><label>Lab</label>
-					<label>Day 1</label><input id="labDay1" placeholder="M / T / W / J / F" maxlength="1"></input>
-					<label>Start</label><input id="startLab"></input>
-					<label>End</label><input id="endLab"></input></p>
+					<label>Day 1</label><input id="labDay1" placeholder="M / T / W / J / F" maxlength="1" style="text-transform: uppercase"></input>
+					<label>Start</label><input id="startLab" placeholder="00:00" maxlength="5"></input>
+					<label>End</label><input id="endLab" placeholder="00:00" maxlength="5"></input></p>
 				</div>
 
-					<div class="button_holder"> <input class="form_button" id="adding_button" type="submit" value="Add Section" />
-							<input class="form_button" id="cancel_button" type="submit" value="Cancel" /></div>
-			
-				
+					<div class="button_holder"> 
+							<input class="form_button" onclick="validateInputAdd();" id="adding_button" type="submit" value="Add Section" />
+							<input class="form_button" id="cancel_button" type="reset" value="Cancel" />
+					</div>
+		
 			</fieldset>
 		
 		</form>	
@@ -141,31 +143,33 @@
 					<label style="width:162.5px;">Course Name</label><input class ="readonly" type="text/javascript" id="editcName" readonly></input>
 					<label  style="width:20px;">ID</label><input class ="readonly" id="courseID" style="width:50px" readonly></input>
 					<label style="width:162px">Semester Offered</label>	
-													<input style="width:25px" type="radio" name="semester" id="1" value="1">Fall</input>
-													<input style="width:25px" type="radio" name="semester" id="2" value="2">Winter</input>
-													<input style="width:25px" type="radio" name="semester" id="3" value="3">Fall/Winter</input>
-													<input style="width:25px" type="radio" name="semester" id="4" value="4">Summer1</input>
-													<input style="width:25px" type="radio" name="semester" id="5" value="5">Summer2</input>
-													<input style="width:25px" type="radio" name="semester" id="6" value="6">Online</input><br>
+													<input style="width:25px" type="radio" name="editsemester" id="1" value="1" required>Fall</input>
+													<input style="width:25px" type="radio" name="editsemester" id="2" value="2" required>Winter</input>
+													<input style="width:25px" type="radio" name="editsemester" id="3" value="3" required>Fall/Winter</input>
+													<input style="width:25px" type="radio" name="editsemester" id="4" value="4" required>Summer1</input>
+													<input style="width:25px" type="radio" name="editsemester" id="5" value="5" required>Summer2</input>
+													<input style="width:25px" type="radio" name="editsemester" id="6" value="6" required>Online</input><br>
 													</p>
 					<p><label>Lec</label>
-					<label>Day 1</label><input id="editlDay1" placeholder="M / T / W / J / F" maxlength="1"></input>
-					<label>Day 2</label><input id="editlDay2" placeholder="M / T / W / J / F" maxlength="1"></input>
-					<label>Start</label><input id="editstartL" ></input>
-					<label>End</label><input id="editendL"></input></p>
+					<label>Day 1</label><input id="editlDay1" placeholder="M / T / W / J / F" maxlength="1" style="text-transform: uppercase" required></input>
+					<label>Day 2</label><input id="editlDay2" placeholder="M / T / W / J / F" maxlength="1" style="text-transform: uppercase"></input>
+					<label>Start</label><input id="editstartL" placeholder="00:00" required></input>
+					<label>End</label><input id="editendL" placeholder="00:00" required></input></p>
 					<p><label>Tut</label>
-					<label>Day 1</label><input id="edittDay1" placeholder="M / T / W / J / F" maxlength="1"></input>
-					<label>Day 2</label><input id="edittDay2" placeholder="M / T / W / J / F" maxlength="1"></input>
-					<label>Start</label><input id="editstartT"></input>
-					<label>End</label><input id="editendT"></input></p>
+					<label>Day 1</label><input id="edittDay1" placeholder="M / T / W / J / F" maxlength="1" style="text-transform: uppercase"></input>
+					<label>Day 2</label><input id="edittDay2" placeholder="M / T / W / J / F" maxlength="1" style="text-transform: uppercase"></input>
+					<label>Start</label><input id="editstartT" placeholder="00:00" maxlength="5"></input>
+					<label>End</label><input id="editendT" placeholder="00:00" maxlength="5"></input></p>
 					<p><label>Lab</label>
-					<label>Day 1</label><input id="editlabDay1" placeholder="M / T / W / J / F" maxlength="1"></input>
-					<label>Start</label><input id="editstartLab"></input>
-					<label>End</label><input id="editendLab"></input></p>
+					<label>Day 1</label><input id="editlabDay1" placeholder="M / T / W / J / F" maxlength="1" style="text-transform: uppercase"></input>
+					<label>Start</label><input id="editstartLab" placeholder="00:00" maxlength="5"></input>
+					<label>End</label><input id="editendLab" placeholder="00:00" maxlength="5"></input></p>
 				</div>
 
-					<div class="button_holder"> <input class="form_button" id="edit_button" type="submit" onclick="save()" value="Edit Section" />
-							<input class="form_button" id="cancel_button" type="submit" value="Cancel" /></div>
+					<div class="button_holder"> 
+						<input class="form_button" id="edit_button" type="submit" onclick="validateInputEdit()" value="Edit Section" />
+						<input class="form_button" id="cancel_button" type="reset" value="Cancel" />
+					</div>
 					
 			</fieldset>
 		</form>	
