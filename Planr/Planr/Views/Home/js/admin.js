@@ -1,4 +1,5 @@
 var semester=["Online", "Fall/Winter", "Fall", "Winter", "Summer1", "Summer2", "Summer"]; 
+
         function drawTable(section)
 		{ 
 			var table=""; 	
@@ -98,6 +99,7 @@ var semester=["Online", "Fall/Winter", "Fall", "Winter", "Summer1", "Summer2", "
 	}
 
 	// TODO: change save to editSave, addSave.
+		/* 
 		function save()
 		{
 			var idSection=document.getElementById("Course").value;
@@ -105,7 +107,7 @@ var semester=["Online", "Fall/Winter", "Fall", "Winter", "Summer1", "Summer2", "
 			var section = searchById(sectionArray, idSection); 
 			window.reload(); 
 		}
-		
+		*/
 		
 		
 		
@@ -150,11 +152,7 @@ var semester=["Online", "Fall/Winter", "Fall", "Winter", "Summer1", "Summer2", "
 			window.alert("Are you sure you want to delete "+course.Course+"?"+course.UniqueID);
 		}
 
-		function addCourse(course)
-		{
-		
-		}
-		
+
 
 		// Function for overall validation
 		function validateInputAdd()
@@ -196,11 +194,13 @@ var semester=["Online", "Fall/Winter", "Fall", "Winter", "Summer1", "Summer2", "
 			
 			var validInput = validL1 && validL2 && validStartL && validEndL && validT1 && validT2 && validStartTut && validEndTut && validLab && validStartLab && validEndLab && isSemesterSelected && inputNonEmpty;
 			
-			if (validInput)
+			return validInput;
+			/* if (validInput)
 				// CALL FIRAS FUNCTION --> addCourse()
 				alert ("Valid input. Call Firas' function");
 			else
-				alert ("Mistakes shown is red.");
+				alert ("Mistakes shown is red from edit.");
+				*/
 		}
 
 		function validateInputEdit()
@@ -235,16 +235,19 @@ var semester=["Online", "Fall/Winter", "Fall", "Winter", "Summer1", "Summer2", "
 			var lectureRequired = nonEmptyInput(courseL1, "editlDay1");
 			var lectureStartRequired = nonEmptyInput(startLec, "editstartL");
 			var lectureEndRequired = nonEmptyInput(endLec, "editendL");
+			
 			var inputNonEmpty = lectureRequired && lectureStartRequired && lectureEndRequired;
 			var isSemesterSelected = selectedSemester("editsemester");
 			
 			var validInput = validL1 && validL2 && validStartL && validEndL && validT1 && validT2 && validStartTut && validEndTut && validLab && validStartLab && validEndLab && isSemesterSelected && inputNonEmpty;
 			
-			if (validInput)
+			return validInput;
+			/* if (validInput)
 				// CALL FIRAS FUNCTION --> addCourse()
 				alert ("Valid input. Call Firas' function");
 			else
 				alert ("Mistakes shown is red from edit.");
+				*/
 		}
 
 		// Function that returns selected semester within the radio buttons
@@ -329,9 +332,10 @@ var semester=["Online", "Fall/Winter", "Fall", "Winter", "Summer1", "Summer2", "
 		function resetInputEdit()
 		{
 			resetStyleEdit();
-			
 			var myKey = document.getElementById("sectionID").value;
 			editCourse(myKey);
+			
+			document.getElementById("edit_section").style.display='none'; 
 			
 		}
 
@@ -342,13 +346,30 @@ var semester=["Online", "Fall/Winter", "Fall", "Winter", "Summer1", "Summer2", "
 			document.getElementById("editstartL").style.borderColor = "";
 			document.getElementById("editendL").style.borderColor = "";
 			document.getElementById("edittDay1").style.borderColor = "";
-			document.getElementById("editlDay2").style.borderColor = "";
+			document.getElementById("edittDay2").style.borderColor = "";
 			document.getElementById("editstartT").style.borderColor = "";
 			document.getElementById("editendT").style.borderColor = "";
 			document.getElementById("editlabDay1").style.borderColor = "";
 			document.getElementById("editstartLab").style.borderColor = "";
 			document.getElementById("editendLab").style.borderColor = "";
 		}
+
+		function resetStyleAdd(){
+			
+			document.getElementById("lDay1").style.borderColor = "";
+			document.getElementById("lDay2").style.borderColor = "";
+			document.getElementById("startL").style.borderColor = "";
+			document.getElementById("endL").style.borderColor = "";
+			document.getElementById("tDay1").style.borderColor = "";
+			document.getElementById("tDay2").style.borderColor = "";
+			document.getElementById("startT").style.borderColor = "";
+			document.getElementById("endT").style.borderColor = "";
+			document.getElementById("labDay1").style.borderColor = "";
+			document.getElementById("startLab").style.borderColor = "";
+			document.getElementById("endLab").style.borderColor = "";
+		}
+
+
 
 		function resetInputAdd() {
 			document.getElementById("lDay1").style.borderColor = "";
@@ -364,8 +385,10 @@ var semester=["Online", "Fall/Winter", "Fall", "Winter", "Summer1", "Summer2", "
 			document.getElementById("endLab").style.borderColor = "";
 		}
 
-function saveAddSection()
+		function saveAddSection()
 		{
+			resetStyleAdd();
+			
 			var section={}; 
 			section.Course = document.getElementById("course_name").value;
 			section.Day1 = document.getElementById("lDay1").value.toUpperCase();
@@ -380,11 +403,18 @@ function saveAddSection()
 			section.LabStartTime = document.getElementById("startLab").value;
 			section.LabEndTime = document.getElementById("endLab").value;
 			section.Availability = getSelectedSemester("semester");
-			$.get( "http://planr.me/Admin/AddSection", section, function(responseCode ) {
-						alert("Section has been successfully added");
-						 location.reload();
-				});
+			
+			if (validateInputAdd())
+			{
+				$.get( "http://planr.me/Admin/AddSection", section, function(responseCode ) {
+							alert("Section has been successfully added");
+							 location.reload();
+					});
+			}
+			else
+				alert("Errors found. Please verify your input.");
 		}
+
 		//function to delete a section
 		function deleteCourse(sectionID)
 		{
@@ -397,6 +427,8 @@ function saveAddSection()
 		//function to edit a section
 		function saveEditSection()
 		{
+			resetStyleEdit();
+			
 			var section={}; 
 			
 			section.Course = document.getElementById("editcName").value;
@@ -414,13 +446,19 @@ function saveAddSection()
 			section.LabStartTime = document.getElementById("editstartLab").value;
 			section.LabEndTime = document.getElementById("editendLab").value;
 			section.Availability = getSelectedSemester("editsemester");
-			location.reload();
-			$.get( "http://planr.me/Admin/UpdateExistingSection", section, function(responseCode ) {
-						alert("Section has been successfully edited");	
-					}
-				);
 			
+			if (validateInputEdit()) 
+			{
+				$.get( "http://planr.me/Admin/UpdateExistingSection", section, function(responseCode ) {
+							alert("Section has been successfully edited");	
+							location.reload();
+						}
+					);
 			}
+			else
+				alert("Errors found. Please verify your input.");
+			
+		}
 // filter table. 			
 (function(document) {
 	'use strict';
