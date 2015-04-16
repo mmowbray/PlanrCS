@@ -15,22 +15,24 @@
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
 </head>
 
-
 <body>
 <section id="container">
-<!--header start-->
-    <header class="header fixed-top clearfix">
+	
+	<!--header start-->
+        <header class="header fixed-top clearfix">
+            <!--logo start-->
+            <div class="brand">
 
-    <!--logo start-->
-    <div class="brand">
-
-        <a href="#" class="logo">
-            <span id="logo_span">P<span id="anr">lan R</span></span>
-        </a>
-    </div>
-    <!--logo end-->
+                <a href="#" class="logo">
+                    <span id="logo_span">P<span id="anr">lan R</span></span>
+                </a>
+            </div>
+            <!--logo end-->
 
 
+            <div class="top-nav clearfix">
+
+<<<<<<< HEAD
     <div class="top-nav clearfix">
         <!--search & user info start-->
         <div class="user_profile">
@@ -55,14 +57,42 @@
 	
 </header>
 <!--header end-->
+=======
+                <!--search & user info start-->
+                <ul class="top-nav-list">
+                    <li class="top-nav-list top-nav-list-left user_profile">
+                        <a href="#" class="user_profile"><span class="fa fa-user" style="font-size: 4.4em;line-height: 1.8em;"></span></a>
+                    </li>
+
+					<li class="top-nav-list top-nav-list-right logout_menu" id="letmego">
+						<a class="menu_button_top" href="#" style="font-size: 14px"><span class="fa fa-power-off" style="font-size:3.1em; line-height: 2.4em;"></span></a>
+					</li>
+					
+					<!--add course button starts -->
+					<div>
+						<li id="add_button" class="top-nav-list top-nav-list-right logout_menu">
+							<a id="add_b" href="#" onclick="toggle_visibility('add_section'); courseOption()" ><i class="fa fa-plus-circle"></i></a>
+							 <p id="add_text"> Add section </p>
+						</li>
+					</div>
+					<!-- add course button ends -->
+
+				</ul>
+                <!--search & user info end-->
+            </div>
+        </header>
+        <!--header end-->
+>>>>>>> 72f119e91869094e658076d1fcb672848f1c53d1
 
 
 <!--sidebar start-->
 <aside>
     <div id="sidebar" class="nav-collapse">
         <!-- sidebar menu start-->
-        <div class="leftside-navigation">
-
+        <div class="leftside-navigation" style="text-align:center">
+  			<div ng-controller="PreferencesCtrl" id="pref-tile">
+				<a href='admin.html' id="sidebar_text"> <p style="padding-top: 35px;">View Sections </p> </a>
+            </div>
         </div>
         <!-- sidebar menu end-->
     </div>
@@ -74,6 +104,12 @@
 <section id="main-content">
 <section class="wrapper">
 
+		
+		<div>  <!--search box-->
+			<input type="search" class="light-table-filter" data-table="order-table" placeholder="Search Courses">
+		</div>
+		
+
 		<!-- start of add section form -->
         <div id = "add_section" class="test" style="display: none">
 		<form name="myform" action="" onsubmit="" method="" id="add_section">
@@ -83,15 +119,20 @@
 				<div id="form_content">
 					<p>
 					<label style="width:162.5px;" id="select_option">Course Name</label>
+<<<<<<< HEAD
+=======
+						
+>>>>>>> 72f119e91869094e658076d1fcb672848f1c53d1
 					<label style="width:162px">Semester Offered</label>	
-													<input style="width:25px" type="radio" name="Fall" value="1">Fall</input>
-													<input style="width:25px" type="radio" name="Winter" value="2">Winter</input>
-													<input style="width:25px" type="radio" name="Fall/Winter" value="3">Fall/Winter</input>
-													<input style="width:25px" type="radio" name="Summer 1" value="4">Summer1</input>
-													<input style="width:25px" type="radio" name="Summer 2" value="5">Summer2</input>
-													<input style="width:25px" type="radio" name="Online" value="1">Online</input><br>
+													<input style="width:25px" type="radio" name="semester" id="aFall" value="1" required>Fall</input>
+													<input style="width:25px" type="radio" name="semester" id="aWinter" value="2" required>Winter</input>
+													<input style="width:25px" type="radio" name="semester" id="aFallWinter" value="3" required>Fall/Winter</input>
+													<input style="width:25px" type="radio" name="semester" id="aSummer1" value="4" required>Summer1</input>
+													<input style="width:25px" type="radio" name="semester" id="aSummer2" value="5" required>Summer2</input>
+													<input style="width:25px" type="radio" name="semester" id="aOnline" value="6" required>Online</input><br>
 													</p>
 					<p><label>Lec</label>
+<<<<<<< HEAD
 					<label>Day 1</label><input id="lDay1" placeholder="M / T / W / J / F" maxlength="1"></input>
 					<label>Day 2</label><input id="lDay2" placeholder="M / T / W / J / F" maxlength="1"></input>
 					<label>Start</label><input id="startL"></input>
@@ -105,12 +146,28 @@
 					<label>Day 1</label><input id="labDay1" placeholder="M / T / W / J / F" maxlength="1"></input>
 					<label>Start</label><input id="startLab"></input>
 					<label>End</label><input id="endLab"></input></p>
+=======
+					<label>Day 1</label><input id="lDay1" placeholder="M / T / W / J / F" maxlength="1" style="text-transform: uppercase" required></input>
+					<label>Day 2</label><input id="lDay2" placeholder="M / T / W / J / F" maxlength="1"></input>
+					<label>Start</label><input id="startL" placeholder="00:00" maxlength="5" required></input>
+					<label>End</label><input id="endL" placeholder="00:00" maxlength="5" required></input></p>
+					<p><label>Tut</label>
+					<label>Day 1</label><input id="tDay1" placeholder="M / T / W / J / F" maxlength="1" style="text-transform: uppercase"></input>
+					<label>Day 2</label><input id="tDay2" placeholder="M / T / W / J / F" maxlength="1" style="text-transform: uppercase"></input>
+					<label>Start</label><input id="startT" placeholder="00:00" maxlength="5" ></input>
+					<label>End</label><input id="endT" placeholder="00:00" maxlength="5"></input></p>
+					<p><label>Lab</label>
+					<label>Day 1</label><input id="labDay1" placeholder="M / T / W / J / F" maxlength="1" style="text-transform: uppercase"></input>
+					<label>Start</label><input id="startLab" placeholder="00:00" maxlength="5"></input>
+					<label>End</label><input id="endLab" placeholder="00:00" maxlength="5"></input></p>
+>>>>>>> 72f119e91869094e658076d1fcb672848f1c53d1
 				</div>
 
-					<div class="button_holder"> <input class="form_button" id="adding_button" type="submit" value="Add Section" />
-							<input class="form_button" id="cancel_button" type="submit" value="Cancel" /></div>
-			
-				
+					<div class="button_holder"> 
+							<input class="form_button" onclick="saveAddSection();" id="adding_button" type="submit" value="Add Section" />
+							<input class="form_button" id="cancel_button" type="reset" onclick="resetInputAdd();" value="Cancel" />
+					</div>
+		
 			</fieldset>
 		
 		</form>	
@@ -126,6 +183,7 @@
 					<legend id="title_field">Edit Section</legend>
 				<div id="form_content">
 					<p>
+<<<<<<< HEAD
 					
 					<label style="width:162.5px;">Course Name</label><input class ="readonly" type="text/javascript" id="editcName" readonly></input>
 					<label  style="width:20px;">ID</label><input class ="readonly" id="courseID" style="width:50px" readonly></input>
@@ -155,6 +213,39 @@
 
 					<div class="button_holder"> <input class="form_button" id="edit_button" type="submit" onclick="save()" value="Edit Section" />
 							<input class="form_button" id="cancel_button" type="submit" value="Cancel" /></div>
+=======
+					<label style="width:162.5px;">Course Name</label><input class ="readonly" type="text/javascript" id="editcName" readonly></input>
+					<input class ="readonly" id="sectionID" style="width:50px" hidden></input>
+					<input class ="readonly" id="courseID" style="width:50px" hidden></input>
+					<label style="width:162px">Semester Offered</label>	
+													<input style="width:25px" type="radio" name="editsemester" id="1" value="1" required>Fall</input>
+													<input style="width:25px" type="radio" name="editsemester" id="2" value="2" required>Winter</input>
+													<input style="width:25px" type="radio" name="editsemester" id="3" value="3" required>Fall/Winter</input>
+													<input style="width:25px" type="radio" name="editsemester" id="4" value="4" required>Summer1</input>
+													<input style="width:25px" type="radio" name="editsemester" id="5" value="5" required>Summer2</input>
+													<input style="width:25px" type="radio" name="editsemester" id="6" value="6" required>Online</input><br>
+													</p>
+					<p><label>Lec</label>
+					<label>Day 1</label><input id="editlDay1" placeholder="M / T / W / J / F" maxlength="1" style="text-transform: uppercase" required></input>
+					<label>Day 2</label><input id="editlDay2" placeholder="M / T / W / J / F" maxlength="1" style="text-transform: uppercase"></input>
+					<label>Start</label><input id="editstartL" placeholder="00:00" maxlength="5" required></input>
+					<label>End</label><input id="editendL" placeholder="00:00" maxlength="5" required></input></p>
+					<p><label>Tut</label>
+					<label>Day 1</label><input id="edittDay1" placeholder="M / T / W / J / F" maxlength="1" style="text-transform: uppercase"></input>
+					<label>Day 2</label><input id="edittDay2" placeholder="M / T / W / J / F" maxlength="1" style="text-transform: uppercase"></input>
+					<label>Start</label><input id="editstartT" placeholder="00:00" maxlength="5"></input>
+					<label>End</label><input id="editendT" placeholder="00:00" maxlength="5"></input></p>
+					<p><label>Lab</label>
+					<label>Day 1</label><input id="editlabDay1" placeholder="M / T / W / J / F" maxlength="1" style="text-transform: uppercase"></input>
+					<label>Start</label><input id="editstartLab" placeholder="00:00" maxlength="5"></input>
+					<label>End</label><input id="editendLab" placeholder="00:00" maxlength="5"></input></p>
+				</div>
+
+					<div class="button_holder"> 
+						<input class="form_button" id="edit_button" type="submit" onclick="saveEditSection();" value="Edit Section" />
+						<input class="form_button" id="cancel_button" type="submit" onclick="resetInputEdit();" value="Cancel" />
+					</div>
+>>>>>>> 72f119e91869094e658076d1fcb672848f1c53d1
 					
 			</fieldset>
 		</form>	
@@ -163,13 +254,12 @@
 	
         <div id="table_content"> 
 			
-            <table id="course_table">
+            <table id="course_table" class="order-table table">
             	<script type="text/javascript" src="js/admin.js"></script>
             </table>	
         </div>
 
-    </div>
-</div>
+
 </section>
 </section>
 <!--main content end-->
