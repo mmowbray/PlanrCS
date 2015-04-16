@@ -121,7 +121,7 @@
 
 					<div class="button_holder"> 
 							<input class="form_button" onclick="validateInputAdd();" id="adding_button" type="submit" value="Add Section" />
-							<input class="form_button" id="cancel_button" type="reset" value="Cancel" />
+							<input class="form_button" id="cancel_button" type="reset" onclick="resetInputAdd();" value="Cancel" />
 					</div>
 		
 			</fieldset>
@@ -153,8 +153,8 @@
 					<p><label>Lec</label>
 					<label>Day 1</label><input id="editlDay1" placeholder="M / T / W / J / F" maxlength="1" style="text-transform: uppercase" required></input>
 					<label>Day 2</label><input id="editlDay2" placeholder="M / T / W / J / F" maxlength="1" style="text-transform: uppercase"></input>
-					<label>Start</label><input id="editstartL" placeholder="00:00" required></input>
-					<label>End</label><input id="editendL" placeholder="00:00" required></input></p>
+					<label>Start</label><input id="editstartL" placeholder="00:00" maxlength="5" required></input>
+					<label>End</label><input id="editendL" placeholder="00:00" maxlength="5" required></input></p>
 					<p><label>Tut</label>
 					<label>Day 1</label><input id="edittDay1" placeholder="M / T / W / J / F" maxlength="1" style="text-transform: uppercase"></input>
 					<label>Day 2</label><input id="edittDay2" placeholder="M / T / W / J / F" maxlength="1" style="text-transform: uppercase"></input>
@@ -167,8 +167,8 @@
 				</div>
 
 					<div class="button_holder"> 
-						<input class="form_button" id="edit_button" type="submit" onclick="validateInputEdit()" value="Edit Section" />
-						<input class="form_button" id="cancel_button" type="reset" value="Cancel" />
+						<input class="form_button" id="edit_button" type="submit" onclick="validateInputEdit();" value="Edit Section" />
+						<input class="form_button" id="cancel_button" type="submit" onclick="resetInputEdit();" value="Cancel" />
 					</div>
 					
 			</fieldset>

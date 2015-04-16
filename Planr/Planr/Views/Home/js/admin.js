@@ -59,6 +59,7 @@ var stringSemester = ["Fall", "Winter", "Fall/Winter", "Summer 1", "Summer 2"];
 			document.getElementById("add_section").style.display='none'; 
 		
 		document.getElementById("edit_section").style.display = 'block'; 
+		resetStyleEdit();
 		
 		var course = searchById(sectionArray, key); 
 		document.getElementById("courseID").value= key;
@@ -76,6 +77,8 @@ var stringSemester = ["Fall", "Winter", "Fall/Winter", "Summer 1", "Summer 2"];
 		document.getElementById("editendLab").value= course.LabEndTime;
 		alert(course.Availability); 
 		document.getElementById(course.Availability).checked=true;
+		
+		
 		
     }
 
@@ -195,6 +198,8 @@ var stringSemester = ["Fall", "Winter", "Fall/Winter", "Summer 1", "Summer 2"];
 			if (validInput)
 				// CALL FIRAS FUNCTION --> addCourse()
 				alert ("Valid input. Call Firas' function");
+			else
+				alert ("Mistakes shown is red.");
 		}
 
 		function validateInputEdit()
@@ -234,6 +239,8 @@ var stringSemester = ["Fall", "Winter", "Fall/Winter", "Summer 1", "Summer 2"];
 			if (validInput)
 				// CALL FIRAS FUNCTION --> addCourse()
 				alert ("Valid input. Call Firas' function");
+			else
+				alert ("Mistakes shown is red.");
 		}
 
 		// Function that returns selected semester within the radio buttons
@@ -306,10 +313,56 @@ var stringSemester = ["Fall", "Winter", "Fall/Winter", "Summer 1", "Summer 2"];
 		{
 			if (valid !== true) {
 				document.getElementById(myId).style.borderColor = "red";
-				document.getElementById(myId).style.borderWidth = "thick";
+
 				return false;
 			}
 			else
 				return true;
 		}
 
+		function resetInput()
+		{
+			resetStyleEdit();
+			
+			document.getElementById("editlDay1").value = "";
+			document.getElementById("editlDay2").value = "";
+			document.getElementById("editstartL").value = "";
+			document.getElementById("editendL").value = "";
+			document.getElementById("edittDay1").value = "";
+			document.getElementById("edittDay2").value = "";
+			document.getElementById("editstartT").value = "";
+			document.getElementById("editendT").value = "";
+			document.getElementById("editlabDay1").value = "";
+			document.getElementById("editstartLab").value = "";
+			document.getElementById("editendLab").value = "";
+			
+		}
+
+		function resetStyleEdit(){
+			
+			document.getElementById("editlDay1").style.borderColor = "";
+			document.getElementById("editlDay2").style.borderColor = "";
+			document.getElementById("editstartL").style.borderColor = "";
+			document.getElementById("editendL").style.borderColor = "";
+			document.getElementById("edittDay1").style.borderColor = "";
+			document.getElementById("editlDay2").style.borderColor = "";
+			document.getElementById("editstartT").style.borderColor = "";
+			document.getElementById("editendT").style.borderColor = "";
+			document.getElementById("editlabDay1").style.borderColor = "";
+			document.getElementById("editstartLab").style.borderColor = "";
+			document.getElementById("editendLab").style.borderColor = "";
+		}
+
+		function resetInputAdd() {
+			document.getElementById("lDay1").style.borderColor = "";
+			document.getElementById("lDay2").style.borderColor = "";
+			document.getElementById("startL").style.borderColor = "";
+			document.getElementById("endL").style.borderColor = "";
+			document.getElementById("tDay1").style.borderColor = "";
+			document.getElementById("lDay2").style.borderColor = "";
+			document.getElementById("startT").style.borderColor = "";
+			document.getElementById("endT").style.borderColor = "";
+			document.getElementById("labDay1").style.borderColor = "";
+			document.getElementById("startLab").style.borderColor = "";
+			document.getElementById("endLab").style.borderColor = "";
+		}
