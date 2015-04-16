@@ -199,15 +199,9 @@ width: 100%;
 
 #add_button
 {
-<<<<<<< HEAD
-	  top: 30%;
-	  left: 89%;
-	  position: absolute;
-=======
 	position: absolute;
   	margin-top: 30px;
   	left: 87%;
->>>>>>> 72f119e91869094e658076d1fcb672848f1c53d1
 }
 
 #add_section {
@@ -341,11 +335,7 @@ width: 100%;
 }
 
 .readonly {
-<<<<<<< HEAD
-	background-color: #FF000A ;
-=======
 	background-color: #d1caca;
->>>>>>> 72f119e91869094e658076d1fcb672848f1c53d1
 }
 
 #form_content {
@@ -355,18 +345,11 @@ width: 100%;
 
 #search {
   margin-top: 10px;
-<<<<<<< HEAD
-}
-
-#letmego {
-	margin-left: 94%;	
-=======
   margin-left: 5px;
 }
 
 #letmego {
 	float: right;
->>>>>>> 72f119e91869094e658076d1fcb672848f1c53d1
 }
 
 fieldset{
