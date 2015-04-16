@@ -116,7 +116,6 @@ Planr.controller('SchedulesCtrl', function($scope, schedulesService, preferences
 	$scope.prefs = prefObj;
 	//instantiate new obj
 	var schedulesObj = schedulesService.schedulesObj;
-	schedulesObj.getSchedulesFromServer($scope.$apply);
 	$scope.schedulesObj = schedulesObj;
 	
 	$scope.prefsFilter = PreferencesFilter;

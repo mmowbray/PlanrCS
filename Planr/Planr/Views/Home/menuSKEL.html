@@ -120,7 +120,7 @@
         <section id="main-content">
             <section class="wrapper">
                 <div ng-controller="ScheduleWrapperCtrl" class="row fall-winter-schedule">
-                    <h1 ng-if = "schedulesServ.selectedSemester > 0">{{semesterNameArr[schedulesServ.selectedSemester-1] + ' - Option ' + (schedulesServ.selectedSchedule+1)}} <a ng-click="schedulesServ.schedulesObj.favoritedSchedules[schedulesServ.selectedSemester-1] = schedulesServ.schedulesObj.allSchedulesFetched[schedulesServ.selectedSemester-1][schedulesServ.selectedSchedule]; schedulesServ.favoritedIndex[schedulesServ.selectedSemester-1] = schedulesServ.selectedSchedule" class="i_heart_it fa fa-heart-o" ></a></h1>
+                    <h1 ng-if = "schedulesServ.selectedSemester > 0">{{semesterNameArr[schedulesServ.selectedSemester-1] + ' - Option ' + (schedulesServ.selectedSchedule+1)}} <a ng-click="schedulesServ.schedulesObj.favoritedSchedules[schedulesServ.selectedSemester-1] = schedulesServ.schedulesObj.allSchedulesFetched[schedulesServ.selectedSemester-1][schedulesServ.selectedSchedule]; schedulesServ.favoritedIndex[schedulesServ.selectedSemester-1] = schedulesServ.selectedSchedule" class="i_heart_it fa {{schedulesServ.favoritedIndex[schedulesServ.selectedSemester-1] == schedulesServ.selectedSchedule ? 'fa-heart' : 'fa-heart-o'}}" ></a></h1>
 
                     <div ng-show="schedulesServ.selectedSemester > 0" class="col-xs-12">
                         {{schedulesServ.selectedSemester > 0 ? (scheduleCanvas.drawSchedule(schedulesServ.schedulesObj.allSchedulesFetched[schedulesServ.selectedSemester-1][schedulesServ.selectedSchedule])) : ''}}
@@ -129,9 +129,9 @@
                     </div>
                 </div>
                 <div ng-controller="SequenceCtrl" class="row">
-                    <div ng-show="schedulesServ.selectedSemester == 0" class="container col-xs-3 col-xs-offset-5">
+                    <div ng-show="schedulesServ.selectedSemester == 0" class="container">
                         <h1 class="sequence_title">Sequence</h1>
-                        <a class="commitSchedule_btn">Generate Schedules</a>
+                        <a ng-click="schedulesServ.schedulesObj.getSchedulesFromServer($apply); schedulesServ.selectedSemester = 1" class="commitSchedule_btn">Generate Schedules</a>
 
                         <div ng-repeat="year in sequence.getSequence()" ng-if="year[3][0] != null" class="col-sm-12 yearSequence">
                             <h2 class="yearNum">Year {{$index+1}}</h2>
@@ -151,8 +151,8 @@
                     <span>{{'Option: ' + record.getRecord().Option}}</span><br>
                     <span>{{'Completed Courses: ' + record.getRecord().CompletedCourses}}</span>
                     <div class="row" style="margin-top:6em;">
-                        <div class="col-md-6 col-sm-12">place holder for schedule</div>
-                        <div class="col-md-6 col-sm-12">place holder for schedule</div>
+                        <div class="col-md-6 col-sm-12">Fall 2015</div>
+                        <div class="col-md-6 col-sm-12">Winter 2016</div>
                     </div>
                 </div>
 
