@@ -51,7 +51,7 @@ video#bgvid {
 }
 
 #banner {
-	margin-top: 200px;
+	margin-top: 14%;
 	/*    background:
         -moz-radial-gradient(rgb(37, 37, 37) 25%, transparent 25%),
         -moz-radial-gradient(rgb(37, 37, 37) 25%, transparent 25%),
@@ -264,11 +264,7 @@ button {
 */
 
 .schedule_icon {
-<<<<<<< HEAD
-    display: inline-block;
-=======
     display: block;
->>>>>>> 7a328a02e26317b6db62c2920b7c829687e4d0b8
     /*font-family: Pacifico;*/
     font-size: 45px;
     line-height: 90px;
@@ -285,16 +281,9 @@ button {
 }
 .schedule_icon.small {
     font-size: 20px;
-<<<<<<< HEAD
-    line-height:28px;
-    width:35px;
-    height:35px;
-    margin:7px;
-=======
     line-height:34px;
     width:35px;
     height:35px;
->>>>>>> 7a328a02e26317b6db62c2920b7c829687e4d0b8
 }
 .schedule_icon:after {
     pointer-events: none;
@@ -319,11 +308,6 @@ button {
     -webkit-font-smoothing: antialiased;
 }
 /* Effect 2 */
-<<<<<<< HEAD
- .schedule_icon.effect-2 {
-    color: #fff;
-    box-shadow: 0 0 0 4px red;
-=======
  .schedule_icon.effect-2.color0 {
     color: #fff;
     box-shadow: 0 0 0 4px #4CE632;
@@ -548,19 +532,10 @@ button {
  .schedule_icon.effect-2.color13 {
     color: #fff;
     box-shadow: 0 0 0 4px #37197C;
->>>>>>> 7a328a02e26317b6db62c2920b7c829687e4d0b8
     -webkit-transition: color 0.3s;
     -moz-transition: color 0.3s;
     transition: color 0.3s;
 }
-<<<<<<< HEAD
-.schedule_icon.effect-2:after {
-    top: -2px;
-    left: -2px;
-    padding: 2px;
-    z-index: -1;
-    background: red;
-=======
 .schedule_icon.effect-2.color13:after {
     top: -2px;
     left: -2px;
@@ -737,7 +712,6 @@ button {
     padding: 2px;
     background: red;
     z-index: -1;
->>>>>>> 7a328a02e26317b6db62c2920b7c829687e4d0b8
     -webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
     -moz-transition: -moz-transform 0.2s, opacity 0.2s;
     transition: transform 0.2s, opacity 0.2s;
@@ -754,8 +728,6 @@ button {
     transform: scale(0.75);
 }
 
-<<<<<<< HEAD
-=======
 .schedule_icon > a{
 
 	color: white;
@@ -765,7 +737,6 @@ button {
 	text-decoration:none;
 }
 
->>>>>>> 7a328a02e26317b6db62c2920b7c829687e4d0b8
 
 .genSchedule_btn {
 
@@ -788,7 +759,7 @@ button {
 
 .genSchedule_btn:hover {
 	background: #A90C12;
-	color:#767676;
+	color:#C0BDBD;
 	text-decoration: none;
 }
 
@@ -803,8 +774,57 @@ button {
 	left: 5px;
 }
 
+.commitSchedule_btn {
+
+    display: block;
+    margin: 3em auto;
+    width: 188px;
+    height: 50px;
+    font: 700 1em sans-serif;
+    background: #FF000A;
+    color: #fff;
+    padding-top: 6px;
+    border: 0;
+    border-bottom: 0.35em solid #CA0606;
+    border-radius: 3px;
+    outline: 0;
+    text-align: center;
+    line-height: 2.6em;
+    cursor: pointer;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+}
+
+.commitSchedule_btn:hover {
+    background: #A90C12;
+    color:#C0BDBD;
+    text-decoration: none;
+}
+
+.commitSchedule_btn:active {
+    background: #E81820;
+    border-color: #E81820;
+}
+
+.commitSchedule_btn.sideMenu{
+    position:absolute;
+    bottom: -23px;
+    left: 5px;
+}
+
 .schedule-option{
 	height: 198px;
   	margin-right: -19px;
   	overflow: auto;
+}
+
+.fall-winter-schedule{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 628px
+}
+
+.user-display{
+    text-align: center;
 }

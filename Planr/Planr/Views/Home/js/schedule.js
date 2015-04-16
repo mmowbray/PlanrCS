@@ -1,8 +1,8 @@
 var canvas = document.getElementById("canvas");
-canvas.width = 1800;
-canvas.height = 2880;
-canvas.style.width = "600px";
-canvas.style.height = "960px";
+canvas.width = 100%;
+canvas.height = 100%
+canvas.style.width = "100%";
+canvas.style.height = "100%";
 var ctx = canvas.getContext("2d");
 ctx.scale(3, 3);
 var days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
@@ -18,6 +18,9 @@ Array.prototype.max = function() {
 };
 //function to draw one day of a course. 
 function draw(name, day, start, end, type, bcolor, fcolor) {
+	var cttx = (a canvas context);
+  	cttx.canvas.width  = window.innerWidth;
+  	cttx.canvas.height = window.innerHeight;
 	var xAxis = (days.indexOf(day) + 1) * 100;
 	var startHour = start.substr(0, 2).concat(":00");
 	var startY = (time.indexOf(startHour) * 15) + (parseInt(start.substr(3, 2)) * 1) + 15;
