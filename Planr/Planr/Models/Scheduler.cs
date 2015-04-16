@@ -118,7 +118,7 @@ namespace Planr.Models
 
             return true;
         }
-        static public void approvedSchedule(ref ScheduleTable scT, params Section[] sections)
+        static public void approvedSchedule(int semester, ref ScheduleTable scT, params Section[] sections)
         {
             Schedule tmpSchedule = new Schedule();
             tmpSchedule.schedule[0] = sections[0];
@@ -126,11 +126,22 @@ namespace Planr.Models
             tmpSchedule.schedule[2] = sections[2];
             tmpSchedule.schedule[3] = sections[3];
             tmpSchedule.schedule[4] = sections[4];
-            scT.sem1.Add(tmpSchedule);
+            if (semester == 1)
+                scT.sem1.Add(tmpSchedule);
+            else if (semester == 2)
+                scT.sem2.Add(tmpSchedule);
         }
         static public ScheduleOptions GenerateSchedules(Sequence seq, int semester, int year)
         {
+            int s2 = semester + 1;
+            int y2 = year;
+            if (s2 > 5)
+            {
+                s2 = 2;
+                y2++;
+            }
             List<Course> semester1 = new List<Course>();
+            List<Course> semester2 = new List<Course>();
             Hashtable semester1_sec = new Hashtable();
             List<Section> semester1_c1 = new List<Section>();
             List<Section> semester1_c2 = new List<Section>();
@@ -142,7 +153,19 @@ namespace Planr.Models
             semester1_sec[2] = semester1_c3;
             semester1_sec[3] = semester1_c4;
             semester1_sec[4] = semester1_c5;
+            Hashtable semester2_sec = new Hashtable();
+            List<Section> semester2_c1 = new List<Section>();
+            List<Section> semester2_c2 = new List<Section>();
+            List<Section> semester2_c3 = new List<Section>();
+            List<Section> semester2_c4 = new List<Section>();
+            List<Section> semester2_c5 = new List<Section>();
+            semester2_sec[0] = semester2_c1;
+            semester2_sec[1] = semester2_c2;
+            semester2_sec[2] = semester2_c3;
+            semester2_sec[3] = semester2_c4;
+            semester2_sec[4] = semester2_c5;
             int[] course1 = new int[5];
+            int[] course2 = new int[5];
             Course tmp;
             int tmpInt;
             List<Section> tmpList = new List<Section>();
@@ -182,20 +205,51 @@ namespace Planr.Models
                 i++;
             }
             i = 0;
+            while (i < 5)
+            {
+                tmp = seq.sequence[y2, s2, i];
+                semester2.Add(tmp);
+                if (tmp == null)
+                {
+                    tmpList = (List<Section>)semester2_sec[i];
+                    tmpList.Add(EmptySection);
+                }
+
+                else if (tmp.CourseID == 111111 || tmp.CourseID == 222222 || tmp.CourseID == 333333)
+                {
+                    tmpList = (List<Section>)semester2_sec[i];
+                    if (tmp.CourseID == 111111)
+                        tmpList.Add(General_Elective);
+                    else if (tmp.CourseID == 222222)
+                        tmpList.Add(Basic_Science);
+                    else if (tmp.CourseID == 333333)
+                        tmpList.Add(Elective);
+                    course2[i] = tmp.CourseID;
+                }
+                else
+                    course2[i] = tmp.CourseID;
+                i++;
+            }
+            i = 0;
             Schedule schedule = new Schedule();
 
             List<Section> items = DBInterfacer.GetSections();
-
             foreach (Section item in items)
             {
                 if (item.Availability == semester && Array.IndexOf(course1, item.CourseID) != -1)
-                {//i think is here
-                    //Console.WriteLine(item.CourseID + " " + item.GetStartTime().ToString("HH:mm") + " " + item.GetEndTime().ToString("HH:mm") + " " + item.tutorial_day1 + " " + item.tutorial_day2 + " " + item.GetTutorialStartTime().ToString("HH:mm") + " " + item.GetTutorialEndTime().ToString("HH:mm") + " " + item.lab_day + " " + item.GetLabStartTime().ToString("HH:mm") + " " + item.LabEndTime().ToString("HH:mm"));
+                {
                     tmpInt = item.CourseID;
                     tmpInt = Array.IndexOf(course1, tmpInt);
                     tmpList = (List<Section>)semester1_sec[tmpInt];
                     tmpList.Add(item);
 
+                }
+                if (item.Availability == s2 && Array.IndexOf(course2, item.CourseID) != -1)
+                {
+                    tmpInt = item.CourseID;
+                    tmpInt = Array.IndexOf(course2, tmpInt);
+                    tmpList = (List<Section>)semester2_sec[tmpInt];
+                    tmpList.Add(item);
                 }
             }
 
@@ -212,7 +266,27 @@ namespace Planr.Models
                                 approved = checkSection(a, b, c, d, e);
                                 if (approved == true)
                                 {
-                                    approvedSchedule(ref scT, a, b, c, d, e);
+                                    approvedSchedule(1, ref scT, a, b, c, d, e);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            foreach (Section a in semester2_c1)
+            {
+                foreach (Section b in semester2_c2)
+                {
+                    foreach (Section c in semester2_c3)
+                    {
+                        foreach (Section d in semester2_c4)
+                        {
+                            foreach (Section e in semester2_c5)
+                            {
+                                approved = checkSection(a, b, c, d, e);
+                                if (approved == true)
+                                {
+                                    approvedSchedule(2, ref scT, a, b, c, d, e);
                                 }
                             }
                         }
@@ -221,14 +295,25 @@ namespace Planr.Models
             }
 
             i = 0;
-            ScheduleOptions op = new ScheduleOptions(scT.sem1.Count);
+
+            ScheduleOptions op = new ScheduleOptions(scT.sem1.Count, scT.sem2.Count);
             foreach (Schedule s in scT.sem1)
             {
-                op.scheduleOptions[0, i, 0] = s.schedule[0];
-                op.scheduleOptions[0, i, 1] = s.schedule[1];
-                op.scheduleOptions[0, i, 2] = s.schedule[2];
-                op.scheduleOptions[0, i, 3] = s.schedule[3];
-                op.scheduleOptions[0, i, 4] = s.schedule[4];
+                op.scheduleOptions[0][i, 0] = s.schedule[0];
+                op.scheduleOptions[0][i, 1] = s.schedule[1];
+                op.scheduleOptions[0][i, 2] = s.schedule[2];
+                op.scheduleOptions[0][i, 3] = s.schedule[3];
+                op.scheduleOptions[0][i, 4] = s.schedule[4];
+                i++;
+            }
+            i = 0;
+            foreach (Schedule s in scT.sem2)
+            {
+                op.scheduleOptions[1][i, 0] = s.schedule[0];
+                op.scheduleOptions[1][i, 1] = s.schedule[1];
+                op.scheduleOptions[1][i, 2] = s.schedule[2];
+                op.scheduleOptions[1][i, 3] = s.schedule[3];
+                op.scheduleOptions[1][i, 4] = s.schedule[4];
                 i++;
             }
             return op;
@@ -247,11 +332,12 @@ namespace Planr.Models
 
     public class ScheduleOptions
     {
-        public Section[,,] scheduleOptions;
+        public Section[][,] scheduleOptions = new Section[2][,];
 
-        public ScheduleOptions(int length)
+        public ScheduleOptions(int length1, int length2)
         {
-            scheduleOptions = new Section[1, length, 5]; 
+            scheduleOptions[0] = new Section[length1, 5];
+            scheduleOptions[1] = new Section[length2, 5];
         }
     }
 }

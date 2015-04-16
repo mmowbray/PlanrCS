@@ -1,42 +1,60 @@
 ﻿<!DOCTYPE html>
 <html ng-app="Planr" lang="en">
-<head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="initial-scale=1.0"/>
-    <title>Planr.me - Log In</title>
 
+<head>
+    <meta charset="utf-8"></meta>
+    <meta name="viewport" content="initial-scale=1.0"></meta>
+    <title>Planr.me - Dashboard</title>
     <link rel="stylesheet" href="/Content/font-awesome/css/font-awesome.min.css" />
-    <link href="/Content/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/Content/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.8.3/angular-material.min.css">
     <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-    <link href="/Content/main_style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/Content/main_style.css" />
+    <link rel="stylesheet" href="/Content/style.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.8.3/angular-material.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script type="text/javascript" src="/Scripts/bootstrap.min.js"></script>
     <script type="text/javascript" src="/Scripts/dashboard.js"></script>
-
+    <script type="text/javascript" src="/Scripts/style.js"></script>
 </head>
+
 <body>
     <section id="container">
         <!--header start-->
         <header class="header fixed-top clearfix">
             <!--logo start-->
             <div class="brand">
+
                 <a href="#" class="logo">
-                    <span id="logo_span">P<span id="anr">lan R</span></span>
                 </a>
             </div>
             <!--logo end-->
 
-            <div class="top-nav clearfix">
+
+            <div ng-controller="topMenuCtrl" class="top-nav clearfix">
+
                 <!--search & user info start-->
-                <div class="user_profile">
-                    <a href="#"><i class="fa fa-user profile_icon"></i></a>
-                </div>
-                <div ng-controller="RecordCtrl">
-                    <span>{{record.getRecord().CreditsCompleted}}</span>
-                    <span>{{record.getRecord().Option}}</span>
-                    <span>{{record.getRecord().CompletedCourses}}</span>
-                </div>
+                <ul class="top-nav-list">
+                    <li class="top-nav-list top-nav-list-left user_profile">
+                        <a ng-click = "schedulesServ.selectedSemester = -1; schedulesServ.selectedSchedule = 0" href="#" class="user_profile"><span class="fa fa-user" style="font-size: 3.6em;line-height: 2.3em;"></span></a>
+                    </li>
+                    <li class="top-nav-list top-nav-list-left sequence_menu">
+                        <a ng-click = "schedulesServ.selectedSemester = 0; schedulesServ.selectedSchedule = 0" class="menu_button_top" href="#">Sequence</a>
+                    </li>
+                    <li ng-show = "schedulesObj.fetched" class="top-nav-list top-nav-list-left fall_menu" style="background-color:{{schedulesServ.schedulesColors[schedulesServ.favoritedIndex[0] % 23]}}">
+                        <a ng-click = "schedulesServ.selectedSemester = 1; schedulesServ.selectedSchedule = 0" class="menu_button_top" href="#" style="color: {{schedulesServ.favoritedIndex[0] != null ? 'white' : ''}}">Fall</a>
+                    </li>
+                    <li ng-show = "schedulesObj.fetched" class="top-nav-list top-nav-list-left winter_menu" style="background-color:{{schedulesServ.schedulesColors[schedulesServ.favoritedIndex[1] % 23]}}">
+                        <a ng-click = "schedulesServ.selectedSemester = 2; schedulesServ.selectedSchedule = 0" class="menu_button_top" href="#" style="color: {{schedulesServ.favoritedIndex[1] != null ? 'white' : ''}}">Winter</a>
+                    </li>
+                    <li class="top-nav-list top-nav-list-right logout_menu" id="letmego">
+                        <a class="menu_button_top" href="/Account/Logout" style="font-size: 14px"><span class="fa fa-power-off" style="font-size:2.3em; line-height: 3.1em;"></span></a>
+                    </li>
+
+                </ul>
                 <!--search & user info end-->
             </div>
         </header>
@@ -44,13 +62,54 @@
         <!--sidebar start-->
         <aside>
             <div id="sidebar" class="nav-collapse">
+
+
+                <!--<div ng-controller="PreferencesCtrl" class="user-pref">
+                        <a href=""><i class="fa fa-bars profile_icon"></i></a>
+                        <div><i class="fa fa-sun-o {{pref.getPreferences.morning ? 'pref-on':'pref-off'}}" ng-click = "alert('hey')" ></i></div>
+                        <div><i class="fa fa-moon-o {{pref.getPreferences.night ? 'pref-on':'pref-off'}}" ng-click = "pref.toggleNight()"></i></div>
+                        <div><i class="fa fa-bed {{pref.getPreferences.dayOff ? 'pref-on':'pref-off'}}" ng-click = "pref.toggleDayOff()"></i></div>
+                    </div>-->
+
+
                 <!-- sidebar menu start-->
                 <div class="leftside-navigation">
-                    <div ng-controller="PreferencesCtrl" class="user-pref">
-                        <a href=""><i class="fa fa-bars profile_icon"></i></a>
-                        <div><i class="fa fa-sun-o {{pref.getPreferences.morning ? 'pref-on':'pref-off'}}" ng-click="alert('hey')"></i></div>
-                        <div><i class="fa fa-moon-o {{pref.getPreferences.night ? 'pref-on':'pref-off'}}" ng-click="pref.toggleNight()"></i></div>
-                        <div><i class="fa fa-bed {{pref.getPreferences.dayOff ? 'pref-on':'pref-off'}}" ng-click="pref.toggleDayOff()"></i></div>
+                    <div ng-controller="PreferencesCtrl" id="pref-tile">
+                        <ul id="pref_list_ul">
+                            <li>
+                                <a ng-click="pref.toggleMorning()" class="fa fa-sun-o pref_icon {{pref.getPreferences().morning ? 'pref_icon_selected' : ''}}" id="day_time" title="No Morning Classes" data-toggle="tooltip" data-placement="right"></a>
+                            </li>
+                            <li>
+                                <a ng-click="pref.toggleNight()" class="fa fa-moon-o pref_icon {{pref.getPreferences().night ? 'pref_icon_selected' : ''}}" id="night_time" title="No Night Classes" data-toggle="tooltip" data-placement="right"></a>
+                            </li>
+                            <li>
+                                <a ng-click="pref.toggleDayOff()" class="fa fa-bed pref_icon {{pref.getPreferences().dayOff ? 'pref_icon_selected' : ''}}" id="day_off" title="Day Off" data-toggle="tooltip" data-placement="right"></a>
+                            </li>
+                        </ul>
+                        <!--morning: {{pref.getPreferences().morning}}<br>
+                        night: {{pref.getPreferences().night}}<br>
+                        offt: {{pref.getPreferences().dayOff}}<br>-->
+                    </div>
+                    <div style="padding-top: 20px;text-align: center;overflow-x: hidden;" ng-controller="SchedulesCtrl">
+                        <div ng-if="schedulesServ.selectedSemester > 0">
+                            <p>Schedules</p>
+                            <hr />
+                            <div class="schedule-option">
+                                <ul style="padding-left:14px; margin-top:-15px; list-style:none;">
+                                    <li ng-repeat="schedule in schedulesObj.allSchedulesFetched[schedulesServ.selectedSemester-1]" class="schedule_icon small effect-2 color{{$index % 23}} sub-a" ng-show = "prefsFilter(prefs.getPreferences(), schedule)"><a ng-click="schedulesServ.selectedSchedule = $index">{{$index+1}}</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <hr/>
+                            <div ng-if="schedulesServ.favoritedIndex[0] != null || schedulesServ.favoritedIndex[1] != null">
+                                <p>Favorited</p>
+                                
+                                <hr/>
+                                <p ng-if="schedulesServ.favoritedIndex[0] != null">Fall: Option {{schedulesServ.favoritedIndex[0]+1}}</p>
+                                <p ng-if="schedulesServ.favoritedIndex[1] != null">Winter: Option {{schedulesServ.favoritedIndex[1]+1}}</p>
+                                <a ng-click = "schedulesObj.saveSchedulesToServer($apply)" class="genSchedule_btn sideMenu">Save &#60;3 Schedules</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <!-- sidebar menu end-->
@@ -60,30 +119,48 @@
         <!--main content start || place for grid schedule-->
         <section id="main-content">
             <section class="wrapper">
-                <div class="row">
-                    <div class="col-xs-12">
-                        <canvas id="schedule" height="1024" width="600px;" style="border:1px solid #d3d3d3;"></canvas>
+                <div ng-controller="ScheduleWrapperCtrl" class="row fall-winter-schedule">
+                    <h1 ng-if = "schedulesServ.selectedSemester > 0">{{semesterNameArr[schedulesServ.selectedSemester-1] + ' - Option ' + (schedulesServ.selectedSchedule+1)}} <a ng-click="schedulesServ.schedulesObj.favoritedSchedules[schedulesServ.selectedSemester-1] = schedulesServ.schedulesObj.allSchedulesFetched[schedulesServ.selectedSemester-1][schedulesServ.selectedSchedule]; schedulesServ.favoritedIndex[schedulesServ.selectedSemester-1] = schedulesServ.selectedSchedule" class="i_heart_it fa {{schedulesServ.favoritedIndex[schedulesServ.selectedSemester-1] == schedulesServ.selectedSchedule ? 'fa-heart' : 'fa-heart-o'}}" ></a></h1>
+
+                    <div ng-show="schedulesServ.selectedSemester > 0" class="col-xs-12">
+                        {{schedulesServ.selectedSemester > 0 ? (scheduleCanvas.drawSchedule(schedulesServ.schedulesObj.allSchedulesFetched[schedulesServ.selectedSemester-1][schedulesServ.selectedSchedule])) : ''}}
+                        <canvas id="canvas" height="1024" width="600px;" style="border:1px solid #d3d3d3; background-color:white;"></canvas>
+                        <!--<script type="text/javascript" src="js/schedule.js"></script>-->
                     </div>
                 </div>
-                <div class="row">
-                    <div ng-controller="SequenceCtrl" class="container">
-                        <h1 class="sequence_title">Sequence list</h1>
-                        <div ng-repeat="year in sequence.getSequence()" class="col-sm-12 yearSequence">
+                <div ng-controller="SequenceCtrl" class="row">
+                    <div ng-show="schedulesServ.selectedSemester == 0" class="container">
+                        <h1 class="sequence_title">Sequence</h1>
+                        <a ng-click="schedulesServ.schedulesObj.getSchedulesFromServer($apply); schedulesServ.selectedSemester = 1" class="commitSchedule_btn">Generate Schedules</a>
+
+                        <div ng-repeat="year in sequence.getSequence()" ng-if="year[3][0] != null" class="col-sm-12 yearSequence">
                             <h2 class="yearNum">Year {{$index+1}}</h2>
-                            <div ng-repeat="semester in year" class="col-sm-6">
-                                <h3>Semester {{$index+1}}</h3>
+                            <div ng-repeat="semester in year" ng-if = "semester[0] != null" class="col-sm-6">
+                                <h3>{{semesterNames[$index-1]}} Semester</h3>
                                 <ul class="sequence_ul">
-                                    <li class="sequence_li {{'c-'+($index+1)}}" ng-repeat="course in semester">
-                                        <span class="sc_name">{{course}}</span><span class="sc_credit">{{$index+1}} credits</span>
+                                    <li class="sequence_li {{'c-'+($index+1)}}" ng-repeat="course in semester track by $index" ng-if="course != null" ><span class="sc_name">{{course.CourseName}}</span><span class="sc_credit">{{course.Credits == 0 ? 'N/A': course.Credits}} credits</span>
                                     </li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </div>
+                <div ng-controller="RecordCtrl" ng-show="schedulesServ.selectedSemester == -1" class="user-display">
+                    <h1>Academic Record</h1>
+                    <span>{{'Completed Credits: ' + record.getRecord().CreditsCompleted}}</span><br>
+                    <span>{{'Option: ' + record.getRecord().Option}}</span><br>
+                    <span>{{'Completed Courses: ' + record.getRecord().CompletedCourses}}</span>
+                    <div class="row" style="margin-top:6em;">
+                        <div class="col-md-6 col-sm-12">Fall 2015</div>
+                        <div class="col-md-6 col-sm-12">Winter 2016</div>
+                    </div>
+                </div>
+
             </section>
         </section>
         <!--main content end-->
+
     </section>
 </body>
+
 </html>

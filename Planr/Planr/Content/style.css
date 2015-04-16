@@ -1,7 +1,7 @@
-@import url('http://fonts.googleapis.com/css?family=Raleway:300,600,800');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:300,600,800');
 
 body {
-	font-family: Raleway;
+	font-family: Ubuntu;
 	font-weight: 600;
 	background-color: #F5F5F5;
 }
@@ -51,7 +51,7 @@ video#bgvid {
 }
 
 #banner {
-	margin-top: 200px;
+	margin-top: 14%;
 	/*    background:
         -moz-radial-gradient(rgb(37, 37, 37) 25%, transparent 25%),
         -moz-radial-gradient(rgb(37, 37, 37) 25%, transparent 25%),
@@ -262,3 +262,577 @@ button {
   cursor: pointer;
 }
 */
+
+.schedule_icon {
+    display: block;
+    /*font-family: Pacifico;*/
+    font-size: 45px;
+    line-height: 90px;
+    cursor: pointer;
+    margin: 20px;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    text-align: center;
+    position: relative;
+    text-decoration: none;
+    z-index: 1;
+    color: #fff;
+}
+.schedule_icon.small {
+    font-size: 20px;
+    line-height:34px;
+    width:35px;
+    height:35px;
+}
+.schedule_icon:after {
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    content:'';
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+.schedule_icon:before {
+    speak: none;
+    font-size: 48px;
+    line-height: 90px;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    display: block;
+    -webkit-font-smoothing: antialiased;
+}
+/* Effect 2 */
+ .schedule_icon.effect-2.color0 {
+    color: #fff;
+    box-shadow: 0 0 0 4px #4CE632;
+    -webkit-transition: color 0.3s;
+    -moz-transition: color 0.3s;
+    transition: color 0.3s;
+}
+.schedule_icon.effect-2.color0:after {
+    top: -2px;
+    left: -2px;
+    padding: 2px;
+    background: #4CE632;
+    z-index: -1;
+    -webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
+    -moz-transition: -moz-transform 0.2s, opacity 0.2s;
+    transition: transform 0.2s, opacity 0.2s;
+}
+ .schedule_icon.effect-2.color1 {
+    color: #fff;
+    box-shadow: 0 0 0 4px #41A1FD;
+    -webkit-transition: color 0.3s;
+    -moz-transition: color 0.3s;
+    transition: color 0.3s;
+}
+.schedule_icon.effect-2.color1:after {
+    top: -2px;
+    left: -2px;
+    padding: 2px;
+    background: #41A1FD;
+    z-index: -1;
+    -webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
+    -moz-transition: -moz-transform 0.2s, opacity 0.2s;
+    transition: transform 0.2s, opacity 0.2s;
+}
+ .schedule_icon.effect-2.color2 {
+    color: #fff;
+    box-shadow: 0 0 0 4px #F2121D;
+    -webkit-transition: color 0.3s;
+    -moz-transition: color 0.3s;
+    transition: color 0.3s;
+}
+.schedule_icon.effect-2.color2:after {
+    top: -2px;
+    left: -2px;
+    padding: 2px;
+    background: #F2121D;
+    z-index: -1;
+    -webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
+    -moz-transition: -moz-transform 0.2s, opacity 0.2s;
+    transition: transform 0.2s, opacity 0.2s;
+}
+ .schedule_icon.effect-2.color3 {
+    color: #fff;
+    box-shadow: 0 0 0 4px #E228FC;
+    -webkit-transition: color 0.3s;
+    -moz-transition: color 0.3s;
+    transition: color 0.3s;
+}
+.schedule_icon.effect-2.color3:after {
+    top: -2px;
+    left: -2px;
+    padding: 2px;
+    background: #E228FC;
+    z-index: -1;
+    -webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
+    -moz-transition: -moz-transform 0.2s, opacity 0.2s;
+    transition: transform 0.2s, opacity 0.2s;
+}
+ .schedule_icon.effect-2.color4 {
+    color: #fff;
+    box-shadow: 0 0 0 4px #004D62;
+    -webkit-transition: color 0.3s;
+    -moz-transition: color 0.3s;
+    transition: color 0.3s;
+}
+.schedule_icon.effect-2.color4:after {
+    top: -2px;
+    left: -2px;
+    padding: 2px;
+    background: #004D62;
+    z-index: -1;
+    -webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
+    -moz-transition: -moz-transform 0.2s, opacity 0.2s;
+    transition: transform 0.2s, opacity 0.2s;
+}
+ .schedule_icon.effect-2.color5 {
+    color: #fff;
+    box-shadow: 0 0 0 4px #F6F043;
+    -webkit-transition: color 0.3s;
+    -moz-transition: color 0.3s;
+    transition: color 0.3s;
+}
+.schedule_icon.effect-2.color5:after {
+    top: -2px;
+    left: -2px;
+    padding: 2px;
+    background: #F6F043;
+    z-index: -1;
+    -webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
+    -moz-transition: -moz-transform 0.2s, opacity 0.2s;
+    transition: transform 0.2s, opacity 0.2s;
+}
+ .schedule_icon.effect-2.color6 {
+    color: #fff;
+    box-shadow: 0 0 0 4px #F58665;
+    -webkit-transition: color 0.3s;
+    -moz-transition: color 0.3s;
+    transition: color 0.3s;
+}
+.schedule_icon.effect-2.color6:after {
+    top: -2px;
+    left: -2px;
+    padding: 2px;
+    background: #F58665;
+    z-index: -1;
+    -webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
+    -moz-transition: -moz-transform 0.2s, opacity 0.2s;
+    transition: transform 0.2s, opacity 0.2s;
+}
+ .schedule_icon.effect-2.color7 {
+    color: #fff;
+    box-shadow: 0 0 0 4px #966FFF;
+    -webkit-transition: color 0.3s;
+    -moz-transition: color 0.3s;
+    transition: color 0.3s;
+}
+.schedule_icon.effect-2.color7:after {
+    top: -2px;
+    left: -2px;
+    padding: 2px;
+    background: #966FFF;
+    z-index: -1;
+    -webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
+    -moz-transition: -moz-transform 0.2s, opacity 0.2s;
+    transition: transform 0.2s, opacity 0.2s;
+}
+ .schedule_icon.effect-2.color8 {
+    color: #fff;
+    box-shadow: 0 0 0 4px #6BDF9F;
+    -webkit-transition: color 0.3s;
+    -moz-transition: color 0.3s;
+    transition: color 0.3s;
+}
+.schedule_icon.effect-2.color8:after {
+    top: -2px;
+    left: -2px;
+    padding: 2px;
+    background: #6BDF9F;
+    z-index: -1;
+    -webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
+    -moz-transition: -moz-transform 0.2s, opacity 0.2s;
+    transition: transform 0.2s, opacity 0.2s;
+}
+ .schedule_icon.effect-2.color9 {
+    color: #fff;
+    box-shadow: 0 0 0 4px #D3CD00;
+    -webkit-transition: color 0.3s;
+    -moz-transition: color 0.3s;
+    transition: color 0.3s;
+}
+.schedule_icon.effect-2.color9:after {
+    top: -2px;
+    left: -2px;
+    padding: 2px;
+    background: #D3CD00;
+    z-index: -1;
+    -webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
+    -moz-transition: -moz-transform 0.2s, opacity 0.2s;
+    transition: transform 0.2s, opacity 0.2s;
+}
+ .schedule_icon.effect-2.color10 {
+    color: #fff;
+    box-shadow: 0 0 0 4px #BC006D;
+    -webkit-transition: color 0.3s;
+    -moz-transition: color 0.3s;
+    transition: color 0.3s;
+}
+.schedule_icon.effect-2.color10:after {
+    top: -2px;
+    left: -2px;
+    padding: 2px;
+    background: #BC006D;
+    z-index: -1;
+    -webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
+    -moz-transition: -moz-transform 0.2s, opacity 0.2s;
+    transition: transform 0.2s, opacity 0.2s;
+}
+ .schedule_icon.effect-2.color11 {
+    color: #fff;
+    box-shadow: 0 0 0 4px #387E00;
+    -webkit-transition: color 0.3s;
+    -moz-transition: color 0.3s;
+    transition: color 0.3s;
+}
+.schedule_icon.effect-2.color11:after {
+    top: -2px;
+    left: -2px;
+    padding: 2px;
+    background: #387E00;
+    z-index: -1;
+    -webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
+    -moz-transition: -moz-transform 0.2s, opacity 0.2s;
+    transition: transform 0.2s, opacity 0.2s;
+}
+ .schedule_icon.effect-2.color12 {
+    color: #fff;
+    box-shadow: 0 0 0 4px #F58603;
+    -webkit-transition: color 0.3s;
+    -moz-transition: color 0.3s;
+    transition: color 0.3s;
+}
+.schedule_icon.effect-2.color12:after {
+    top: -2px;
+    left: -2px;
+    padding: 2px;
+    background: #F58603;
+    z-index: -1;
+    -webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
+    -moz-transition: -moz-transform 0.2s, opacity 0.2s;
+    transition: transform 0.2s, opacity 0.2s;
+}
+ .schedule_icon.effect-2.color13 {
+    color: #fff;
+    box-shadow: 0 0 0 4px #37197C;
+    -webkit-transition: color 0.3s;
+    -moz-transition: color 0.3s;
+    transition: color 0.3s;
+}
+.schedule_icon.effect-2.color13:after {
+    top: -2px;
+    left: -2px;
+    padding: 2px;
+    background: #37197C;
+    z-index: -1;
+    -webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
+    -moz-transition: -moz-transform 0.2s, opacity 0.2s;
+    transition: transform 0.2s, opacity 0.2s;
+}
+ .schedule_icon.effect-2.color14 {
+    color: #fff;
+    box-shadow: 0 0 0 4px #BF6ADE;
+    -webkit-transition: color 0.3s;
+    -moz-transition: color 0.3s;
+    transition: color 0.3s;
+}
+.schedule_icon.effect-2.color14:after {
+    top: -2px;
+    left: -2px;
+    padding: 2px;
+    background: #BF6ADE;
+    z-index: -1;
+    -webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
+    -moz-transition: -moz-transform 0.2s, opacity 0.2s;
+    transition: transform 0.2s, opacity 0.2s;
+}
+ .schedule_icon.effect-2.color15 {
+    color: #fff;
+    box-shadow: 0 0 0 4px #D57D00;
+    -webkit-transition: color 0.3s;
+    -moz-transition: color 0.3s;
+    transition: color 0.3s;
+}
+.schedule_icon.effect-2.color15:after {
+    top: -2px;
+    left: -2px;
+    padding: 2px;
+    background: #D57D00;
+    z-index: -1;
+    -webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
+    -moz-transition: -moz-transform 0.2s, opacity 0.2s;
+    transition: transform 0.2s, opacity 0.2s;
+}
+ .schedule_icon.effect-2.color16 {
+    color: #fff;
+    box-shadow: 0 0 0 4px #FFC0BB;
+    -webkit-transition: color 0.3s;
+    -moz-transition: color 0.3s;
+    transition: color 0.3s;
+}
+.schedule_icon.effect-2.color16:after {
+    top: -2px;
+    left: -2px;
+    padding: 2px;
+    background: #FFC0BB;
+    z-index: -1;
+    -webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
+    -moz-transition: -moz-transform 0.2s, opacity 0.2s;
+    transition: transform 0.2s, opacity 0.2s;
+}
+ .schedule_icon.effect-2.color17 {
+    color: #fff;
+    box-shadow: 0 0 0 4px #FE19B8;
+    -webkit-transition: color 0.3s;
+    -moz-transition: color 0.3s;
+    transition: color 0.3s;
+}
+.schedule_icon.effect-2.color17:after {
+    top: -2px;
+    left: -2px;
+    padding: 2px;
+    background: #FE19B8;
+    z-index: -1;
+    -webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
+    -moz-transition: -moz-transform 0.2s, opacity 0.2s;
+    transition: transform 0.2s, opacity 0.2s;
+}
+ .schedule_icon.effect-2.color18 {
+    color: #fff;
+    box-shadow: 0 0 0 4px #FF4C02;
+    -webkit-transition: color 0.3s;
+    -moz-transition: color 0.3s;
+    transition: color 0.3s;
+}
+.schedule_icon.effect-2.color18:after {
+    top: -2px;
+    left: -2px;
+    padding: 2px;
+    background: #FF4C02;
+    z-index: -1;
+    -webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
+    -moz-transition: -moz-transform 0.2s, opacity 0.2s;
+    transition: transform 0.2s, opacity 0.2s;
+}
+ .schedule_icon.effect-2.color19 {
+    color: #fff;
+    box-shadow: 0 0 0 4px #02FBFF;
+    -webkit-transition: color 0.3s;
+    -moz-transition: color 0.3s;
+    transition: color 0.3s;
+}
+.schedule_icon.effect-2.color19:after {
+    top: -2px;
+    left: -2px;
+    padding: 2px;
+    background: #02FBFF;
+    z-index: -1;
+    -webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
+    -moz-transition: -moz-transform 0.2s, opacity 0.2s;
+    transition: transform 0.2s, opacity 0.2s;
+}
+ .schedule_icon.effect-2.color20 {
+    color: #fff;
+    box-shadow: 0 0 0 4px #FD06C9;
+    -webkit-transition: color 0.3s;
+    -moz-transition: color 0.3s;
+    transition: color 0.3s;
+}
+.schedule_icon.effect-2.color20:after {
+    top: -2px;
+    left: -2px;
+    padding: 2px;
+    background: #FD06C9;
+    z-index: -1;
+    -webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
+    -moz-transition: -moz-transform 0.2s, opacity 0.2s;
+    transition: transform 0.2s, opacity 0.2s;
+}
+ .schedule_icon.effect-2.color21 {
+    color: #fff;
+    box-shadow: 0 0 0 4px #9AFF01;
+    -webkit-transition: color 0.3s;
+    -moz-transition: color 0.3s;
+    transition: color 0.3s;
+}
+.schedule_icon.effect-2.color21:after {
+    top: -2px;
+    left: -2px;
+    padding: 2px;
+    background: #9AFF01;
+    z-index: -1;
+    -webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
+    -moz-transition: -moz-transform 0.2s, opacity 0.2s;
+    transition: transform 0.2s, opacity 0.2s;
+}
+ .schedule_icon.effect-2.color22 {
+    color: #fff;
+    box-shadow: 0 0 0 4px #009899;
+    -webkit-transition: color 0.3s;
+    -moz-transition: color 0.3s;
+    transition: color 0.3s;
+}
+.schedule_icon.effect-2.color22:after {
+    top: -2px;
+    left: -2px;
+    padding: 2px;
+    background: #009899;
+    z-index: -1;
+    -webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
+    -moz-transition: -moz-transform 0.2s, opacity 0.2s;
+    transition: transform 0.2s, opacity 0.2s;
+}
+ .schedule_icon.effect-2.color23 {
+    color: #fff;
+    box-shadow: 0 0 0 4px red;
+    -webkit-transition: color 0.3s;
+    -moz-transition: color 0.3s;
+    transition: color 0.3s;
+}
+.schedule_icon.effect-2.color23:after {
+    top: -2px;
+    left: -2px;
+    padding: 2px;
+    background: red;
+    z-index: -1;
+    -webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
+    -moz-transition: -moz-transform 0.2s, opacity 0.2s;
+    transition: transform 0.2s, opacity 0.2s;
+}
+/* Effect 2a */
+ .schedule_icon.effect-2.sub-a:hover, .schedule_icon.effect-2.sub-a:hover i {
+    color: #fff;
+   background:#fff;
+}
+.schedule_icon.effect-2.sub-a:hover:after {
+    -webkit-transform: scale(0.75);
+    -moz-transform: scale(0.75);
+    -ms-transform: scale(0.75);
+    transform: scale(0.75);
+}
+
+.schedule_icon > a{
+
+	color: white;
+}
+.schedule_icon > a:hover{
+	color: white;
+	text-decoration:none;
+}
+
+
+.genSchedule_btn {
+
+	display: block;
+	margin: 3em auto;
+	width: 90%;
+	height: 50px;
+	font: 700 1em sans-serif;
+	background: #FF000A;
+	color: #fff;
+	padding-top: 6px;
+	border: 0;
+	border-bottom: 0.35em solid #CA0606;
+	border-radius: 3px;
+	outline: 0;
+	cursor: pointer;
+	-webkit-transition: all .3s;
+	transition: all .3s;
+}
+
+.genSchedule_btn:hover {
+	background: #A90C12;
+	color:#C0BDBD;
+	text-decoration: none;
+}
+
+.genSchedule_btn:active {
+	background: #E81820;
+	border-color: #E81820;
+}
+
+.genSchedule_btn.sideMenu{
+	position:absolute;
+	bottom: -23px;
+	left: 5px;
+}
+
+.commitSchedule_btn {
+
+    display: block;
+    margin: 3em auto;
+    width: 188px;
+    height: 50px;
+    font: 700 1em sans-serif;
+    background: #16ce63;
+    color: #fff;
+    padding-top: 6px;
+    border: 0;
+    border-bottom: 0.35em solid #18AE57;
+    border-radius: 3px;
+    outline: 0;
+    text-align: center;
+    line-height: 2.6em;
+    cursor: pointer;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+}
+
+.commitSchedule_btn:hover {
+    background: #209350;
+    color:#C0BDBD;
+    text-decoration: none;
+}
+
+.commitSchedule_btn:active {
+    background: #E81820;
+    border-color: #E81820;
+}
+
+.commitSchedule_btn.sideMenu{
+    position:absolute;
+    bottom: -23px;
+    left: 5px;
+}
+
+.schedule-option{
+	height: 198px;
+  	margin-right: -19px;
+  	overflow: auto;
+}
+
+.fall-winter-schedule{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 628px
+}
+
+.user-display{
+    text-align: center;
+}
+
+.i_heart_it{
+
+}
+
+.i_heart_it:hover{
+    text-decoration: none;
+}

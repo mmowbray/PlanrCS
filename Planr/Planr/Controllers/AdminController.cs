@@ -21,7 +21,8 @@ namespace Planr.Controllers
         [HttpGet]
         public JsonResult GetSections()
         {
-            return Json(DBInterfacer.GetSections(), JsonRequestBehavior.AllowGet);
+            var sections = DBInterfacer.GetSections();
+            return Json(sections, JsonRequestBehavior.AllowGet);
         }
 
         [HttpGet]

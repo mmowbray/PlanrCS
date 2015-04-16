@@ -87,6 +87,9 @@ namespace Planr.Controllers
 
             //var x = new JsonConvert.DeserializeObject<List<Schedule>>(input);
 
+            dynamic fart = JObject.Parse(input);
+            string lawl = fart.myArray[0];
+
             return Json(1, JsonRequestBehavior.AllowGet);
             //return Json(DBInterfacer.SaveSchedule((Session["username"] ?? TEST_STUDENT_USER).ToString(), schedules), JsonRequestBehavior.AllowGet);
         }

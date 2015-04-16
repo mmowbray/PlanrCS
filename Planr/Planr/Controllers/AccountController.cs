@@ -17,7 +17,7 @@ namespace Planr.Controllers
             return View();
         }
 
-        [HttpPost]
+        [HttpGet]
         public ActionResult Logout()
         {
             Session.Abandon();

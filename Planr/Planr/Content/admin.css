@@ -199,9 +199,8 @@ width: 100%;
 
 #add_button
 {
-	position: absolute;
-  	margin-top: 30px;
-  	left: 87%;
+	width: 105px;
+	height: 105px;
 }
 
 #add_section {
@@ -217,7 +216,17 @@ width: 100%;
 #add_text{
 	display: none;
 }
-
+#add_b{
+	display: block;
+  	width: 105px;
+  	text-align: center;
+  	height: 105px;
+  	line-height: 2.3em;
+  	text-decoration: none;
+}
+#add_b:hover{
+	text-decoration: none;
+}
 #add_b:hover + #add_text
 {
 	color: #231f1d;
@@ -226,7 +235,8 @@ width: 100%;
 	font-weight: bolder;
 	display: block;
 	transition: all .3s ease-in-out;
-	margin-left: -25px;
+	text-align: center;
+  	top: -30px;
 
 }
 
