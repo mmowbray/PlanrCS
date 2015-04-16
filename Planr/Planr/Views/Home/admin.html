@@ -51,10 +51,6 @@
 					</div>
 					<!-- add course button ends -->
 
-					<div class="user_profile">
-						<div>	<input type="text" id="search" placeholder="Type to search"></input> </div>
-					</div> 
-
 				</ul>
                 <!--search & user info end-->
             </div>
@@ -80,6 +76,12 @@
 <!--main content start || place for grid couses -->
 <section id="main-content">
 <section class="wrapper">
+
+		
+		<div>  <!--search box-->
+			<input type="search" class="light-table-filter" data-table="order-table" placeholder="Search Courses">
+		</div>
+		
 
 		<!-- start of add section form -->
         <div id = "add_section" class="test" style="display: none">
@@ -116,7 +118,7 @@
 				</div>
 
 					<div class="button_holder"> 
-							<input class="form_button" onclick="validateInputAdd();" id="adding_button" type="submit" value="Add Section" />
+							<input class="form_button" onclick="saveAddSection();" id="adding_button" type="submit" value="Add Section" />
 							<input class="form_button" id="cancel_button" type="reset" onclick="resetInputAdd();" value="Cancel" />
 					</div>
 		
@@ -135,9 +137,9 @@
 					<legend id="title_field">Edit Section</legend>
 				<div id="form_content">
 					<p>
-					
 					<label style="width:162.5px;">Course Name</label><input class ="readonly" type="text/javascript" id="editcName" readonly></input>
-					<label  style="width:20px;">ID</label><input class ="readonly" id="courseID" style="width:50px" readonly></input>
+					<input class ="readonly" id="sectionID" style="width:50px" hidden></input>
+					<input class ="readonly" id="courseID" style="width:50px" hidden></input>
 					<label style="width:162px">Semester Offered</label>	
 													<input style="width:25px" type="radio" name="editsemester" id="1" value="1" required>Fall</input>
 													<input style="width:25px" type="radio" name="editsemester" id="2" value="2" required>Winter</input>
@@ -163,7 +165,7 @@
 				</div>
 
 					<div class="button_holder"> 
-						<input class="form_button" id="edit_button" type="submit" onclick="validateInputEdit();" value="Edit Section" />
+						<input class="form_button" id="edit_button" type="submit" onclick="saveEditSection();" value="Edit Section" />
 						<input class="form_button" id="cancel_button" type="submit" onclick="resetInputEdit();" value="Cancel" />
 					</div>
 					
@@ -178,6 +180,7 @@
             	<script type="text/javascript" src="js/admin.js"></script>
             </table>	
         </div>
+
 
 </section>
 </section>

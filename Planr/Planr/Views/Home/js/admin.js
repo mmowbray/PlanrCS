@@ -1,6 +1,4 @@
-var stringSemester = ["Fall", "Winter", "Fall/Winter", "Summer 1", "Summer 2"]; 
 
-        
         function drawTable(section)
 		{ 
 			var table=""; 	
@@ -62,7 +60,7 @@ var stringSemester = ["Fall", "Winter", "Fall/Winter", "Summer 1", "Summer 2"];
 		resetStyleEdit();
 		
 		var course = searchById(sectionArray, key); 
-		document.getElementById("courseID").value= key;
+		document.getElementById("sectionID").value= key;
 		document.getElementById("editcName").value= course.Course;
 		document.getElementById("editlDay1").value= course.Day1;
 		document.getElementById("editlDay2").value= course.Day2;
@@ -77,7 +75,6 @@ var stringSemester = ["Fall", "Winter", "Fall/Winter", "Summer 1", "Summer 2"];
 		document.getElementById("editendLab").value= course.LabEndTime;
 		// alert(course.Availability); 
 		document.getElementById(course.Availability).checked=true;
-		
 		
 		
     }
@@ -333,7 +330,7 @@ var stringSemester = ["Fall", "Winter", "Fall/Winter", "Summer 1", "Summer 2"];
 		{
 			resetStyleEdit();
 			
-			var myKey = document.getElementById("courseID").value;
+			var myKey = document.getElementById("sectionID").value;
 			editCourse(myKey);
 			
 		}
@@ -366,3 +363,102 @@ var stringSemester = ["Fall", "Winter", "Fall/Winter", "Summer 1", "Summer 2"];
 			document.getElementById("startLab").style.borderColor = "";
 			document.getElementById("endLab").style.borderColor = "";
 		}
+
+function saveAddSection()
+		{
+			var section={}; 
+			section.Course = document.getElementById("course_name").value;
+			section.Day1 = document.getElementById("lDay1").value.toUpperCase();
+			section.Day2 = document.getElementById("lDay2").value.toUpperCase();
+			section.StartTime = document.getElementById("startL").value; 
+			section.EndTime = document.getElementById("endL").value;
+			section.TutorialDay1 = document.getElementById("tDay1").value.toUpperCase();
+			section.TutorialDay2 = document.getElementById("tDay2").value.toUpperCase();
+			section.TutorialStartTime = document.getElementById("startT").value;
+			section.TutorialEndTime = document.getElementById("endT").value; 
+			section.LabDay = document.getElementById("labDay1").value.toUpperCase();
+			section.LabStartTime = document.getElementById("startLab").value;
+			section.LabEndTime = document.getElementById("endLab").value;
+			section.Availability = getSelectedSemester("semester");
+			$.get( "http://planr.me/Admin/AddSection", section, function(responseCode ) {
+						alert("Section has been successfully added");
+						 location.reload();
+				});
+		}
+		//function to delete a section
+		function deleteCourse(sectionID)
+		{
+			$.get( "http://planr.me/Admin/DeleteSection", {"sectionUniqueID":sectionID}, function( responseCode ) {
+					if(responseCode==0) {alert("Section Successfully deleted");
+					location.reload();}
+				});
+		}
+		
+		//function to edit a section
+		function saveEditSection()
+		{
+			var section={}; 
+			
+			section.Course = document.getElementById("editcName").value;
+			section.CourseID= document.getElementById("courseID").value; 
+			section.UniqueID= document.getElementById("sectionID").value; 
+			section.Day1 = document.getElementById("editlDay1").value.toUpperCase();
+			section.Day2 = document.getElementById("editlDay2").value.toUpperCase();
+			section.StartTime = document.getElementById("editstartL").value;
+			section.EndTime = document.getElementById("editendL").value;
+			section.TutorialDay1 = document.getElementById("edittDay1").value.toUpperCase();
+			section.TutorialDay2 = document.getElementById("edittDay2").value.toUpperCase();
+			section.TutorialStartTime = document.getElementById("editstartT").value;
+			section.TutorialEndTime = document.getElementById("editendT").value;
+			section.LabDay = document.getElementById("editlabDay1").value.toUpperCase();
+			section.LabStartTime = document.getElementById("editstartLab").value;
+			section.LabEndTime = document.getElementById("editendLab").value;
+			section.Availability = getSelectedSemester("editsemester");
+			location.reload();
+			$.get( "http://planr.me/Admin/UpdateExistingSection", section, function(responseCode ) {
+						alert("Section has been successfully edited");	
+					}
+				);
+			
+			}
+// filter table. 			
+(function(document) {
+	'use strict';
+
+	var LightTableFilter = (function(Arr) {
+
+		var _input;
+
+		function _onInputEvent(e) {
+			_input = e.target;
+			var tables = document.getElementsByClassName(_input.getAttribute('data-table'));
+			Arr.forEach.call(tables, function(table) {
+				Arr.forEach.call(table.tBodies, function(tbody) {
+					Arr.forEach.call(tbody.rows, _filter);
+				});
+			});
+		}
+
+		function _filter(row) {
+			var text = row.textContent.toLowerCase(), val = _input.value.toLowerCase();
+			row.style.display = text.indexOf(val) === -1 ? 'none' : 'table-row';
+		}
+
+		return {
+			init: function() {
+				var inputs = document.getElementsByClassName('light-table-filter');
+				Arr.forEach.call(inputs, function(input) {
+					input.oninput = _onInputEvent;
+				});
+			}
+		};
+	})(Array.prototype);
+
+	document.addEventListener('readystatechange', function() {
+		if (document.readyState === 'complete') {
+			LightTableFilter.init();
+		}
+	});
+
+})(document);
+
