@@ -51,7 +51,7 @@ video#bgvid {
 }
 
 #banner {
-	margin-top: 200px;
+	margin-top: 14%;
 	/*    background:
         -moz-radial-gradient(rgb(37, 37, 37) 25%, transparent 25%),
         -moz-radial-gradient(rgb(37, 37, 37) 25%, transparent 25%),
@@ -759,7 +759,7 @@ button {
 
 .genSchedule_btn:hover {
 	background: #A90C12;
-	color:#767676;
+	color:#C0BDBD;
 	text-decoration: none;
 }
 
@@ -774,8 +774,65 @@ button {
 	left: 5px;
 }
 
+.commitSchedule_btn {
+
+    display: block;
+    margin: 3em auto;
+    width: 188px;
+    height: 50px;
+    font: 700 1em sans-serif;
+    background: #16ce63;
+    color: #fff;
+    padding-top: 6px;
+    border: 0;
+    border-bottom: 0.35em solid #18AE57;
+    border-radius: 3px;
+    outline: 0;
+    text-align: center;
+    line-height: 2.6em;
+    cursor: pointer;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+}
+
+.commitSchedule_btn:hover {
+    background: #209350;
+    color:#C0BDBD;
+    text-decoration: none;
+}
+
+.commitSchedule_btn:active {
+    background: #E81820;
+    border-color: #E81820;
+}
+
+.commitSchedule_btn.sideMenu{
+    position:absolute;
+    bottom: -23px;
+    left: 5px;
+}
+
 .schedule-option{
 	height: 198px;
   	margin-right: -19px;
   	overflow: auto;
+}
+
+.fall-winter-schedule{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 628px
+}
+
+.user-display{
+    text-align: center;
+}
+
+.i_heart_it{
+
+}
+
+.i_heart_it:hover{
+    text-decoration: none;
 }
