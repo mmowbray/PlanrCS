@@ -7,7 +7,8 @@ namespace Planr.Models
         public int StudentID { get; set; }
         public Preference SavedPreferences { get; set; }
         public AcademicRecord Record{ get; set; }
-        public Schedule SavedSchedule { get; set; }
+        public Schedule SavedSchedule1 { get; set; }
+        public Schedule SavedSchedule2 { get; set; }
         public Sequence SavedSequence { get; set; }
         
         public Student()

@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Web.Mvc;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Planr.Models;
 
@@ -79,9 +81,12 @@ namespace Planr.Controllers
         // 0 = SUCCESS, 1 = ERROR
 
         [HttpGet]
-        public JsonResult SaveSchedule(Schedule schedule)
+        public JsonResult SaveSchedule(String input)
         {
-            return Json(DBInterfacer.SaveSchedule((Session["username"] ?? TEST_STUDENT_USER).ToString(), schedule), JsonRequestBehavior.AllowGet);
+            //List<Schedule> dsa = JsonConvert.DeserializeObject<List<Schedule>>(schedules);
+
+            return Json(1, JsonRequestBehavior.AllowGet);
+            //return Json(DBInterfacer.SaveSchedule((Session["username"] ?? TEST_STUDENT_USER).ToString(), schedules), JsonRequestBehavior.AllowGet);
         }
 
         // This method accepts a Student.Preferences object from the front-end, and writes it to the database for the currently logged in user

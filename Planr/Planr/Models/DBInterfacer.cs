@@ -58,10 +58,10 @@ namespace Planr.Models
             return 0; //0 = success
         }
 
-        public static Schedule GetSchedule(String username)
+        public static Schedule[] GetSchedule(String username)
         {
             Student student = GetStudent(username);
-            return student.SavedSchedule;
+            return new Schedule[] {student.SavedSchedule1, student.SavedSchedule2};
         }
 
         public static Student GetStudent(String studentName)
@@ -128,7 +128,7 @@ namespace Planr.Models
             return Sequencer.GenerateSequence(student, 2, 0);
         }
 
-        public static int SaveSchedule(string studentName, Schedule schedule)
+        public static int SaveSchedule(string studentName, Schedule[] newschedule)
         {
             List<Student> DBPreviousState = GetStudents();
             int studentIndex = DBPreviousState.FindIndex(stud => stud.UserName == studentName);
@@ -136,7 +136,8 @@ namespace Planr.Models
             if (studentIndex == -1) //entry not found in DB
                 return 1; //1 = failure
 
-            DBPreviousState[studentIndex].SavedSchedule = schedule;
+            DBPreviousState[studentIndex].SavedSchedule1 = newschedule[0];
+            DBPreviousState[studentIndex].SavedSchedule2 = newschedule[1];
             WriteValuesToDB(DB_USERS_PATH, DBPreviousState);
 
             return 0; //0 = success        

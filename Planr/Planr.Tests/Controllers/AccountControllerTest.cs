@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -146,8 +147,42 @@ namespace Planr.Tests.Controllers
         Assert.AreEqual(logoutResultingAction, RedirectToAction("Dashboard", "Student"));
         }*/
 
-        //                        return RedirectToAction("Editor", "Admin"); //user is an admin
-                           // return RedirectToAction("Dashboard", "Student"); //user is not an admin
+        //return RedirectToAction("Editor", "Admin"); //user is an admin
+        // return RedirectToAction("Dashboard", "Student"); //user is not an admin
 
-        }
+        /*
+        [TestMethod]
+        public void CourseSubsystemTest()
+        {
+        List<Course> allCourses = DBInterfacer.GetCourses();
+
+        //a new course is defined and added to list of all courses
+        int newRandomCourseID = new Random().Next() * 5;
+
+        Course newCourse = new Course();
+        newCourse.CourseID = newRandomCourseID;
+        newCourse.CourseName = "FAKE 101";
+
+        allCourses.Add(new Course());
+
+        //the new course is added to the courses database
+        DBInterfacer.WriteValuesToDB(DB_COURSES_PATH, allCourses);
+
+        //assert that the new course was indeed added to the courses database
+        Assert.IsTrue(DBInterfacer.GetCourses().Contains(course => course.CourseID == newRandomCourseID));
+
+
+        //an existing section is modified from the database and committed
+        List<Section> allSections = DBInterfacer.GetSections();
+
+        int newRandomSectionUID = new Random().Next()*5;
+        allSections[0].UniqueID = newRandomSectionUID;
+
+        DBInterfacer.WriteValuesToDB(DB_SECTIONS_PATH, allSections);
+
+        //assert that the changes made to the section have been saved to the database
+        Assert.IsTrue(DBInterfacer.GetSection().Contains(section => section.UniqueID == newRandomSectionUID));
+        }*/
+
+    }
 }

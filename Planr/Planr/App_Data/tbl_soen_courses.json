@@ -5,7 +5,7 @@
     "Credits": 3.0,
     "Prerequisites": null,
     "Corequisites": null,
-    "CourseType": "General Elective",
+    "CourseType": "General aElective",
     "Availability": null
   },
   {
@@ -1087,5 +1087,114 @@
     "Corequisites": null,
     "CourseType": "Basic Science",
     "Availability": null
+  },
+  {
+    "CourseName": "AERO 480",
+    "CourseID": 109,
+    "Credits": 3.5,
+    "Prerequisites": "95/73",
+    "Corequisites": null,
+    "CourseType": "REA",
+    "Availability": "3"
+  },
+  {
+    "CourseName": "AERO 482",
+    "CourseID": 110,
+    "Credits": 3,
+    "Prerequisites": "95/73",
+    "Corequisites": null,
+    "CourseType": "REA",
+    "Availability": "3"
+  },
+  {
+    "CourseName": "COEN 320",
+    "CourseID": 111,
+    "Credits": 3,
+    "Prerequisites": "81",
+    "Corequisites": null,
+    "CourseType": "REA",
+    "Availability": "3"
+  },
+  {
+    "CourseName": "SOEN 422",
+    "CourseID": 131,
+    "Credits": 4,
+    "Prerequisites": "81",
+    "Corequisites": null,
+    "CourseType": "REA",
+    "Availability": "3"
+  },
+  {
+    "CourseName": "SOEN 423",
+    "CourseID": 132,
+    "Credits": 4,
+    "Prerequisites": "81",
+    "Corequisites": null,
+    "CourseType": "REA",
+    "Availability": "3"
+  },
+  {
+    "CourseName": "COMP 426",
+    "CourseID": 119,
+    "Credits": 4,
+    "Prerequisites": "81",
+    "Corequisites": null,
+    "CourseType": "Elective",
+    "Availability": "3"
+  },
+  {
+    "CourseName": "COMP 428",
+    "CourseID": 120,
+    "Credits": 4,
+    "Prerequisites": "81",
+    "Corequisites": null,
+    "CourseType": "Elective",
+    "Availability": "3"
+  },
+  {
+    "CourseName": "COMP 442",
+    "CourseID": 121,
+    "Credits": 4,
+    "Prerequisites": "81/83",
+    "Corequisites": null,
+    "CourseType": "Elective",
+    "Availability": "4"
+  },
+  {
+    "CourseName": "COMP 465",
+    "CourseID": 124,
+    "Credits": 3,
+    "Prerequisites": "81/83",
+    "Corequisites": null,
+    "CourseType": "Elective",
+    "Availability": "3"
+  },
+  {
+    "CourseName": "COMP 473",
+    "CourseID": 126,
+    "Credits": 4,
+    "Prerequisites": "83",
+    "Corequisites": null,
+    "CourseType": "Elective",
+    "Availability": "3"
+  },
+  {
+    "CourseName": "COMP 474",
+    "CourseID": 127,
+    "Credits": 4,
+    "Prerequisites": "83",
+    "Corequisites": null,
+    "CourseType": "Elective",
+    "Availability": "4"
+  },
+  {
+    "CourseName": "COMP 478",
+    "CourseID": 128,
+    "Credits": 4,
+    "Prerequisites": "83",
+    "Corequisites": null,
+    "CourseType": "Elective",
+    "Availability": "3"
   }
+  
 ]

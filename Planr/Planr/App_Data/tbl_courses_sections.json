@@ -3995,7 +3995,7 @@
     "LabEndTime": "18:05"
   },
   {
-    "Course": null,
+    "Course": "COMP 371",
     "UniqueID": 505,
     "CourseID": 118,
     "Availability": 5,
@@ -4573,7 +4573,7 @@
     "LabEndTime": "17:05"
   },
   {
-    "Course": null,
+    "Course": "AERO 480",
     "UniqueID": 539,
     "CourseID": 109,
     "Availability": 2,
@@ -4590,7 +4590,7 @@
     "LabEndTime": "13:35"
   },
   {
-    "Course": null,
+    "Course": "AERO 480",
     "UniqueID": 540,
     "CourseID": 109,
     "Availability": 2,
@@ -4607,7 +4607,7 @@
     "LabEndTime": "13:55"
   },
   {
-    "Course": null,
+    "Course": "AERO 480",
     "UniqueID": 541,
     "CourseID": 109,
     "Availability": 2,
@@ -4624,7 +4624,7 @@
     "LabEndTime": "11:35"
   },
   {
-    "Course": null,
+    "Course": "AERO 482",
     "UniqueID": 542,
     "CourseID": 110,
     "Availability": 2,
@@ -4641,7 +4641,7 @@
     "LabEndTime": "00:00"
   },
   {
-    "Course": null,
+    "Course": "COEN 320",
     "UniqueID": 543,
     "CourseID": 111,
     "Availability": 2,
@@ -4675,7 +4675,7 @@
     "LabEndTime": "18:05"
   },
   {
-    "Course": null,
+    "CourseName": "SOEN 422",
     "UniqueID": 545,
     "CourseID": 131,
     "Availability": 2,
@@ -4692,7 +4692,7 @@
     "LabEndTime": "23:00"
   },
   {
-    "Course": null,
+    "CourseName": "SOEN 422",
     "UniqueID": 546,
     "CourseID": 131,
     "Availability": 2,
@@ -4709,7 +4709,7 @@
     "LabEndTime": "16:35"
   },
   {
-    "Course": null,
+    "CourseName": "SOEN 423",
     "UniqueID": 547,
     "CourseID": 132,
     "Availability": 2,
@@ -4964,7 +4964,7 @@
     "LabEndTime": "22:10"
   },
   {
-    "Course": null,
+    "CourseName": "COMP 426",
     "UniqueID": 562,
     "CourseID": 119,
     "Availability": 2,
@@ -4981,7 +4981,7 @@
     "LabEndTime": "22:10"
   },
   {
-    "Course": null,
+    "CourseName": "COMP 428",
     "UniqueID": 563,
     "CourseID": 120,
     "Availability": 2,
@@ -4998,7 +4998,7 @@
     "LabEndTime": "00:00"
   },
   {
-    "Course": null,
+    "CourseName": "COMP 442",
     "UniqueID": 564,
     "CourseID": 121,
     "Availability": 3,
@@ -5015,7 +5015,7 @@
     "LabEndTime": "22:00"
   },
   {
-    "Course": null,
+    "CourseName": "COMP 442",
     "UniqueID": 565,
     "CourseID": 121,
     "Availability": 3,
@@ -5100,7 +5100,7 @@
     "LabEndTime": "13:00"
   },
   {
-    "Course": null,
+    "CourseName": "COMP 465",
     "UniqueID": 570,
     "CourseID": 124,
     "Availability": 2,
@@ -5202,7 +5202,7 @@
     "LabEndTime": "19:45"
   },
   {
-    "Course": null,
+    "CourseName": "COMP 473",
     "UniqueID": 576,
     "CourseID": 126,
     "Availability": 2,
@@ -5219,7 +5219,7 @@
     "LabEndTime": "22:20"
   },
   {
-    "Course": null,
+    "CourseName": "COMP 474",
     "UniqueID": 577,
     "CourseID": 127,
     "Availability": 3,
@@ -5236,7 +5236,7 @@
     "LabEndTime": "17:00"
   },
   {
-    "Course": null,
+    "CourseName": "COMP 474",
     "UniqueID": 578,
     "CourseID": 127,
     "Availability": 3,
@@ -5253,7 +5253,7 @@
     "LabEndTime": "20:00"
   },
   {
-    "Course": null,
+    "CourseName": "COMP 478",
     "UniqueID": 579,
     "CourseID": 128,
     "Availability": 2,
@@ -5270,7 +5270,7 @@
     "LabEndTime": "22:30"
   },
   {
-    "Course": null,
+    "CourseName": "COMP 478",
     "UniqueID": 580,
     "CourseID": 128,
     "Availability": 2,
@@ -5338,7 +5338,7 @@
     "LabEndTime": "16:35"
   },
   {
-    "Course": null,
+    "CourseName": "SOEN 422",
     "UniqueID": 584,
     "CourseID": 131,
     "Availability": 2,
@@ -5355,7 +5355,7 @@
     "LabEndTime": "23:00"
   },
   {
-    "Course": null,
+    "CourseName": "SOEN 422",
     "UniqueID": 585,
     "CourseID": 131,
     "Availability": 2,
@@ -5372,7 +5372,7 @@
     "LabEndTime": "16:35"
   },
   {
-    "Course": null,
+    "CourseName": "SOEN 423",
     "UniqueID": 586,
     "CourseID": 132,
     "Availability": 2,
