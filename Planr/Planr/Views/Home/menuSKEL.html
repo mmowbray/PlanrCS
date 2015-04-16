@@ -44,10 +44,10 @@
                     <li class="top-nav-list top-nav-list-left sequence_menu">
                         <a ng-click = "schedulesServ.selectedSemester = 0; schedulesServ.selectedSchedule = 0" class="menu_button_top" href="#">Sequence</a>
                     </li>
-                    <li class="top-nav-list top-nav-list-left fall_menu" style="background-color:{{schedulesServ.schedulesColors[schedulesServ.favoritedIndex[0] % 23]}}">
+                    <li ng-show = "schedulesObj.fetched" class="top-nav-list top-nav-list-left fall_menu" style="background-color:{{schedulesServ.schedulesColors[schedulesServ.favoritedIndex[0] % 23]}}">
                         <a ng-click = "schedulesServ.selectedSemester = 1; schedulesServ.selectedSchedule = 0" class="menu_button_top" href="#" style="color: {{schedulesServ.favoritedIndex[0] != null ? 'white' : ''}}">Fall</a>
                     </li>
-                    <li class="top-nav-list top-nav-list-left winter_menu" style="background-color:{{schedulesServ.schedulesColors[schedulesServ.favoritedIndex[1] % 23]}}">
+                    <li ng-show = "schedulesObj.fetched" class="top-nav-list top-nav-list-left winter_menu" style="background-color:{{schedulesServ.schedulesColors[schedulesServ.favoritedIndex[1] % 23]}}">
                         <a ng-click = "schedulesServ.selectedSemester = 2; schedulesServ.selectedSchedule = 0" class="menu_button_top" href="#" style="color: {{schedulesServ.favoritedIndex[1] != null ? 'white' : ''}}">Winter</a>
                     </li>
                     <li class="top-nav-list top-nav-list-right logout_menu" id="letmego">

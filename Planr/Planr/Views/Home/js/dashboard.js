@@ -148,6 +148,7 @@ Planr.controller('topMenuCtrl', function($scope, schedulesService) {
 	var schedulesObj = schedulesService.schedulesObj;
 	//Attach service to scope
 	$scope.schedulesServ = schedulesService;
+	$scope.schedulesObj = schedulesObj;
 });
 
 
@@ -467,6 +468,7 @@ function Schedules(fetchUrl, saveUrl, /* preferencesOBJ,*/ scheduleListDOMID) {
 	//public instance variables
 	//boolean stating if there is an ajax call to the server
 	this.fetching = false;
+	this.fetched = false;
 	//ajax object
 	this.DOMID = scheduleListDOMID;
 	this.jqxhr = null;
@@ -505,6 +507,7 @@ Schedules.prototype = {
 				self.makeSchedules(data.scheduleOptions);
 				console.log(self.allSchedulesFetched);
 				self.fetching = false;
+				self.fetched = true;
 				//run a callback setted by the constructor
 				callback();
 			});
