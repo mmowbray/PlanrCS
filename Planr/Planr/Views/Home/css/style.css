@@ -781,11 +781,11 @@ button {
     width: 188px;
     height: 50px;
     font: 700 1em sans-serif;
-    background: #FF000A;
+    background: #16ce63;
     color: #fff;
     padding-top: 6px;
     border: 0;
-    border-bottom: 0.35em solid #CA0606;
+    border-bottom: 0.35em solid #18AE57;
     border-radius: 3px;
     outline: 0;
     text-align: center;
@@ -796,7 +796,7 @@ button {
 }
 
 .commitSchedule_btn:hover {
-    background: #A90C12;
+    background: #209350;
     color:#C0BDBD;
     text-decoration: none;
 }
@@ -827,4 +827,12 @@ button {
 
 .user-display{
     text-align: center;
+}
+
+.i_heart_it{
+
+}
+
+.i_heart_it:hover{
+    text-decoration: none;
 }

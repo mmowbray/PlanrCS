@@ -28,12 +28,9 @@
             <!--logo start-->
             <div class="brand">
 
-                <a href="#" class="logo">
-                    <span id="logo_span">P<span id="anr">lan r</span></span>
-                </a>
+                <a href="#" class="logo"></a>
             </div>
             <!--logo end-->
-
 
             <div ng-controller="topMenuCtrl" class="top-nav clearfix">
 
@@ -112,7 +109,7 @@
         <section id="main-content">
             <section class="wrapper">
                 <div ng-controller="ScheduleWrapperCtrl" class="row fall-winter-schedule">
-                    <h1 ng-if = "schedulesServ.selectedSemester > 0">{{semesterNameArr[schedulesServ.selectedSemester-1] + ' - Option ' + (schedulesServ.selectedSchedule+1)}} <a ng-click="schedulesServ.schedulesObj.favoritedSchedules[schedulesServ.selectedSemester-1] = schedulesServ.schedulesObj.allSchedulesFetched[schedulesServ.selectedSemester-1][schedulesServ.selectedSchedule]; schedulesServ.favoritedIndex[schedulesServ.selectedSemester-1] = schedulesServ.selectedSchedule" >Favorite Schedule</a></h1>
+                    <h1 ng-if = "schedulesServ.selectedSemester > 0">{{semesterNameArr[schedulesServ.selectedSemester-1] + ' - Option ' + (schedulesServ.selectedSchedule+1)}} <a ng-click="schedulesServ.schedulesObj.favoritedSchedules[schedulesServ.selectedSemester-1] = schedulesServ.schedulesObj.allSchedulesFetched[schedulesServ.selectedSemester-1][schedulesServ.selectedSchedule]; schedulesServ.favoritedIndex[schedulesServ.selectedSemester-1] = schedulesServ.selectedSchedule" class="i_heart_it fa fa-heart-o"></a></h1>
                     <div ng-show="schedulesServ.selectedSemester > 0" class="col-xs-12">
                         {{schedulesServ.selectedSemester > 0 ? (scheduleCanvas.drawSchedule(schedulesServ.schedulesObj.allSchedulesFetched[schedulesServ.selectedSemester-1][schedulesServ.selectedSchedule])) : ''}}
                         <canvas id="canvas" height="100%" width="100%" style="border:1px solid #d3d3d3; background-color:white; height:100%; width:100%;"></canvas>
@@ -122,7 +119,7 @@
                 <div ng-controller="SequenceCtrl" class="row">
                     <div ng-show="schedulesServ.selectedSemester == 0" class="container col-xs-3 col-xs-offset-5">
                         <h1 class="sequence_title">Sequence</h1>
-                        <a class="commitSchedule_btn">HEART</a>
+                        <a class="commitSchedule_btn">Generate Schedules</a>
 
                         <div ng-repeat="year in sequence.getSequence()" ng-if="year[3][0] != null" class="col-sm-12 yearSequence">
                             <h2 class="yearNum">Year {{$index+1}}</h2>
@@ -141,6 +138,7 @@
                     <span>{{'Completed Credits: ' + record.getRecord().CreditsCompleted}}</span><br>
                     <span>{{'Option: ' + record.getRecord().Option}}</span><br>
                     <span>{{'Completed Courses: ' + record.getRecord().CompletedCourses}}</span>
+                    <!-- place-holder for -->
                     <div class="row" style="margin-top:6em;">
                         <div class="col-md-6 col-sm-12">place holder for schedule</div>
                         <div class="col-md-6 col-sm-12">place holder for schedule</div>
