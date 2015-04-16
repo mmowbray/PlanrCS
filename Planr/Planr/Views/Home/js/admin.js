@@ -22,9 +22,9 @@ var semester=["Online", "Fall/Winter", "Fall", "Winter", "Summer1", "Summer2", "
 		function returnCourse(course)
         {
 			var courseHTMLString = "";
-			courseHTMLString += '<tr><td> ' +course.Course+ '</td><td>' +findSemester(course.Availability)+ '</td><td>' +course.Day1+ '</td><td>' +course.Day2+ '</td><td>' +course.StartTime+ '</td><td>' +course.EndTime+  '</td>';
-			courseHTMLString += '<td>' +course.TutorialDay1+ '</td><td>' +course.TutorialDay2+ '</td><td>' +course.TutorialStartTime+ '</td><td>' +course.TutorialEndTime+ '</td>';
-			courseHTMLString += '<td>' +course.LabDay+ '</td><td>' +course.LabStartTime+ '</td><td>' +course.LabEndTime+ '</td>';
+			courseHTMLString += '<tr><td> ' +course.Course+ '</td><td>' +findSemester(course.Availability)+ '</td><td>' + displayEmpty(course.Day1)+ '</td><td>' +displayEmpty(course.Day2)+ '</td><td>' +displayEmpty(course.StartTime)+ '</td><td>' +displayEmpty(course.EndTime)+  '</td>';
+			courseHTMLString += '<td>' +displayEmpty(course.TutorialDay1)+ '</td><td>' +displayEmpty(course.TutorialDay2)+ '</td><td>' +displayEmpty(course.TutorialStartTime)+ '</td><td>' +displayEmpty(course.TutorialEndTime)+ '</td>';
+			courseHTMLString += '<td>' +displayEmpty(course.LabDay)+ '</td><td>' +displayEmpty(course.LabStartTime)+ '</td><td>' +displayEmpty(course.LabEndTime)+ '</td>';
 			courseHTMLString += '<td class="button_td"> <button onclick="editCourse('+course.UniqueID+')" class = "buttons" type="submit" name="editSection"> Edit </button></td>';
 			courseHTMLString += '<td class="button_td"> <button onclick="deleteCourse('+course.UniqueID+')" class = "buttons" type="submit" name="delSection" > Delete</button></td></tr>';    
 			return courseHTMLString;       
@@ -195,12 +195,7 @@ var semester=["Online", "Fall/Winter", "Fall", "Winter", "Summer1", "Summer2", "
 			var validInput = validL1 && validL2 && validStartL && validEndL && validT1 && validT2 && validStartTut && validEndTut && validLab && validStartLab && validEndLab && isSemesterSelected && inputNonEmpty;
 			
 			return validInput;
-			/* if (validInput)
-				// CALL FIRAS FUNCTION --> addCourse()
-				alert ("Valid input. Call Firas' function");
-			else
-				alert ("Mistakes shown is red from edit.");
-				*/
+			
 		}
 
 		function validateInputEdit()
@@ -242,12 +237,6 @@ var semester=["Online", "Fall/Winter", "Fall", "Winter", "Summer1", "Summer2", "
 			var validInput = validL1 && validL2 && validStartL && validEndL && validT1 && validT2 && validStartTut && validEndTut && validLab && validStartLab && validEndLab && isSemesterSelected && inputNonEmpty;
 			
 			return validInput;
-			/* if (validInput)
-				// CALL FIRAS FUNCTION --> addCourse()
-				alert ("Valid input. Call Firas' function");
-			else
-				alert ("Mistakes shown is red from edit.");
-				*/
 		}
 
 		// Function that returns selected semester within the radio buttons
@@ -296,12 +285,12 @@ var semester=["Online", "Fall/Winter", "Fall", "Winter", "Summer1", "Summer2", "
 			var isValid = false;
 			
 			if (time === "")
-				return true;
+				isValid = true;
 			else 
 				isValid = /([0-1]\d|2[0-3]):([0-5]\d)/.test(time);
 			
 			
-			return changeInputField (isValid, id);
+			return changeInputField(isValid, id);
 		}
 
 		// Function checks for non-empty input
@@ -322,7 +311,6 @@ var semester=["Online", "Fall/Winter", "Fall", "Winter", "Summer1", "Summer2", "
 		{
 			if (valid !== true) {
 				document.getElementById(myId).style.borderColor = "red";
-
 				return false;
 			}
 			else
@@ -407,8 +395,10 @@ var semester=["Online", "Fall/Winter", "Fall", "Winter", "Summer1", "Summer2", "
 			if (validateInputAdd())
 			{
 				$.get( "http://planr.me/Admin/AddSection", section, function(responseCode ) {
-							alert("Section has been successfully added");
-							 location.reload();
+						if(responseCode==0) 
+						{	alert("Section has been successfully added");
+							location.reload();
+						}
 					});
 			}
 			else
@@ -450,8 +440,10 @@ var semester=["Online", "Fall/Winter", "Fall", "Winter", "Summer1", "Summer2", "
 			if (validateInputEdit()) 
 			{
 				$.get( "http://planr.me/Admin/UpdateExistingSection", section, function(responseCode ) {
-							alert("Section has been successfully edited");	
-							location.reload();
+							if(responseCode==0) {
+								alert("Section has been successfully edited");	
+								location.reload();
+							}	
 						}
 					);
 			}
@@ -500,7 +492,14 @@ var semester=["Online", "Fall/Winter", "Fall", "Winter", "Summer1", "Summer2", "
 
 })(document);
 
-function findSemester(numberSemester){
-return semester[numberSemester];
-}
+	function findSemester(numberSemester){
+		return semester[numberSemester];
+	}
+
+	function displayEmpty(attribute) {
+		if (attribute === null)
+			return "";
+		else
+			return attribute;
+	}
 
