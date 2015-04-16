@@ -205,8 +205,13 @@ width: 100%;
 }
 
 #add_section {
-	margin-left: 5px;
-	margin-top: 22px;
+  margin-left: 5px;
+  margin-top: 30px;
+}
+
+#edit_section {
+  margin-left: 5px;
+  margin-top: 30px;
 }
 
 #add_text{
@@ -246,7 +251,7 @@ width: 100%;
 #table_content
 {
 	margin-left: 5px;
-	margin-top: 22px;
+	margin-top: 40px;
 }
 
 
@@ -256,6 +261,15 @@ width: 100%;
 	color: black;
 }
 
+#searchbox {
+	position: fixed;  
+	display: inline-block;
+	margin-top: -13px;
+	padding: 15px;
+	width: 100%;
+	background-color: #f0f0f0;
+}
+
  #course_table {
 	border-collapse: collapse;
 	background-color: white;
@@ -263,6 +277,7 @@ width: 100%;
 	border: 3px solid rgb(219, 52, 58); 
 	font-size: 14px;
 	color: black;
+	 
   }
 
 #course_table .button_td {  
