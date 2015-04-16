@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8"></meta>
     <meta name="viewport" content="initial-scale=1.0"></meta>
-    <title>Planr.me - Log In</title>
+    <title>Planr.me - Dashboard</title>
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.8.3/angular-material.min.css">
@@ -78,10 +78,10 @@
                     <div ng-controller="PreferencesCtrl" id="pref-tile">
                         <ul id="pref_list_ul">
                             <li>
-                                <a ng-click="pref.toggleMorning()" class="fa fa-sun-o pref_icon {{pref.getPreferences().morning ? 'pref_icon_selected' : ''}}" id="day_time" title="Day Classes" data-toggle="tooltip" data-placement="right"></a>
+                                <a ng-click="pref.toggleMorning()" class="fa fa-sun-o pref_icon {{pref.getPreferences().morning ? 'pref_icon_selected' : ''}}" id="day_time" title="No Morning Classes" data-toggle="tooltip" data-placement="right"></a>
                             </li>
                             <li>
-                                <a ng-click="pref.toggleNight()" class="fa fa-moon-o pref_icon {{pref.getPreferences().night ? 'pref_icon_selected' : ''}}" id="night_time" title="Night Classes" data-toggle="tooltip" data-placement="right"></a>
+                                <a ng-click="pref.toggleNight()" class="fa fa-moon-o pref_icon {{pref.getPreferences().night ? 'pref_icon_selected' : ''}}" id="night_time" title="No Night Classes" data-toggle="tooltip" data-placement="right"></a>
                             </li>
                             <li>
                                 <a ng-click="pref.toggleDayOff()" class="fa fa-bed pref_icon {{pref.getPreferences().dayOff ? 'pref_icon_selected' : ''}}" id="day_off" title="Day Off" data-toggle="tooltip" data-placement="right"></a>
@@ -92,16 +92,25 @@
                         offt: {{pref.getPreferences().dayOff}}<br>-->
                     </div>
                     <div style="padding-top: 20px;text-align: center;overflow-x: hidden;" ng-controller="SchedulesCtrl">
-                        <p>Schedules</p>
-                        <hr />
-                        <div class="schedule-option">
-                            <ul style="padding-left:14px; margin-top:-15px; list-style:none;">
-                                <li ng-if = "schedulesServ.selectedSemester > 0" ng-repeat="schedule in schedulesObj.allSchedulesFetched[schedulesServ.selectedSemester-1]" class="schedule_icon small effect-2 color{{$index % 23}} sub-a" ><a ng-click="schedulesServ.selectedSchedule = $index">{{$index+1}}</a></li>
+                        <div ng-if="schedulesServ.selectedSemester > 0">
+                            <p>Schedules</p>
+                            <hr />
+                            <div class="schedule-option">
+                                <ul style="padding-left:14px; margin-top:-15px; list-style:none;">
+                                    <li ng-repeat="schedule in schedulesObj.allSchedulesFetched[schedulesServ.selectedSemester-1]" class="schedule_icon small effect-2 color{{$index % 23}} sub-a" ng-show = "prefsFilter(prefs.getPreferences(), schedule)"><a ng-click="schedulesServ.selectedSchedule = $index">{{$index+1}}</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <hr/>
+                            <div ng-if="schedulesServ.favoritedIndex[0] != null || schedulesServ.favoritedIndex[1] != null">
+                                <p>Favorited</p>
                                 
-                            </ul>
-                    </div>
-                    <hr />
-                    <a class="genSchedule_btn sideMenu">Save Fav Schedules</a>
+                                <hr/>
+                                <p ng-if="schedulesServ.favoritedIndex[0] != null">Fall: Option {{schedulesServ.favoritedIndex[0]+1}}</p>
+                                <p ng-if="schedulesServ.favoritedIndex[1] != null">Winter: Option {{schedulesServ.favoritedIndex[1]+1}}</p>
+                                <a ng-click = "schedulesObj.saveSchedulesToServer($apply)" class="genSchedule_btn sideMenu">Save &#60;3 Schedules</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <!-- sidebar menu end-->
@@ -112,7 +121,8 @@
         <section id="main-content">
             <section class="wrapper">
                 <div ng-controller="ScheduleWrapperCtrl" class="row">
-                    <h1 ng-if = "schedulesServ.selectedSemester > 0">{{semesterNameArr[schedulesServ.selectedSemester-1] + ' - Option ' + (schedulesServ.selectedSchedule+1)}} <a ng-click="schedulesServ.schedulesObj.favoritedSchedules[schedulesServ.selectedSemester-1] = schedulesServ.schedulesObj.allSchedulesFetched[schedulesServ.selectedSemester-1][schedulesServ.selectedSchedule]; schedulesServ.favoritedIndex[schedulesServ.selectedSemester-1] = schedulesServ.selectedSchedule" >Favorite Schedule</a></h1>
+                    <h1 ng-if = "schedulesServ.selectedSemester > 0">{{semesterNameArr[schedulesServ.selectedSemester-1] + ' - Option ' + (schedulesServ.selectedSchedule+1)}} <a ng-click="schedulesServ.schedulesObj.favoritedSchedules[schedulesServ.selectedSemester-1] = schedulesServ.schedulesObj.allSchedulesFetched[schedulesServ.selectedSemester-1][schedulesServ.selectedSchedule]; schedulesServ.favoritedIndex[schedulesServ.selectedSemester-1] = schedulesServ.selectedSchedule"  >Favorite Schedule</a></h1>
+
                     <div ng-show="schedulesServ.selectedSemester > 0" class="col-xs-12">
                         {{schedulesServ.selectedSemester > 0 ? (scheduleCanvas.drawSchedule(schedulesServ.schedulesObj.allSchedulesFetched[schedulesServ.selectedSemester-1][schedulesServ.selectedSchedule])) : ''}}
                         <canvas id="canvas" height="1024" width="600px;" style="border:1px solid #d3d3d3; background-color:white;"></canvas>

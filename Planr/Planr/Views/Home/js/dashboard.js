@@ -38,6 +38,8 @@ Planr.service('schedulesService', function() {
 	this.selectedSemester = 0;
 	this.selectedSchedule = 0;
 	this.schedulesObj = new Schedules('jsonTest/schedulesTest.json', 'jsonTest/schedulesTest.json', 'someID');
+	
+	
 });
 
 //Create Sequence controller
@@ -71,7 +73,7 @@ Planr.controller('PreferencesCtrl', function($scope, preferencesFactory) {
 	//instantiate new obj
 	var prefObj = preferencesFactory
 		//fetch from server $scope.$apply
-	prefObj.fetchPreferencesFromServer($scope.$apply);
+	//prefObj.fetchPreferencesFromServer($scope.$apply);
 	//bind the object to the scope
 	$scope.pref = prefObj;
 	$scope.count = 1;
@@ -83,21 +85,41 @@ Planr.controller('ScheduleWrapperCtrl', function($scope, schedulesService) {
 	var semesterNameArr= ['Fall 2015','Winter 2016'];
 	$scope.semesterNameArr = semesterNameArr;
 	$scope.schedulesServ = schedulesService;
+	
+	$scope.currentFavedSchedule = false;
+	
 	//create new canvas object
 	var canvas = new ScheduleCanvas('canvas')
 	//attach canvas to scope
 	$scope.scheduleCanvas = canvas;
+	
+	
+	$scope.$watch(
+		function() {
+			return schedulesService.selectedSchedule;
+		},
+
+		function(newVal) {
+			$scope.currentFavedSchedule = schedulesService.favoritedIndex[schedulesService.selectedSemester] === newVal;
+		}
+	)
+	
+	
 
 });
 
 //Create Schedules controller
-Planr.controller('SchedulesCtrl', function($scope, schedulesService) {
+Planr.controller('SchedulesCtrl', function($scope, schedulesService, preferencesFactory) {
+	var prefObj = preferencesFactory
 	//Attach service to scope
 	$scope.schedulesServ = schedulesService;
+	$scope.prefs = prefObj;
 	//instantiate new obj
 	var schedulesObj = schedulesService.schedulesObj;
 	schedulesObj.getSchedulesFromServer($scope.$apply);
-	$scope.schedulesObj = schedulesObj
+	$scope.schedulesObj = schedulesObj;
+	
+	$scope.prefsFilter = PreferencesFilter;
 
 	//Put all the schedules in an array for each semester, this array is the one thats look at when generating the colored pucks, 
 	//the first entry is an empty array because when the user click on sequence schedulesService.selectedSemester, which tells what 
@@ -198,7 +220,7 @@ function Preferences(fetchUrl, saveUrl, preferencesDOMID) {
 	// private instance variables
 	// preferences object
 	var preferences = {
-		'morning': 'yo',
+		'morning': false,
 		'night': false,
 		'dayOff': false
 	};
@@ -442,7 +464,7 @@ function Schedule(coursesArray, scheduleSemester, scheduleYear) {
 /////////////////////////////////
 function Schedules(fetchUrl, saveUrl, /* preferencesOBJ,*/ scheduleListDOMID) {
 	// Constants
-	var SUCCESS_STATUS_CODE = 1;
+	var SUCCESS_STATUS_CODE = 0;
 	//public instance variables
 	//boolean stating if there is an ajax call to the server
 	this.fetching = false;
@@ -458,7 +480,12 @@ function Schedules(fetchUrl, saveUrl, /* preferencesOBJ,*/ scheduleListDOMID) {
 	this.allSchedulesFetched = null;
 	this.RAWSchedulesFetched = null;
 	this.favoritedSchedules = new Array(2);
+	this.savedSchedules = null;
 	this.self = this;
+	
+	this.getSuccessStatusCode = function(){
+		return SUCCESS_STATUS_CODE;
+	};
 }
 
 Schedules.prototype = {
@@ -497,14 +524,14 @@ Schedules.prototype = {
 		if (!this.fetching) { //if no current preference ajax goin on then fetch
 			this.fetching = true; //set fetch flag to true
 			var self = this.self;
+			console.log(JSON.stringify(this.favoritedSchedules));
 			//perform get request
 			this.jqxhr = $.get(this.saveSchedulesUrl, {
-				'scheduleIDs[]': this.favoritedSchedules
+				'schedules[]': this.favoritedSchedules
 			}, function(data) {
 				//if the returned data is not the same as our success status code then alert the user and return false
 				if (self.getSuccessStatusCode() != data) {
 					alert('failed to save data to server.');
-					return false;
 				}
 
 				//TODO, what to do if it worked.
@@ -520,15 +547,16 @@ Schedules.prototype = {
 			var self = this.self;
 			//perform get request
 			this.jqxhr = $.get(this.saveSchedulesUrl, function(data) {
-				//forma
+				//format data
+				self.savedSchedules = self.formatSchedulesArray(data.savedSchedules)
 				self.fetching = false;
 				callback();
 			});
 		}
 	},
 	
+	//loop through the returned schedules array to create a schedules array that contains course objects that have some needed method
 	formatSchedulesArray: function(data){
-		//loop through the returned schedules array to create a schedules array that contains course objects that have some needed method
 		var tempArray = new Array(data.length)
 		for(var i = 0; i < data.length; i++){
 
@@ -731,6 +759,58 @@ function Course(name, lDay1, lDay2, startL, endL, tDay1, tDay2, startT, endT, la
 
 		}
 	};
+}
+
+//////////////////
+//Filter functions
+//////////////////
+function PreferencesFilter(prefObj, schedule){
+	
+	var morningBool = true;
+	var nightBool = true;
+	var m = false;
+	var t = false;
+	var w = false;
+	var j = false;
+	var f = false;
+	
+	//if pref set check morning times
+	if(prefObj.morning){
+
+		for(var i = 0; i < schedule.length; i++){
+			//check all start time to see if one is smaller than 10 (am)
+			morningBool = morningBool && ((isNaN(parseInt(schedule[i].startL.substr(0, 2))) || parseInt(schedule[i].startL.substr(0, 2)) == 0 || (parseInt(schedule[i].startL.substr(0, 2)) >= 10)) && ( isNaN(parseInt(schedule[i].startT.substr(0, 2))) || parseInt(schedule[i].startT.substr(0, 2)) == 0 || (parseInt(schedule[i].startT.substr(0, 2)) >= 10)) && (isNaN(parseInt(schedule[i].startLab.substr(0, 2))) || parseInt(schedule[i].startLab.substr(0, 2)) == 0 || (parseInt(schedule[i].startLab.substr(0, 2)) >= 10)));
+		}
+
+	}
+
+	
+	//if pref set check night times
+	if(prefObj.night){
+		for(var j = 0; j < schedule.length; j++){
+			//check all end time to see if one is greater than 19 (pm)
+			nightBool = nightBool && ((isNaN(parseInt(schedule[j].endL.substr(0, 2))) || parseInt(schedule[j].endL.substr(0, 2)) == 0 || (parseInt(schedule[j].endL.substr(0, 2)) < 19)) && ( isNaN(parseInt(schedule[j].endT.substr(0, 2))) || parseInt(schedule[j].endT.substr(0, 2)) == 0 || (parseInt(schedule[j].endT.substr(0, 2)) < 19)) && (isNaN(parseInt(schedule[j].endLab.substr(0, 2))) || parseInt(schedule[j].endLab.substr(0, 2)) == 0 || (parseInt(schedule[j].endLab.substr(0, 2)) < 19)));
+
+		}	
+	}
+
+	
+	//if pref set check days
+	if(prefObj.dayOff){
+		for(var k = 0; k < schedule.length; k++){
+			//check all course for the day they are help, if one is held that day, make the variable true
+			m = m || (schedule[k].lDay1 == 'M' || schedule[k].lDay2 == 'M' || schedule[k].tDay1 == 'M' || schedule[k].tDay2 == 'M' || schedule[k].labDay1 == 'M' || schedule[k].labDay2 == 'M');
+			t = t || (schedule[k].lDay1 == 'T' || schedule[k].lDay2 == 'T' || schedule[k].tDay1 == 'T' || schedule[k].tDay2 == 'T' || schedule[k].labDay1 == 'T' || schedule[k].labDay2 == 'T');
+			w = w || (schedule[k].lDay1 == 'W' || schedule[k].lDay2 == 'W' || schedule[k].tDay1 == 'W' || schedule[k].tDay2 == 'W' || schedule[k].labDay1 == 'W' || schedule[k].labDay2 == 'W');
+			j = j || (schedule[k].lDay1 == 'J' || schedule[k].lDay2 == 'J' || schedule[k].tDay1 == 'J' || schedule[k].tDay2 == 'J' || schedule[k].labDay1 == 'J' || schedule[k].labDay2 == 'J');
+			f = f || (schedule[k].lDay1 == 'F' || schedule[k].lDay2 == 'F' || schedule[k].tDay1 == 'F' || schedule[k].tDay2 == 'F' || schedule[k].labDay1 == 'F' || schedule[k].labDay2 == 'F');
+		
+		}	
+	}
+
+	
+	
+	return morningBool && nightBool && !(m && t && w && j && f);
 }
 
 /*
