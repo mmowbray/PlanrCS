@@ -438,18 +438,21 @@ var semester=["Online", "Fall/Winter", "Fall", "Winter", "Summer1", "Summer2", "
 			section.LabEndTime = document.getElementById("editendLab").value;
 			section.Availability = getSelectedSemester("editsemester");
 			
-			if (validateInputEdit()) 
+			if (!validateInputEdit()) 
 			{
-				$.get( "/Admin/UpdateExistingSection", section, function(responseCode ) {
-							if(responseCode==0) {
-								alert("Section has been successfully edited");	
-								location.reload();
-							}	
-						}
-					);
+			    alert("Errors found. Please verify your input.");
+			    return;
 			}
 			else
-				alert("Errors found. Please verify your input.");
+		    {
+		        $.get("/Admin/UpdateExistingSection", section, function (responseCode) {
+		            if (responseCode == 0) {
+		                alert("Section has been successfully edited");
+		                location.reload();
+		            }
+		        }
+					);
+		    }
 			
 		}
 // filter table. 			
