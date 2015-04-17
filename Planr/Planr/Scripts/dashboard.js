@@ -61,12 +61,25 @@ Planr.controller('SequenceCtrl', function($scope, schedulesService) {
 Planr.controller('RecordCtrl', function($scope, schedulesService) {
 	$scope.schedulesServ = schedulesService;
 	//instantiate new obj
-	var recordObj = new StudentRecord('ViewRecord', 'someID');
+	var recordObj = new StudentRecord('jsonTest/studentRecodTest.json', 'someID');
 	//fetch from server
 	recordObj.fetchRecordFromServer($scope.$apply);
 	//bind the object to the scope
 	$scope.record = recordObj;
+	
+	
+	//create new canvas object
+	var fallCanvas = new ScheduleCanvas('fallCanvas')
+	//attach canvas to scope
+	$scope.fallCanvas = fallCanvas;
+	
+	//create new canvas object
+	var wintercanvas = new ScheduleCanvas('wintercanvas')
+	//attach canvas to scope
+	$scope.wintercanvas = wintercanvas;
+	
 });
+
 
 //Create Preferences controller
 Planr.controller('PreferencesCtrl', function($scope, preferencesFactory) {
