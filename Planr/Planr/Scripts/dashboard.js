@@ -61,7 +61,7 @@ Planr.controller('SequenceCtrl', function($scope, schedulesService) {
 Planr.controller('RecordCtrl', function($scope, schedulesService) {
 	$scope.schedulesServ = schedulesService;
 	//instantiate new obj
-	var recordObj = new StudentRecord('jsonTest/studentRecodTest.json', 'someID');
+	var recordObj = new StudentRecord('ViewRecord', 'someID');
 	//fetch from server
 	recordObj.fetchRecordFromServer($scope.$apply);
 	//bind the object to the scope
