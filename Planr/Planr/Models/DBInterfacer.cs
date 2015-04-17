@@ -58,10 +58,14 @@ namespace Planr.Models
             return 0; //0 = success
         }
 
-        public static Schedule[] GetSchedule(String username)
+        public static Schedule[][] GetSchedule(String username)
         {
             Student student = GetStudent(username);
-            return new Schedule[] {student.SavedSchedule1, student.SavedSchedule2};
+
+            Schedule[][] jagged = new Schedule[1][];
+            jagged[0] = new Schedule[]{student.SavedSchedule1, student.SavedSchedule2};
+
+            return jagged;
         }
 
         public static Student GetStudent(String studentName)
@@ -71,7 +75,7 @@ namespace Planr.Models
 
         public static List<Student> GetStudents()
         {
-            return (List<Student>) GetUsers().OfType<Student>();
+            return GetUsers().OfType<Student>().ToList();
         }
 
         public static User GetUser(String username)
@@ -128,7 +132,7 @@ namespace Planr.Models
             return Sequencer.GenerateSequence(student, 2, 0);
         }
 
-        public static int SaveSchedule(string studentName, Schedule[] newschedule)
+        public static int SaveSchedule1(string studentName, Schedule newschedule1)
         {
             List<Student> DBPreviousState = GetStudents();
             int studentIndex = DBPreviousState.FindIndex(stud => stud.UserName == studentName);
@@ -136,8 +140,21 @@ namespace Planr.Models
             if (studentIndex == -1) //entry not found in DB
                 return 1; //1 = failure
 
-            DBPreviousState[studentIndex].SavedSchedule1 = newschedule[0];
-            DBPreviousState[studentIndex].SavedSchedule2 = newschedule[1];
+            DBPreviousState[studentIndex].SavedSchedule1 = newschedule1;
+            WriteValuesToDB(DB_USERS_PATH, DBPreviousState);
+
+            return 0; //0 = success        
+        }
+
+        public static int SaveSchedule2(string studentName, Schedule newschedule2)
+        {
+            List<Student> DBPreviousState = GetStudents();
+            int studentIndex = DBPreviousState.FindIndex(stud => stud.UserName == studentName);
+
+            if (studentIndex == -1) //entry not found in DB
+                return 1; //1 = failure
+
+            DBPreviousState[studentIndex].SavedSchedule2 = newschedule2;
             WriteValuesToDB(DB_USERS_PATH, DBPreviousState);
 
             return 0; //0 = success        
@@ -247,7 +264,6 @@ namespace Planr.Models
 
             //Console.WriteLine("Today is " + thisDate1.ToString("MMMM dd, yyyy") + ".");
         }
-
     }
 
     // UserItemConverter Class

@@ -81,17 +81,66 @@ namespace Planr.Controllers
         // 0 = SUCCESS, 1 = ERROR
 
         [HttpGet]
-        public JsonResult SaveSchedule(String input)
+        public JsonResult SaveSchedule1(String input)
         {
-            //List<Schedule> dsa = JsonConvert.DeserializeObject<List<Schedule>>(schedules);
 
-            //var x = new JsonConvert.DeserializeObject<List<Schedule>>(input);
+            dynamic dyn = JObject.Parse(input);
 
-            dynamic fart = JObject.Parse(input);
-            string lawl = fart.myArray[0];
+            String name = dyn.myArray[0].name;
+            Schedule s1 = new Schedule();
 
-            return Json(1, JsonRequestBehavior.AllowGet);
-            //return Json(DBInterfacer.SaveSchedule((Session["username"] ?? TEST_STUDENT_USER).ToString(), schedules), JsonRequestBehavior.AllowGet);
+            for (int i = 0; i < 5; i++)
+            {
+                s1.schedule[i] = new Section();
+
+                s1.schedule[i].Course = dyn.myArray[i].name;
+                s1.schedule[i].Day1 = dyn.myArray[i].lDay1;
+                s1.schedule[i].Day2 = dyn.myArray[i].lDay2;
+                s1.schedule[i].StartTime = dyn.myArray[i].startL;
+                s1.schedule[i].EndTime = dyn.myArray[i].endL;
+                s1.schedule[i].TutorialDay1 = dyn.myArray[i].tDay1;
+                s1.schedule[i].TutorialDay2 = dyn.myArray[i].tDay2;
+                s1.schedule[i].TutorialStartTime = dyn.myArray[i].startT;
+                s1.schedule[i].TutorialEndTime = dyn.myArray[i].endT;
+                s1.schedule[i].LabDay = dyn.myArray[i].labDay1;
+                s1.schedule[i].LabStartTime = dyn.myArray[i].startLab;
+                s1.schedule[i].LabEndTime = dyn.myArray[i].endLab;
+            }
+
+            return Json(DBInterfacer.SaveSchedule1((Session["username"] ?? TEST_STUDENT_USER).ToString(), s1), JsonRequestBehavior.AllowGet);
+        }
+
+        // This method accepts a Schedule object from the front-end, and writes it to the database for the currently logged in user
+        // 0 = SUCCESS, 1 = ERROR
+
+        [HttpGet]
+        public JsonResult SaveSchedule2(String input)
+        {
+
+            dynamic dyn = JObject.Parse(input);
+
+            String name = dyn.myArray[0].name;
+            Schedule s2 = new Schedule();
+
+            for (int i = 0; i < 5; i++)
+            {
+                s2.schedule[i] = new Section();
+
+                s2.schedule[i].Course = dyn.myArray[i].name;
+                s2.schedule[i].Day1 = dyn.myArray[i].lDay1;
+                s2.schedule[i].Day2 = dyn.myArray[i].lDay2;
+                s2.schedule[i].StartTime = dyn.myArray[i].startL;
+                s2.schedule[i].EndTime = dyn.myArray[i].endL;
+                s2.schedule[i].TutorialDay1 = dyn.myArray[i].tDay1;
+                s2.schedule[i].TutorialDay2 = dyn.myArray[i].tDay2;
+                s2.schedule[i].TutorialStartTime = dyn.myArray[i].startT;
+                s2.schedule[i].TutorialEndTime = dyn.myArray[i].endT;
+                s2.schedule[i].LabDay = dyn.myArray[i].labDay1;
+                s2.schedule[i].LabStartTime = dyn.myArray[i].startLab;
+                s2.schedule[i].LabEndTime = dyn.myArray[i].endLab;
+            }
+
+            return Json(DBInterfacer.SaveSchedule2((Session["username"] ?? TEST_STUDENT_USER).ToString(), s2), JsonRequestBehavior.AllowGet);
         }
 
         // This method accepts a Student.Preferences object from the front-end, and writes it to the database for the currently logged in user

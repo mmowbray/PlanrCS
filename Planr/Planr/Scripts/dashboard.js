@@ -522,25 +522,38 @@ Schedules.prototype = {
 		this.allSchedulesFetched = this.formatSchedulesArray(data)
 	},
 
-	saveSchedulesToServer: function(callback) {
-		if (!this.fetching) { //if no current preference ajax goin on then fetch
-			this.fetching = true; //set fetch flag to true
-			var self = this.self;
-			console.log(JSON.stringify(this.favoritedSchedules));
-			//perform get request
-			this.jqxhr = $.get(this.saveSchedulesUrl, {
-				'schedules[]': this.favoritedSchedules
-			}, function(data) {
-				//if the returned data is not the same as our success status code then alert the user and return false
-				if (self.getSuccessStatusCode() != data) {
-					alert('failed to save data to server.');
-				}
+	saveSchedulesToServer: function (callback) {
+	    var self = this;
+	    if (!this.fetching) { //if no current preference ajax goin on then fetch
+	        this.fetching = true; //set fetch flag to true
+	        var self = this.self;
+	        console.log(JSON.stringify(this.favoritedSchedules));
+	        //perform get request
+	        this.jqxhr = $.ajax({
+	            type: "GET",
+	            url: "SaveSchedule1?input=" + encodeURIComponent(JSON.stringify({
+	                "myArray": self.favoritedSchedules[0]
+	            })),
+	            success: function (data) {
 
-				//TODO, what to do if it worked.
-				self.fetching = false;
-				callback();
-			});
-		}
+	                console.log(data);
+
+	                $.ajax({
+	                    type: "GET",
+	                    url: "SaveSchedule2?input=" + encodeURIComponent(JSON.stringify({
+	                        "myArray": self.favoritedSchedules[1]
+	                    })),
+	                    success: function (data) {
+
+	                        console.log(data);
+	                    }
+	                });
+
+
+	            }
+	        });
+
+	    }
 	},
 	
 	getSavedSchedulesFromServer: function(callback) {
